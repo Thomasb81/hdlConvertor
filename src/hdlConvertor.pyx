@@ -5,34 +5,6 @@ from libc.errno cimport errno
 from libcpp cimport bool
 from cpython.ref cimport PyObject
 
-
-#cdef extern from "hdlObjects/context.h":
-#    cdef cppclass Context:
-#        PyObject * toJson()
-#
-#cdef extern from "parserContainer.h":
-#    enum ParserErrors:
-#        PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR
-#
-#cdef extern from "langue.h":
-#    enum Langue:
-#        VHDL, VERILOG,SYSTEM_VERILOG
-
-#cdef extern from "convertor.h":
-#    cdef cppclass Convertor:
-#
-#        char * filename
-#        Langue lang
-#        bool hierarchyOnly
-#        ParserErrors err
-#        char * errStr
-#
-#        Context * parse ( char *,
-#                              Langue,
-#                              bool,
-#                              bool
-#                             ) except +
-
 from convertor cimport Context, PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR, VHDL, VERILOG, Convertor as _Convertor
 
 
@@ -49,6 +21,9 @@ cdef class hdlConvertor:
         self.thisptr = new _Convertor()
         
     def parse(self,filename,langue,hierarchyOnly,debug):
+#if PY_MAJOR_VERSION >= 3
+        filename = filename.encode()
+#endif
         cdef char * filename_byte = <bytes> filename
         cdef Context* c
         if langue == "verilog":

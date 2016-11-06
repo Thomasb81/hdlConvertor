@@ -1,16 +1,113 @@
 import os
-from distutils.core import setup, Extension
-from distutils.command.build_ext import build_ext
+from setuptools import setup, Extension
+from setuptools.command.build_ext import build_ext
 from distutils.sysconfig import customize_compiler
-import distutils.ccompiler
+from distutils.ccompiler import new_compiler
+from distutils import sysconfig
+from distutils import log as distutilsLog
+from Cython.Build import cythonize
 
-def path_is_parent(parent_path, child_path):
-    # Smooth out relative path names, note: if you are concerned about symbolic links, you should use os.path.realpath too
-    parent_path = os.path.abspath(parent_path)
-    child_path = os.path.abspath(child_path)
+verilog_source = [
+"src/VerilogParser/Verilog2001Visitor.cpp",
+"src/VerilogParser/Verilog2001Parser.cpp",
+"src/VerilogParser/Verilog2001Lexer.cpp",
+"src/VerilogParser/Verilog2001BaseVisitor.cpp",
+"src/verilogConvertor/utils.cpp",
+"src/verilogConvertor/moduleParser.cpp",
+"src/verilogConvertor/attributeParser.cpp",
+"src/verilogConvertor/literalParser.cpp",
+"src/verilogConvertor/exprParser.cpp",
+"src/verilogConvertor/source_textParser.cpp",
+"src/verilogConvertor/portParser.cpp",
+]
 
-    # Compare the common path of the parent and child path with the common path of just the parent path. Using the commonpath method on just the parent path will regularise the path name in the same way as the comparison that deals with both paths, removing any trailing path separator
-    return os.path.commonpath([parent_path]) == os.path.commonpath([parent_path, child_path])
+vhdl_source = [
+"src/vhdlConvertor/interfaceParser.cpp",
+"src/vhdlConvertor/designFileParser.cpp",
+"src/vhdlConvertor/statementParser.cpp",
+"src/vhdlConvertor/packageHeaderParser.cpp",
+"src/vhdlConvertor/literalParser.cpp",
+"src/vhdlConvertor/packageParser.cpp",
+"src/vhdlConvertor/entityParser.cpp",
+"src/vhdlConvertor/exprParser.cpp",
+"src/vhdlConvertor/referenceParser.cpp",
+"src/vhdlConvertor/compInstanceParser.cpp",
+"src/vhdlConvertor/archParser.cpp",
+"src/VhdlParser/vhdlVisitor.cpp",
+"src/VhdlParser/vhdlLexer.cpp",
+"src/VhdlParser/vhdlParser.cpp",
+"src/VhdlParser/vhdlBaseVisitor.cpp",
+]
+
+sv_source = [
+"src/svConverter/library_textParser.cpp",
+"src/SVParser/sv2012Visitor.cpp",
+"src/SVParser/sv2012Parser.cpp",
+"src/SVParser/sv2012BaseVisitor.cpp",
+"src/SVParser/sv2012Lexer.cpp",
+]
+
+c_source = [
+"src/notImplementedLogger.cpp",
+"src/convertor.cpp",
+"src/hdlObjects/named.cpp",
+"src/hdlObjects/entity.cpp",
+"src/hdlObjects/statement.cpp",
+"src/hdlObjects/operator.cpp",
+"src/hdlObjects/jsonable.cpp",
+"src/hdlObjects/variable.cpp",
+"src/hdlObjects/symbol.cpp",
+"src/hdlObjects/aPackage.cpp",
+"src/hdlObjects/function.cpp",
+"src/hdlObjects/context.cpp",
+"src/hdlObjects/compInstance.cpp",
+"src/hdlObjects/expr.cpp",
+"src/hdlObjects/arch.cpp",
+"src/hdlObjects/port.cpp",
+"src/hdlObjects/operatorType.cpp",
+"src/baseHdlParser/baseHdlParser.cpp",
+"src/syntaxErrorLogger.cpp",
+"src/hdlConvertor.pyx",
+]
+
+all_source = []
+all_source.extend(c_source)
+#all_source.extend(verilog_source)
+#all_source.extend(vhdl_source)
+
+distutilsLog.set_verbosity(1)
+
+if not os.path.exists(os.path.join('build','libverilogParser.a')):
+    verilog_compiler = new_compiler()
+    customize_compiler(verilog_compiler)
+    verilog_compiler.compiler_so.append('-std=c++11')
+    verilog_compiler.compiler_so.remove("-Wstrict-prototypes")
+    verilog_compiler.add_include_dir('antlr4-install/usr/local/include/')
+    verilog_compiler.add_include_dir(sysconfig.get_python_inc())
+    verilog_object = verilog_compiler.compile(verilog_source)
+    verilog_compiler.create_static_lib(verilog_object,"verilogParser",output_dir="build")
+
+if not os.path.exists(os.path.join('build','libvhdlParser.a')):
+    vhdl_compiler = new_compiler()
+    customize_compiler(vhdl_compiler)
+    vhdl_compiler.compiler_so.append('-std=c++11')
+    vhdl_compiler.compiler_so.remove("-Wstrict-prototypes")
+    vhdl_compiler.add_include_dir('antlr4-install/usr/local/include/')
+    vhdl_compiler.add_include_dir(sysconfig.get_python_inc())
+    vhdl_object = vhdl_compiler.compile(vhdl_source)
+    vhdl_compiler.create_static_lib(vhdl_object,"vhdlParser",output_dir="build")
+
+if not os.path.exists(os.path.join('build','libsvParser.a')):
+    sv_compiler = new_compiler()
+    customize_compiler(sv_compiler)
+    sv_compiler.compiler_so.append('-std=c++11')
+    sv_compiler.compiler_so.remove("-Wstrict-prototypes")
+    sv_compiler.add_include_dir('antlr4-install/usr/local/include/')
+    sv_compiler.add_include_dir(sysconfig.get_python_inc())
+    sv_object = sv_compiler.compile(sv_source)
+    sv_compiler.create_static_lib(sv_object,"svParser",output_dir="build")
+
+distutilsLog.set_verbosity(0)
 
 class buildWithoutStrictPrototypes(build_ext):
     """
@@ -24,56 +121,16 @@ class buildWithoutStrictPrototypes(build_ext):
             pass
         build_ext.build_extensions(self)
 
-# monkey-patch for parallel compilation
-def parallelCCompile(self, sources, output_dir=None, macros=None, include_dirs=None,
-                      debug=0, extra_preargs=None, extra_postargs=None, depends=None):
-    # those lines are copied from distutils.ccompiler.CCompiler directly
-    macros, objects, extra_postargs, pp_opts, build = self._setup_compile(
-            output_dir, macros, include_dirs, sources, depends, extra_postargs)
-    cc_args = self._get_cc_args(pp_opts, debug, extra_preargs)
-    # parallel code
-    import multiprocessing.pool
-    N = multiprocessing.cpu_count()  # number of parallel compilations
-    def _single_compile(obj):
-        try: src, ext = build[obj]
-        except KeyError: return
-        self._compile(obj, src, ext, cc_args, extra_postargs, pp_opts)
-    # convert to list, imap is evaluated on-demand
-    list(multiprocessing.pool.ThreadPool(N).imap(_single_compile, objects))
-    return objects
-
-def listFiles(baseDir):
-    for root, dirs, files in os.walk(baseDir):
-        for file in files:
-            yield os.path.join(root, file) 
-            
-def collectSourceFiles(baseDir, excludeDirs=[]):
-    for file in listFiles(baseDir):
-        if (file.endswith(".c") or file.endswith(".cpp"))\
-            and not file.endswith("main.c"):
-            # skip all files in exclude dirs
-            for d in excludeDirs:
-                if path_is_parent(d, file):
-                    continue
-            yield file
-
-BASE = "src/"
-ANTLR4_BASE = BASE + "antlr4-runitime-cpp/"
-ALL_SOURCE = list(collectSourceFiles(BASE, excludeDirs=[ANTLR4_BASE]))
-
-
-distutils.ccompiler.CCompiler.compile = parallelCCompile
 hdlConvertor = Extension('hdlConvertor',
-                    include_dirs=[BASE + "antlr4-runtime-cpp/"],
+                    include_dirs=['antlr4-install/usr/local/include/'],
                     extra_compile_args=['-std=c++11'],
-                    sources=ALL_SOURCE,
+                    sources=all_source,
                     language="c++",
+                    library_dirs = ['antlr4-install/usr/local/lib/',"build"],
+                    libraries=['antlr4-runtime','verilogParser','vhdlParser','svParser'],
+#                    undef_macros=['SV_PARSER'],
                     )
 
-antlr4 = ('antlr4',
-          {'sources': list(collectSourceFiles(ANTLR4_BASE))
-          }
-         )
 
 setup (cmdclass={'build_ext': buildWithoutStrictPrototypes},
        name='hdlConvertor',
@@ -82,7 +139,6 @@ setup (cmdclass={'build_ext': buildWithoutStrictPrototypes},
        url='https://github.com/Nic30/hdlConvertor',
        author='Michal Orsak',
        author_email='michal.o.socials@gmail.com',
-       libraries=[antlr4],
-       ext_modules=[hdlConvertor],
+       ext_modules= cythonize(hdlConvertor),
        keywords=['vhdl', 'verilog', 'parser', 'hdl'],
 )

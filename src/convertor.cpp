@@ -23,6 +23,7 @@ void parseFnVHDL(vhdlParser * antlrParser, DesignFileParser * hdlParser) {
 	tree.reset();
 }
 
+#ifdef SV_PARSER
 void parseFnSystemVerilog(sv::sv2012Parser * antlrParser,
 		Library_textParser * hdlParser) {
 	Ref<sv::sv2012Parser::Library_textContext> tree =
@@ -30,6 +31,7 @@ void parseFnSystemVerilog(sv::sv2012Parser * antlrParser,
 		hdlParser->visitLibrary_text(tree);
 		tree.reset();
 }
+#endif
 
 Context * Convertor::parse(const char * _fileName, Langue _lang,
 		bool _hierarchyOnly, bool _debug) {
@@ -53,13 +55,14 @@ Context * Convertor::parse(const char * _fileName, Langue _lang,
 			c = pc->context;
 			delete pc;
 
+#ifdef SV_PARSER
 		} else if (lang == SYSTEM_VERILOG) {
 			auto pc = new ParserContainer<sv::sv2012Lexer, sv::sv2012Parser,
 					Library_textParser>();
 			err = pc->parseFile(fileName, hierarchyOnly, debug, parseFnSystemVerilog);
 			c = pc->context;
 			delete pc;
-
+#endif
 		} else {
 			throw "Unsupported language.";
 		}

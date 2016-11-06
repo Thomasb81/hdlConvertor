@@ -30,6 +30,7 @@
 
 # generated files
 MANIFEST
+src/hdlConvertor.cpp
 
 # build folders
 Debug/

@@ -15,9 +15,11 @@
 #include "VerilogParser/Verilog2001Parser.h"
 #include "verilogConvertor/source_textParser.h"
 
+#ifdef SV_PARSER
 #include "SVParser/sv2012Lexer.h"
 #include "SVParser/sv2012Parser.h"
 #include "svConverter/library_textParser.h"
+#endif
 
 #include "syntaxErrorLogger.h"
 #include "langue.h"
