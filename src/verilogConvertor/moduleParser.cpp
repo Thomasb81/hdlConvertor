@@ -147,9 +147,9 @@ void ModuleParser::visitModule_item(
 			Port * p = ent->getPortByName(declr->variable->name);
 			p->direction = declr->direction;
 			p->variable = declr->variable;
-			delete declr;
+			//delete declr;
 		}
-		delete portsDeclr;
+		//delete portsDeclr;
 		return;
 	}
 	NotImplementedLogger::print("ModuleParser.visitModule_item");

@@ -32,3 +32,4 @@ cdef extern from "convertor.h":
                               bool,
                               bool
                              ) except +
+        void test (char * filename)

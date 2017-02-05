@@ -34,24 +34,24 @@ dfa::Vocabulary& vhdlParser::getVocabulary() const {
 
 //----------------- Abstract_literalContext ------------------------------------------------------------------
 
-vhdlParser::Abstract_literalContext::Abstract_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Abstract_literalContext::Abstract_literalContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Abstract_literalContext::INTEGER() {
+tree::TerminalNode* vhdlParser::Abstract_literalContext::INTEGER() {
   return getToken(vhdlParser::INTEGER, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Abstract_literalContext::REAL_LITERAL() {
+tree::TerminalNode* vhdlParser::Abstract_literalContext::REAL_LITERAL() {
   return getToken(vhdlParser::REAL_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Abstract_literalContext::BASE_LITERAL() {
+tree::TerminalNode* vhdlParser::Abstract_literalContext::BASE_LITERAL() {
   return getToken(vhdlParser::BASE_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::Abstract_literalContext::getRuleIndex() const {
+size_t vhdlParser::Abstract_literalContext::getRuleIndex() const {
   return vhdlParser::RuleAbstract_literal;
 }
 
@@ -62,10 +62,10 @@ antlrcpp::Any vhdlParser::Abstract_literalContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Abstract_literalContext> vhdlParser::abstract_literal() {
-  Ref<Abstract_literalContext> _localctx = std::make_shared<Abstract_literalContext>(_ctx, getState());
+vhdlParser::Abstract_literalContext* vhdlParser::abstract_literal() {
+  Abstract_literalContext *_localctx = _tracker.createInstance<Abstract_literalContext>(_ctx, getState());
   enterRule(_localctx, 0, vhdlParser::RuleAbstract_literal);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -74,7 +74,7 @@ Ref<vhdlParser::Abstract_literalContext> vhdlParser::abstract_literal() {
     enterOuterAlt(_localctx, 1);
     setState(510);
     _la = _input->LA(1);
-    if (!(((((_la - 112) & ~(ssize_t)0x3f) == 0) &&
+    if (!(((((_la - 112) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 112)) & ((1ULL << (vhdlParser::BASE_LITERAL - 112))
       | (1ULL << (vhdlParser::REAL_LITERAL - 112))
       | (1ULL << (vhdlParser::INTEGER - 112)))) != 0))) {
@@ -95,20 +95,20 @@ Ref<vhdlParser::Abstract_literalContext> vhdlParser::abstract_literal() {
 
 //----------------- Access_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Access_type_definitionContext::Access_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Access_type_definitionContext::Access_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Access_type_definitionContext::ACCESS() {
+tree::TerminalNode* vhdlParser::Access_type_definitionContext::ACCESS() {
   return getToken(vhdlParser::ACCESS, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Access_type_definitionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Access_type_definitionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Access_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Access_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleAccess_type_definition;
 }
 
@@ -119,8 +119,8 @@ antlrcpp::Any vhdlParser::Access_type_definitionContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Access_type_definitionContext> vhdlParser::access_type_definition() {
-  Ref<Access_type_definitionContext> _localctx = std::make_shared<Access_type_definitionContext>(_ctx, getState());
+vhdlParser::Access_type_definitionContext* vhdlParser::access_type_definition() {
+  Access_type_definitionContext *_localctx = _tracker.createInstance<Access_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 2, vhdlParser::RuleAccess_type_definition);
 
   auto onExit = finally([=] {
@@ -145,32 +145,32 @@ Ref<vhdlParser::Access_type_definitionContext> vhdlParser::access_type_definitio
 
 //----------------- Across_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Across_aspectContext::Across_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Across_aspectContext::Across_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Across_aspectContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Across_aspectContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Across_aspectContext::ACROSS() {
+tree::TerminalNode* vhdlParser::Across_aspectContext::ACROSS() {
   return getToken(vhdlParser::ACROSS, 0);
 }
 
-Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::Across_aspectContext::tolerance_aspect() {
+vhdlParser::Tolerance_aspectContext* vhdlParser::Across_aspectContext::tolerance_aspect() {
   return getRuleContext<vhdlParser::Tolerance_aspectContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Across_aspectContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Across_aspectContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Across_aspectContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Across_aspectContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Across_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Across_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleAcross_aspect;
 }
 
@@ -181,10 +181,10 @@ antlrcpp::Any vhdlParser::Across_aspectContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Across_aspectContext> vhdlParser::across_aspect() {
-  Ref<Across_aspectContext> _localctx = std::make_shared<Across_aspectContext>(_ctx, getState());
+vhdlParser::Across_aspectContext* vhdlParser::across_aspect() {
+  Across_aspectContext *_localctx = _tracker.createInstance<Across_aspectContext>(_ctx, getState());
   enterRule(_localctx, 4, vhdlParser::RuleAcross_aspect);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -224,20 +224,20 @@ Ref<vhdlParser::Across_aspectContext> vhdlParser::across_aspect() {
 
 //----------------- Actual_designatorContext ------------------------------------------------------------------
 
-vhdlParser::Actual_designatorContext::Actual_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Actual_designatorContext::Actual_designatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Actual_designatorContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Actual_designatorContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Actual_designatorContext::OPEN() {
+tree::TerminalNode* vhdlParser::Actual_designatorContext::OPEN() {
   return getToken(vhdlParser::OPEN, 0);
 }
 
 
-ssize_t vhdlParser::Actual_designatorContext::getRuleIndex() const {
+size_t vhdlParser::Actual_designatorContext::getRuleIndex() const {
   return vhdlParser::RuleActual_designator;
 }
 
@@ -248,8 +248,8 @@ antlrcpp::Any vhdlParser::Actual_designatorContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Actual_designatorContext> vhdlParser::actual_designator() {
-  Ref<Actual_designatorContext> _localctx = std::make_shared<Actual_designatorContext>(_ctx, getState());
+vhdlParser::Actual_designatorContext* vhdlParser::actual_designator() {
+  Actual_designatorContext *_localctx = _tracker.createInstance<Actual_designatorContext>(_ctx, getState());
   enterRule(_localctx, 6, vhdlParser::RuleActual_designator);
 
   auto onExit = finally([=] {
@@ -303,16 +303,16 @@ Ref<vhdlParser::Actual_designatorContext> vhdlParser::actual_designator() {
 
 //----------------- Actual_parameter_partContext ------------------------------------------------------------------
 
-vhdlParser::Actual_parameter_partContext::Actual_parameter_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Actual_parameter_partContext::Actual_parameter_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Association_listContext> vhdlParser::Actual_parameter_partContext::association_list() {
+vhdlParser::Association_listContext* vhdlParser::Actual_parameter_partContext::association_list() {
   return getRuleContext<vhdlParser::Association_listContext>(0);
 }
 
 
-ssize_t vhdlParser::Actual_parameter_partContext::getRuleIndex() const {
+size_t vhdlParser::Actual_parameter_partContext::getRuleIndex() const {
   return vhdlParser::RuleActual_parameter_part;
 }
 
@@ -323,8 +323,8 @@ antlrcpp::Any vhdlParser::Actual_parameter_partContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Actual_parameter_partContext> vhdlParser::actual_parameter_part() {
-  Ref<Actual_parameter_partContext> _localctx = std::make_shared<Actual_parameter_partContext>(_ctx, getState());
+vhdlParser::Actual_parameter_partContext* vhdlParser::actual_parameter_part() {
+  Actual_parameter_partContext *_localctx = _tracker.createInstance<Actual_parameter_partContext>(_ctx, getState());
   enterRule(_localctx, 8, vhdlParser::RuleActual_parameter_part);
 
   auto onExit = finally([=] {
@@ -347,28 +347,28 @@ Ref<vhdlParser::Actual_parameter_partContext> vhdlParser::actual_parameter_part(
 
 //----------------- Actual_partContext ------------------------------------------------------------------
 
-vhdlParser::Actual_partContext::Actual_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Actual_partContext::Actual_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Actual_partContext::name() {
+vhdlParser::NameContext* vhdlParser::Actual_partContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Actual_partContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Actual_partContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Actual_designatorContext> vhdlParser::Actual_partContext::actual_designator() {
+vhdlParser::Actual_designatorContext* vhdlParser::Actual_partContext::actual_designator() {
   return getRuleContext<vhdlParser::Actual_designatorContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Actual_partContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Actual_partContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Actual_partContext::getRuleIndex() const {
+size_t vhdlParser::Actual_partContext::getRuleIndex() const {
   return vhdlParser::RuleActual_part;
 }
 
@@ -379,8 +379,8 @@ antlrcpp::Any vhdlParser::Actual_partContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Actual_partContext> vhdlParser::actual_part() {
-  Ref<Actual_partContext> _localctx = std::make_shared<Actual_partContext>(_ctx, getState());
+vhdlParser::Actual_partContext* vhdlParser::actual_part() {
+  Actual_partContext *_localctx = _tracker.createInstance<Actual_partContext>(_ctx, getState());
   enterRule(_localctx, 10, vhdlParser::RuleActual_part);
 
   auto onExit = finally([=] {
@@ -424,24 +424,24 @@ Ref<vhdlParser::Actual_partContext> vhdlParser::actual_part() {
 
 //----------------- Adding_operatorContext ------------------------------------------------------------------
 
-vhdlParser::Adding_operatorContext::Adding_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Adding_operatorContext::Adding_operatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Adding_operatorContext::PLUS() {
+tree::TerminalNode* vhdlParser::Adding_operatorContext::PLUS() {
   return getToken(vhdlParser::PLUS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Adding_operatorContext::MINUS() {
+tree::TerminalNode* vhdlParser::Adding_operatorContext::MINUS() {
   return getToken(vhdlParser::MINUS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Adding_operatorContext::AMPERSAND() {
+tree::TerminalNode* vhdlParser::Adding_operatorContext::AMPERSAND() {
   return getToken(vhdlParser::AMPERSAND, 0);
 }
 
 
-ssize_t vhdlParser::Adding_operatorContext::getRuleIndex() const {
+size_t vhdlParser::Adding_operatorContext::getRuleIndex() const {
   return vhdlParser::RuleAdding_operator;
 }
 
@@ -452,10 +452,10 @@ antlrcpp::Any vhdlParser::Adding_operatorContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Adding_operatorContext> vhdlParser::adding_operator() {
-  Ref<Adding_operatorContext> _localctx = std::make_shared<Adding_operatorContext>(_ctx, getState());
+vhdlParser::Adding_operatorContext* vhdlParser::adding_operator() {
+  Adding_operatorContext *_localctx = _tracker.createInstance<Adding_operatorContext>(_ctx, getState());
   enterRule(_localctx, 12, vhdlParser::RuleAdding_operator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -464,7 +464,7 @@ Ref<vhdlParser::Adding_operatorContext> vhdlParser::adding_operator() {
     enterOuterAlt(_localctx, 1);
     setState(539);
     _la = _input->LA(1);
-    if (!(((((_la - 140) & ~(ssize_t)0x3f) == 0) &&
+    if (!(((((_la - 140) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 140)) & ((1ULL << (vhdlParser::AMPERSAND - 140))
       | (1ULL << (vhdlParser::PLUS - 140))
       | (1ULL << (vhdlParser::MINUS - 140)))) != 0))) {
@@ -485,36 +485,36 @@ Ref<vhdlParser::Adding_operatorContext> vhdlParser::adding_operator() {
 
 //----------------- AggregateContext ------------------------------------------------------------------
 
-vhdlParser::AggregateContext::AggregateContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::AggregateContext::AggregateContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::AggregateContext::LPAREN() {
+tree::TerminalNode* vhdlParser::AggregateContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Element_associationContext>> vhdlParser::AggregateContext::element_association() {
+std::vector<vhdlParser::Element_associationContext *> vhdlParser::AggregateContext::element_association() {
   return getRuleContexts<vhdlParser::Element_associationContext>();
 }
 
-Ref<vhdlParser::Element_associationContext> vhdlParser::AggregateContext::element_association(int i) {
-  return getRuleContext<vhdlParser::Element_associationContext>((size_t)i);
+vhdlParser::Element_associationContext* vhdlParser::AggregateContext::element_association(size_t i) {
+  return getRuleContext<vhdlParser::Element_associationContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::AggregateContext::RPAREN() {
+tree::TerminalNode* vhdlParser::AggregateContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::AggregateContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::AggregateContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::AggregateContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::AggregateContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::AggregateContext::getRuleIndex() const {
+size_t vhdlParser::AggregateContext::getRuleIndex() const {
   return vhdlParser::RuleAggregate;
 }
 
@@ -525,10 +525,10 @@ antlrcpp::Any vhdlParser::AggregateContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::AggregateContext> vhdlParser::aggregate() {
-  Ref<AggregateContext> _localctx = std::make_shared<AggregateContext>(_ctx, getState());
+vhdlParser::AggregateContext* vhdlParser::aggregate() {
+  AggregateContext *_localctx = _tracker.createInstance<AggregateContext>(_ctx, getState());
   enterRule(_localctx, 14, vhdlParser::RuleAggregate);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -566,44 +566,44 @@ Ref<vhdlParser::AggregateContext> vhdlParser::aggregate() {
 
 //----------------- Alias_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Alias_declarationContext::Alias_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Alias_declarationContext::Alias_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_declarationContext::ALIAS() {
+tree::TerminalNode* vhdlParser::Alias_declarationContext::ALIAS() {
   return getToken(vhdlParser::ALIAS, 0);
 }
 
-Ref<vhdlParser::Alias_designatorContext> vhdlParser::Alias_declarationContext::alias_designator() {
+vhdlParser::Alias_designatorContext* vhdlParser::Alias_declarationContext::alias_designator() {
   return getRuleContext<vhdlParser::Alias_designatorContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Alias_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Alias_declarationContext::name() {
+vhdlParser::NameContext* vhdlParser::Alias_declarationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Alias_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Alias_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Alias_indicationContext> vhdlParser::Alias_declarationContext::alias_indication() {
+vhdlParser::Alias_indicationContext* vhdlParser::Alias_declarationContext::alias_indication() {
   return getRuleContext<vhdlParser::Alias_indicationContext>(0);
 }
 
-Ref<vhdlParser::SignatureContext> vhdlParser::Alias_declarationContext::signature() {
+vhdlParser::SignatureContext* vhdlParser::Alias_declarationContext::signature() {
   return getRuleContext<vhdlParser::SignatureContext>(0);
 }
 
 
-ssize_t vhdlParser::Alias_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Alias_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleAlias_declaration;
 }
 
@@ -614,10 +614,10 @@ antlrcpp::Any vhdlParser::Alias_declarationContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::alias_declaration() {
-  Ref<Alias_declarationContext> _localctx = std::make_shared<Alias_declarationContext>(_ctx, getState());
+vhdlParser::Alias_declarationContext* vhdlParser::alias_declaration() {
+  Alias_declarationContext *_localctx = _tracker.createInstance<Alias_declarationContext>(_ctx, getState());
   enterRule(_localctx, 16, vhdlParser::RuleAlias_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -663,24 +663,24 @@ Ref<vhdlParser::Alias_declarationContext> vhdlParser::alias_declaration() {
 
 //----------------- Alias_designatorContext ------------------------------------------------------------------
 
-vhdlParser::Alias_designatorContext::Alias_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Alias_designatorContext::Alias_designatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Alias_designatorContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Alias_designatorContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_designatorContext::CHARACTER_LITERAL() {
+tree::TerminalNode* vhdlParser::Alias_designatorContext::CHARACTER_LITERAL() {
   return getToken(vhdlParser::CHARACTER_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Alias_designatorContext::STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::Alias_designatorContext::STRING_LITERAL() {
   return getToken(vhdlParser::STRING_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::Alias_designatorContext::getRuleIndex() const {
+size_t vhdlParser::Alias_designatorContext::getRuleIndex() const {
   return vhdlParser::RuleAlias_designator;
 }
 
@@ -691,8 +691,8 @@ antlrcpp::Any vhdlParser::Alias_designatorContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Alias_designatorContext> vhdlParser::alias_designator() {
-  Ref<Alias_designatorContext> _localctx = std::make_shared<Alias_designatorContext>(_ctx, getState());
+vhdlParser::Alias_designatorContext* vhdlParser::alias_designator() {
+  Alias_designatorContext *_localctx = _tracker.createInstance<Alias_designatorContext>(_ctx, getState());
   enterRule(_localctx, 18, vhdlParser::RuleAlias_designator);
 
   auto onExit = finally([=] {
@@ -740,20 +740,20 @@ Ref<vhdlParser::Alias_designatorContext> vhdlParser::alias_designator() {
 
 //----------------- Alias_indicationContext ------------------------------------------------------------------
 
-vhdlParser::Alias_indicationContext::Alias_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Alias_indicationContext::Alias_indicationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Alias_indicationContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Alias_indicationContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Alias_indicationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Alias_indicationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Alias_indicationContext::getRuleIndex() const {
+size_t vhdlParser::Alias_indicationContext::getRuleIndex() const {
   return vhdlParser::RuleAlias_indication;
 }
 
@@ -764,8 +764,8 @@ antlrcpp::Any vhdlParser::Alias_indicationContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Alias_indicationContext> vhdlParser::alias_indication() {
-  Ref<Alias_indicationContext> _localctx = std::make_shared<Alias_indicationContext>(_ctx, getState());
+vhdlParser::Alias_indicationContext* vhdlParser::alias_indication() {
+  Alias_indicationContext *_localctx = _tracker.createInstance<Alias_indicationContext>(_ctx, getState());
   enterRule(_localctx, 20, vhdlParser::RuleAlias_indication);
 
   auto onExit = finally([=] {
@@ -803,24 +803,24 @@ Ref<vhdlParser::Alias_indicationContext> vhdlParser::alias_indication() {
 
 //----------------- AllocatorContext ------------------------------------------------------------------
 
-vhdlParser::AllocatorContext::AllocatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::AllocatorContext::AllocatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::AllocatorContext::NEW() {
+tree::TerminalNode* vhdlParser::AllocatorContext::NEW() {
   return getToken(vhdlParser::NEW, 0);
 }
 
-Ref<vhdlParser::Qualified_expressionContext> vhdlParser::AllocatorContext::qualified_expression() {
+vhdlParser::Qualified_expressionContext* vhdlParser::AllocatorContext::qualified_expression() {
   return getRuleContext<vhdlParser::Qualified_expressionContext>(0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::AllocatorContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::AllocatorContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::AllocatorContext::getRuleIndex() const {
+size_t vhdlParser::AllocatorContext::getRuleIndex() const {
   return vhdlParser::RuleAllocator;
 }
 
@@ -831,8 +831,8 @@ antlrcpp::Any vhdlParser::AllocatorContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::AllocatorContext> vhdlParser::allocator() {
-  Ref<AllocatorContext> _localctx = std::make_shared<AllocatorContext>(_ctx, getState());
+vhdlParser::AllocatorContext* vhdlParser::allocator() {
+  AllocatorContext *_localctx = _tracker.createInstance<AllocatorContext>(_ctx, getState());
   enterRule(_localctx, 22, vhdlParser::RuleAllocator);
 
   auto onExit = finally([=] {
@@ -871,56 +871,56 @@ Ref<vhdlParser::AllocatorContext> vhdlParser::allocator() {
 
 //----------------- Architecture_bodyContext ------------------------------------------------------------------
 
-vhdlParser::Architecture_bodyContext::Architecture_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Architecture_bodyContext::Architecture_bodyContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Architecture_bodyContext::ARCHITECTURE() {
+std::vector<tree::TerminalNode *> vhdlParser::Architecture_bodyContext::ARCHITECTURE() {
   return getTokens(vhdlParser::ARCHITECTURE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::ARCHITECTURE(int i) {
-  return getToken(vhdlParser::ARCHITECTURE, (size_t)i);
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::ARCHITECTURE(size_t i) {
+  return getToken(vhdlParser::ARCHITECTURE, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Architecture_bodyContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Architecture_bodyContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Architecture_bodyContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Architecture_bodyContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::OF() {
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::IS() {
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Architecture_declarative_partContext> vhdlParser::Architecture_bodyContext::architecture_declarative_part() {
+vhdlParser::Architecture_declarative_partContext* vhdlParser::Architecture_bodyContext::architecture_declarative_part() {
   return getRuleContext<vhdlParser::Architecture_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::Architecture_bodyContext::architecture_statement_part() {
+vhdlParser::Architecture_statement_partContext* vhdlParser::Architecture_bodyContext::architecture_statement_part() {
   return getRuleContext<vhdlParser::Architecture_statement_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::END() {
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_bodyContext::SEMI() {
+tree::TerminalNode* vhdlParser::Architecture_bodyContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Architecture_bodyContext::getRuleIndex() const {
+size_t vhdlParser::Architecture_bodyContext::getRuleIndex() const {
   return vhdlParser::RuleArchitecture_body;
 }
 
@@ -931,10 +931,10 @@ antlrcpp::Any vhdlParser::Architecture_bodyContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Architecture_bodyContext> vhdlParser::architecture_body() {
-  Ref<Architecture_bodyContext> _localctx = std::make_shared<Architecture_bodyContext>(_ctx, getState());
+vhdlParser::Architecture_bodyContext* vhdlParser::architecture_body() {
+  Architecture_bodyContext *_localctx = _tracker.createInstance<Architecture_bodyContext>(_ctx, getState());
   enterRule(_localctx, 24, vhdlParser::RuleArchitecture_body);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -990,20 +990,20 @@ Ref<vhdlParser::Architecture_bodyContext> vhdlParser::architecture_body() {
 
 //----------------- Architecture_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Architecture_declarative_partContext::Architecture_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Architecture_declarative_partContext::Architecture_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Block_declarative_itemContext>> vhdlParser::Architecture_declarative_partContext::block_declarative_item() {
+std::vector<vhdlParser::Block_declarative_itemContext *> vhdlParser::Architecture_declarative_partContext::block_declarative_item() {
   return getRuleContexts<vhdlParser::Block_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Block_declarative_itemContext> vhdlParser::Architecture_declarative_partContext::block_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Block_declarative_itemContext>((size_t)i);
+vhdlParser::Block_declarative_itemContext* vhdlParser::Architecture_declarative_partContext::block_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Block_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Architecture_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Architecture_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleArchitecture_declarative_part;
 }
 
@@ -1014,10 +1014,10 @@ antlrcpp::Any vhdlParser::Architecture_declarative_partContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Architecture_declarative_partContext> vhdlParser::architecture_declarative_part() {
-  Ref<Architecture_declarative_partContext> _localctx = std::make_shared<Architecture_declarative_partContext>(_ctx, getState());
+vhdlParser::Architecture_declarative_partContext* vhdlParser::architecture_declarative_part() {
+  Architecture_declarative_partContext *_localctx = _tracker.createInstance<Architecture_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 26, vhdlParser::RuleArchitecture_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -1027,7 +1027,7 @@ Ref<vhdlParser::Architecture_declarative_partContext> vhdlParser::architecture_d
     setState(599);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::COMPONENT)
@@ -1039,7 +1039,7 @@ Ref<vhdlParser::Architecture_declarative_partContext> vhdlParser::architecture_d
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::IMPURE)
       | (1ULL << vhdlParser::LIMIT)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::QUANTITY - 68))
@@ -1070,56 +1070,56 @@ Ref<vhdlParser::Architecture_declarative_partContext> vhdlParser::architecture_d
 
 //----------------- Architecture_statementContext ------------------------------------------------------------------
 
-vhdlParser::Architecture_statementContext::Architecture_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Architecture_statementContext::Architecture_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Block_statementContext> vhdlParser::Architecture_statementContext::block_statement() {
+vhdlParser::Block_statementContext* vhdlParser::Architecture_statementContext::block_statement() {
   return getRuleContext<vhdlParser::Block_statementContext>(0);
 }
 
-Ref<vhdlParser::Process_statementContext> vhdlParser::Architecture_statementContext::process_statement() {
+vhdlParser::Process_statementContext* vhdlParser::Architecture_statementContext::process_statement() {
   return getRuleContext<vhdlParser::Process_statementContext>(0);
 }
 
-Ref<vhdlParser::Concurrent_procedure_call_statementContext> vhdlParser::Architecture_statementContext::concurrent_procedure_call_statement() {
+vhdlParser::Concurrent_procedure_call_statementContext* vhdlParser::Architecture_statementContext::concurrent_procedure_call_statement() {
   return getRuleContext<vhdlParser::Concurrent_procedure_call_statementContext>(0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Architecture_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Architecture_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Concurrent_assertion_statementContext> vhdlParser::Architecture_statementContext::concurrent_assertion_statement() {
+vhdlParser::Concurrent_assertion_statementContext* vhdlParser::Architecture_statementContext::concurrent_assertion_statement() {
   return getRuleContext<vhdlParser::Concurrent_assertion_statementContext>(0);
 }
 
-Ref<vhdlParser::Concurrent_signal_assignment_statementContext> vhdlParser::Architecture_statementContext::concurrent_signal_assignment_statement() {
+vhdlParser::Concurrent_signal_assignment_statementContext* vhdlParser::Architecture_statementContext::concurrent_signal_assignment_statement() {
   return getRuleContext<vhdlParser::Concurrent_signal_assignment_statementContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Architecture_statementContext::POSTPONED() {
+tree::TerminalNode* vhdlParser::Architecture_statementContext::POSTPONED() {
   return getToken(vhdlParser::POSTPONED, 0);
 }
 
-Ref<vhdlParser::Component_instantiation_statementContext> vhdlParser::Architecture_statementContext::component_instantiation_statement() {
+vhdlParser::Component_instantiation_statementContext* vhdlParser::Architecture_statementContext::component_instantiation_statement() {
   return getRuleContext<vhdlParser::Component_instantiation_statementContext>(0);
 }
 
-Ref<vhdlParser::Generate_statementContext> vhdlParser::Architecture_statementContext::generate_statement() {
+vhdlParser::Generate_statementContext* vhdlParser::Architecture_statementContext::generate_statement() {
   return getRuleContext<vhdlParser::Generate_statementContext>(0);
 }
 
-Ref<vhdlParser::Concurrent_break_statementContext> vhdlParser::Architecture_statementContext::concurrent_break_statement() {
+vhdlParser::Concurrent_break_statementContext* vhdlParser::Architecture_statementContext::concurrent_break_statement() {
   return getRuleContext<vhdlParser::Concurrent_break_statementContext>(0);
 }
 
-Ref<vhdlParser::Simultaneous_statementContext> vhdlParser::Architecture_statementContext::simultaneous_statement() {
+vhdlParser::Simultaneous_statementContext* vhdlParser::Architecture_statementContext::simultaneous_statement() {
   return getRuleContext<vhdlParser::Simultaneous_statementContext>(0);
 }
 
 
-ssize_t vhdlParser::Architecture_statementContext::getRuleIndex() const {
+size_t vhdlParser::Architecture_statementContext::getRuleIndex() const {
   return vhdlParser::RuleArchitecture_statement;
 }
 
@@ -1130,8 +1130,8 @@ antlrcpp::Any vhdlParser::Architecture_statementContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Architecture_statementContext> vhdlParser::architecture_statement() {
-  Ref<Architecture_statementContext> _localctx = std::make_shared<Architecture_statementContext>(_ctx, getState());
+vhdlParser::Architecture_statementContext* vhdlParser::architecture_statement() {
+  Architecture_statementContext *_localctx = _tracker.createInstance<Architecture_statementContext>(_ctx, getState());
   enterRule(_localctx, 28, vhdlParser::RuleArchitecture_statement);
 
   auto onExit = finally([=] {
@@ -1262,20 +1262,20 @@ Ref<vhdlParser::Architecture_statementContext> vhdlParser::architecture_statemen
 
 //----------------- Architecture_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Architecture_statement_partContext::Architecture_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Architecture_statement_partContext::Architecture_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Architecture_statementContext>> vhdlParser::Architecture_statement_partContext::architecture_statement() {
+std::vector<vhdlParser::Architecture_statementContext *> vhdlParser::Architecture_statement_partContext::architecture_statement() {
   return getRuleContexts<vhdlParser::Architecture_statementContext>();
 }
 
-Ref<vhdlParser::Architecture_statementContext> vhdlParser::Architecture_statement_partContext::architecture_statement(int i) {
-  return getRuleContext<vhdlParser::Architecture_statementContext>((size_t)i);
+vhdlParser::Architecture_statementContext* vhdlParser::Architecture_statement_partContext::architecture_statement(size_t i) {
+  return getRuleContext<vhdlParser::Architecture_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Architecture_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Architecture_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleArchitecture_statement_part;
 }
 
@@ -1286,10 +1286,10 @@ antlrcpp::Any vhdlParser::Architecture_statement_partContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::architecture_statement_part() {
-  Ref<Architecture_statement_partContext> _localctx = std::make_shared<Architecture_statement_partContext>(_ctx, getState());
+vhdlParser::Architecture_statement_partContext* vhdlParser::architecture_statement_part() {
+  Architecture_statement_partContext *_localctx = _tracker.createInstance<Architecture_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 30, vhdlParser::RuleArchitecture_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -1299,7 +1299,7 @@ Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::architecture_sta
     setState(628);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
@@ -1307,7 +1307,7 @@ Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::architecture_sta
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 66)) & ((1ULL << (vhdlParser::POSTPONED - 66))
       | (1ULL << (vhdlParser::PROCESS - 66))
       | (1ULL << (vhdlParser::PROCEDURAL - 66))
@@ -1318,7 +1318,7 @@ Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::architecture_sta
       | (1ULL << (vhdlParser::BASIC_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::EXTENDED_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::CHARACTER_LITERAL - 66))
-      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 141)) & ((1ULL << (vhdlParser::LPAREN - 141))
       | (1ULL << (vhdlParser::PLUS - 141))
       | (1ULL << (vhdlParser::MINUS - 141))
@@ -1342,20 +1342,20 @@ Ref<vhdlParser::Architecture_statement_partContext> vhdlParser::architecture_sta
 
 //----------------- Array_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Array_nature_definitionContext::Array_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Array_nature_definitionContext::Array_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Unconstrained_nature_definitionContext> vhdlParser::Array_nature_definitionContext::unconstrained_nature_definition() {
+vhdlParser::Unconstrained_nature_definitionContext* vhdlParser::Array_nature_definitionContext::unconstrained_nature_definition() {
   return getRuleContext<vhdlParser::Unconstrained_nature_definitionContext>(0);
 }
 
-Ref<vhdlParser::Constrained_nature_definitionContext> vhdlParser::Array_nature_definitionContext::constrained_nature_definition() {
+vhdlParser::Constrained_nature_definitionContext* vhdlParser::Array_nature_definitionContext::constrained_nature_definition() {
   return getRuleContext<vhdlParser::Constrained_nature_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Array_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Array_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleArray_nature_definition;
 }
 
@@ -1366,8 +1366,8 @@ antlrcpp::Any vhdlParser::Array_nature_definitionContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Array_nature_definitionContext> vhdlParser::array_nature_definition() {
-  Ref<Array_nature_definitionContext> _localctx = std::make_shared<Array_nature_definitionContext>(_ctx, getState());
+vhdlParser::Array_nature_definitionContext* vhdlParser::array_nature_definition() {
+  Array_nature_definitionContext *_localctx = _tracker.createInstance<Array_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 32, vhdlParser::RuleArray_nature_definition);
 
   auto onExit = finally([=] {
@@ -1405,20 +1405,20 @@ Ref<vhdlParser::Array_nature_definitionContext> vhdlParser::array_nature_definit
 
 //----------------- Array_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Array_type_definitionContext::Array_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Array_type_definitionContext::Array_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Unconstrained_array_definitionContext> vhdlParser::Array_type_definitionContext::unconstrained_array_definition() {
+vhdlParser::Unconstrained_array_definitionContext* vhdlParser::Array_type_definitionContext::unconstrained_array_definition() {
   return getRuleContext<vhdlParser::Unconstrained_array_definitionContext>(0);
 }
 
-Ref<vhdlParser::Constrained_array_definitionContext> vhdlParser::Array_type_definitionContext::constrained_array_definition() {
+vhdlParser::Constrained_array_definitionContext* vhdlParser::Array_type_definitionContext::constrained_array_definition() {
   return getRuleContext<vhdlParser::Constrained_array_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Array_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Array_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleArray_type_definition;
 }
 
@@ -1429,8 +1429,8 @@ antlrcpp::Any vhdlParser::Array_type_definitionContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Array_type_definitionContext> vhdlParser::array_type_definition() {
-  Ref<Array_type_definitionContext> _localctx = std::make_shared<Array_type_definitionContext>(_ctx, getState());
+vhdlParser::Array_type_definitionContext* vhdlParser::array_type_definition() {
+  Array_type_definitionContext *_localctx = _tracker.createInstance<Array_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 34, vhdlParser::RuleArray_type_definition);
 
   auto onExit = finally([=] {
@@ -1468,36 +1468,36 @@ Ref<vhdlParser::Array_type_definitionContext> vhdlParser::array_type_definition(
 
 //----------------- AssertionContext ------------------------------------------------------------------
 
-vhdlParser::AssertionContext::AssertionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::AssertionContext::AssertionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::AssertionContext::ASSERT() {
+tree::TerminalNode* vhdlParser::AssertionContext::ASSERT() {
   return getToken(vhdlParser::ASSERT, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::AssertionContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::AssertionContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::AssertionContext::REPORT() {
+tree::TerminalNode* vhdlParser::AssertionContext::REPORT() {
   return getToken(vhdlParser::REPORT, 0);
 }
 
-std::vector<Ref<vhdlParser::ExpressionContext>> vhdlParser::AssertionContext::expression() {
+std::vector<vhdlParser::ExpressionContext *> vhdlParser::AssertionContext::expression() {
   return getRuleContexts<vhdlParser::ExpressionContext>();
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::AssertionContext::expression(int i) {
-  return getRuleContext<vhdlParser::ExpressionContext>((size_t)i);
+vhdlParser::ExpressionContext* vhdlParser::AssertionContext::expression(size_t i) {
+  return getRuleContext<vhdlParser::ExpressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::AssertionContext::SEVERITY() {
+tree::TerminalNode* vhdlParser::AssertionContext::SEVERITY() {
   return getToken(vhdlParser::SEVERITY, 0);
 }
 
 
-ssize_t vhdlParser::AssertionContext::getRuleIndex() const {
+size_t vhdlParser::AssertionContext::getRuleIndex() const {
   return vhdlParser::RuleAssertion;
 }
 
@@ -1508,10 +1508,10 @@ antlrcpp::Any vhdlParser::AssertionContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::AssertionContext> vhdlParser::assertion() {
-  Ref<AssertionContext> _localctx = std::make_shared<AssertionContext>(_ctx, getState());
+vhdlParser::AssertionContext* vhdlParser::assertion() {
+  AssertionContext *_localctx = _tracker.createInstance<AssertionContext>(_ctx, getState());
   enterRule(_localctx, 36, vhdlParser::RuleAssertion);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -1553,24 +1553,24 @@ Ref<vhdlParser::AssertionContext> vhdlParser::assertion() {
 
 //----------------- Assertion_statementContext ------------------------------------------------------------------
 
-vhdlParser::Assertion_statementContext::Assertion_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Assertion_statementContext::Assertion_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::AssertionContext> vhdlParser::Assertion_statementContext::assertion() {
+vhdlParser::AssertionContext* vhdlParser::Assertion_statementContext::assertion() {
   return getRuleContext<vhdlParser::AssertionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Assertion_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Assertion_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Assertion_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Assertion_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
 
-ssize_t vhdlParser::Assertion_statementContext::getRuleIndex() const {
+size_t vhdlParser::Assertion_statementContext::getRuleIndex() const {
   return vhdlParser::RuleAssertion_statement;
 }
 
@@ -1581,10 +1581,10 @@ antlrcpp::Any vhdlParser::Assertion_statementContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Assertion_statementContext> vhdlParser::assertion_statement() {
-  Ref<Assertion_statementContext> _localctx = std::make_shared<Assertion_statementContext>(_ctx, getState());
+vhdlParser::Assertion_statementContext* vhdlParser::assertion_statement() {
+  Assertion_statementContext *_localctx = _tracker.createInstance<Assertion_statementContext>(_ctx, getState());
   enterRule(_localctx, 38, vhdlParser::RuleAssertion_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -1617,24 +1617,24 @@ Ref<vhdlParser::Assertion_statementContext> vhdlParser::assertion_statement() {
 
 //----------------- Association_elementContext ------------------------------------------------------------------
 
-vhdlParser::Association_elementContext::Association_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Association_elementContext::Association_elementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Actual_partContext> vhdlParser::Association_elementContext::actual_part() {
+vhdlParser::Actual_partContext* vhdlParser::Association_elementContext::actual_part() {
   return getRuleContext<vhdlParser::Actual_partContext>(0);
 }
 
-Ref<vhdlParser::Formal_partContext> vhdlParser::Association_elementContext::formal_part() {
+vhdlParser::Formal_partContext* vhdlParser::Association_elementContext::formal_part() {
   return getRuleContext<vhdlParser::Formal_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Association_elementContext::ARROW() {
+tree::TerminalNode* vhdlParser::Association_elementContext::ARROW() {
   return getToken(vhdlParser::ARROW, 0);
 }
 
 
-ssize_t vhdlParser::Association_elementContext::getRuleIndex() const {
+size_t vhdlParser::Association_elementContext::getRuleIndex() const {
   return vhdlParser::RuleAssociation_element;
 }
 
@@ -1645,8 +1645,8 @@ antlrcpp::Any vhdlParser::Association_elementContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Association_elementContext> vhdlParser::association_element() {
-  Ref<Association_elementContext> _localctx = std::make_shared<Association_elementContext>(_ctx, getState());
+vhdlParser::Association_elementContext* vhdlParser::association_element() {
+  Association_elementContext *_localctx = _tracker.createInstance<Association_elementContext>(_ctx, getState());
   enterRule(_localctx, 40, vhdlParser::RuleAssociation_element);
 
   auto onExit = finally([=] {
@@ -1682,28 +1682,28 @@ Ref<vhdlParser::Association_elementContext> vhdlParser::association_element() {
 
 //----------------- Association_listContext ------------------------------------------------------------------
 
-vhdlParser::Association_listContext::Association_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Association_listContext::Association_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Association_elementContext>> vhdlParser::Association_listContext::association_element() {
+std::vector<vhdlParser::Association_elementContext *> vhdlParser::Association_listContext::association_element() {
   return getRuleContexts<vhdlParser::Association_elementContext>();
 }
 
-Ref<vhdlParser::Association_elementContext> vhdlParser::Association_listContext::association_element(int i) {
-  return getRuleContext<vhdlParser::Association_elementContext>((size_t)i);
+vhdlParser::Association_elementContext* vhdlParser::Association_listContext::association_element(size_t i) {
+  return getRuleContext<vhdlParser::Association_elementContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Association_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Association_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Association_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Association_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Association_listContext::getRuleIndex() const {
+size_t vhdlParser::Association_listContext::getRuleIndex() const {
   return vhdlParser::RuleAssociation_list;
 }
 
@@ -1714,10 +1714,10 @@ antlrcpp::Any vhdlParser::Association_listContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Association_listContext> vhdlParser::association_list() {
-  Ref<Association_listContext> _localctx = std::make_shared<Association_listContext>(_ctx, getState());
+vhdlParser::Association_listContext* vhdlParser::association_list() {
+  Association_listContext *_localctx = _tracker.createInstance<Association_listContext>(_ctx, getState());
   enterRule(_localctx, 42, vhdlParser::RuleAssociation_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -1751,28 +1751,28 @@ Ref<vhdlParser::Association_listContext> vhdlParser::association_list() {
 
 //----------------- Attribute_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Attribute_declarationContext::Attribute_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Attribute_declarationContext::Attribute_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_declarationContext::ATTRIBUTE() {
+tree::TerminalNode* vhdlParser::Attribute_declarationContext::ATTRIBUTE() {
   return getToken(vhdlParser::ATTRIBUTE, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Attribute_declarationContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Attribute_declarationContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Attribute_declarationContext::name() {
+vhdlParser::NameContext* vhdlParser::Attribute_declarationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Attribute_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Attribute_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Attribute_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleAttribute_declaration;
 }
 
@@ -1783,8 +1783,8 @@ antlrcpp::Any vhdlParser::Attribute_declarationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::attribute_declaration() {
-  Ref<Attribute_declarationContext> _localctx = std::make_shared<Attribute_declarationContext>(_ctx, getState());
+vhdlParser::Attribute_declarationContext* vhdlParser::attribute_declaration() {
+  Attribute_declarationContext *_localctx = _tracker.createInstance<Attribute_declarationContext>(_ctx, getState());
   enterRule(_localctx, 44, vhdlParser::RuleAttribute_declaration);
 
   auto onExit = finally([=] {
@@ -1813,40 +1813,40 @@ Ref<vhdlParser::Attribute_declarationContext> vhdlParser::attribute_declaration(
 
 //----------------- Attribute_designatorContext ------------------------------------------------------------------
 
-vhdlParser::Attribute_designatorContext::Attribute_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Attribute_designatorContext::Attribute_designatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Attribute_designatorContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Attribute_designatorContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::RANGE() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::RANGE() {
   return getToken(vhdlParser::RANGE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::REVERSE_RANGE() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::REVERSE_RANGE() {
   return getToken(vhdlParser::REVERSE_RANGE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::ACROSS() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::ACROSS() {
   return getToken(vhdlParser::ACROSS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::THROUGH() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::THROUGH() {
   return getToken(vhdlParser::THROUGH, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::REFERENCE() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::REFERENCE() {
   return getToken(vhdlParser::REFERENCE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_designatorContext::TOLERANCE() {
+tree::TerminalNode* vhdlParser::Attribute_designatorContext::TOLERANCE() {
   return getToken(vhdlParser::TOLERANCE, 0);
 }
 
 
-ssize_t vhdlParser::Attribute_designatorContext::getRuleIndex() const {
+size_t vhdlParser::Attribute_designatorContext::getRuleIndex() const {
   return vhdlParser::RuleAttribute_designator;
 }
 
@@ -1857,8 +1857,8 @@ antlrcpp::Any vhdlParser::Attribute_designatorContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Attribute_designatorContext> vhdlParser::attribute_designator() {
-  Ref<Attribute_designatorContext> _localctx = std::make_shared<Attribute_designatorContext>(_ctx, getState());
+vhdlParser::Attribute_designatorContext* vhdlParser::attribute_designator() {
+  Attribute_designatorContext *_localctx = _tracker.createInstance<Attribute_designatorContext>(_ctx, getState());
   enterRule(_localctx, 46, vhdlParser::RuleAttribute_designator);
 
   auto onExit = finally([=] {
@@ -1934,40 +1934,40 @@ Ref<vhdlParser::Attribute_designatorContext> vhdlParser::attribute_designator() 
 
 //----------------- Attribute_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Attribute_specificationContext::Attribute_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Attribute_specificationContext::Attribute_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_specificationContext::ATTRIBUTE() {
+tree::TerminalNode* vhdlParser::Attribute_specificationContext::ATTRIBUTE() {
   return getToken(vhdlParser::ATTRIBUTE, 0);
 }
 
-Ref<vhdlParser::Attribute_designatorContext> vhdlParser::Attribute_specificationContext::attribute_designator() {
+vhdlParser::Attribute_designatorContext* vhdlParser::Attribute_specificationContext::attribute_designator() {
   return getRuleContext<vhdlParser::Attribute_designatorContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_specificationContext::OF() {
+tree::TerminalNode* vhdlParser::Attribute_specificationContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Entity_specificationContext> vhdlParser::Attribute_specificationContext::entity_specification() {
+vhdlParser::Entity_specificationContext* vhdlParser::Attribute_specificationContext::entity_specification() {
   return getRuleContext<vhdlParser::Entity_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_specificationContext::IS() {
+tree::TerminalNode* vhdlParser::Attribute_specificationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Attribute_specificationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Attribute_specificationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Attribute_specificationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Attribute_specificationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Attribute_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Attribute_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleAttribute_specification;
 }
 
@@ -1978,8 +1978,8 @@ antlrcpp::Any vhdlParser::Attribute_specificationContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::attribute_specification() {
-  Ref<Attribute_specificationContext> _localctx = std::make_shared<Attribute_specificationContext>(_ctx, getState());
+vhdlParser::Attribute_specificationContext* vhdlParser::attribute_specification() {
+  Attribute_specificationContext *_localctx = _tracker.createInstance<Attribute_specificationContext>(_ctx, getState());
   enterRule(_localctx, 48, vhdlParser::RuleAttribute_specification);
 
   auto onExit = finally([=] {
@@ -2014,20 +2014,20 @@ Ref<vhdlParser::Attribute_specificationContext> vhdlParser::attribute_specificat
 
 //----------------- Base_unit_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Base_unit_declarationContext::Base_unit_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Base_unit_declarationContext::Base_unit_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Base_unit_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Base_unit_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Base_unit_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Base_unit_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Base_unit_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Base_unit_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleBase_unit_declaration;
 }
 
@@ -2038,8 +2038,8 @@ antlrcpp::Any vhdlParser::Base_unit_declarationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Base_unit_declarationContext> vhdlParser::base_unit_declaration() {
-  Ref<Base_unit_declarationContext> _localctx = std::make_shared<Base_unit_declarationContext>(_ctx, getState());
+vhdlParser::Base_unit_declarationContext* vhdlParser::base_unit_declaration() {
+  Base_unit_declarationContext *_localctx = _tracker.createInstance<Base_unit_declarationContext>(_ctx, getState());
   enterRule(_localctx, 50, vhdlParser::RuleBase_unit_declaration);
 
   auto onExit = finally([=] {
@@ -2064,28 +2064,28 @@ Ref<vhdlParser::Base_unit_declarationContext> vhdlParser::base_unit_declaration(
 
 //----------------- Binding_indicationContext ------------------------------------------------------------------
 
-vhdlParser::Binding_indicationContext::Binding_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Binding_indicationContext::Binding_indicationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Binding_indicationContext::USE() {
+tree::TerminalNode* vhdlParser::Binding_indicationContext::USE() {
   return getToken(vhdlParser::USE, 0);
 }
 
-Ref<vhdlParser::Entity_aspectContext> vhdlParser::Binding_indicationContext::entity_aspect() {
+vhdlParser::Entity_aspectContext* vhdlParser::Binding_indicationContext::entity_aspect() {
   return getRuleContext<vhdlParser::Entity_aspectContext>(0);
 }
 
-Ref<vhdlParser::Generic_map_aspectContext> vhdlParser::Binding_indicationContext::generic_map_aspect() {
+vhdlParser::Generic_map_aspectContext* vhdlParser::Binding_indicationContext::generic_map_aspect() {
   return getRuleContext<vhdlParser::Generic_map_aspectContext>(0);
 }
 
-Ref<vhdlParser::Port_map_aspectContext> vhdlParser::Binding_indicationContext::port_map_aspect() {
+vhdlParser::Port_map_aspectContext* vhdlParser::Binding_indicationContext::port_map_aspect() {
   return getRuleContext<vhdlParser::Port_map_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Binding_indicationContext::getRuleIndex() const {
+size_t vhdlParser::Binding_indicationContext::getRuleIndex() const {
   return vhdlParser::RuleBinding_indication;
 }
 
@@ -2096,10 +2096,10 @@ antlrcpp::Any vhdlParser::Binding_indicationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Binding_indicationContext> vhdlParser::binding_indication() {
-  Ref<Binding_indicationContext> _localctx = std::make_shared<Binding_indicationContext>(_ctx, getState());
+vhdlParser::Binding_indicationContext* vhdlParser::binding_indication() {
+  Binding_indicationContext *_localctx = _tracker.createInstance<Binding_indicationContext>(_ctx, getState());
   enterRule(_localctx, 52, vhdlParser::RuleBinding_indication);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2142,48 +2142,48 @@ Ref<vhdlParser::Binding_indicationContext> vhdlParser::binding_indication() {
 
 //----------------- Block_configurationContext ------------------------------------------------------------------
 
-vhdlParser::Block_configurationContext::Block_configurationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_configurationContext::Block_configurationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Block_configurationContext::FOR() {
+std::vector<tree::TerminalNode *> vhdlParser::Block_configurationContext::FOR() {
   return getTokens(vhdlParser::FOR);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_configurationContext::FOR(int i) {
-  return getToken(vhdlParser::FOR, (size_t)i);
+tree::TerminalNode* vhdlParser::Block_configurationContext::FOR(size_t i) {
+  return getToken(vhdlParser::FOR, i);
 }
 
-Ref<vhdlParser::Block_specificationContext> vhdlParser::Block_configurationContext::block_specification() {
+vhdlParser::Block_specificationContext* vhdlParser::Block_configurationContext::block_specification() {
   return getRuleContext<vhdlParser::Block_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_configurationContext::END() {
+tree::TerminalNode* vhdlParser::Block_configurationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_configurationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Block_configurationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-std::vector<Ref<vhdlParser::Use_clauseContext>> vhdlParser::Block_configurationContext::use_clause() {
+std::vector<vhdlParser::Use_clauseContext *> vhdlParser::Block_configurationContext::use_clause() {
   return getRuleContexts<vhdlParser::Use_clauseContext>();
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Block_configurationContext::use_clause(int i) {
-  return getRuleContext<vhdlParser::Use_clauseContext>((size_t)i);
+vhdlParser::Use_clauseContext* vhdlParser::Block_configurationContext::use_clause(size_t i) {
+  return getRuleContext<vhdlParser::Use_clauseContext>(i);
 }
 
-std::vector<Ref<vhdlParser::Configuration_itemContext>> vhdlParser::Block_configurationContext::configuration_item() {
+std::vector<vhdlParser::Configuration_itemContext *> vhdlParser::Block_configurationContext::configuration_item() {
   return getRuleContexts<vhdlParser::Configuration_itemContext>();
 }
 
-Ref<vhdlParser::Configuration_itemContext> vhdlParser::Block_configurationContext::configuration_item(int i) {
-  return getRuleContext<vhdlParser::Configuration_itemContext>((size_t)i);
+vhdlParser::Configuration_itemContext* vhdlParser::Block_configurationContext::configuration_item(size_t i) {
+  return getRuleContext<vhdlParser::Configuration_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Block_configurationContext::getRuleIndex() const {
+size_t vhdlParser::Block_configurationContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_configuration;
 }
 
@@ -2194,10 +2194,10 @@ antlrcpp::Any vhdlParser::Block_configurationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_configurationContext> vhdlParser::block_configuration() {
-  Ref<Block_configurationContext> _localctx = std::make_shared<Block_configurationContext>(_ctx, getState());
+vhdlParser::Block_configurationContext* vhdlParser::block_configuration() {
+  Block_configurationContext *_localctx = _tracker.createInstance<Block_configurationContext>(_ctx, getState());
   enterRule(_localctx, 54, vhdlParser::RuleBlock_configuration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2247,100 +2247,100 @@ Ref<vhdlParser::Block_configurationContext> vhdlParser::block_configuration() {
 
 //----------------- Block_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Block_declarative_itemContext::Block_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_declarative_itemContext::Block_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Block_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Block_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Block_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Block_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Block_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Block_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Block_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Block_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Block_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Block_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Signal_declarationContext> vhdlParser::Block_declarative_itemContext::signal_declaration() {
+vhdlParser::Signal_declarationContext* vhdlParser::Block_declarative_itemContext::signal_declaration() {
   return getRuleContext<vhdlParser::Signal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Block_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Block_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Block_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Block_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Block_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Block_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Component_declarationContext> vhdlParser::Block_declarative_itemContext::component_declaration() {
+vhdlParser::Component_declarationContext* vhdlParser::Block_declarative_itemContext::component_declaration() {
   return getRuleContext<vhdlParser::Component_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Block_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Block_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Block_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Block_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Configuration_specificationContext> vhdlParser::Block_declarative_itemContext::configuration_specification() {
+vhdlParser::Configuration_specificationContext* vhdlParser::Block_declarative_itemContext::configuration_specification() {
   return getRuleContext<vhdlParser::Configuration_specificationContext>(0);
 }
 
-Ref<vhdlParser::Disconnection_specificationContext> vhdlParser::Block_declarative_itemContext::disconnection_specification() {
+vhdlParser::Disconnection_specificationContext* vhdlParser::Block_declarative_itemContext::disconnection_specification() {
   return getRuleContext<vhdlParser::Disconnection_specificationContext>(0);
 }
 
-Ref<vhdlParser::Step_limit_specificationContext> vhdlParser::Block_declarative_itemContext::step_limit_specification() {
+vhdlParser::Step_limit_specificationContext* vhdlParser::Block_declarative_itemContext::step_limit_specification() {
   return getRuleContext<vhdlParser::Step_limit_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Block_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Block_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Block_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Block_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Block_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Block_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
-Ref<vhdlParser::Nature_declarationContext> vhdlParser::Block_declarative_itemContext::nature_declaration() {
+vhdlParser::Nature_declarationContext* vhdlParser::Block_declarative_itemContext::nature_declaration() {
   return getRuleContext<vhdlParser::Nature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subnature_declarationContext> vhdlParser::Block_declarative_itemContext::subnature_declaration() {
+vhdlParser::Subnature_declarationContext* vhdlParser::Block_declarative_itemContext::subnature_declaration() {
   return getRuleContext<vhdlParser::Subnature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Quantity_declarationContext> vhdlParser::Block_declarative_itemContext::quantity_declaration() {
+vhdlParser::Quantity_declarationContext* vhdlParser::Block_declarative_itemContext::quantity_declaration() {
   return getRuleContext<vhdlParser::Quantity_declarationContext>(0);
 }
 
-Ref<vhdlParser::Terminal_declarationContext> vhdlParser::Block_declarative_itemContext::terminal_declaration() {
+vhdlParser::Terminal_declarationContext* vhdlParser::Block_declarative_itemContext::terminal_declaration() {
   return getRuleContext<vhdlParser::Terminal_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Block_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Block_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_declarative_item;
 }
 
@@ -2351,8 +2351,8 @@ antlrcpp::Any vhdlParser::Block_declarative_itemContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_declarative_itemContext> vhdlParser::block_declarative_item() {
-  Ref<Block_declarative_itemContext> _localctx = std::make_shared<Block_declarative_itemContext>(_ctx, getState());
+vhdlParser::Block_declarative_itemContext* vhdlParser::block_declarative_item() {
+  Block_declarative_itemContext *_localctx = _tracker.createInstance<Block_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 56, vhdlParser::RuleBlock_declarative_item);
 
   auto onExit = finally([=] {
@@ -2530,20 +2530,20 @@ Ref<vhdlParser::Block_declarative_itemContext> vhdlParser::block_declarative_ite
 
 //----------------- Block_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Block_declarative_partContext::Block_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_declarative_partContext::Block_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Block_declarative_itemContext>> vhdlParser::Block_declarative_partContext::block_declarative_item() {
+std::vector<vhdlParser::Block_declarative_itemContext *> vhdlParser::Block_declarative_partContext::block_declarative_item() {
   return getRuleContexts<vhdlParser::Block_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Block_declarative_itemContext> vhdlParser::Block_declarative_partContext::block_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Block_declarative_itemContext>((size_t)i);
+vhdlParser::Block_declarative_itemContext* vhdlParser::Block_declarative_partContext::block_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Block_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Block_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Block_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_declarative_part;
 }
 
@@ -2554,10 +2554,10 @@ antlrcpp::Any vhdlParser::Block_declarative_partContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_declarative_partContext> vhdlParser::block_declarative_part() {
-  Ref<Block_declarative_partContext> _localctx = std::make_shared<Block_declarative_partContext>(_ctx, getState());
+vhdlParser::Block_declarative_partContext* vhdlParser::block_declarative_part() {
+  Block_declarative_partContext *_localctx = _tracker.createInstance<Block_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 58, vhdlParser::RuleBlock_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2567,7 +2567,7 @@ Ref<vhdlParser::Block_declarative_partContext> vhdlParser::block_declarative_par
     setState(750);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::COMPONENT)
@@ -2579,7 +2579,7 @@ Ref<vhdlParser::Block_declarative_partContext> vhdlParser::block_declarative_par
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::IMPURE)
       | (1ULL << vhdlParser::LIMIT)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::QUANTITY - 68))
@@ -2610,36 +2610,36 @@ Ref<vhdlParser::Block_declarative_partContext> vhdlParser::block_declarative_par
 
 //----------------- Block_headerContext ------------------------------------------------------------------
 
-vhdlParser::Block_headerContext::Block_headerContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_headerContext::Block_headerContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Generic_clauseContext> vhdlParser::Block_headerContext::generic_clause() {
+vhdlParser::Generic_clauseContext* vhdlParser::Block_headerContext::generic_clause() {
   return getRuleContext<vhdlParser::Generic_clauseContext>(0);
 }
 
-Ref<vhdlParser::Port_clauseContext> vhdlParser::Block_headerContext::port_clause() {
+vhdlParser::Port_clauseContext* vhdlParser::Block_headerContext::port_clause() {
   return getRuleContext<vhdlParser::Port_clauseContext>(0);
 }
 
-Ref<vhdlParser::Generic_map_aspectContext> vhdlParser::Block_headerContext::generic_map_aspect() {
+vhdlParser::Generic_map_aspectContext* vhdlParser::Block_headerContext::generic_map_aspect() {
   return getRuleContext<vhdlParser::Generic_map_aspectContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Block_headerContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Block_headerContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_headerContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Block_headerContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
-Ref<vhdlParser::Port_map_aspectContext> vhdlParser::Block_headerContext::port_map_aspect() {
+vhdlParser::Port_map_aspectContext* vhdlParser::Block_headerContext::port_map_aspect() {
   return getRuleContext<vhdlParser::Port_map_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Block_headerContext::getRuleIndex() const {
+size_t vhdlParser::Block_headerContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_header;
 }
 
@@ -2650,10 +2650,10 @@ antlrcpp::Any vhdlParser::Block_headerContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_headerContext> vhdlParser::block_header() {
-  Ref<Block_headerContext> _localctx = std::make_shared<Block_headerContext>(_ctx, getState());
+vhdlParser::Block_headerContext* vhdlParser::block_header() {
+  Block_headerContext *_localctx = _tracker.createInstance<Block_headerContext>(_ctx, getState());
   enterRule(_localctx, 60, vhdlParser::RuleBlock_header);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2705,32 +2705,32 @@ Ref<vhdlParser::Block_headerContext> vhdlParser::block_header() {
 
 //----------------- Block_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Block_specificationContext::Block_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_specificationContext::Block_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Block_specificationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Block_specificationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_specificationContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Block_specificationContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Index_specificationContext> vhdlParser::Block_specificationContext::index_specification() {
+vhdlParser::Index_specificationContext* vhdlParser::Block_specificationContext::index_specification() {
   return getRuleContext<vhdlParser::Index_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_specificationContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Block_specificationContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Block_specificationContext::name() {
+vhdlParser::NameContext* vhdlParser::Block_specificationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::Block_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Block_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_specification;
 }
 
@@ -2741,10 +2741,10 @@ antlrcpp::Any vhdlParser::Block_specificationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_specificationContext> vhdlParser::block_specification() {
-  Ref<Block_specificationContext> _localctx = std::make_shared<Block_specificationContext>(_ctx, getState());
+vhdlParser::Block_specificationContext* vhdlParser::block_specification() {
+  Block_specificationContext *_localctx = _tracker.createInstance<Block_specificationContext>(_ctx, getState());
   enterRule(_localctx, 62, vhdlParser::RuleBlock_specification);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2792,68 +2792,68 @@ Ref<vhdlParser::Block_specificationContext> vhdlParser::block_specification() {
 
 //----------------- Block_statementContext ------------------------------------------------------------------
 
-vhdlParser::Block_statementContext::Block_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_statementContext::Block_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Block_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Block_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Block_statementContext::BLOCK() {
+std::vector<tree::TerminalNode *> vhdlParser::Block_statementContext::BLOCK() {
   return getTokens(vhdlParser::BLOCK);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::BLOCK(int i) {
-  return getToken(vhdlParser::BLOCK, (size_t)i);
+tree::TerminalNode* vhdlParser::Block_statementContext::BLOCK(size_t i) {
+  return getToken(vhdlParser::BLOCK, i);
 }
 
-Ref<vhdlParser::Block_headerContext> vhdlParser::Block_statementContext::block_header() {
+vhdlParser::Block_headerContext* vhdlParser::Block_statementContext::block_header() {
   return getRuleContext<vhdlParser::Block_headerContext>(0);
 }
 
-Ref<vhdlParser::Block_declarative_partContext> vhdlParser::Block_statementContext::block_declarative_part() {
+vhdlParser::Block_declarative_partContext* vhdlParser::Block_statementContext::block_declarative_part() {
   return getRuleContext<vhdlParser::Block_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Block_statementContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Block_statement_partContext> vhdlParser::Block_statementContext::block_statement_part() {
+vhdlParser::Block_statement_partContext* vhdlParser::Block_statementContext::block_statement_part() {
   return getRuleContext<vhdlParser::Block_statement_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::END() {
+tree::TerminalNode* vhdlParser::Block_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Block_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Block_statementContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Block_statementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Block_statementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Block_statementContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Block_statementContext::IS() {
+tree::TerminalNode* vhdlParser::Block_statementContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Block_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Block_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Block_statementContext::getRuleIndex() const {
+size_t vhdlParser::Block_statementContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_statement;
 }
 
@@ -2864,10 +2864,10 @@ antlrcpp::Any vhdlParser::Block_statementContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_statementContext> vhdlParser::block_statement() {
-  Ref<Block_statementContext> _localctx = std::make_shared<Block_statementContext>(_ctx, getState());
+vhdlParser::Block_statementContext* vhdlParser::block_statement() {
+  Block_statementContext *_localctx = _tracker.createInstance<Block_statementContext>(_ctx, getState());
   enterRule(_localctx, 64, vhdlParser::RuleBlock_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2932,20 +2932,20 @@ Ref<vhdlParser::Block_statementContext> vhdlParser::block_statement() {
 
 //----------------- Block_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Block_statement_partContext::Block_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Block_statement_partContext::Block_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Architecture_statementContext>> vhdlParser::Block_statement_partContext::architecture_statement() {
+std::vector<vhdlParser::Architecture_statementContext *> vhdlParser::Block_statement_partContext::architecture_statement() {
   return getRuleContexts<vhdlParser::Architecture_statementContext>();
 }
 
-Ref<vhdlParser::Architecture_statementContext> vhdlParser::Block_statement_partContext::architecture_statement(int i) {
-  return getRuleContext<vhdlParser::Architecture_statementContext>((size_t)i);
+vhdlParser::Architecture_statementContext* vhdlParser::Block_statement_partContext::architecture_statement(size_t i) {
+  return getRuleContext<vhdlParser::Architecture_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Block_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Block_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleBlock_statement_part;
 }
 
@@ -2956,10 +2956,10 @@ antlrcpp::Any vhdlParser::Block_statement_partContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Block_statement_partContext> vhdlParser::block_statement_part() {
-  Ref<Block_statement_partContext> _localctx = std::make_shared<Block_statement_partContext>(_ctx, getState());
+vhdlParser::Block_statement_partContext* vhdlParser::block_statement_part() {
+  Block_statement_partContext *_localctx = _tracker.createInstance<Block_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 66, vhdlParser::RuleBlock_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -2969,7 +2969,7 @@ Ref<vhdlParser::Block_statement_partContext> vhdlParser::block_statement_part() 
     setState(804);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
@@ -2977,7 +2977,7 @@ Ref<vhdlParser::Block_statement_partContext> vhdlParser::block_statement_part() 
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 66)) & ((1ULL << (vhdlParser::POSTPONED - 66))
       | (1ULL << (vhdlParser::PROCESS - 66))
       | (1ULL << (vhdlParser::PROCEDURAL - 66))
@@ -2988,7 +2988,7 @@ Ref<vhdlParser::Block_statement_partContext> vhdlParser::block_statement_part() 
       | (1ULL << (vhdlParser::BASIC_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::EXTENDED_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::CHARACTER_LITERAL - 66))
-      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 141)) & ((1ULL << (vhdlParser::LPAREN - 141))
       | (1ULL << (vhdlParser::PLUS - 141))
       | (1ULL << (vhdlParser::MINUS - 141))
@@ -3012,32 +3012,32 @@ Ref<vhdlParser::Block_statement_partContext> vhdlParser::block_statement_part() 
 
 //----------------- Branch_quantity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Branch_quantity_declarationContext::Branch_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Branch_quantity_declarationContext::Branch_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Branch_quantity_declarationContext::QUANTITY() {
+tree::TerminalNode* vhdlParser::Branch_quantity_declarationContext::QUANTITY() {
   return getToken(vhdlParser::QUANTITY, 0);
 }
 
-Ref<vhdlParser::Terminal_aspectContext> vhdlParser::Branch_quantity_declarationContext::terminal_aspect() {
+vhdlParser::Terminal_aspectContext* vhdlParser::Branch_quantity_declarationContext::terminal_aspect() {
   return getRuleContext<vhdlParser::Terminal_aspectContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Branch_quantity_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Branch_quantity_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Across_aspectContext> vhdlParser::Branch_quantity_declarationContext::across_aspect() {
+vhdlParser::Across_aspectContext* vhdlParser::Branch_quantity_declarationContext::across_aspect() {
   return getRuleContext<vhdlParser::Across_aspectContext>(0);
 }
 
-Ref<vhdlParser::Through_aspectContext> vhdlParser::Branch_quantity_declarationContext::through_aspect() {
+vhdlParser::Through_aspectContext* vhdlParser::Branch_quantity_declarationContext::through_aspect() {
   return getRuleContext<vhdlParser::Through_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Branch_quantity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Branch_quantity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleBranch_quantity_declaration;
 }
 
@@ -3048,8 +3048,8 @@ antlrcpp::Any vhdlParser::Branch_quantity_declarationContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Branch_quantity_declarationContext> vhdlParser::branch_quantity_declaration() {
-  Ref<Branch_quantity_declarationContext> _localctx = std::make_shared<Branch_quantity_declarationContext>(_ctx, getState());
+vhdlParser::Branch_quantity_declarationContext* vhdlParser::branch_quantity_declaration() {
+  Branch_quantity_declarationContext *_localctx = _tracker.createInstance<Branch_quantity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 68, vhdlParser::RuleBranch_quantity_declaration);
 
   auto onExit = finally([=] {
@@ -3098,28 +3098,28 @@ Ref<vhdlParser::Branch_quantity_declarationContext> vhdlParser::branch_quantity_
 
 //----------------- Break_elementContext ------------------------------------------------------------------
 
-vhdlParser::Break_elementContext::Break_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Break_elementContext::Break_elementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Break_elementContext::name() {
+vhdlParser::NameContext* vhdlParser::Break_elementContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_elementContext::ARROW() {
+tree::TerminalNode* vhdlParser::Break_elementContext::ARROW() {
   return getToken(vhdlParser::ARROW, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Break_elementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Break_elementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<vhdlParser::Break_selector_clauseContext> vhdlParser::Break_elementContext::break_selector_clause() {
+vhdlParser::Break_selector_clauseContext* vhdlParser::Break_elementContext::break_selector_clause() {
   return getRuleContext<vhdlParser::Break_selector_clauseContext>(0);
 }
 
 
-ssize_t vhdlParser::Break_elementContext::getRuleIndex() const {
+size_t vhdlParser::Break_elementContext::getRuleIndex() const {
   return vhdlParser::RuleBreak_element;
 }
 
@@ -3130,10 +3130,10 @@ antlrcpp::Any vhdlParser::Break_elementContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Break_elementContext> vhdlParser::break_element() {
-  Ref<Break_elementContext> _localctx = std::make_shared<Break_elementContext>(_ctx, getState());
+vhdlParser::Break_elementContext* vhdlParser::break_element() {
+  Break_elementContext *_localctx = _tracker.createInstance<Break_elementContext>(_ctx, getState());
   enterRule(_localctx, 70, vhdlParser::RuleBreak_element);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3166,28 +3166,28 @@ Ref<vhdlParser::Break_elementContext> vhdlParser::break_element() {
 
 //----------------- Break_listContext ------------------------------------------------------------------
 
-vhdlParser::Break_listContext::Break_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Break_listContext::Break_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Break_elementContext>> vhdlParser::Break_listContext::break_element() {
+std::vector<vhdlParser::Break_elementContext *> vhdlParser::Break_listContext::break_element() {
   return getRuleContexts<vhdlParser::Break_elementContext>();
 }
 
-Ref<vhdlParser::Break_elementContext> vhdlParser::Break_listContext::break_element(int i) {
-  return getRuleContext<vhdlParser::Break_elementContext>((size_t)i);
+vhdlParser::Break_elementContext* vhdlParser::Break_listContext::break_element(size_t i) {
+  return getRuleContext<vhdlParser::Break_elementContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Break_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Break_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Break_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Break_listContext::getRuleIndex() const {
+size_t vhdlParser::Break_listContext::getRuleIndex() const {
   return vhdlParser::RuleBreak_list;
 }
 
@@ -3198,10 +3198,10 @@ antlrcpp::Any vhdlParser::Break_listContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Break_listContext> vhdlParser::break_list() {
-  Ref<Break_listContext> _localctx = std::make_shared<Break_listContext>(_ctx, getState());
+vhdlParser::Break_listContext* vhdlParser::break_list() {
+  Break_listContext *_localctx = _tracker.createInstance<Break_listContext>(_ctx, getState());
   enterRule(_localctx, 72, vhdlParser::RuleBreak_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3235,24 +3235,24 @@ Ref<vhdlParser::Break_listContext> vhdlParser::break_list() {
 
 //----------------- Break_selector_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Break_selector_clauseContext::Break_selector_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Break_selector_clauseContext::Break_selector_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_selector_clauseContext::FOR() {
+tree::TerminalNode* vhdlParser::Break_selector_clauseContext::FOR() {
   return getToken(vhdlParser::FOR, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Break_selector_clauseContext::name() {
+vhdlParser::NameContext* vhdlParser::Break_selector_clauseContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_selector_clauseContext::USE() {
+tree::TerminalNode* vhdlParser::Break_selector_clauseContext::USE() {
   return getToken(vhdlParser::USE, 0);
 }
 
 
-ssize_t vhdlParser::Break_selector_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Break_selector_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleBreak_selector_clause;
 }
 
@@ -3263,8 +3263,8 @@ antlrcpp::Any vhdlParser::Break_selector_clauseContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Break_selector_clauseContext> vhdlParser::break_selector_clause() {
-  Ref<Break_selector_clauseContext> _localctx = std::make_shared<Break_selector_clauseContext>(_ctx, getState());
+vhdlParser::Break_selector_clauseContext* vhdlParser::break_selector_clause() {
+  Break_selector_clauseContext *_localctx = _tracker.createInstance<Break_selector_clauseContext>(_ctx, getState());
   enterRule(_localctx, 74, vhdlParser::RuleBreak_selector_clause);
 
   auto onExit = finally([=] {
@@ -3291,36 +3291,36 @@ Ref<vhdlParser::Break_selector_clauseContext> vhdlParser::break_selector_clause(
 
 //----------------- Break_statementContext ------------------------------------------------------------------
 
-vhdlParser::Break_statementContext::Break_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Break_statementContext::Break_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_statementContext::BREAK() {
+tree::TerminalNode* vhdlParser::Break_statementContext::BREAK() {
   return getToken(vhdlParser::BREAK, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Break_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Break_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Break_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Break_listContext> vhdlParser::Break_statementContext::break_list() {
+vhdlParser::Break_listContext* vhdlParser::Break_statementContext::break_list() {
   return getRuleContext<vhdlParser::Break_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Break_statementContext::WHEN() {
+tree::TerminalNode* vhdlParser::Break_statementContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Break_statementContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Break_statementContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Break_statementContext::getRuleIndex() const {
+size_t vhdlParser::Break_statementContext::getRuleIndex() const {
   return vhdlParser::RuleBreak_statement;
 }
 
@@ -3331,10 +3331,10 @@ antlrcpp::Any vhdlParser::Break_statementContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Break_statementContext> vhdlParser::break_statement() {
-  Ref<Break_statementContext> _localctx = std::make_shared<Break_statementContext>(_ctx, getState());
+vhdlParser::Break_statementContext* vhdlParser::break_statement() {
+  Break_statementContext *_localctx = _tracker.createInstance<Break_statementContext>(_ctx, getState());
   enterRule(_localctx, 76, vhdlParser::RuleBreak_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3385,52 +3385,52 @@ Ref<vhdlParser::Break_statementContext> vhdlParser::break_statement() {
 
 //----------------- Case_statementContext ------------------------------------------------------------------
 
-vhdlParser::Case_statementContext::Case_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Case_statementContext::Case_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Case_statementContext::CASE() {
+std::vector<tree::TerminalNode *> vhdlParser::Case_statementContext::CASE() {
   return getTokens(vhdlParser::CASE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statementContext::CASE(int i) {
-  return getToken(vhdlParser::CASE, (size_t)i);
+tree::TerminalNode* vhdlParser::Case_statementContext::CASE(size_t i) {
+  return getToken(vhdlParser::CASE, i);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Case_statementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Case_statementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statementContext::IS() {
+tree::TerminalNode* vhdlParser::Case_statementContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statementContext::END() {
+tree::TerminalNode* vhdlParser::Case_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Case_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Case_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Case_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<vhdlParser::Case_statement_alternativeContext>> vhdlParser::Case_statementContext::case_statement_alternative() {
+std::vector<vhdlParser::Case_statement_alternativeContext *> vhdlParser::Case_statementContext::case_statement_alternative() {
   return getRuleContexts<vhdlParser::Case_statement_alternativeContext>();
 }
 
-Ref<vhdlParser::Case_statement_alternativeContext> vhdlParser::Case_statementContext::case_statement_alternative(int i) {
-  return getRuleContext<vhdlParser::Case_statement_alternativeContext>((size_t)i);
+vhdlParser::Case_statement_alternativeContext* vhdlParser::Case_statementContext::case_statement_alternative(size_t i) {
+  return getRuleContext<vhdlParser::Case_statement_alternativeContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Case_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Case_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Case_statementContext::getRuleIndex() const {
+size_t vhdlParser::Case_statementContext::getRuleIndex() const {
   return vhdlParser::RuleCase_statement;
 }
 
@@ -3441,10 +3441,10 @@ antlrcpp::Any vhdlParser::Case_statementContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Case_statementContext> vhdlParser::case_statement() {
-  Ref<Case_statementContext> _localctx = std::make_shared<Case_statementContext>(_ctx, getState());
+vhdlParser::Case_statementContext* vhdlParser::case_statement() {
+  Case_statementContext *_localctx = _tracker.createInstance<Case_statementContext>(_ctx, getState());
   enterRule(_localctx, 78, vhdlParser::RuleCase_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3504,28 +3504,28 @@ Ref<vhdlParser::Case_statementContext> vhdlParser::case_statement() {
 
 //----------------- Case_statement_alternativeContext ------------------------------------------------------------------
 
-vhdlParser::Case_statement_alternativeContext::Case_statement_alternativeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Case_statement_alternativeContext::Case_statement_alternativeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statement_alternativeContext::WHEN() {
+tree::TerminalNode* vhdlParser::Case_statement_alternativeContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ChoicesContext> vhdlParser::Case_statement_alternativeContext::choices() {
+vhdlParser::ChoicesContext* vhdlParser::Case_statement_alternativeContext::choices() {
   return getRuleContext<vhdlParser::ChoicesContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Case_statement_alternativeContext::ARROW() {
+tree::TerminalNode* vhdlParser::Case_statement_alternativeContext::ARROW() {
   return getToken(vhdlParser::ARROW, 0);
 }
 
-Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::Case_statement_alternativeContext::sequence_of_statements() {
+vhdlParser::Sequence_of_statementsContext* vhdlParser::Case_statement_alternativeContext::sequence_of_statements() {
   return getRuleContext<vhdlParser::Sequence_of_statementsContext>(0);
 }
 
 
-ssize_t vhdlParser::Case_statement_alternativeContext::getRuleIndex() const {
+size_t vhdlParser::Case_statement_alternativeContext::getRuleIndex() const {
   return vhdlParser::RuleCase_statement_alternative;
 }
 
@@ -3536,8 +3536,8 @@ antlrcpp::Any vhdlParser::Case_statement_alternativeContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Case_statement_alternativeContext> vhdlParser::case_statement_alternative() {
-  Ref<Case_statement_alternativeContext> _localctx = std::make_shared<Case_statement_alternativeContext>(_ctx, getState());
+vhdlParser::Case_statement_alternativeContext* vhdlParser::case_statement_alternative() {
+  Case_statement_alternativeContext *_localctx = _tracker.createInstance<Case_statement_alternativeContext>(_ctx, getState());
   enterRule(_localctx, 80, vhdlParser::RuleCase_statement_alternative);
 
   auto onExit = finally([=] {
@@ -3566,28 +3566,28 @@ Ref<vhdlParser::Case_statement_alternativeContext> vhdlParser::case_statement_al
 
 //----------------- ChoiceContext ------------------------------------------------------------------
 
-vhdlParser::ChoiceContext::ChoiceContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::ChoiceContext::ChoiceContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::ChoiceContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::ChoiceContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<vhdlParser::Discrete_rangeContext> vhdlParser::ChoiceContext::discrete_range() {
+vhdlParser::Discrete_rangeContext* vhdlParser::ChoiceContext::discrete_range() {
   return getRuleContext<vhdlParser::Discrete_rangeContext>(0);
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::ChoiceContext::simple_expression() {
+vhdlParser::Simple_expressionContext* vhdlParser::ChoiceContext::simple_expression() {
   return getRuleContext<vhdlParser::Simple_expressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::ChoiceContext::OTHERS() {
+tree::TerminalNode* vhdlParser::ChoiceContext::OTHERS() {
   return getToken(vhdlParser::OTHERS, 0);
 }
 
 
-ssize_t vhdlParser::ChoiceContext::getRuleIndex() const {
+size_t vhdlParser::ChoiceContext::getRuleIndex() const {
   return vhdlParser::RuleChoice;
 }
 
@@ -3598,8 +3598,8 @@ antlrcpp::Any vhdlParser::ChoiceContext::accept(tree::ParseTreeVisitor *visitor)
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::ChoiceContext> vhdlParser::choice() {
-  Ref<ChoiceContext> _localctx = std::make_shared<ChoiceContext>(_ctx, getState());
+vhdlParser::ChoiceContext* vhdlParser::choice() {
+  ChoiceContext *_localctx = _tracker.createInstance<ChoiceContext>(_ctx, getState());
   enterRule(_localctx, 82, vhdlParser::RuleChoice);
 
   auto onExit = finally([=] {
@@ -3651,28 +3651,28 @@ Ref<vhdlParser::ChoiceContext> vhdlParser::choice() {
 
 //----------------- ChoicesContext ------------------------------------------------------------------
 
-vhdlParser::ChoicesContext::ChoicesContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::ChoicesContext::ChoicesContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::ChoiceContext>> vhdlParser::ChoicesContext::choice() {
+std::vector<vhdlParser::ChoiceContext *> vhdlParser::ChoicesContext::choice() {
   return getRuleContexts<vhdlParser::ChoiceContext>();
 }
 
-Ref<vhdlParser::ChoiceContext> vhdlParser::ChoicesContext::choice(int i) {
-  return getRuleContext<vhdlParser::ChoiceContext>((size_t)i);
+vhdlParser::ChoiceContext* vhdlParser::ChoicesContext::choice(size_t i) {
+  return getRuleContext<vhdlParser::ChoiceContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::ChoicesContext::BAR() {
+std::vector<tree::TerminalNode *> vhdlParser::ChoicesContext::BAR() {
   return getTokens(vhdlParser::BAR);
 }
 
-Ref<tree::TerminalNode> vhdlParser::ChoicesContext::BAR(int i) {
-  return getToken(vhdlParser::BAR, (size_t)i);
+tree::TerminalNode* vhdlParser::ChoicesContext::BAR(size_t i) {
+  return getToken(vhdlParser::BAR, i);
 }
 
 
-ssize_t vhdlParser::ChoicesContext::getRuleIndex() const {
+size_t vhdlParser::ChoicesContext::getRuleIndex() const {
   return vhdlParser::RuleChoices;
 }
 
@@ -3683,10 +3683,10 @@ antlrcpp::Any vhdlParser::ChoicesContext::accept(tree::ParseTreeVisitor *visitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::ChoicesContext> vhdlParser::choices() {
-  Ref<ChoicesContext> _localctx = std::make_shared<ChoicesContext>(_ctx, getState());
+vhdlParser::ChoicesContext* vhdlParser::choices() {
+  ChoicesContext *_localctx = _tracker.createInstance<ChoicesContext>(_ctx, getState());
   enterRule(_localctx, 84, vhdlParser::RuleChoices);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3720,44 +3720,44 @@ Ref<vhdlParser::ChoicesContext> vhdlParser::choices() {
 
 //----------------- Component_configurationContext ------------------------------------------------------------------
 
-vhdlParser::Component_configurationContext::Component_configurationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Component_configurationContext::Component_configurationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Component_configurationContext::FOR() {
+std::vector<tree::TerminalNode *> vhdlParser::Component_configurationContext::FOR() {
   return getTokens(vhdlParser::FOR);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_configurationContext::FOR(int i) {
-  return getToken(vhdlParser::FOR, (size_t)i);
+tree::TerminalNode* vhdlParser::Component_configurationContext::FOR(size_t i) {
+  return getToken(vhdlParser::FOR, i);
 }
 
-Ref<vhdlParser::Component_specificationContext> vhdlParser::Component_configurationContext::component_specification() {
+vhdlParser::Component_specificationContext* vhdlParser::Component_configurationContext::component_specification() {
   return getRuleContext<vhdlParser::Component_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_configurationContext::END() {
+tree::TerminalNode* vhdlParser::Component_configurationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Component_configurationContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Component_configurationContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_configurationContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Component_configurationContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
-Ref<vhdlParser::Binding_indicationContext> vhdlParser::Component_configurationContext::binding_indication() {
+vhdlParser::Binding_indicationContext* vhdlParser::Component_configurationContext::binding_indication() {
   return getRuleContext<vhdlParser::Binding_indicationContext>(0);
 }
 
-Ref<vhdlParser::Block_configurationContext> vhdlParser::Component_configurationContext::block_configuration() {
+vhdlParser::Block_configurationContext* vhdlParser::Component_configurationContext::block_configuration() {
   return getRuleContext<vhdlParser::Block_configurationContext>(0);
 }
 
 
-ssize_t vhdlParser::Component_configurationContext::getRuleIndex() const {
+size_t vhdlParser::Component_configurationContext::getRuleIndex() const {
   return vhdlParser::RuleComponent_configuration;
 }
 
@@ -3768,10 +3768,10 @@ antlrcpp::Any vhdlParser::Component_configurationContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Component_configurationContext> vhdlParser::component_configuration() {
-  Ref<Component_configurationContext> _localctx = std::make_shared<Component_configurationContext>(_ctx, getState());
+vhdlParser::Component_configurationContext* vhdlParser::component_configuration() {
+  Component_configurationContext *_localctx = _tracker.createInstance<Component_configurationContext>(_ctx, getState());
   enterRule(_localctx, 86, vhdlParser::RuleComponent_configuration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3821,48 +3821,48 @@ Ref<vhdlParser::Component_configurationContext> vhdlParser::component_configurat
 
 //----------------- Component_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Component_declarationContext::Component_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Component_declarationContext::Component_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Component_declarationContext::COMPONENT() {
+std::vector<tree::TerminalNode *> vhdlParser::Component_declarationContext::COMPONENT() {
   return getTokens(vhdlParser::COMPONENT);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_declarationContext::COMPONENT(int i) {
-  return getToken(vhdlParser::COMPONENT, (size_t)i);
+tree::TerminalNode* vhdlParser::Component_declarationContext::COMPONENT(size_t i) {
+  return getToken(vhdlParser::COMPONENT, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Component_declarationContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Component_declarationContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Component_declarationContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Component_declarationContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_declarationContext::END() {
+tree::TerminalNode* vhdlParser::Component_declarationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Component_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Component_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Generic_clauseContext> vhdlParser::Component_declarationContext::generic_clause() {
+vhdlParser::Generic_clauseContext* vhdlParser::Component_declarationContext::generic_clause() {
   return getRuleContext<vhdlParser::Generic_clauseContext>(0);
 }
 
-Ref<vhdlParser::Port_clauseContext> vhdlParser::Component_declarationContext::port_clause() {
+vhdlParser::Port_clauseContext* vhdlParser::Component_declarationContext::port_clause() {
   return getRuleContext<vhdlParser::Port_clauseContext>(0);
 }
 
 
-ssize_t vhdlParser::Component_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Component_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleComponent_declaration;
 }
 
@@ -3873,10 +3873,10 @@ antlrcpp::Any vhdlParser::Component_declarationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Component_declarationContext> vhdlParser::component_declaration() {
-  Ref<Component_declarationContext> _localctx = std::make_shared<Component_declarationContext>(_ctx, getState());
+vhdlParser::Component_declarationContext* vhdlParser::component_declaration() {
+  Component_declarationContext *_localctx = _tracker.createInstance<Component_declarationContext>(_ctx, getState());
   enterRule(_localctx, 88, vhdlParser::RuleComponent_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -3936,32 +3936,32 @@ Ref<vhdlParser::Component_declarationContext> vhdlParser::component_declaration(
 
 //----------------- Component_instantiation_statementContext ------------------------------------------------------------------
 
-vhdlParser::Component_instantiation_statementContext::Component_instantiation_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Component_instantiation_statementContext::Component_instantiation_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Component_instantiation_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Component_instantiation_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Instantiated_unitContext> vhdlParser::Component_instantiation_statementContext::instantiated_unit() {
+vhdlParser::Instantiated_unitContext* vhdlParser::Component_instantiation_statementContext::instantiated_unit() {
   return getRuleContext<vhdlParser::Instantiated_unitContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_instantiation_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Component_instantiation_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Generic_map_aspectContext> vhdlParser::Component_instantiation_statementContext::generic_map_aspect() {
+vhdlParser::Generic_map_aspectContext* vhdlParser::Component_instantiation_statementContext::generic_map_aspect() {
   return getRuleContext<vhdlParser::Generic_map_aspectContext>(0);
 }
 
-Ref<vhdlParser::Port_map_aspectContext> vhdlParser::Component_instantiation_statementContext::port_map_aspect() {
+vhdlParser::Port_map_aspectContext* vhdlParser::Component_instantiation_statementContext::port_map_aspect() {
   return getRuleContext<vhdlParser::Port_map_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Component_instantiation_statementContext::getRuleIndex() const {
+size_t vhdlParser::Component_instantiation_statementContext::getRuleIndex() const {
   return vhdlParser::RuleComponent_instantiation_statement;
 }
 
@@ -3972,10 +3972,10 @@ antlrcpp::Any vhdlParser::Component_instantiation_statementContext::accept(tree:
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Component_instantiation_statementContext> vhdlParser::component_instantiation_statement() {
-  Ref<Component_instantiation_statementContext> _localctx = std::make_shared<Component_instantiation_statementContext>(_ctx, getState());
+vhdlParser::Component_instantiation_statementContext* vhdlParser::component_instantiation_statement() {
+  Component_instantiation_statementContext *_localctx = _tracker.createInstance<Component_instantiation_statementContext>(_ctx, getState());
   enterRule(_localctx, 90, vhdlParser::RuleComponent_instantiation_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4015,24 +4015,24 @@ Ref<vhdlParser::Component_instantiation_statementContext> vhdlParser::component_
 
 //----------------- Component_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Component_specificationContext::Component_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Component_specificationContext::Component_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Instantiation_listContext> vhdlParser::Component_specificationContext::instantiation_list() {
+vhdlParser::Instantiation_listContext* vhdlParser::Component_specificationContext::instantiation_list() {
   return getRuleContext<vhdlParser::Instantiation_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Component_specificationContext::COLON() {
+tree::TerminalNode* vhdlParser::Component_specificationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Component_specificationContext::name() {
+vhdlParser::NameContext* vhdlParser::Component_specificationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::Component_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Component_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleComponent_specification;
 }
 
@@ -4043,8 +4043,8 @@ antlrcpp::Any vhdlParser::Component_specificationContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Component_specificationContext> vhdlParser::component_specification() {
-  Ref<Component_specificationContext> _localctx = std::make_shared<Component_specificationContext>(_ctx, getState());
+vhdlParser::Component_specificationContext* vhdlParser::component_specification() {
+  Component_specificationContext *_localctx = _tracker.createInstance<Component_specificationContext>(_ctx, getState());
   enterRule(_localctx, 92, vhdlParser::RuleComponent_specification);
 
   auto onExit = finally([=] {
@@ -4071,20 +4071,20 @@ Ref<vhdlParser::Component_specificationContext> vhdlParser::component_specificat
 
 //----------------- Composite_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Composite_nature_definitionContext::Composite_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Composite_nature_definitionContext::Composite_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Array_nature_definitionContext> vhdlParser::Composite_nature_definitionContext::array_nature_definition() {
+vhdlParser::Array_nature_definitionContext* vhdlParser::Composite_nature_definitionContext::array_nature_definition() {
   return getRuleContext<vhdlParser::Array_nature_definitionContext>(0);
 }
 
-Ref<vhdlParser::Record_nature_definitionContext> vhdlParser::Composite_nature_definitionContext::record_nature_definition() {
+vhdlParser::Record_nature_definitionContext* vhdlParser::Composite_nature_definitionContext::record_nature_definition() {
   return getRuleContext<vhdlParser::Record_nature_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Composite_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Composite_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleComposite_nature_definition;
 }
 
@@ -4095,8 +4095,8 @@ antlrcpp::Any vhdlParser::Composite_nature_definitionContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Composite_nature_definitionContext> vhdlParser::composite_nature_definition() {
-  Ref<Composite_nature_definitionContext> _localctx = std::make_shared<Composite_nature_definitionContext>(_ctx, getState());
+vhdlParser::Composite_nature_definitionContext* vhdlParser::composite_nature_definition() {
+  Composite_nature_definitionContext *_localctx = _tracker.createInstance<Composite_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 94, vhdlParser::RuleComposite_nature_definition);
 
   auto onExit = finally([=] {
@@ -4136,20 +4136,20 @@ Ref<vhdlParser::Composite_nature_definitionContext> vhdlParser::composite_nature
 
 //----------------- Composite_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Composite_type_definitionContext::Composite_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Composite_type_definitionContext::Composite_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Array_type_definitionContext> vhdlParser::Composite_type_definitionContext::array_type_definition() {
+vhdlParser::Array_type_definitionContext* vhdlParser::Composite_type_definitionContext::array_type_definition() {
   return getRuleContext<vhdlParser::Array_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::Record_type_definitionContext> vhdlParser::Composite_type_definitionContext::record_type_definition() {
+vhdlParser::Record_type_definitionContext* vhdlParser::Composite_type_definitionContext::record_type_definition() {
   return getRuleContext<vhdlParser::Record_type_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Composite_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Composite_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleComposite_type_definition;
 }
 
@@ -4160,8 +4160,8 @@ antlrcpp::Any vhdlParser::Composite_type_definitionContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Composite_type_definitionContext> vhdlParser::composite_type_definition() {
-  Ref<Composite_type_definitionContext> _localctx = std::make_shared<Composite_type_definitionContext>(_ctx, getState());
+vhdlParser::Composite_type_definitionContext* vhdlParser::composite_type_definition() {
+  Composite_type_definitionContext *_localctx = _tracker.createInstance<Composite_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 96, vhdlParser::RuleComposite_type_definition);
 
   auto onExit = finally([=] {
@@ -4201,28 +4201,28 @@ Ref<vhdlParser::Composite_type_definitionContext> vhdlParser::composite_type_def
 
 //----------------- Concurrent_assertion_statementContext ------------------------------------------------------------------
 
-vhdlParser::Concurrent_assertion_statementContext::Concurrent_assertion_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Concurrent_assertion_statementContext::Concurrent_assertion_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::AssertionContext> vhdlParser::Concurrent_assertion_statementContext::assertion() {
+vhdlParser::AssertionContext* vhdlParser::Concurrent_assertion_statementContext::assertion() {
   return getRuleContext<vhdlParser::AssertionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_assertion_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Concurrent_assertion_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Concurrent_assertion_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Concurrent_assertion_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_assertion_statementContext::POSTPONED() {
+tree::TerminalNode* vhdlParser::Concurrent_assertion_statementContext::POSTPONED() {
   return getToken(vhdlParser::POSTPONED, 0);
 }
 
 
-ssize_t vhdlParser::Concurrent_assertion_statementContext::getRuleIndex() const {
+size_t vhdlParser::Concurrent_assertion_statementContext::getRuleIndex() const {
   return vhdlParser::RuleConcurrent_assertion_statement;
 }
 
@@ -4233,10 +4233,10 @@ antlrcpp::Any vhdlParser::Concurrent_assertion_statementContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Concurrent_assertion_statementContext> vhdlParser::concurrent_assertion_statement() {
-  Ref<Concurrent_assertion_statementContext> _localctx = std::make_shared<Concurrent_assertion_statementContext>(_ctx, getState());
+vhdlParser::Concurrent_assertion_statementContext* vhdlParser::concurrent_assertion_statement() {
+  Concurrent_assertion_statementContext *_localctx = _tracker.createInstance<Concurrent_assertion_statementContext>(_ctx, getState());
   enterRule(_localctx, 98, vhdlParser::RuleConcurrent_assertion_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4276,40 +4276,40 @@ Ref<vhdlParser::Concurrent_assertion_statementContext> vhdlParser::concurrent_as
 
 //----------------- Concurrent_break_statementContext ------------------------------------------------------------------
 
-vhdlParser::Concurrent_break_statementContext::Concurrent_break_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Concurrent_break_statementContext::Concurrent_break_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_break_statementContext::BREAK() {
+tree::TerminalNode* vhdlParser::Concurrent_break_statementContext::BREAK() {
   return getToken(vhdlParser::BREAK, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_break_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Concurrent_break_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Concurrent_break_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Concurrent_break_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Break_listContext> vhdlParser::Concurrent_break_statementContext::break_list() {
+vhdlParser::Break_listContext* vhdlParser::Concurrent_break_statementContext::break_list() {
   return getRuleContext<vhdlParser::Break_listContext>(0);
 }
 
-Ref<vhdlParser::Sensitivity_clauseContext> vhdlParser::Concurrent_break_statementContext::sensitivity_clause() {
+vhdlParser::Sensitivity_clauseContext* vhdlParser::Concurrent_break_statementContext::sensitivity_clause() {
   return getRuleContext<vhdlParser::Sensitivity_clauseContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_break_statementContext::WHEN() {
+tree::TerminalNode* vhdlParser::Concurrent_break_statementContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Concurrent_break_statementContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Concurrent_break_statementContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Concurrent_break_statementContext::getRuleIndex() const {
+size_t vhdlParser::Concurrent_break_statementContext::getRuleIndex() const {
   return vhdlParser::RuleConcurrent_break_statement;
 }
 
@@ -4320,10 +4320,10 @@ antlrcpp::Any vhdlParser::Concurrent_break_statementContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Concurrent_break_statementContext> vhdlParser::concurrent_break_statement() {
-  Ref<Concurrent_break_statementContext> _localctx = std::make_shared<Concurrent_break_statementContext>(_ctx, getState());
+vhdlParser::Concurrent_break_statementContext* vhdlParser::concurrent_break_statement() {
+  Concurrent_break_statementContext *_localctx = _tracker.createInstance<Concurrent_break_statementContext>(_ctx, getState());
   enterRule(_localctx, 100, vhdlParser::RuleConcurrent_break_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4381,28 +4381,28 @@ Ref<vhdlParser::Concurrent_break_statementContext> vhdlParser::concurrent_break_
 
 //----------------- Concurrent_procedure_call_statementContext ------------------------------------------------------------------
 
-vhdlParser::Concurrent_procedure_call_statementContext::Concurrent_procedure_call_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Concurrent_procedure_call_statementContext::Concurrent_procedure_call_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Procedure_callContext> vhdlParser::Concurrent_procedure_call_statementContext::procedure_call() {
+vhdlParser::Procedure_callContext* vhdlParser::Concurrent_procedure_call_statementContext::procedure_call() {
   return getRuleContext<vhdlParser::Procedure_callContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_procedure_call_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Concurrent_procedure_call_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Concurrent_procedure_call_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Concurrent_procedure_call_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_procedure_call_statementContext::POSTPONED() {
+tree::TerminalNode* vhdlParser::Concurrent_procedure_call_statementContext::POSTPONED() {
   return getToken(vhdlParser::POSTPONED, 0);
 }
 
 
-ssize_t vhdlParser::Concurrent_procedure_call_statementContext::getRuleIndex() const {
+size_t vhdlParser::Concurrent_procedure_call_statementContext::getRuleIndex() const {
   return vhdlParser::RuleConcurrent_procedure_call_statement;
 }
 
@@ -4413,10 +4413,10 @@ antlrcpp::Any vhdlParser::Concurrent_procedure_call_statementContext::accept(tre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Concurrent_procedure_call_statementContext> vhdlParser::concurrent_procedure_call_statement() {
-  Ref<Concurrent_procedure_call_statementContext> _localctx = std::make_shared<Concurrent_procedure_call_statementContext>(_ctx, getState());
+vhdlParser::Concurrent_procedure_call_statementContext* vhdlParser::concurrent_procedure_call_statement() {
+  Concurrent_procedure_call_statementContext *_localctx = _tracker.createInstance<Concurrent_procedure_call_statementContext>(_ctx, getState());
   enterRule(_localctx, 102, vhdlParser::RuleConcurrent_procedure_call_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4458,28 +4458,28 @@ Ref<vhdlParser::Concurrent_procedure_call_statementContext> vhdlParser::concurre
 
 //----------------- Concurrent_signal_assignment_statementContext ------------------------------------------------------------------
 
-vhdlParser::Concurrent_signal_assignment_statementContext::Concurrent_signal_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Concurrent_signal_assignment_statementContext::Concurrent_signal_assignment_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Conditional_signal_assignmentContext> vhdlParser::Concurrent_signal_assignment_statementContext::conditional_signal_assignment() {
+vhdlParser::Conditional_signal_assignmentContext* vhdlParser::Concurrent_signal_assignment_statementContext::conditional_signal_assignment() {
   return getRuleContext<vhdlParser::Conditional_signal_assignmentContext>(0);
 }
 
-Ref<vhdlParser::Selected_signal_assignmentContext> vhdlParser::Concurrent_signal_assignment_statementContext::selected_signal_assignment() {
+vhdlParser::Selected_signal_assignmentContext* vhdlParser::Concurrent_signal_assignment_statementContext::selected_signal_assignment() {
   return getRuleContext<vhdlParser::Selected_signal_assignmentContext>(0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Concurrent_signal_assignment_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Concurrent_signal_assignment_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Concurrent_signal_assignment_statementContext::POSTPONED() {
+tree::TerminalNode* vhdlParser::Concurrent_signal_assignment_statementContext::POSTPONED() {
   return getToken(vhdlParser::POSTPONED, 0);
 }
 
 
-ssize_t vhdlParser::Concurrent_signal_assignment_statementContext::getRuleIndex() const {
+size_t vhdlParser::Concurrent_signal_assignment_statementContext::getRuleIndex() const {
   return vhdlParser::RuleConcurrent_signal_assignment_statement;
 }
 
@@ -4490,10 +4490,10 @@ antlrcpp::Any vhdlParser::Concurrent_signal_assignment_statementContext::accept(
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Concurrent_signal_assignment_statementContext> vhdlParser::concurrent_signal_assignment_statement() {
-  Ref<Concurrent_signal_assignment_statementContext> _localctx = std::make_shared<Concurrent_signal_assignment_statementContext>(_ctx, getState());
+vhdlParser::Concurrent_signal_assignment_statementContext* vhdlParser::concurrent_signal_assignment_statement() {
+  Concurrent_signal_assignment_statementContext *_localctx = _tracker.createInstance<Concurrent_signal_assignment_statementContext>(_ctx, getState());
   enterRule(_localctx, 104, vhdlParser::RuleConcurrent_signal_assignment_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4551,16 +4551,16 @@ Ref<vhdlParser::Concurrent_signal_assignment_statementContext> vhdlParser::concu
 
 //----------------- ConditionContext ------------------------------------------------------------------
 
-vhdlParser::ConditionContext::ConditionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::ConditionContext::ConditionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::ConditionContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::ConditionContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::ConditionContext::getRuleIndex() const {
+size_t vhdlParser::ConditionContext::getRuleIndex() const {
   return vhdlParser::RuleCondition;
 }
 
@@ -4571,8 +4571,8 @@ antlrcpp::Any vhdlParser::ConditionContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::condition() {
-  Ref<ConditionContext> _localctx = std::make_shared<ConditionContext>(_ctx, getState());
+vhdlParser::ConditionContext* vhdlParser::condition() {
+  ConditionContext *_localctx = _tracker.createInstance<ConditionContext>(_ctx, getState());
   enterRule(_localctx, 106, vhdlParser::RuleCondition);
 
   auto onExit = finally([=] {
@@ -4595,20 +4595,20 @@ Ref<vhdlParser::ConditionContext> vhdlParser::condition() {
 
 //----------------- Condition_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Condition_clauseContext::Condition_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Condition_clauseContext::Condition_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Condition_clauseContext::UNTIL() {
+tree::TerminalNode* vhdlParser::Condition_clauseContext::UNTIL() {
   return getToken(vhdlParser::UNTIL, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Condition_clauseContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Condition_clauseContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Condition_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Condition_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleCondition_clause;
 }
 
@@ -4619,8 +4619,8 @@ antlrcpp::Any vhdlParser::Condition_clauseContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Condition_clauseContext> vhdlParser::condition_clause() {
-  Ref<Condition_clauseContext> _localctx = std::make_shared<Condition_clauseContext>(_ctx, getState());
+vhdlParser::Condition_clauseContext* vhdlParser::condition_clause() {
+  Condition_clauseContext *_localctx = _tracker.createInstance<Condition_clauseContext>(_ctx, getState());
   enterRule(_localctx, 108, vhdlParser::RuleCondition_clause);
 
   auto onExit = finally([=] {
@@ -4645,32 +4645,32 @@ Ref<vhdlParser::Condition_clauseContext> vhdlParser::condition_clause() {
 
 //----------------- Conditional_signal_assignmentContext ------------------------------------------------------------------
 
-vhdlParser::Conditional_signal_assignmentContext::Conditional_signal_assignmentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Conditional_signal_assignmentContext::Conditional_signal_assignmentContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::TargetContext> vhdlParser::Conditional_signal_assignmentContext::target() {
+vhdlParser::TargetContext* vhdlParser::Conditional_signal_assignmentContext::target() {
   return getRuleContext<vhdlParser::TargetContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Conditional_signal_assignmentContext::LE() {
+tree::TerminalNode* vhdlParser::Conditional_signal_assignmentContext::LE() {
   return getToken(vhdlParser::LE, 0);
 }
 
-Ref<vhdlParser::OptsContext> vhdlParser::Conditional_signal_assignmentContext::opts() {
+vhdlParser::OptsContext* vhdlParser::Conditional_signal_assignmentContext::opts() {
   return getRuleContext<vhdlParser::OptsContext>(0);
 }
 
-Ref<vhdlParser::Conditional_waveformsContext> vhdlParser::Conditional_signal_assignmentContext::conditional_waveforms() {
+vhdlParser::Conditional_waveformsContext* vhdlParser::Conditional_signal_assignmentContext::conditional_waveforms() {
   return getRuleContext<vhdlParser::Conditional_waveformsContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Conditional_signal_assignmentContext::SEMI() {
+tree::TerminalNode* vhdlParser::Conditional_signal_assignmentContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Conditional_signal_assignmentContext::getRuleIndex() const {
+size_t vhdlParser::Conditional_signal_assignmentContext::getRuleIndex() const {
   return vhdlParser::RuleConditional_signal_assignment;
 }
 
@@ -4681,8 +4681,8 @@ antlrcpp::Any vhdlParser::Conditional_signal_assignmentContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Conditional_signal_assignmentContext> vhdlParser::conditional_signal_assignment() {
-  Ref<Conditional_signal_assignmentContext> _localctx = std::make_shared<Conditional_signal_assignmentContext>(_ctx, getState());
+vhdlParser::Conditional_signal_assignmentContext* vhdlParser::conditional_signal_assignment() {
+  Conditional_signal_assignmentContext *_localctx = _tracker.createInstance<Conditional_signal_assignmentContext>(_ctx, getState());
   enterRule(_localctx, 110, vhdlParser::RuleConditional_signal_assignment);
 
   auto onExit = finally([=] {
@@ -4713,32 +4713,32 @@ Ref<vhdlParser::Conditional_signal_assignmentContext> vhdlParser::conditional_si
 
 //----------------- Conditional_waveformsContext ------------------------------------------------------------------
 
-vhdlParser::Conditional_waveformsContext::Conditional_waveformsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Conditional_waveformsContext::Conditional_waveformsContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::WaveformContext> vhdlParser::Conditional_waveformsContext::waveform() {
+vhdlParser::WaveformContext* vhdlParser::Conditional_waveformsContext::waveform() {
   return getRuleContext<vhdlParser::WaveformContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Conditional_waveformsContext::WHEN() {
+tree::TerminalNode* vhdlParser::Conditional_waveformsContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Conditional_waveformsContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Conditional_waveformsContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Conditional_waveformsContext::ELSE() {
+tree::TerminalNode* vhdlParser::Conditional_waveformsContext::ELSE() {
   return getToken(vhdlParser::ELSE, 0);
 }
 
-Ref<vhdlParser::Conditional_waveformsContext> vhdlParser::Conditional_waveformsContext::conditional_waveforms() {
+vhdlParser::Conditional_waveformsContext* vhdlParser::Conditional_waveformsContext::conditional_waveforms() {
   return getRuleContext<vhdlParser::Conditional_waveformsContext>(0);
 }
 
 
-ssize_t vhdlParser::Conditional_waveformsContext::getRuleIndex() const {
+size_t vhdlParser::Conditional_waveformsContext::getRuleIndex() const {
   return vhdlParser::RuleConditional_waveforms;
 }
 
@@ -4749,10 +4749,10 @@ antlrcpp::Any vhdlParser::Conditional_waveformsContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Conditional_waveformsContext> vhdlParser::conditional_waveforms() {
-  Ref<Conditional_waveformsContext> _localctx = std::make_shared<Conditional_waveformsContext>(_ctx, getState());
+vhdlParser::Conditional_waveformsContext* vhdlParser::conditional_waveforms() {
+  Conditional_waveformsContext *_localctx = _tracker.createInstance<Conditional_waveformsContext>(_ctx, getState());
   enterRule(_localctx, 112, vhdlParser::RuleConditional_waveforms);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4792,56 +4792,56 @@ Ref<vhdlParser::Conditional_waveformsContext> vhdlParser::conditional_waveforms(
 
 //----------------- Configuration_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Configuration_declarationContext::Configuration_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Configuration_declarationContext::Configuration_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Configuration_declarationContext::CONFIGURATION() {
+std::vector<tree::TerminalNode *> vhdlParser::Configuration_declarationContext::CONFIGURATION() {
   return getTokens(vhdlParser::CONFIGURATION);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_declarationContext::CONFIGURATION(int i) {
-  return getToken(vhdlParser::CONFIGURATION, (size_t)i);
+tree::TerminalNode* vhdlParser::Configuration_declarationContext::CONFIGURATION(size_t i) {
+  return getToken(vhdlParser::CONFIGURATION, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Configuration_declarationContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Configuration_declarationContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Configuration_declarationContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Configuration_declarationContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_declarationContext::OF() {
+tree::TerminalNode* vhdlParser::Configuration_declarationContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Configuration_declarationContext::name() {
+vhdlParser::NameContext* vhdlParser::Configuration_declarationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Configuration_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Configuration_declarative_partContext> vhdlParser::Configuration_declarationContext::configuration_declarative_part() {
+vhdlParser::Configuration_declarative_partContext* vhdlParser::Configuration_declarationContext::configuration_declarative_part() {
   return getRuleContext<vhdlParser::Configuration_declarative_partContext>(0);
 }
 
-Ref<vhdlParser::Block_configurationContext> vhdlParser::Configuration_declarationContext::block_configuration() {
+vhdlParser::Block_configurationContext* vhdlParser::Configuration_declarationContext::block_configuration() {
   return getRuleContext<vhdlParser::Block_configurationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_declarationContext::END() {
+tree::TerminalNode* vhdlParser::Configuration_declarationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Configuration_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Configuration_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Configuration_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleConfiguration_declaration;
 }
 
@@ -4852,10 +4852,10 @@ antlrcpp::Any vhdlParser::Configuration_declarationContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Configuration_declarationContext> vhdlParser::configuration_declaration() {
-  Ref<Configuration_declarationContext> _localctx = std::make_shared<Configuration_declarationContext>(_ctx, getState());
+vhdlParser::Configuration_declarationContext* vhdlParser::configuration_declaration() {
+  Configuration_declarationContext *_localctx = _tracker.createInstance<Configuration_declarationContext>(_ctx, getState());
   enterRule(_localctx, 114, vhdlParser::RuleConfiguration_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -4909,24 +4909,24 @@ Ref<vhdlParser::Configuration_declarationContext> vhdlParser::configuration_decl
 
 //----------------- Configuration_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Configuration_declarative_itemContext::Configuration_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Configuration_declarative_itemContext::Configuration_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Configuration_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Configuration_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Configuration_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Configuration_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Configuration_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Configuration_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Configuration_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Configuration_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleConfiguration_declarative_item;
 }
 
@@ -4937,8 +4937,8 @@ antlrcpp::Any vhdlParser::Configuration_declarative_itemContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Configuration_declarative_itemContext> vhdlParser::configuration_declarative_item() {
-  Ref<Configuration_declarative_itemContext> _localctx = std::make_shared<Configuration_declarative_itemContext>(_ctx, getState());
+vhdlParser::Configuration_declarative_itemContext* vhdlParser::configuration_declarative_item() {
+  Configuration_declarative_itemContext *_localctx = _tracker.createInstance<Configuration_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 116, vhdlParser::RuleConfiguration_declarative_item);
 
   auto onExit = finally([=] {
@@ -4985,20 +4985,20 @@ Ref<vhdlParser::Configuration_declarative_itemContext> vhdlParser::configuration
 
 //----------------- Configuration_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Configuration_declarative_partContext::Configuration_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Configuration_declarative_partContext::Configuration_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Configuration_declarative_itemContext>> vhdlParser::Configuration_declarative_partContext::configuration_declarative_item() {
+std::vector<vhdlParser::Configuration_declarative_itemContext *> vhdlParser::Configuration_declarative_partContext::configuration_declarative_item() {
   return getRuleContexts<vhdlParser::Configuration_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Configuration_declarative_itemContext> vhdlParser::Configuration_declarative_partContext::configuration_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Configuration_declarative_itemContext>((size_t)i);
+vhdlParser::Configuration_declarative_itemContext* vhdlParser::Configuration_declarative_partContext::configuration_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Configuration_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Configuration_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Configuration_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleConfiguration_declarative_part;
 }
 
@@ -5009,10 +5009,10 @@ antlrcpp::Any vhdlParser::Configuration_declarative_partContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Configuration_declarative_partContext> vhdlParser::configuration_declarative_part() {
-  Ref<Configuration_declarative_partContext> _localctx = std::make_shared<Configuration_declarative_partContext>(_ctx, getState());
+vhdlParser::Configuration_declarative_partContext* vhdlParser::configuration_declarative_part() {
+  Configuration_declarative_partContext *_localctx = _tracker.createInstance<Configuration_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 118, vhdlParser::RuleConfiguration_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5044,20 +5044,20 @@ Ref<vhdlParser::Configuration_declarative_partContext> vhdlParser::configuration
 
 //----------------- Configuration_itemContext ------------------------------------------------------------------
 
-vhdlParser::Configuration_itemContext::Configuration_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Configuration_itemContext::Configuration_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Block_configurationContext> vhdlParser::Configuration_itemContext::block_configuration() {
+vhdlParser::Block_configurationContext* vhdlParser::Configuration_itemContext::block_configuration() {
   return getRuleContext<vhdlParser::Block_configurationContext>(0);
 }
 
-Ref<vhdlParser::Component_configurationContext> vhdlParser::Configuration_itemContext::component_configuration() {
+vhdlParser::Component_configurationContext* vhdlParser::Configuration_itemContext::component_configuration() {
   return getRuleContext<vhdlParser::Component_configurationContext>(0);
 }
 
 
-ssize_t vhdlParser::Configuration_itemContext::getRuleIndex() const {
+size_t vhdlParser::Configuration_itemContext::getRuleIndex() const {
   return vhdlParser::RuleConfiguration_item;
 }
 
@@ -5068,8 +5068,8 @@ antlrcpp::Any vhdlParser::Configuration_itemContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Configuration_itemContext> vhdlParser::configuration_item() {
-  Ref<Configuration_itemContext> _localctx = std::make_shared<Configuration_itemContext>(_ctx, getState());
+vhdlParser::Configuration_itemContext* vhdlParser::configuration_item() {
+  Configuration_itemContext *_localctx = _tracker.createInstance<Configuration_itemContext>(_ctx, getState());
   enterRule(_localctx, 120, vhdlParser::RuleConfiguration_item);
 
   auto onExit = finally([=] {
@@ -5107,28 +5107,28 @@ Ref<vhdlParser::Configuration_itemContext> vhdlParser::configuration_item() {
 
 //----------------- Configuration_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Configuration_specificationContext::Configuration_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Configuration_specificationContext::Configuration_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_specificationContext::FOR() {
+tree::TerminalNode* vhdlParser::Configuration_specificationContext::FOR() {
   return getToken(vhdlParser::FOR, 0);
 }
 
-Ref<vhdlParser::Component_specificationContext> vhdlParser::Configuration_specificationContext::component_specification() {
+vhdlParser::Component_specificationContext* vhdlParser::Configuration_specificationContext::component_specification() {
   return getRuleContext<vhdlParser::Component_specificationContext>(0);
 }
 
-Ref<vhdlParser::Binding_indicationContext> vhdlParser::Configuration_specificationContext::binding_indication() {
+vhdlParser::Binding_indicationContext* vhdlParser::Configuration_specificationContext::binding_indication() {
   return getRuleContext<vhdlParser::Binding_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Configuration_specificationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Configuration_specificationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Configuration_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Configuration_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleConfiguration_specification;
 }
 
@@ -5139,8 +5139,8 @@ antlrcpp::Any vhdlParser::Configuration_specificationContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Configuration_specificationContext> vhdlParser::configuration_specification() {
-  Ref<Configuration_specificationContext> _localctx = std::make_shared<Configuration_specificationContext>(_ctx, getState());
+vhdlParser::Configuration_specificationContext* vhdlParser::configuration_specification() {
+  Configuration_specificationContext *_localctx = _tracker.createInstance<Configuration_specificationContext>(_ctx, getState());
   enterRule(_localctx, 122, vhdlParser::RuleConfiguration_specification);
 
   auto onExit = finally([=] {
@@ -5169,40 +5169,40 @@ Ref<vhdlParser::Configuration_specificationContext> vhdlParser::configuration_sp
 
 //----------------- Constant_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Constant_declarationContext::Constant_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Constant_declarationContext::Constant_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constant_declarationContext::CONSTANT() {
+tree::TerminalNode* vhdlParser::Constant_declarationContext::CONSTANT() {
   return getToken(vhdlParser::CONSTANT, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Constant_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Constant_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constant_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Constant_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Constant_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Constant_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constant_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Constant_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constant_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Constant_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Constant_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Constant_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Constant_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Constant_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleConstant_declaration;
 }
 
@@ -5213,10 +5213,10 @@ antlrcpp::Any vhdlParser::Constant_declarationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::constant_declaration() {
-  Ref<Constant_declarationContext> _localctx = std::make_shared<Constant_declarationContext>(_ctx, getState());
+vhdlParser::Constant_declarationContext* vhdlParser::constant_declaration() {
+  Constant_declarationContext *_localctx = _tracker.createInstance<Constant_declarationContext>(_ctx, getState());
   enterRule(_localctx, 124, vhdlParser::RuleConstant_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5255,28 +5255,28 @@ Ref<vhdlParser::Constant_declarationContext> vhdlParser::constant_declaration() 
 
 //----------------- Constrained_array_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Constrained_array_definitionContext::Constrained_array_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Constrained_array_definitionContext::Constrained_array_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constrained_array_definitionContext::ARRAY() {
+tree::TerminalNode* vhdlParser::Constrained_array_definitionContext::ARRAY() {
   return getToken(vhdlParser::ARRAY, 0);
 }
 
-Ref<vhdlParser::Index_constraintContext> vhdlParser::Constrained_array_definitionContext::index_constraint() {
+vhdlParser::Index_constraintContext* vhdlParser::Constrained_array_definitionContext::index_constraint() {
   return getRuleContext<vhdlParser::Index_constraintContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constrained_array_definitionContext::OF() {
+tree::TerminalNode* vhdlParser::Constrained_array_definitionContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Constrained_array_definitionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Constrained_array_definitionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Constrained_array_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Constrained_array_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleConstrained_array_definition;
 }
 
@@ -5287,8 +5287,8 @@ antlrcpp::Any vhdlParser::Constrained_array_definitionContext::accept(tree::Pars
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Constrained_array_definitionContext> vhdlParser::constrained_array_definition() {
-  Ref<Constrained_array_definitionContext> _localctx = std::make_shared<Constrained_array_definitionContext>(_ctx, getState());
+vhdlParser::Constrained_array_definitionContext* vhdlParser::constrained_array_definition() {
+  Constrained_array_definitionContext *_localctx = _tracker.createInstance<Constrained_array_definitionContext>(_ctx, getState());
   enterRule(_localctx, 126, vhdlParser::RuleConstrained_array_definition);
 
   auto onExit = finally([=] {
@@ -5317,28 +5317,28 @@ Ref<vhdlParser::Constrained_array_definitionContext> vhdlParser::constrained_arr
 
 //----------------- Constrained_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Constrained_nature_definitionContext::Constrained_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Constrained_nature_definitionContext::Constrained_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constrained_nature_definitionContext::ARRAY() {
+tree::TerminalNode* vhdlParser::Constrained_nature_definitionContext::ARRAY() {
   return getToken(vhdlParser::ARRAY, 0);
 }
 
-Ref<vhdlParser::Index_constraintContext> vhdlParser::Constrained_nature_definitionContext::index_constraint() {
+vhdlParser::Index_constraintContext* vhdlParser::Constrained_nature_definitionContext::index_constraint() {
   return getRuleContext<vhdlParser::Index_constraintContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Constrained_nature_definitionContext::OF() {
+tree::TerminalNode* vhdlParser::Constrained_nature_definitionContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Constrained_nature_definitionContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Constrained_nature_definitionContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Constrained_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Constrained_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleConstrained_nature_definition;
 }
 
@@ -5349,8 +5349,8 @@ antlrcpp::Any vhdlParser::Constrained_nature_definitionContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Constrained_nature_definitionContext> vhdlParser::constrained_nature_definition() {
-  Ref<Constrained_nature_definitionContext> _localctx = std::make_shared<Constrained_nature_definitionContext>(_ctx, getState());
+vhdlParser::Constrained_nature_definitionContext* vhdlParser::constrained_nature_definition() {
+  Constrained_nature_definitionContext *_localctx = _tracker.createInstance<Constrained_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 128, vhdlParser::RuleConstrained_nature_definition);
 
   auto onExit = finally([=] {
@@ -5379,20 +5379,20 @@ Ref<vhdlParser::Constrained_nature_definitionContext> vhdlParser::constrained_na
 
 //----------------- ConstraintContext ------------------------------------------------------------------
 
-vhdlParser::ConstraintContext::ConstraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::ConstraintContext::ConstraintContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Range_constraintContext> vhdlParser::ConstraintContext::range_constraint() {
+vhdlParser::Range_constraintContext* vhdlParser::ConstraintContext::range_constraint() {
   return getRuleContext<vhdlParser::Range_constraintContext>(0);
 }
 
-Ref<vhdlParser::Index_constraintContext> vhdlParser::ConstraintContext::index_constraint() {
+vhdlParser::Index_constraintContext* vhdlParser::ConstraintContext::index_constraint() {
   return getRuleContext<vhdlParser::Index_constraintContext>(0);
 }
 
 
-ssize_t vhdlParser::ConstraintContext::getRuleIndex() const {
+size_t vhdlParser::ConstraintContext::getRuleIndex() const {
   return vhdlParser::RuleConstraint;
 }
 
@@ -5403,8 +5403,8 @@ antlrcpp::Any vhdlParser::ConstraintContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::ConstraintContext> vhdlParser::constraint() {
-  Ref<ConstraintContext> _localctx = std::make_shared<ConstraintContext>(_ctx, getState());
+vhdlParser::ConstraintContext* vhdlParser::constraint() {
+  ConstraintContext *_localctx = _tracker.createInstance<ConstraintContext>(_ctx, getState());
   enterRule(_localctx, 130, vhdlParser::RuleConstraint);
 
   auto onExit = finally([=] {
@@ -5444,20 +5444,20 @@ Ref<vhdlParser::ConstraintContext> vhdlParser::constraint() {
 
 //----------------- Context_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Context_clauseContext::Context_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Context_clauseContext::Context_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Context_itemContext>> vhdlParser::Context_clauseContext::context_item() {
+std::vector<vhdlParser::Context_itemContext *> vhdlParser::Context_clauseContext::context_item() {
   return getRuleContexts<vhdlParser::Context_itemContext>();
 }
 
-Ref<vhdlParser::Context_itemContext> vhdlParser::Context_clauseContext::context_item(int i) {
-  return getRuleContext<vhdlParser::Context_itemContext>((size_t)i);
+vhdlParser::Context_itemContext* vhdlParser::Context_clauseContext::context_item(size_t i) {
+  return getRuleContext<vhdlParser::Context_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Context_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Context_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleContext_clause;
 }
 
@@ -5468,10 +5468,10 @@ antlrcpp::Any vhdlParser::Context_clauseContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Context_clauseContext> vhdlParser::context_clause() {
-  Ref<Context_clauseContext> _localctx = std::make_shared<Context_clauseContext>(_ctx, getState());
+vhdlParser::Context_clauseContext* vhdlParser::context_clause() {
+  Context_clauseContext *_localctx = _tracker.createInstance<Context_clauseContext>(_ctx, getState());
   enterRule(_localctx, 132, vhdlParser::RuleContext_clause);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5503,20 +5503,20 @@ Ref<vhdlParser::Context_clauseContext> vhdlParser::context_clause() {
 
 //----------------- Context_itemContext ------------------------------------------------------------------
 
-vhdlParser::Context_itemContext::Context_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Context_itemContext::Context_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Library_clauseContext> vhdlParser::Context_itemContext::library_clause() {
+vhdlParser::Library_clauseContext* vhdlParser::Context_itemContext::library_clause() {
   return getRuleContext<vhdlParser::Library_clauseContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Context_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Context_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
 
-ssize_t vhdlParser::Context_itemContext::getRuleIndex() const {
+size_t vhdlParser::Context_itemContext::getRuleIndex() const {
   return vhdlParser::RuleContext_item;
 }
 
@@ -5527,8 +5527,8 @@ antlrcpp::Any vhdlParser::Context_itemContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Context_itemContext> vhdlParser::context_item() {
-  Ref<Context_itemContext> _localctx = std::make_shared<Context_itemContext>(_ctx, getState());
+vhdlParser::Context_itemContext* vhdlParser::context_item() {
+  Context_itemContext *_localctx = _tracker.createInstance<Context_itemContext>(_ctx, getState());
   enterRule(_localctx, 134, vhdlParser::RuleContext_item);
 
   auto onExit = finally([=] {
@@ -5568,28 +5568,28 @@ Ref<vhdlParser::Context_itemContext> vhdlParser::context_item() {
 
 //----------------- Delay_mechanismContext ------------------------------------------------------------------
 
-vhdlParser::Delay_mechanismContext::Delay_mechanismContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Delay_mechanismContext::Delay_mechanismContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Delay_mechanismContext::TRANSPORT() {
+tree::TerminalNode* vhdlParser::Delay_mechanismContext::TRANSPORT() {
   return getToken(vhdlParser::TRANSPORT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Delay_mechanismContext::INERTIAL() {
+tree::TerminalNode* vhdlParser::Delay_mechanismContext::INERTIAL() {
   return getToken(vhdlParser::INERTIAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Delay_mechanismContext::REJECT() {
+tree::TerminalNode* vhdlParser::Delay_mechanismContext::REJECT() {
   return getToken(vhdlParser::REJECT, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Delay_mechanismContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Delay_mechanismContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Delay_mechanismContext::getRuleIndex() const {
+size_t vhdlParser::Delay_mechanismContext::getRuleIndex() const {
   return vhdlParser::RuleDelay_mechanism;
 }
 
@@ -5600,10 +5600,10 @@ antlrcpp::Any vhdlParser::Delay_mechanismContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Delay_mechanismContext> vhdlParser::delay_mechanism() {
-  Ref<Delay_mechanismContext> _localctx = std::make_shared<Delay_mechanismContext>(_ctx, getState());
+vhdlParser::Delay_mechanismContext* vhdlParser::delay_mechanism() {
+  Delay_mechanismContext *_localctx = _tracker.createInstance<Delay_mechanismContext>(_ctx, getState());
   enterRule(_localctx, 136, vhdlParser::RuleDelay_mechanism);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5652,24 +5652,24 @@ Ref<vhdlParser::Delay_mechanismContext> vhdlParser::delay_mechanism() {
 
 //----------------- Design_fileContext ------------------------------------------------------------------
 
-vhdlParser::Design_fileContext::Design_fileContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Design_fileContext::Design_fileContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Design_fileContext::EOF() {
+tree::TerminalNode* vhdlParser::Design_fileContext::EOF() {
   return getToken(vhdlParser::EOF, 0);
 }
 
-std::vector<Ref<vhdlParser::Design_unitContext>> vhdlParser::Design_fileContext::design_unit() {
+std::vector<vhdlParser::Design_unitContext *> vhdlParser::Design_fileContext::design_unit() {
   return getRuleContexts<vhdlParser::Design_unitContext>();
 }
 
-Ref<vhdlParser::Design_unitContext> vhdlParser::Design_fileContext::design_unit(int i) {
-  return getRuleContext<vhdlParser::Design_unitContext>((size_t)i);
+vhdlParser::Design_unitContext* vhdlParser::Design_fileContext::design_unit(size_t i) {
+  return getRuleContext<vhdlParser::Design_unitContext>(i);
 }
 
 
-ssize_t vhdlParser::Design_fileContext::getRuleIndex() const {
+size_t vhdlParser::Design_fileContext::getRuleIndex() const {
   return vhdlParser::RuleDesign_file;
 }
 
@@ -5680,10 +5680,10 @@ antlrcpp::Any vhdlParser::Design_fileContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Design_fileContext> vhdlParser::design_file() {
-  Ref<Design_fileContext> _localctx = std::make_shared<Design_fileContext>(_ctx, getState());
+vhdlParser::Design_fileContext* vhdlParser::design_file() {
+  Design_fileContext *_localctx = _tracker.createInstance<Design_fileContext>(_ctx, getState());
   enterRule(_localctx, 138, vhdlParser::RuleDesign_file);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5693,7 +5693,7 @@ Ref<vhdlParser::Design_fileContext> vhdlParser::design_file() {
     setState(1085);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ARCHITECTURE)
       | (1ULL << vhdlParser::CONFIGURATION)
       | (1ULL << vhdlParser::ENTITY)
@@ -5721,20 +5721,20 @@ Ref<vhdlParser::Design_fileContext> vhdlParser::design_file() {
 
 //----------------- Design_unitContext ------------------------------------------------------------------
 
-vhdlParser::Design_unitContext::Design_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Design_unitContext::Design_unitContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Context_clauseContext> vhdlParser::Design_unitContext::context_clause() {
+vhdlParser::Context_clauseContext* vhdlParser::Design_unitContext::context_clause() {
   return getRuleContext<vhdlParser::Context_clauseContext>(0);
 }
 
-Ref<vhdlParser::Library_unitContext> vhdlParser::Design_unitContext::library_unit() {
+vhdlParser::Library_unitContext* vhdlParser::Design_unitContext::library_unit() {
   return getRuleContext<vhdlParser::Library_unitContext>(0);
 }
 
 
-ssize_t vhdlParser::Design_unitContext::getRuleIndex() const {
+size_t vhdlParser::Design_unitContext::getRuleIndex() const {
   return vhdlParser::RuleDesign_unit;
 }
 
@@ -5745,8 +5745,8 @@ antlrcpp::Any vhdlParser::Design_unitContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Design_unitContext> vhdlParser::design_unit() {
-  Ref<Design_unitContext> _localctx = std::make_shared<Design_unitContext>(_ctx, getState());
+vhdlParser::Design_unitContext* vhdlParser::design_unit() {
+  Design_unitContext *_localctx = _tracker.createInstance<Design_unitContext>(_ctx, getState());
   enterRule(_localctx, 140, vhdlParser::RuleDesign_unit);
 
   auto onExit = finally([=] {
@@ -5771,20 +5771,20 @@ Ref<vhdlParser::Design_unitContext> vhdlParser::design_unit() {
 
 //----------------- DesignatorContext ------------------------------------------------------------------
 
-vhdlParser::DesignatorContext::DesignatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::DesignatorContext::DesignatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::DesignatorContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::DesignatorContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::DesignatorContext::STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::DesignatorContext::STRING_LITERAL() {
   return getToken(vhdlParser::STRING_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::DesignatorContext::getRuleIndex() const {
+size_t vhdlParser::DesignatorContext::getRuleIndex() const {
   return vhdlParser::RuleDesignator;
 }
 
@@ -5795,8 +5795,8 @@ antlrcpp::Any vhdlParser::DesignatorContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::DesignatorContext> vhdlParser::designator() {
-  Ref<DesignatorContext> _localctx = std::make_shared<DesignatorContext>(_ctx, getState());
+vhdlParser::DesignatorContext* vhdlParser::designator() {
+  DesignatorContext *_localctx = _tracker.createInstance<DesignatorContext>(_ctx, getState());
   enterRule(_localctx, 142, vhdlParser::RuleDesignator);
 
   auto onExit = finally([=] {
@@ -5837,20 +5837,20 @@ Ref<vhdlParser::DesignatorContext> vhdlParser::designator() {
 
 //----------------- DirectionContext ------------------------------------------------------------------
 
-vhdlParser::DirectionContext::DirectionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::DirectionContext::DirectionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::DirectionContext::TO() {
+tree::TerminalNode* vhdlParser::DirectionContext::TO() {
   return getToken(vhdlParser::TO, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::DirectionContext::DOWNTO() {
+tree::TerminalNode* vhdlParser::DirectionContext::DOWNTO() {
   return getToken(vhdlParser::DOWNTO, 0);
 }
 
 
-ssize_t vhdlParser::DirectionContext::getRuleIndex() const {
+size_t vhdlParser::DirectionContext::getRuleIndex() const {
   return vhdlParser::RuleDirection;
 }
 
@@ -5861,10 +5861,10 @@ antlrcpp::Any vhdlParser::DirectionContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::DirectionContext> vhdlParser::direction() {
-  Ref<DirectionContext> _localctx = std::make_shared<DirectionContext>(_ctx, getState());
+vhdlParser::DirectionContext* vhdlParser::direction() {
+  DirectionContext *_localctx = _tracker.createInstance<DirectionContext>(_ctx, getState());
   enterRule(_localctx, 144, vhdlParser::RuleDirection);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -5891,32 +5891,32 @@ Ref<vhdlParser::DirectionContext> vhdlParser::direction() {
 
 //----------------- Disconnection_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Disconnection_specificationContext::Disconnection_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Disconnection_specificationContext::Disconnection_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Disconnection_specificationContext::DISCONNECT() {
+tree::TerminalNode* vhdlParser::Disconnection_specificationContext::DISCONNECT() {
   return getToken(vhdlParser::DISCONNECT, 0);
 }
 
-Ref<vhdlParser::Guarded_signal_specificationContext> vhdlParser::Disconnection_specificationContext::guarded_signal_specification() {
+vhdlParser::Guarded_signal_specificationContext* vhdlParser::Disconnection_specificationContext::guarded_signal_specification() {
   return getRuleContext<vhdlParser::Guarded_signal_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Disconnection_specificationContext::AFTER() {
+tree::TerminalNode* vhdlParser::Disconnection_specificationContext::AFTER() {
   return getToken(vhdlParser::AFTER, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Disconnection_specificationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Disconnection_specificationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Disconnection_specificationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Disconnection_specificationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Disconnection_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Disconnection_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleDisconnection_specification;
 }
 
@@ -5927,8 +5927,8 @@ antlrcpp::Any vhdlParser::Disconnection_specificationContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Disconnection_specificationContext> vhdlParser::disconnection_specification() {
-  Ref<Disconnection_specificationContext> _localctx = std::make_shared<Disconnection_specificationContext>(_ctx, getState());
+vhdlParser::Disconnection_specificationContext* vhdlParser::disconnection_specification() {
+  Disconnection_specificationContext *_localctx = _tracker.createInstance<Disconnection_specificationContext>(_ctx, getState());
   enterRule(_localctx, 146, vhdlParser::RuleDisconnection_specification);
 
   auto onExit = finally([=] {
@@ -5959,20 +5959,20 @@ Ref<vhdlParser::Disconnection_specificationContext> vhdlParser::disconnection_sp
 
 //----------------- Discrete_rangeContext ------------------------------------------------------------------
 
-vhdlParser::Discrete_rangeContext::Discrete_rangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Discrete_rangeContext::Discrete_rangeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::RangeContext> vhdlParser::Discrete_rangeContext::range() {
+vhdlParser::RangeContext* vhdlParser::Discrete_rangeContext::range() {
   return getRuleContext<vhdlParser::RangeContext>(0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Discrete_rangeContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Discrete_rangeContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Discrete_rangeContext::getRuleIndex() const {
+size_t vhdlParser::Discrete_rangeContext::getRuleIndex() const {
   return vhdlParser::RuleDiscrete_range;
 }
 
@@ -5983,8 +5983,8 @@ antlrcpp::Any vhdlParser::Discrete_rangeContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Discrete_rangeContext> vhdlParser::discrete_range() {
-  Ref<Discrete_rangeContext> _localctx = std::make_shared<Discrete_rangeContext>(_ctx, getState());
+vhdlParser::Discrete_rangeContext* vhdlParser::discrete_range() {
+  Discrete_rangeContext *_localctx = _tracker.createInstance<Discrete_rangeContext>(_ctx, getState());
   enterRule(_localctx, 148, vhdlParser::RuleDiscrete_range);
 
   auto onExit = finally([=] {
@@ -6022,24 +6022,24 @@ Ref<vhdlParser::Discrete_rangeContext> vhdlParser::discrete_range() {
 
 //----------------- Element_associationContext ------------------------------------------------------------------
 
-vhdlParser::Element_associationContext::Element_associationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Element_associationContext::Element_associationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Element_associationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Element_associationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<vhdlParser::ChoicesContext> vhdlParser::Element_associationContext::choices() {
+vhdlParser::ChoicesContext* vhdlParser::Element_associationContext::choices() {
   return getRuleContext<vhdlParser::ChoicesContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Element_associationContext::ARROW() {
+tree::TerminalNode* vhdlParser::Element_associationContext::ARROW() {
   return getToken(vhdlParser::ARROW, 0);
 }
 
 
-ssize_t vhdlParser::Element_associationContext::getRuleIndex() const {
+size_t vhdlParser::Element_associationContext::getRuleIndex() const {
   return vhdlParser::RuleElement_association;
 }
 
@@ -6050,8 +6050,8 @@ antlrcpp::Any vhdlParser::Element_associationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Element_associationContext> vhdlParser::element_association() {
-  Ref<Element_associationContext> _localctx = std::make_shared<Element_associationContext>(_ctx, getState());
+vhdlParser::Element_associationContext* vhdlParser::element_association() {
+  Element_associationContext *_localctx = _tracker.createInstance<Element_associationContext>(_ctx, getState());
   enterRule(_localctx, 150, vhdlParser::RuleElement_association);
 
   auto onExit = finally([=] {
@@ -6087,28 +6087,28 @@ Ref<vhdlParser::Element_associationContext> vhdlParser::element_association() {
 
 //----------------- Element_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Element_declarationContext::Element_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Element_declarationContext::Element_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Element_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Element_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Element_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Element_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Element_subtype_definitionContext> vhdlParser::Element_declarationContext::element_subtype_definition() {
+vhdlParser::Element_subtype_definitionContext* vhdlParser::Element_declarationContext::element_subtype_definition() {
   return getRuleContext<vhdlParser::Element_subtype_definitionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Element_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Element_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Element_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Element_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleElement_declaration;
 }
 
@@ -6119,8 +6119,8 @@ antlrcpp::Any vhdlParser::Element_declarationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Element_declarationContext> vhdlParser::element_declaration() {
-  Ref<Element_declarationContext> _localctx = std::make_shared<Element_declarationContext>(_ctx, getState());
+vhdlParser::Element_declarationContext* vhdlParser::element_declaration() {
+  Element_declarationContext *_localctx = _tracker.createInstance<Element_declarationContext>(_ctx, getState());
   enterRule(_localctx, 152, vhdlParser::RuleElement_declaration);
 
   auto onExit = finally([=] {
@@ -6149,16 +6149,16 @@ Ref<vhdlParser::Element_declarationContext> vhdlParser::element_declaration() {
 
 //----------------- Element_subnature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Element_subnature_definitionContext::Element_subnature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Element_subnature_definitionContext::Element_subnature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Element_subnature_definitionContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Element_subnature_definitionContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Element_subnature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Element_subnature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleElement_subnature_definition;
 }
 
@@ -6169,8 +6169,8 @@ antlrcpp::Any vhdlParser::Element_subnature_definitionContext::accept(tree::Pars
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Element_subnature_definitionContext> vhdlParser::element_subnature_definition() {
-  Ref<Element_subnature_definitionContext> _localctx = std::make_shared<Element_subnature_definitionContext>(_ctx, getState());
+vhdlParser::Element_subnature_definitionContext* vhdlParser::element_subnature_definition() {
+  Element_subnature_definitionContext *_localctx = _tracker.createInstance<Element_subnature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 154, vhdlParser::RuleElement_subnature_definition);
 
   auto onExit = finally([=] {
@@ -6193,16 +6193,16 @@ Ref<vhdlParser::Element_subnature_definitionContext> vhdlParser::element_subnatu
 
 //----------------- Element_subtype_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Element_subtype_definitionContext::Element_subtype_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Element_subtype_definitionContext::Element_subtype_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Element_subtype_definitionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Element_subtype_definitionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Element_subtype_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Element_subtype_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleElement_subtype_definition;
 }
 
@@ -6213,8 +6213,8 @@ antlrcpp::Any vhdlParser::Element_subtype_definitionContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Element_subtype_definitionContext> vhdlParser::element_subtype_definition() {
-  Ref<Element_subtype_definitionContext> _localctx = std::make_shared<Element_subtype_definitionContext>(_ctx, getState());
+vhdlParser::Element_subtype_definitionContext* vhdlParser::element_subtype_definition() {
+  Element_subtype_definitionContext *_localctx = _tracker.createInstance<Element_subtype_definitionContext>(_ctx, getState());
   enterRule(_localctx, 156, vhdlParser::RuleElement_subtype_definition);
 
   auto onExit = finally([=] {
@@ -6237,40 +6237,40 @@ Ref<vhdlParser::Element_subtype_definitionContext> vhdlParser::element_subtype_d
 
 //----------------- Entity_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Entity_aspectContext::Entity_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_aspectContext::Entity_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_aspectContext::ENTITY() {
+tree::TerminalNode* vhdlParser::Entity_aspectContext::ENTITY() {
   return getToken(vhdlParser::ENTITY, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Entity_aspectContext::name() {
+vhdlParser::NameContext* vhdlParser::Entity_aspectContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_aspectContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Entity_aspectContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Entity_aspectContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Entity_aspectContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_aspectContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Entity_aspectContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_aspectContext::CONFIGURATION() {
+tree::TerminalNode* vhdlParser::Entity_aspectContext::CONFIGURATION() {
   return getToken(vhdlParser::CONFIGURATION, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_aspectContext::OPEN() {
+tree::TerminalNode* vhdlParser::Entity_aspectContext::OPEN() {
   return getToken(vhdlParser::OPEN, 0);
 }
 
 
-ssize_t vhdlParser::Entity_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Entity_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_aspect;
 }
 
@@ -6281,10 +6281,10 @@ antlrcpp::Any vhdlParser::Entity_aspectContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_aspectContext> vhdlParser::entity_aspect() {
-  Ref<Entity_aspectContext> _localctx = std::make_shared<Entity_aspectContext>(_ctx, getState());
+vhdlParser::Entity_aspectContext* vhdlParser::entity_aspect() {
+  Entity_aspectContext *_localctx = _tracker.createInstance<Entity_aspectContext>(_ctx, getState());
   enterRule(_localctx, 158, vhdlParser::RuleEntity_aspect);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -6345,96 +6345,96 @@ Ref<vhdlParser::Entity_aspectContext> vhdlParser::entity_aspect() {
 
 //----------------- Entity_classContext ------------------------------------------------------------------
 
-vhdlParser::Entity_classContext::Entity_classContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_classContext::Entity_classContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::ENTITY() {
+tree::TerminalNode* vhdlParser::Entity_classContext::ENTITY() {
   return getToken(vhdlParser::ENTITY, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::ARCHITECTURE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::ARCHITECTURE() {
   return getToken(vhdlParser::ARCHITECTURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::CONFIGURATION() {
+tree::TerminalNode* vhdlParser::Entity_classContext::CONFIGURATION() {
   return getToken(vhdlParser::CONFIGURATION, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::PROCEDURE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::PROCEDURE() {
   return getToken(vhdlParser::PROCEDURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::FUNCTION() {
+tree::TerminalNode* vhdlParser::Entity_classContext::FUNCTION() {
   return getToken(vhdlParser::FUNCTION, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::PACKAGE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::PACKAGE() {
   return getToken(vhdlParser::PACKAGE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::TYPE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::TYPE() {
   return getToken(vhdlParser::TYPE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::SUBTYPE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::SUBTYPE() {
   return getToken(vhdlParser::SUBTYPE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::CONSTANT() {
+tree::TerminalNode* vhdlParser::Entity_classContext::CONSTANT() {
   return getToken(vhdlParser::CONSTANT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::SIGNAL() {
+tree::TerminalNode* vhdlParser::Entity_classContext::SIGNAL() {
   return getToken(vhdlParser::SIGNAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::VARIABLE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::VARIABLE() {
   return getToken(vhdlParser::VARIABLE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::COMPONENT() {
+tree::TerminalNode* vhdlParser::Entity_classContext::COMPONENT() {
   return getToken(vhdlParser::COMPONENT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::LABEL() {
+tree::TerminalNode* vhdlParser::Entity_classContext::LABEL() {
   return getToken(vhdlParser::LABEL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::LITERAL() {
+tree::TerminalNode* vhdlParser::Entity_classContext::LITERAL() {
   return getToken(vhdlParser::LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::UNITS() {
+tree::TerminalNode* vhdlParser::Entity_classContext::UNITS() {
   return getToken(vhdlParser::UNITS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::GROUP() {
+tree::TerminalNode* vhdlParser::Entity_classContext::GROUP() {
   return getToken(vhdlParser::GROUP, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::FILE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::FILE() {
   return getToken(vhdlParser::FILE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::NATURE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::NATURE() {
   return getToken(vhdlParser::NATURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::SUBNATURE() {
+tree::TerminalNode* vhdlParser::Entity_classContext::SUBNATURE() {
   return getToken(vhdlParser::SUBNATURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::QUANTITY() {
+tree::TerminalNode* vhdlParser::Entity_classContext::QUANTITY() {
   return getToken(vhdlParser::QUANTITY, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_classContext::TERMINAL() {
+tree::TerminalNode* vhdlParser::Entity_classContext::TERMINAL() {
   return getToken(vhdlParser::TERMINAL, 0);
 }
 
 
-ssize_t vhdlParser::Entity_classContext::getRuleIndex() const {
+size_t vhdlParser::Entity_classContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_class;
 }
 
@@ -6445,10 +6445,10 @@ antlrcpp::Any vhdlParser::Entity_classContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_classContext> vhdlParser::entity_class() {
-  Ref<Entity_classContext> _localctx = std::make_shared<Entity_classContext>(_ctx, getState());
+vhdlParser::Entity_classContext* vhdlParser::entity_class() {
+  Entity_classContext *_localctx = _tracker.createInstance<Entity_classContext>(_ctx, getState());
   enterRule(_localctx, 160, vhdlParser::RuleEntity_class);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -6457,7 +6457,7 @@ Ref<vhdlParser::Entity_classContext> vhdlParser::entity_class() {
     enterOuterAlt(_localctx, 1);
     setState(1138);
     _la = _input->LA(1);
-    if (!((((_la & ~(ssize_t)0x3f) == 0) &&
+    if (!((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ARCHITECTURE)
       | (1ULL << vhdlParser::COMPONENT)
       | (1ULL << vhdlParser::CONFIGURATION)
@@ -6468,7 +6468,7 @@ Ref<vhdlParser::Entity_classContext> vhdlParser::entity_class() {
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::LABEL)
       | (1ULL << vhdlParser::LITERAL)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 64) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 64) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 64)) & ((1ULL << (vhdlParser::PACKAGE - 64))
       | (1ULL << (vhdlParser::PROCEDURE - 64))
       | (1ULL << (vhdlParser::QUANTITY - 64))
@@ -6496,20 +6496,20 @@ Ref<vhdlParser::Entity_classContext> vhdlParser::entity_class() {
 
 //----------------- Entity_class_entryContext ------------------------------------------------------------------
 
-vhdlParser::Entity_class_entryContext::Entity_class_entryContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_class_entryContext::Entity_class_entryContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Entity_classContext> vhdlParser::Entity_class_entryContext::entity_class() {
+vhdlParser::Entity_classContext* vhdlParser::Entity_class_entryContext::entity_class() {
   return getRuleContext<vhdlParser::Entity_classContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_class_entryContext::BOX() {
+tree::TerminalNode* vhdlParser::Entity_class_entryContext::BOX() {
   return getToken(vhdlParser::BOX, 0);
 }
 
 
-ssize_t vhdlParser::Entity_class_entryContext::getRuleIndex() const {
+size_t vhdlParser::Entity_class_entryContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_class_entry;
 }
 
@@ -6520,10 +6520,10 @@ antlrcpp::Any vhdlParser::Entity_class_entryContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_class_entryContext> vhdlParser::entity_class_entry() {
-  Ref<Entity_class_entryContext> _localctx = std::make_shared<Entity_class_entryContext>(_ctx, getState());
+vhdlParser::Entity_class_entryContext* vhdlParser::entity_class_entry() {
+  Entity_class_entryContext *_localctx = _tracker.createInstance<Entity_class_entryContext>(_ctx, getState());
   enterRule(_localctx, 162, vhdlParser::RuleEntity_class_entry);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -6552,28 +6552,28 @@ Ref<vhdlParser::Entity_class_entryContext> vhdlParser::entity_class_entry() {
 
 //----------------- Entity_class_entry_listContext ------------------------------------------------------------------
 
-vhdlParser::Entity_class_entry_listContext::Entity_class_entry_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_class_entry_listContext::Entity_class_entry_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Entity_class_entryContext>> vhdlParser::Entity_class_entry_listContext::entity_class_entry() {
+std::vector<vhdlParser::Entity_class_entryContext *> vhdlParser::Entity_class_entry_listContext::entity_class_entry() {
   return getRuleContexts<vhdlParser::Entity_class_entryContext>();
 }
 
-Ref<vhdlParser::Entity_class_entryContext> vhdlParser::Entity_class_entry_listContext::entity_class_entry(int i) {
-  return getRuleContext<vhdlParser::Entity_class_entryContext>((size_t)i);
+vhdlParser::Entity_class_entryContext* vhdlParser::Entity_class_entry_listContext::entity_class_entry(size_t i) {
+  return getRuleContext<vhdlParser::Entity_class_entryContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Entity_class_entry_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Entity_class_entry_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_class_entry_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Entity_class_entry_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Entity_class_entry_listContext::getRuleIndex() const {
+size_t vhdlParser::Entity_class_entry_listContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_class_entry_list;
 }
 
@@ -6584,10 +6584,10 @@ antlrcpp::Any vhdlParser::Entity_class_entry_listContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_class_entry_listContext> vhdlParser::entity_class_entry_list() {
-  Ref<Entity_class_entry_listContext> _localctx = std::make_shared<Entity_class_entry_listContext>(_ctx, getState());
+vhdlParser::Entity_class_entry_listContext* vhdlParser::entity_class_entry_list() {
+  Entity_class_entry_listContext *_localctx = _tracker.createInstance<Entity_class_entry_listContext>(_ctx, getState());
   enterRule(_localctx, 164, vhdlParser::RuleEntity_class_entry_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -6621,56 +6621,56 @@ Ref<vhdlParser::Entity_class_entry_listContext> vhdlParser::entity_class_entry_l
 
 //----------------- Entity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Entity_declarationContext::Entity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_declarationContext::Entity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Entity_declarationContext::ENTITY() {
+std::vector<tree::TerminalNode *> vhdlParser::Entity_declarationContext::ENTITY() {
   return getTokens(vhdlParser::ENTITY);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_declarationContext::ENTITY(int i) {
-  return getToken(vhdlParser::ENTITY, (size_t)i);
+tree::TerminalNode* vhdlParser::Entity_declarationContext::ENTITY(size_t i) {
+  return getToken(vhdlParser::ENTITY, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Entity_declarationContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Entity_declarationContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Entity_declarationContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Entity_declarationContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Entity_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Entity_headerContext> vhdlParser::Entity_declarationContext::entity_header() {
+vhdlParser::Entity_headerContext* vhdlParser::Entity_declarationContext::entity_header() {
   return getRuleContext<vhdlParser::Entity_headerContext>(0);
 }
 
-Ref<vhdlParser::Entity_declarative_partContext> vhdlParser::Entity_declarationContext::entity_declarative_part() {
+vhdlParser::Entity_declarative_partContext* vhdlParser::Entity_declarationContext::entity_declarative_part() {
   return getRuleContext<vhdlParser::Entity_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_declarationContext::END() {
+tree::TerminalNode* vhdlParser::Entity_declarationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Entity_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_declarationContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Entity_declarationContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Entity_statement_partContext> vhdlParser::Entity_declarationContext::entity_statement_part() {
+vhdlParser::Entity_statement_partContext* vhdlParser::Entity_declarationContext::entity_statement_part() {
   return getRuleContext<vhdlParser::Entity_statement_partContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Entity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_declaration;
 }
 
@@ -6681,10 +6681,10 @@ antlrcpp::Any vhdlParser::Entity_declarationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_declarationContext> vhdlParser::entity_declaration() {
-  Ref<Entity_declarationContext> _localctx = std::make_shared<Entity_declarationContext>(_ctx, getState());
+vhdlParser::Entity_declarationContext* vhdlParser::entity_declaration() {
+  Entity_declarationContext *_localctx = _tracker.createInstance<Entity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 166, vhdlParser::RuleEntity_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -6743,92 +6743,92 @@ Ref<vhdlParser::Entity_declarationContext> vhdlParser::entity_declaration() {
 
 //----------------- Entity_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Entity_declarative_itemContext::Entity_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_declarative_itemContext::Entity_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Entity_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Entity_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Entity_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Entity_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Entity_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Entity_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Entity_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Entity_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Entity_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Entity_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Signal_declarationContext> vhdlParser::Entity_declarative_itemContext::signal_declaration() {
+vhdlParser::Signal_declarationContext* vhdlParser::Entity_declarative_itemContext::signal_declaration() {
   return getRuleContext<vhdlParser::Signal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Entity_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Entity_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Entity_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Entity_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Entity_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Entity_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Entity_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Entity_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Entity_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Entity_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Disconnection_specificationContext> vhdlParser::Entity_declarative_itemContext::disconnection_specification() {
+vhdlParser::Disconnection_specificationContext* vhdlParser::Entity_declarative_itemContext::disconnection_specification() {
   return getRuleContext<vhdlParser::Disconnection_specificationContext>(0);
 }
 
-Ref<vhdlParser::Step_limit_specificationContext> vhdlParser::Entity_declarative_itemContext::step_limit_specification() {
+vhdlParser::Step_limit_specificationContext* vhdlParser::Entity_declarative_itemContext::step_limit_specification() {
   return getRuleContext<vhdlParser::Step_limit_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Entity_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Entity_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Entity_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Entity_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Entity_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Entity_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
-Ref<vhdlParser::Nature_declarationContext> vhdlParser::Entity_declarative_itemContext::nature_declaration() {
+vhdlParser::Nature_declarationContext* vhdlParser::Entity_declarative_itemContext::nature_declaration() {
   return getRuleContext<vhdlParser::Nature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subnature_declarationContext> vhdlParser::Entity_declarative_itemContext::subnature_declaration() {
+vhdlParser::Subnature_declarationContext* vhdlParser::Entity_declarative_itemContext::subnature_declaration() {
   return getRuleContext<vhdlParser::Subnature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Quantity_declarationContext> vhdlParser::Entity_declarative_itemContext::quantity_declaration() {
+vhdlParser::Quantity_declarationContext* vhdlParser::Entity_declarative_itemContext::quantity_declaration() {
   return getRuleContext<vhdlParser::Quantity_declarationContext>(0);
 }
 
-Ref<vhdlParser::Terminal_declarationContext> vhdlParser::Entity_declarative_itemContext::terminal_declaration() {
+vhdlParser::Terminal_declarationContext* vhdlParser::Entity_declarative_itemContext::terminal_declaration() {
   return getRuleContext<vhdlParser::Terminal_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Entity_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_declarative_item;
 }
 
@@ -6839,8 +6839,8 @@ antlrcpp::Any vhdlParser::Entity_declarative_itemContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_declarative_itemContext> vhdlParser::entity_declarative_item() {
-  Ref<Entity_declarative_itemContext> _localctx = std::make_shared<Entity_declarative_itemContext>(_ctx, getState());
+vhdlParser::Entity_declarative_itemContext* vhdlParser::entity_declarative_item() {
+  Entity_declarative_itemContext *_localctx = _tracker.createInstance<Entity_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 168, vhdlParser::RuleEntity_declarative_item);
 
   auto onExit = finally([=] {
@@ -7004,20 +7004,20 @@ Ref<vhdlParser::Entity_declarative_itemContext> vhdlParser::entity_declarative_i
 
 //----------------- Entity_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Entity_declarative_partContext::Entity_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_declarative_partContext::Entity_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Entity_declarative_itemContext>> vhdlParser::Entity_declarative_partContext::entity_declarative_item() {
+std::vector<vhdlParser::Entity_declarative_itemContext *> vhdlParser::Entity_declarative_partContext::entity_declarative_item() {
   return getRuleContexts<vhdlParser::Entity_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Entity_declarative_itemContext> vhdlParser::Entity_declarative_partContext::entity_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Entity_declarative_itemContext>((size_t)i);
+vhdlParser::Entity_declarative_itemContext* vhdlParser::Entity_declarative_partContext::entity_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Entity_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Entity_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Entity_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_declarative_part;
 }
 
@@ -7028,10 +7028,10 @@ antlrcpp::Any vhdlParser::Entity_declarative_partContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_declarative_partContext> vhdlParser::entity_declarative_part() {
-  Ref<Entity_declarative_partContext> _localctx = std::make_shared<Entity_declarative_partContext>(_ctx, getState());
+vhdlParser::Entity_declarative_partContext* vhdlParser::entity_declarative_part() {
+  Entity_declarative_partContext *_localctx = _tracker.createInstance<Entity_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 170, vhdlParser::RuleEntity_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7041,7 +7041,7 @@ Ref<vhdlParser::Entity_declarative_partContext> vhdlParser::entity_declarative_p
     setState(1195);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::CONSTANT)
@@ -7051,7 +7051,7 @@ Ref<vhdlParser::Entity_declarative_partContext> vhdlParser::entity_declarative_p
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::IMPURE)
       | (1ULL << vhdlParser::LIMIT)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::QUANTITY - 68))
@@ -7082,20 +7082,20 @@ Ref<vhdlParser::Entity_declarative_partContext> vhdlParser::entity_declarative_p
 
 //----------------- Entity_designatorContext ------------------------------------------------------------------
 
-vhdlParser::Entity_designatorContext::Entity_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_designatorContext::Entity_designatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Entity_tagContext> vhdlParser::Entity_designatorContext::entity_tag() {
+vhdlParser::Entity_tagContext* vhdlParser::Entity_designatorContext::entity_tag() {
   return getRuleContext<vhdlParser::Entity_tagContext>(0);
 }
 
-Ref<vhdlParser::SignatureContext> vhdlParser::Entity_designatorContext::signature() {
+vhdlParser::SignatureContext* vhdlParser::Entity_designatorContext::signature() {
   return getRuleContext<vhdlParser::SignatureContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_designatorContext::getRuleIndex() const {
+size_t vhdlParser::Entity_designatorContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_designator;
 }
 
@@ -7106,10 +7106,10 @@ antlrcpp::Any vhdlParser::Entity_designatorContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_designatorContext> vhdlParser::entity_designator() {
-  Ref<Entity_designatorContext> _localctx = std::make_shared<Entity_designatorContext>(_ctx, getState());
+vhdlParser::Entity_designatorContext* vhdlParser::entity_designator() {
+  Entity_designatorContext *_localctx = _tracker.createInstance<Entity_designatorContext>(_ctx, getState());
   enterRule(_localctx, 172, vhdlParser::RuleEntity_designator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7138,20 +7138,20 @@ Ref<vhdlParser::Entity_designatorContext> vhdlParser::entity_designator() {
 
 //----------------- Entity_headerContext ------------------------------------------------------------------
 
-vhdlParser::Entity_headerContext::Entity_headerContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_headerContext::Entity_headerContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Generic_clauseContext> vhdlParser::Entity_headerContext::generic_clause() {
+vhdlParser::Generic_clauseContext* vhdlParser::Entity_headerContext::generic_clause() {
   return getRuleContext<vhdlParser::Generic_clauseContext>(0);
 }
 
-Ref<vhdlParser::Port_clauseContext> vhdlParser::Entity_headerContext::port_clause() {
+vhdlParser::Port_clauseContext* vhdlParser::Entity_headerContext::port_clause() {
   return getRuleContext<vhdlParser::Port_clauseContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_headerContext::getRuleIndex() const {
+size_t vhdlParser::Entity_headerContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_header;
 }
 
@@ -7162,10 +7162,10 @@ antlrcpp::Any vhdlParser::Entity_headerContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_headerContext> vhdlParser::entity_header() {
-  Ref<Entity_headerContext> _localctx = std::make_shared<Entity_headerContext>(_ctx, getState());
+vhdlParser::Entity_headerContext* vhdlParser::entity_header() {
+  Entity_headerContext *_localctx = _tracker.createInstance<Entity_headerContext>(_ctx, getState());
   enterRule(_localctx, 174, vhdlParser::RuleEntity_header);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7199,36 +7199,36 @@ Ref<vhdlParser::Entity_headerContext> vhdlParser::entity_header() {
 
 //----------------- Entity_name_listContext ------------------------------------------------------------------
 
-vhdlParser::Entity_name_listContext::Entity_name_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_name_listContext::Entity_name_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Entity_designatorContext>> vhdlParser::Entity_name_listContext::entity_designator() {
+std::vector<vhdlParser::Entity_designatorContext *> vhdlParser::Entity_name_listContext::entity_designator() {
   return getRuleContexts<vhdlParser::Entity_designatorContext>();
 }
 
-Ref<vhdlParser::Entity_designatorContext> vhdlParser::Entity_name_listContext::entity_designator(int i) {
-  return getRuleContext<vhdlParser::Entity_designatorContext>((size_t)i);
+vhdlParser::Entity_designatorContext* vhdlParser::Entity_name_listContext::entity_designator(size_t i) {
+  return getRuleContext<vhdlParser::Entity_designatorContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Entity_name_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Entity_name_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_name_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Entity_name_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_name_listContext::OTHERS() {
+tree::TerminalNode* vhdlParser::Entity_name_listContext::OTHERS() {
   return getToken(vhdlParser::OTHERS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_name_listContext::ALL() {
+tree::TerminalNode* vhdlParser::Entity_name_listContext::ALL() {
   return getToken(vhdlParser::ALL, 0);
 }
 
 
-ssize_t vhdlParser::Entity_name_listContext::getRuleIndex() const {
+size_t vhdlParser::Entity_name_listContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_name_list;
 }
 
@@ -7239,10 +7239,10 @@ antlrcpp::Any vhdlParser::Entity_name_listContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_name_listContext> vhdlParser::entity_name_list() {
-  Ref<Entity_name_listContext> _localctx = std::make_shared<Entity_name_listContext>(_ctx, getState());
+vhdlParser::Entity_name_listContext* vhdlParser::entity_name_list() {
+  Entity_name_listContext *_localctx = _tracker.createInstance<Entity_name_listContext>(_ctx, getState());
   enterRule(_localctx, 176, vhdlParser::RuleEntity_name_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7303,24 +7303,24 @@ Ref<vhdlParser::Entity_name_listContext> vhdlParser::entity_name_list() {
 
 //----------------- Entity_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Entity_specificationContext::Entity_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_specificationContext::Entity_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Entity_name_listContext> vhdlParser::Entity_specificationContext::entity_name_list() {
+vhdlParser::Entity_name_listContext* vhdlParser::Entity_specificationContext::entity_name_list() {
   return getRuleContext<vhdlParser::Entity_name_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_specificationContext::COLON() {
+tree::TerminalNode* vhdlParser::Entity_specificationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Entity_classContext> vhdlParser::Entity_specificationContext::entity_class() {
+vhdlParser::Entity_classContext* vhdlParser::Entity_specificationContext::entity_class() {
   return getRuleContext<vhdlParser::Entity_classContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Entity_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_specification;
 }
 
@@ -7331,8 +7331,8 @@ antlrcpp::Any vhdlParser::Entity_specificationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_specificationContext> vhdlParser::entity_specification() {
-  Ref<Entity_specificationContext> _localctx = std::make_shared<Entity_specificationContext>(_ctx, getState());
+vhdlParser::Entity_specificationContext* vhdlParser::entity_specification() {
+  Entity_specificationContext *_localctx = _tracker.createInstance<Entity_specificationContext>(_ctx, getState());
   enterRule(_localctx, 178, vhdlParser::RuleEntity_specification);
 
   auto onExit = finally([=] {
@@ -7359,24 +7359,24 @@ Ref<vhdlParser::Entity_specificationContext> vhdlParser::entity_specification() 
 
 //----------------- Entity_statementContext ------------------------------------------------------------------
 
-vhdlParser::Entity_statementContext::Entity_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_statementContext::Entity_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Concurrent_assertion_statementContext> vhdlParser::Entity_statementContext::concurrent_assertion_statement() {
+vhdlParser::Concurrent_assertion_statementContext* vhdlParser::Entity_statementContext::concurrent_assertion_statement() {
   return getRuleContext<vhdlParser::Concurrent_assertion_statementContext>(0);
 }
 
-Ref<vhdlParser::Process_statementContext> vhdlParser::Entity_statementContext::process_statement() {
+vhdlParser::Process_statementContext* vhdlParser::Entity_statementContext::process_statement() {
   return getRuleContext<vhdlParser::Process_statementContext>(0);
 }
 
-Ref<vhdlParser::Concurrent_procedure_call_statementContext> vhdlParser::Entity_statementContext::concurrent_procedure_call_statement() {
+vhdlParser::Concurrent_procedure_call_statementContext* vhdlParser::Entity_statementContext::concurrent_procedure_call_statement() {
   return getRuleContext<vhdlParser::Concurrent_procedure_call_statementContext>(0);
 }
 
 
-ssize_t vhdlParser::Entity_statementContext::getRuleIndex() const {
+size_t vhdlParser::Entity_statementContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_statement;
 }
 
@@ -7387,8 +7387,8 @@ antlrcpp::Any vhdlParser::Entity_statementContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_statementContext> vhdlParser::entity_statement() {
-  Ref<Entity_statementContext> _localctx = std::make_shared<Entity_statementContext>(_ctx, getState());
+vhdlParser::Entity_statementContext* vhdlParser::entity_statement() {
+  Entity_statementContext *_localctx = _tracker.createInstance<Entity_statementContext>(_ctx, getState());
   enterRule(_localctx, 180, vhdlParser::RuleEntity_statement);
 
   auto onExit = finally([=] {
@@ -7433,20 +7433,20 @@ Ref<vhdlParser::Entity_statementContext> vhdlParser::entity_statement() {
 
 //----------------- Entity_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Entity_statement_partContext::Entity_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_statement_partContext::Entity_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Entity_statementContext>> vhdlParser::Entity_statement_partContext::entity_statement() {
+std::vector<vhdlParser::Entity_statementContext *> vhdlParser::Entity_statement_partContext::entity_statement() {
   return getRuleContexts<vhdlParser::Entity_statementContext>();
 }
 
-Ref<vhdlParser::Entity_statementContext> vhdlParser::Entity_statement_partContext::entity_statement(int i) {
-  return getRuleContext<vhdlParser::Entity_statementContext>((size_t)i);
+vhdlParser::Entity_statementContext* vhdlParser::Entity_statement_partContext::entity_statement(size_t i) {
+  return getRuleContext<vhdlParser::Entity_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Entity_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Entity_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_statement_part;
 }
 
@@ -7457,10 +7457,10 @@ antlrcpp::Any vhdlParser::Entity_statement_partContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_statement_partContext> vhdlParser::entity_statement_part() {
-  Ref<Entity_statement_partContext> _localctx = std::make_shared<Entity_statement_partContext>(_ctx, getState());
+vhdlParser::Entity_statement_partContext* vhdlParser::entity_statement_part() {
+  Entity_statement_partContext *_localctx = _tracker.createInstance<Entity_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 182, vhdlParser::RuleEntity_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7470,7 +7470,7 @@ Ref<vhdlParser::Entity_statement_partContext> vhdlParser::entity_statement_part(
     setState(1232);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while (_la == vhdlParser::ASSERT || ((((_la - 66) & ~(ssize_t)0x3f) == 0) &&
+    while (_la == vhdlParser::ASSERT || ((((_la - 66) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 66)) & ((1ULL << (vhdlParser::POSTPONED - 66))
       | (1ULL << (vhdlParser::PROCESS - 66))
       | (1ULL << (vhdlParser::BASIC_IDENTIFIER - 66))
@@ -7494,24 +7494,24 @@ Ref<vhdlParser::Entity_statement_partContext> vhdlParser::entity_statement_part(
 
 //----------------- Entity_tagContext ------------------------------------------------------------------
 
-vhdlParser::Entity_tagContext::Entity_tagContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Entity_tagContext::Entity_tagContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Entity_tagContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Entity_tagContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_tagContext::CHARACTER_LITERAL() {
+tree::TerminalNode* vhdlParser::Entity_tagContext::CHARACTER_LITERAL() {
   return getToken(vhdlParser::CHARACTER_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Entity_tagContext::STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::Entity_tagContext::STRING_LITERAL() {
   return getToken(vhdlParser::STRING_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::Entity_tagContext::getRuleIndex() const {
+size_t vhdlParser::Entity_tagContext::getRuleIndex() const {
   return vhdlParser::RuleEntity_tag;
 }
 
@@ -7522,8 +7522,8 @@ antlrcpp::Any vhdlParser::Entity_tagContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Entity_tagContext> vhdlParser::entity_tag() {
-  Ref<Entity_tagContext> _localctx = std::make_shared<Entity_tagContext>(_ctx, getState());
+vhdlParser::Entity_tagContext* vhdlParser::entity_tag() {
+  Entity_tagContext *_localctx = _tracker.createInstance<Entity_tagContext>(_ctx, getState());
   enterRule(_localctx, 184, vhdlParser::RuleEntity_tag);
 
   auto onExit = finally([=] {
@@ -7571,20 +7571,20 @@ Ref<vhdlParser::Entity_tagContext> vhdlParser::entity_tag() {
 
 //----------------- Enumeration_literalContext ------------------------------------------------------------------
 
-vhdlParser::Enumeration_literalContext::Enumeration_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Enumeration_literalContext::Enumeration_literalContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Enumeration_literalContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Enumeration_literalContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Enumeration_literalContext::CHARACTER_LITERAL() {
+tree::TerminalNode* vhdlParser::Enumeration_literalContext::CHARACTER_LITERAL() {
   return getToken(vhdlParser::CHARACTER_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::Enumeration_literalContext::getRuleIndex() const {
+size_t vhdlParser::Enumeration_literalContext::getRuleIndex() const {
   return vhdlParser::RuleEnumeration_literal;
 }
 
@@ -7595,8 +7595,8 @@ antlrcpp::Any vhdlParser::Enumeration_literalContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Enumeration_literalContext> vhdlParser::enumeration_literal() {
-  Ref<Enumeration_literalContext> _localctx = std::make_shared<Enumeration_literalContext>(_ctx, getState());
+vhdlParser::Enumeration_literalContext* vhdlParser::enumeration_literal() {
+  Enumeration_literalContext *_localctx = _tracker.createInstance<Enumeration_literalContext>(_ctx, getState());
   enterRule(_localctx, 186, vhdlParser::RuleEnumeration_literal);
 
   auto onExit = finally([=] {
@@ -7637,36 +7637,36 @@ Ref<vhdlParser::Enumeration_literalContext> vhdlParser::enumeration_literal() {
 
 //----------------- Enumeration_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Enumeration_type_definitionContext::Enumeration_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Enumeration_type_definitionContext::Enumeration_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Enumeration_type_definitionContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Enumeration_type_definitionContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Enumeration_literalContext>> vhdlParser::Enumeration_type_definitionContext::enumeration_literal() {
+std::vector<vhdlParser::Enumeration_literalContext *> vhdlParser::Enumeration_type_definitionContext::enumeration_literal() {
   return getRuleContexts<vhdlParser::Enumeration_literalContext>();
 }
 
-Ref<vhdlParser::Enumeration_literalContext> vhdlParser::Enumeration_type_definitionContext::enumeration_literal(int i) {
-  return getRuleContext<vhdlParser::Enumeration_literalContext>((size_t)i);
+vhdlParser::Enumeration_literalContext* vhdlParser::Enumeration_type_definitionContext::enumeration_literal(size_t i) {
+  return getRuleContext<vhdlParser::Enumeration_literalContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Enumeration_type_definitionContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Enumeration_type_definitionContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Enumeration_type_definitionContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Enumeration_type_definitionContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Enumeration_type_definitionContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Enumeration_type_definitionContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Enumeration_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Enumeration_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleEnumeration_type_definition;
 }
 
@@ -7677,10 +7677,10 @@ antlrcpp::Any vhdlParser::Enumeration_type_definitionContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Enumeration_type_definitionContext> vhdlParser::enumeration_type_definition() {
-  Ref<Enumeration_type_definitionContext> _localctx = std::make_shared<Enumeration_type_definitionContext>(_ctx, getState());
+vhdlParser::Enumeration_type_definitionContext* vhdlParser::enumeration_type_definition() {
+  Enumeration_type_definitionContext *_localctx = _tracker.createInstance<Enumeration_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 188, vhdlParser::RuleEnumeration_type_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7718,36 +7718,36 @@ Ref<vhdlParser::Enumeration_type_definitionContext> vhdlParser::enumeration_type
 
 //----------------- Exit_statementContext ------------------------------------------------------------------
 
-vhdlParser::Exit_statementContext::Exit_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Exit_statementContext::Exit_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Exit_statementContext::EXIT() {
+tree::TerminalNode* vhdlParser::Exit_statementContext::EXIT() {
   return getToken(vhdlParser::EXIT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Exit_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Exit_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Exit_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Exit_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Exit_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Exit_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Exit_statementContext::WHEN() {
+tree::TerminalNode* vhdlParser::Exit_statementContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Exit_statementContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Exit_statementContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Exit_statementContext::getRuleIndex() const {
+size_t vhdlParser::Exit_statementContext::getRuleIndex() const {
   return vhdlParser::RuleExit_statement;
 }
 
@@ -7758,10 +7758,10 @@ antlrcpp::Any vhdlParser::Exit_statementContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Exit_statementContext> vhdlParser::exit_statement() {
-  Ref<Exit_statementContext> _localctx = std::make_shared<Exit_statementContext>(_ctx, getState());
+vhdlParser::Exit_statementContext* vhdlParser::exit_statement() {
+  Exit_statementContext *_localctx = _tracker.createInstance<Exit_statementContext>(_ctx, getState());
   enterRule(_localctx, 190, vhdlParser::RuleExit_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -7812,28 +7812,28 @@ Ref<vhdlParser::Exit_statementContext> vhdlParser::exit_statement() {
 
 //----------------- ExpressionContext ------------------------------------------------------------------
 
-vhdlParser::ExpressionContext::ExpressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::ExpressionContext::ExpressionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::RelationContext>> vhdlParser::ExpressionContext::relation() {
+std::vector<vhdlParser::RelationContext *> vhdlParser::ExpressionContext::relation() {
   return getRuleContexts<vhdlParser::RelationContext>();
 }
 
-Ref<vhdlParser::RelationContext> vhdlParser::ExpressionContext::relation(int i) {
-  return getRuleContext<vhdlParser::RelationContext>((size_t)i);
+vhdlParser::RelationContext* vhdlParser::ExpressionContext::relation(size_t i) {
+  return getRuleContext<vhdlParser::RelationContext>(i);
 }
 
-std::vector<Ref<vhdlParser::Logical_operatorContext>> vhdlParser::ExpressionContext::logical_operator() {
+std::vector<vhdlParser::Logical_operatorContext *> vhdlParser::ExpressionContext::logical_operator() {
   return getRuleContexts<vhdlParser::Logical_operatorContext>();
 }
 
-Ref<vhdlParser::Logical_operatorContext> vhdlParser::ExpressionContext::logical_operator(int i) {
-  return getRuleContext<vhdlParser::Logical_operatorContext>((size_t)i);
+vhdlParser::Logical_operatorContext* vhdlParser::ExpressionContext::logical_operator(size_t i) {
+  return getRuleContext<vhdlParser::Logical_operatorContext>(i);
 }
 
 
-ssize_t vhdlParser::ExpressionContext::getRuleIndex() const {
+size_t vhdlParser::ExpressionContext::getRuleIndex() const {
   return vhdlParser::RuleExpression;
 }
 
@@ -7844,15 +7844,15 @@ antlrcpp::Any vhdlParser::ExpressionContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::expression() {
-  Ref<ExpressionContext> _localctx = std::make_shared<ExpressionContext>(_ctx, getState());
+vhdlParser::ExpressionContext* vhdlParser::expression() {
+  ExpressionContext *_localctx = _tracker.createInstance<ExpressionContext>(_ctx, getState());
   enterRule(_localctx, 192, vhdlParser::RuleExpression);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(1268);
     relation();
@@ -7883,32 +7883,32 @@ Ref<vhdlParser::ExpressionContext> vhdlParser::expression() {
 
 //----------------- FactorContext ------------------------------------------------------------------
 
-vhdlParser::FactorContext::FactorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::FactorContext::FactorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::PrimaryContext>> vhdlParser::FactorContext::primary() {
+std::vector<vhdlParser::PrimaryContext *> vhdlParser::FactorContext::primary() {
   return getRuleContexts<vhdlParser::PrimaryContext>();
 }
 
-Ref<vhdlParser::PrimaryContext> vhdlParser::FactorContext::primary(int i) {
-  return getRuleContext<vhdlParser::PrimaryContext>((size_t)i);
+vhdlParser::PrimaryContext* vhdlParser::FactorContext::primary(size_t i) {
+  return getRuleContext<vhdlParser::PrimaryContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::FactorContext::DOUBLESTAR() {
+tree::TerminalNode* vhdlParser::FactorContext::DOUBLESTAR() {
   return getToken(vhdlParser::DOUBLESTAR, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::FactorContext::ABS() {
+tree::TerminalNode* vhdlParser::FactorContext::ABS() {
   return getToken(vhdlParser::ABS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::FactorContext::NOT() {
+tree::TerminalNode* vhdlParser::FactorContext::NOT() {
   return getToken(vhdlParser::NOT, 0);
 }
 
 
-ssize_t vhdlParser::FactorContext::getRuleIndex() const {
+size_t vhdlParser::FactorContext::getRuleIndex() const {
   return vhdlParser::RuleFactor;
 }
 
@@ -7919,8 +7919,8 @@ antlrcpp::Any vhdlParser::FactorContext::accept(tree::ParseTreeVisitor *visitor)
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::FactorContext> vhdlParser::factor() {
-  Ref<FactorContext> _localctx = std::make_shared<FactorContext>(_ctx, getState());
+vhdlParser::FactorContext* vhdlParser::factor() {
+  FactorContext *_localctx = _tracker.createInstance<FactorContext>(_ctx, getState());
   enterRule(_localctx, 194, vhdlParser::RuleFactor);
 
   auto onExit = finally([=] {
@@ -7994,36 +7994,36 @@ Ref<vhdlParser::FactorContext> vhdlParser::factor() {
 
 //----------------- File_declarationContext ------------------------------------------------------------------
 
-vhdlParser::File_declarationContext::File_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::File_declarationContext::File_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_declarationContext::FILE() {
+tree::TerminalNode* vhdlParser::File_declarationContext::FILE() {
   return getToken(vhdlParser::FILE, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::File_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::File_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::File_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::File_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::File_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::File_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::File_open_informationContext> vhdlParser::File_declarationContext::file_open_information() {
+vhdlParser::File_open_informationContext* vhdlParser::File_declarationContext::file_open_information() {
   return getRuleContext<vhdlParser::File_open_informationContext>(0);
 }
 
 
-ssize_t vhdlParser::File_declarationContext::getRuleIndex() const {
+size_t vhdlParser::File_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleFile_declaration;
 }
 
@@ -8034,10 +8034,10 @@ antlrcpp::Any vhdlParser::File_declarationContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::file_declaration() {
-  Ref<File_declarationContext> _localctx = std::make_shared<File_declarationContext>(_ctx, getState());
+vhdlParser::File_declarationContext* vhdlParser::file_declaration() {
+  File_declarationContext *_localctx = _tracker.createInstance<File_declarationContext>(_ctx, getState());
   enterRule(_localctx, 196, vhdlParser::RuleFile_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -8076,16 +8076,16 @@ Ref<vhdlParser::File_declarationContext> vhdlParser::file_declaration() {
 
 //----------------- File_logical_nameContext ------------------------------------------------------------------
 
-vhdlParser::File_logical_nameContext::File_logical_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::File_logical_nameContext::File_logical_nameContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::File_logical_nameContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::File_logical_nameContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::File_logical_nameContext::getRuleIndex() const {
+size_t vhdlParser::File_logical_nameContext::getRuleIndex() const {
   return vhdlParser::RuleFile_logical_name;
 }
 
@@ -8096,8 +8096,8 @@ antlrcpp::Any vhdlParser::File_logical_nameContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::File_logical_nameContext> vhdlParser::file_logical_name() {
-  Ref<File_logical_nameContext> _localctx = std::make_shared<File_logical_nameContext>(_ctx, getState());
+vhdlParser::File_logical_nameContext* vhdlParser::file_logical_name() {
+  File_logical_nameContext *_localctx = _tracker.createInstance<File_logical_nameContext>(_ctx, getState());
   enterRule(_localctx, 198, vhdlParser::RuleFile_logical_name);
 
   auto onExit = finally([=] {
@@ -8120,28 +8120,28 @@ Ref<vhdlParser::File_logical_nameContext> vhdlParser::file_logical_name() {
 
 //----------------- File_open_informationContext ------------------------------------------------------------------
 
-vhdlParser::File_open_informationContext::File_open_informationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::File_open_informationContext::File_open_informationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_open_informationContext::IS() {
+tree::TerminalNode* vhdlParser::File_open_informationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::File_logical_nameContext> vhdlParser::File_open_informationContext::file_logical_name() {
+vhdlParser::File_logical_nameContext* vhdlParser::File_open_informationContext::file_logical_name() {
   return getRuleContext<vhdlParser::File_logical_nameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_open_informationContext::OPEN() {
+tree::TerminalNode* vhdlParser::File_open_informationContext::OPEN() {
   return getToken(vhdlParser::OPEN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::File_open_informationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::File_open_informationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::File_open_informationContext::getRuleIndex() const {
+size_t vhdlParser::File_open_informationContext::getRuleIndex() const {
   return vhdlParser::RuleFile_open_information;
 }
 
@@ -8152,10 +8152,10 @@ antlrcpp::Any vhdlParser::File_open_informationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::File_open_informationContext> vhdlParser::file_open_information() {
-  Ref<File_open_informationContext> _localctx = std::make_shared<File_open_informationContext>(_ctx, getState());
+vhdlParser::File_open_informationContext* vhdlParser::file_open_information() {
+  File_open_informationContext *_localctx = _tracker.createInstance<File_open_informationContext>(_ctx, getState());
   enterRule(_localctx, 200, vhdlParser::RuleFile_open_information);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -8188,24 +8188,24 @@ Ref<vhdlParser::File_open_informationContext> vhdlParser::file_open_information(
 
 //----------------- File_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::File_type_definitionContext::File_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::File_type_definitionContext::File_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_type_definitionContext::FILE() {
+tree::TerminalNode* vhdlParser::File_type_definitionContext::FILE() {
   return getToken(vhdlParser::FILE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::File_type_definitionContext::OF() {
+tree::TerminalNode* vhdlParser::File_type_definitionContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::File_type_definitionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::File_type_definitionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::File_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::File_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleFile_type_definition;
 }
 
@@ -8216,8 +8216,8 @@ antlrcpp::Any vhdlParser::File_type_definitionContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::File_type_definitionContext> vhdlParser::file_type_definition() {
-  Ref<File_type_definitionContext> _localctx = std::make_shared<File_type_definitionContext>(_ctx, getState());
+vhdlParser::File_type_definitionContext* vhdlParser::file_type_definition() {
+  File_type_definitionContext *_localctx = _tracker.createInstance<File_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 202, vhdlParser::RuleFile_type_definition);
 
   auto onExit = finally([=] {
@@ -8244,16 +8244,16 @@ Ref<vhdlParser::File_type_definitionContext> vhdlParser::file_type_definition() 
 
 //----------------- Formal_parameter_listContext ------------------------------------------------------------------
 
-vhdlParser::Formal_parameter_listContext::Formal_parameter_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Formal_parameter_listContext::Formal_parameter_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Interface_listContext> vhdlParser::Formal_parameter_listContext::interface_list() {
+vhdlParser::Interface_listContext* vhdlParser::Formal_parameter_listContext::interface_list() {
   return getRuleContext<vhdlParser::Interface_listContext>(0);
 }
 
 
-ssize_t vhdlParser::Formal_parameter_listContext::getRuleIndex() const {
+size_t vhdlParser::Formal_parameter_listContext::getRuleIndex() const {
   return vhdlParser::RuleFormal_parameter_list;
 }
 
@@ -8264,8 +8264,8 @@ antlrcpp::Any vhdlParser::Formal_parameter_listContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Formal_parameter_listContext> vhdlParser::formal_parameter_list() {
-  Ref<Formal_parameter_listContext> _localctx = std::make_shared<Formal_parameter_listContext>(_ctx, getState());
+vhdlParser::Formal_parameter_listContext* vhdlParser::formal_parameter_list() {
+  Formal_parameter_listContext *_localctx = _tracker.createInstance<Formal_parameter_listContext>(_ctx, getState());
   enterRule(_localctx, 204, vhdlParser::RuleFormal_parameter_list);
 
   auto onExit = finally([=] {
@@ -8288,28 +8288,28 @@ Ref<vhdlParser::Formal_parameter_listContext> vhdlParser::formal_parameter_list(
 
 //----------------- Formal_partContext ------------------------------------------------------------------
 
-vhdlParser::Formal_partContext::Formal_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Formal_partContext::Formal_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Formal_partContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Formal_partContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Formal_partContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Formal_partContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Explicit_rangeContext> vhdlParser::Formal_partContext::explicit_range() {
+vhdlParser::Explicit_rangeContext* vhdlParser::Formal_partContext::explicit_range() {
   return getRuleContext<vhdlParser::Explicit_rangeContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Formal_partContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Formal_partContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Formal_partContext::getRuleIndex() const {
+size_t vhdlParser::Formal_partContext::getRuleIndex() const {
   return vhdlParser::RuleFormal_part;
 }
 
@@ -8320,8 +8320,8 @@ antlrcpp::Any vhdlParser::Formal_partContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Formal_partContext> vhdlParser::formal_part() {
-  Ref<Formal_partContext> _localctx = std::make_shared<Formal_partContext>(_ctx, getState());
+vhdlParser::Formal_partContext* vhdlParser::formal_part() {
+  Formal_partContext *_localctx = _tracker.createInstance<Formal_partContext>(_ctx, getState());
   enterRule(_localctx, 206, vhdlParser::RuleFormal_part);
 
   auto onExit = finally([=] {
@@ -8365,40 +8365,40 @@ Ref<vhdlParser::Formal_partContext> vhdlParser::formal_part() {
 
 //----------------- Free_quantity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Free_quantity_declarationContext::Free_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Free_quantity_declarationContext::Free_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Free_quantity_declarationContext::QUANTITY() {
+tree::TerminalNode* vhdlParser::Free_quantity_declarationContext::QUANTITY() {
   return getToken(vhdlParser::QUANTITY, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Free_quantity_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Free_quantity_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Free_quantity_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Free_quantity_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Free_quantity_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Free_quantity_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Free_quantity_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Free_quantity_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Free_quantity_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Free_quantity_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Free_quantity_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Free_quantity_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Free_quantity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Free_quantity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleFree_quantity_declaration;
 }
 
@@ -8409,10 +8409,10 @@ antlrcpp::Any vhdlParser::Free_quantity_declarationContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Free_quantity_declarationContext> vhdlParser::free_quantity_declaration() {
-  Ref<Free_quantity_declarationContext> _localctx = std::make_shared<Free_quantity_declarationContext>(_ctx, getState());
+vhdlParser::Free_quantity_declarationContext* vhdlParser::free_quantity_declaration() {
+  Free_quantity_declarationContext *_localctx = _tracker.createInstance<Free_quantity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 208, vhdlParser::RuleFree_quantity_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -8451,60 +8451,60 @@ Ref<vhdlParser::Free_quantity_declarationContext> vhdlParser::free_quantity_decl
 
 //----------------- Generate_statementContext ------------------------------------------------------------------
 
-vhdlParser::Generate_statementContext::Generate_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Generate_statementContext::Generate_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Generate_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Generate_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Generation_schemeContext> vhdlParser::Generate_statementContext::generation_scheme() {
+vhdlParser::Generation_schemeContext* vhdlParser::Generate_statementContext::generation_scheme() {
   return getRuleContext<vhdlParser::Generation_schemeContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Generate_statementContext::GENERATE() {
+std::vector<tree::TerminalNode *> vhdlParser::Generate_statementContext::GENERATE() {
   return getTokens(vhdlParser::GENERATE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generate_statementContext::GENERATE(int i) {
-  return getToken(vhdlParser::GENERATE, (size_t)i);
+tree::TerminalNode* vhdlParser::Generate_statementContext::GENERATE(size_t i) {
+  return getToken(vhdlParser::GENERATE, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generate_statementContext::END() {
+tree::TerminalNode* vhdlParser::Generate_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generate_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Generate_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generate_statementContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Generate_statementContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-std::vector<Ref<vhdlParser::Architecture_statementContext>> vhdlParser::Generate_statementContext::architecture_statement() {
+std::vector<vhdlParser::Architecture_statementContext *> vhdlParser::Generate_statementContext::architecture_statement() {
   return getRuleContexts<vhdlParser::Architecture_statementContext>();
 }
 
-Ref<vhdlParser::Architecture_statementContext> vhdlParser::Generate_statementContext::architecture_statement(int i) {
-  return getRuleContext<vhdlParser::Architecture_statementContext>((size_t)i);
+vhdlParser::Architecture_statementContext* vhdlParser::Generate_statementContext::architecture_statement(size_t i) {
+  return getRuleContext<vhdlParser::Architecture_statementContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Generate_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Generate_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-std::vector<Ref<vhdlParser::Block_declarative_itemContext>> vhdlParser::Generate_statementContext::block_declarative_item() {
+std::vector<vhdlParser::Block_declarative_itemContext *> vhdlParser::Generate_statementContext::block_declarative_item() {
   return getRuleContexts<vhdlParser::Block_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Block_declarative_itemContext> vhdlParser::Generate_statementContext::block_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Block_declarative_itemContext>((size_t)i);
+vhdlParser::Block_declarative_itemContext* vhdlParser::Generate_statementContext::block_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Block_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Generate_statementContext::getRuleIndex() const {
+size_t vhdlParser::Generate_statementContext::getRuleIndex() const {
   return vhdlParser::RuleGenerate_statement;
 }
 
@@ -8515,10 +8515,10 @@ antlrcpp::Any vhdlParser::Generate_statementContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
-  Ref<Generate_statementContext> _localctx = std::make_shared<Generate_statementContext>(_ctx, getState());
+vhdlParser::Generate_statementContext* vhdlParser::generate_statement() {
+  Generate_statementContext *_localctx = _tracker.createInstance<Generate_statementContext>(_ctx, getState());
   enterRule(_localctx, 210, vhdlParser::RuleGenerate_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -8534,7 +8534,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
     setState(1340);
 
     _la = _input->LA(1);
-    if ((((_la & ~(ssize_t)0x3f) == 0) &&
+    if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::BEGIN)
@@ -8547,7 +8547,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::IMPURE)
       | (1ULL << vhdlParser::LIMIT)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::QUANTITY - 68))
@@ -8562,7 +8562,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
       setState(1336);
       _errHandler->sync(this);
       _la = _input->LA(1);
-      while ((((_la & ~(ssize_t)0x3f) == 0) &&
+      while ((((_la & ~ 0x3fULL) == 0) &&
         ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
         | (1ULL << vhdlParser::ATTRIBUTE)
         | (1ULL << vhdlParser::COMPONENT)
@@ -8574,7 +8574,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
         | (1ULL << vhdlParser::GROUP)
         | (1ULL << vhdlParser::IMPURE)
         | (1ULL << vhdlParser::LIMIT)
-        | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+        | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
         ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
         | (1ULL << (vhdlParser::PURE - 68))
         | (1ULL << (vhdlParser::QUANTITY - 68))
@@ -8598,7 +8598,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
     setState(1345);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
@@ -8606,7 +8606,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 66) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 66)) & ((1ULL << (vhdlParser::POSTPONED - 66))
       | (1ULL << (vhdlParser::PROCESS - 66))
       | (1ULL << (vhdlParser::PROCEDURAL - 66))
@@ -8617,7 +8617,7 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
       | (1ULL << (vhdlParser::BASIC_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::EXTENDED_IDENTIFIER - 66))
       | (1ULL << (vhdlParser::CHARACTER_LITERAL - 66))
-      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << (vhdlParser::STRING_LITERAL - 66)))) != 0) || ((((_la - 141) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 141)) & ((1ULL << (vhdlParser::LPAREN - 141))
       | (1ULL << (vhdlParser::PLUS - 141))
       | (1ULL << (vhdlParser::MINUS - 141))
@@ -8656,28 +8656,28 @@ Ref<vhdlParser::Generate_statementContext> vhdlParser::generate_statement() {
 
 //----------------- Generation_schemeContext ------------------------------------------------------------------
 
-vhdlParser::Generation_schemeContext::Generation_schemeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Generation_schemeContext::Generation_schemeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generation_schemeContext::FOR() {
+tree::TerminalNode* vhdlParser::Generation_schemeContext::FOR() {
   return getToken(vhdlParser::FOR, 0);
 }
 
-Ref<vhdlParser::Parameter_specificationContext> vhdlParser::Generation_schemeContext::parameter_specification() {
+vhdlParser::Parameter_specificationContext* vhdlParser::Generation_schemeContext::parameter_specification() {
   return getRuleContext<vhdlParser::Parameter_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generation_schemeContext::IF() {
+tree::TerminalNode* vhdlParser::Generation_schemeContext::IF() {
   return getToken(vhdlParser::IF, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Generation_schemeContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Generation_schemeContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Generation_schemeContext::getRuleIndex() const {
+size_t vhdlParser::Generation_schemeContext::getRuleIndex() const {
   return vhdlParser::RuleGeneration_scheme;
 }
 
@@ -8688,8 +8688,8 @@ antlrcpp::Any vhdlParser::Generation_schemeContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Generation_schemeContext> vhdlParser::generation_scheme() {
-  Ref<Generation_schemeContext> _localctx = std::make_shared<Generation_schemeContext>(_ctx, getState());
+vhdlParser::Generation_schemeContext* vhdlParser::generation_scheme() {
+  Generation_schemeContext *_localctx = _tracker.createInstance<Generation_schemeContext>(_ctx, getState());
   enterRule(_localctx, 212, vhdlParser::RuleGeneration_scheme);
 
   auto onExit = finally([=] {
@@ -8733,32 +8733,32 @@ Ref<vhdlParser::Generation_schemeContext> vhdlParser::generation_scheme() {
 
 //----------------- Generic_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Generic_clauseContext::Generic_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Generic_clauseContext::Generic_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_clauseContext::GENERIC() {
+tree::TerminalNode* vhdlParser::Generic_clauseContext::GENERIC() {
   return getToken(vhdlParser::GENERIC, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_clauseContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Generic_clauseContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Generic_listContext> vhdlParser::Generic_clauseContext::generic_list() {
+vhdlParser::Generic_listContext* vhdlParser::Generic_clauseContext::generic_list() {
   return getRuleContext<vhdlParser::Generic_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_clauseContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Generic_clauseContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_clauseContext::SEMI() {
+tree::TerminalNode* vhdlParser::Generic_clauseContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Generic_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Generic_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleGeneric_clause;
 }
 
@@ -8769,8 +8769,8 @@ antlrcpp::Any vhdlParser::Generic_clauseContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Generic_clauseContext> vhdlParser::generic_clause() {
-  Ref<Generic_clauseContext> _localctx = std::make_shared<Generic_clauseContext>(_ctx, getState());
+vhdlParser::Generic_clauseContext* vhdlParser::generic_clause() {
+  Generic_clauseContext *_localctx = _tracker.createInstance<Generic_clauseContext>(_ctx, getState());
   enterRule(_localctx, 214, vhdlParser::RuleGeneric_clause);
 
   auto onExit = finally([=] {
@@ -8801,28 +8801,28 @@ Ref<vhdlParser::Generic_clauseContext> vhdlParser::generic_clause() {
 
 //----------------- Generic_listContext ------------------------------------------------------------------
 
-vhdlParser::Generic_listContext::Generic_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Generic_listContext::Generic_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Interface_constant_declarationContext>> vhdlParser::Generic_listContext::interface_constant_declaration() {
+std::vector<vhdlParser::Interface_constant_declarationContext *> vhdlParser::Generic_listContext::interface_constant_declaration() {
   return getRuleContexts<vhdlParser::Interface_constant_declarationContext>();
 }
 
-Ref<vhdlParser::Interface_constant_declarationContext> vhdlParser::Generic_listContext::interface_constant_declaration(int i) {
-  return getRuleContext<vhdlParser::Interface_constant_declarationContext>((size_t)i);
+vhdlParser::Interface_constant_declarationContext* vhdlParser::Generic_listContext::interface_constant_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Interface_constant_declarationContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Generic_listContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Generic_listContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_listContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Generic_listContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
 
-ssize_t vhdlParser::Generic_listContext::getRuleIndex() const {
+size_t vhdlParser::Generic_listContext::getRuleIndex() const {
   return vhdlParser::RuleGeneric_list;
 }
 
@@ -8833,10 +8833,10 @@ antlrcpp::Any vhdlParser::Generic_listContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Generic_listContext> vhdlParser::generic_list() {
-  Ref<Generic_listContext> _localctx = std::make_shared<Generic_listContext>(_ctx, getState());
+vhdlParser::Generic_listContext* vhdlParser::generic_list() {
+  Generic_listContext *_localctx = _tracker.createInstance<Generic_listContext>(_ctx, getState());
   enterRule(_localctx, 216, vhdlParser::RuleGeneric_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -8870,32 +8870,32 @@ Ref<vhdlParser::Generic_listContext> vhdlParser::generic_list() {
 
 //----------------- Generic_map_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Generic_map_aspectContext::Generic_map_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Generic_map_aspectContext::Generic_map_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_map_aspectContext::GENERIC() {
+tree::TerminalNode* vhdlParser::Generic_map_aspectContext::GENERIC() {
   return getToken(vhdlParser::GENERIC, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_map_aspectContext::MAP() {
+tree::TerminalNode* vhdlParser::Generic_map_aspectContext::MAP() {
   return getToken(vhdlParser::MAP, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_map_aspectContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Generic_map_aspectContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Association_listContext> vhdlParser::Generic_map_aspectContext::association_list() {
+vhdlParser::Association_listContext* vhdlParser::Generic_map_aspectContext::association_list() {
   return getRuleContext<vhdlParser::Association_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Generic_map_aspectContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Generic_map_aspectContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Generic_map_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Generic_map_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleGeneric_map_aspect;
 }
 
@@ -8906,8 +8906,8 @@ antlrcpp::Any vhdlParser::Generic_map_aspectContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Generic_map_aspectContext> vhdlParser::generic_map_aspect() {
-  Ref<Generic_map_aspectContext> _localctx = std::make_shared<Generic_map_aspectContext>(_ctx, getState());
+vhdlParser::Generic_map_aspectContext* vhdlParser::generic_map_aspect() {
+  Generic_map_aspectContext *_localctx = _tracker.createInstance<Generic_map_aspectContext>(_ctx, getState());
   enterRule(_localctx, 218, vhdlParser::RuleGeneric_map_aspect);
 
   auto onExit = finally([=] {
@@ -8938,20 +8938,20 @@ Ref<vhdlParser::Generic_map_aspectContext> vhdlParser::generic_map_aspect() {
 
 //----------------- Group_constituentContext ------------------------------------------------------------------
 
-vhdlParser::Group_constituentContext::Group_constituentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Group_constituentContext::Group_constituentContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Group_constituentContext::name() {
+vhdlParser::NameContext* vhdlParser::Group_constituentContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_constituentContext::CHARACTER_LITERAL() {
+tree::TerminalNode* vhdlParser::Group_constituentContext::CHARACTER_LITERAL() {
   return getToken(vhdlParser::CHARACTER_LITERAL, 0);
 }
 
 
-ssize_t vhdlParser::Group_constituentContext::getRuleIndex() const {
+size_t vhdlParser::Group_constituentContext::getRuleIndex() const {
   return vhdlParser::RuleGroup_constituent;
 }
 
@@ -8962,8 +8962,8 @@ antlrcpp::Any vhdlParser::Group_constituentContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Group_constituentContext> vhdlParser::group_constituent() {
-  Ref<Group_constituentContext> _localctx = std::make_shared<Group_constituentContext>(_ctx, getState());
+vhdlParser::Group_constituentContext* vhdlParser::group_constituent() {
+  Group_constituentContext *_localctx = _tracker.createInstance<Group_constituentContext>(_ctx, getState());
   enterRule(_localctx, 220, vhdlParser::RuleGroup_constituent);
 
   auto onExit = finally([=] {
@@ -9004,28 +9004,28 @@ Ref<vhdlParser::Group_constituentContext> vhdlParser::group_constituent() {
 
 //----------------- Group_constituent_listContext ------------------------------------------------------------------
 
-vhdlParser::Group_constituent_listContext::Group_constituent_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Group_constituent_listContext::Group_constituent_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Group_constituentContext>> vhdlParser::Group_constituent_listContext::group_constituent() {
+std::vector<vhdlParser::Group_constituentContext *> vhdlParser::Group_constituent_listContext::group_constituent() {
   return getRuleContexts<vhdlParser::Group_constituentContext>();
 }
 
-Ref<vhdlParser::Group_constituentContext> vhdlParser::Group_constituent_listContext::group_constituent(int i) {
-  return getRuleContext<vhdlParser::Group_constituentContext>((size_t)i);
+vhdlParser::Group_constituentContext* vhdlParser::Group_constituent_listContext::group_constituent(size_t i) {
+  return getRuleContext<vhdlParser::Group_constituentContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Group_constituent_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Group_constituent_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_constituent_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Group_constituent_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Group_constituent_listContext::getRuleIndex() const {
+size_t vhdlParser::Group_constituent_listContext::getRuleIndex() const {
   return vhdlParser::RuleGroup_constituent_list;
 }
 
@@ -9036,10 +9036,10 @@ antlrcpp::Any vhdlParser::Group_constituent_listContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Group_constituent_listContext> vhdlParser::group_constituent_list() {
-  Ref<Group_constituent_listContext> _localctx = std::make_shared<Group_constituent_listContext>(_ctx, getState());
+vhdlParser::Group_constituent_listContext* vhdlParser::group_constituent_list() {
+  Group_constituent_listContext *_localctx = _tracker.createInstance<Group_constituent_listContext>(_ctx, getState());
   enterRule(_localctx, 222, vhdlParser::RuleGroup_constituent_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9073,40 +9073,40 @@ Ref<vhdlParser::Group_constituent_listContext> vhdlParser::group_constituent_lis
 
 //----------------- Group_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Group_declarationContext::Group_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Group_declarationContext::Group_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_declarationContext::GROUP() {
+tree::TerminalNode* vhdlParser::Group_declarationContext::GROUP() {
   return getToken(vhdlParser::GROUP, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Group_declarationContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Group_declarationContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Group_declarationContext::name() {
+vhdlParser::NameContext* vhdlParser::Group_declarationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_declarationContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Group_declarationContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Group_constituent_listContext> vhdlParser::Group_declarationContext::group_constituent_list() {
+vhdlParser::Group_constituent_listContext* vhdlParser::Group_declarationContext::group_constituent_list() {
   return getRuleContext<vhdlParser::Group_constituent_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_declarationContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Group_declarationContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Group_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Group_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Group_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleGroup_declaration;
 }
 
@@ -9117,8 +9117,8 @@ antlrcpp::Any vhdlParser::Group_declarationContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::group_declaration() {
-  Ref<Group_declarationContext> _localctx = std::make_shared<Group_declarationContext>(_ctx, getState());
+vhdlParser::Group_declarationContext* vhdlParser::group_declaration() {
+  Group_declarationContext *_localctx = _tracker.createInstance<Group_declarationContext>(_ctx, getState());
   enterRule(_localctx, 224, vhdlParser::RuleGroup_declaration);
 
   auto onExit = finally([=] {
@@ -9153,40 +9153,40 @@ Ref<vhdlParser::Group_declarationContext> vhdlParser::group_declaration() {
 
 //----------------- Group_template_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Group_template_declarationContext::Group_template_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Group_template_declarationContext::Group_template_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_template_declarationContext::GROUP() {
+tree::TerminalNode* vhdlParser::Group_template_declarationContext::GROUP() {
   return getToken(vhdlParser::GROUP, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Group_template_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Group_template_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_template_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Group_template_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_template_declarationContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Group_template_declarationContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Entity_class_entry_listContext> vhdlParser::Group_template_declarationContext::entity_class_entry_list() {
+vhdlParser::Entity_class_entry_listContext* vhdlParser::Group_template_declarationContext::entity_class_entry_list() {
   return getRuleContext<vhdlParser::Entity_class_entry_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_template_declarationContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Group_template_declarationContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Group_template_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Group_template_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Group_template_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Group_template_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleGroup_template_declaration;
 }
 
@@ -9197,8 +9197,8 @@ antlrcpp::Any vhdlParser::Group_template_declarationContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::group_template_declaration() {
-  Ref<Group_template_declarationContext> _localctx = std::make_shared<Group_template_declarationContext>(_ctx, getState());
+vhdlParser::Group_template_declarationContext* vhdlParser::group_template_declaration() {
+  Group_template_declarationContext *_localctx = _tracker.createInstance<Group_template_declarationContext>(_ctx, getState());
   enterRule(_localctx, 226, vhdlParser::RuleGroup_template_declaration);
 
   auto onExit = finally([=] {
@@ -9233,24 +9233,24 @@ Ref<vhdlParser::Group_template_declarationContext> vhdlParser::group_template_de
 
 //----------------- Guarded_signal_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Guarded_signal_specificationContext::Guarded_signal_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Guarded_signal_specificationContext::Guarded_signal_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Signal_listContext> vhdlParser::Guarded_signal_specificationContext::signal_list() {
+vhdlParser::Signal_listContext* vhdlParser::Guarded_signal_specificationContext::signal_list() {
   return getRuleContext<vhdlParser::Signal_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Guarded_signal_specificationContext::COLON() {
+tree::TerminalNode* vhdlParser::Guarded_signal_specificationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Guarded_signal_specificationContext::name() {
+vhdlParser::NameContext* vhdlParser::Guarded_signal_specificationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::Guarded_signal_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Guarded_signal_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleGuarded_signal_specification;
 }
 
@@ -9261,8 +9261,8 @@ antlrcpp::Any vhdlParser::Guarded_signal_specificationContext::accept(tree::Pars
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Guarded_signal_specificationContext> vhdlParser::guarded_signal_specification() {
-  Ref<Guarded_signal_specificationContext> _localctx = std::make_shared<Guarded_signal_specificationContext>(_ctx, getState());
+vhdlParser::Guarded_signal_specificationContext* vhdlParser::guarded_signal_specification() {
+  Guarded_signal_specificationContext *_localctx = _tracker.createInstance<Guarded_signal_specificationContext>(_ctx, getState());
   enterRule(_localctx, 228, vhdlParser::RuleGuarded_signal_specification);
 
   auto onExit = finally([=] {
@@ -9289,20 +9289,20 @@ Ref<vhdlParser::Guarded_signal_specificationContext> vhdlParser::guarded_signal_
 
 //----------------- IdentifierContext ------------------------------------------------------------------
 
-vhdlParser::IdentifierContext::IdentifierContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::IdentifierContext::IdentifierContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::IdentifierContext::BASIC_IDENTIFIER() {
+tree::TerminalNode* vhdlParser::IdentifierContext::BASIC_IDENTIFIER() {
   return getToken(vhdlParser::BASIC_IDENTIFIER, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::IdentifierContext::EXTENDED_IDENTIFIER() {
+tree::TerminalNode* vhdlParser::IdentifierContext::EXTENDED_IDENTIFIER() {
   return getToken(vhdlParser::EXTENDED_IDENTIFIER, 0);
 }
 
 
-ssize_t vhdlParser::IdentifierContext::getRuleIndex() const {
+size_t vhdlParser::IdentifierContext::getRuleIndex() const {
   return vhdlParser::RuleIdentifier;
 }
 
@@ -9313,10 +9313,10 @@ antlrcpp::Any vhdlParser::IdentifierContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::identifier() {
-  Ref<IdentifierContext> _localctx = std::make_shared<IdentifierContext>(_ctx, getState());
+vhdlParser::IdentifierContext* vhdlParser::identifier() {
+  IdentifierContext *_localctx = _tracker.createInstance<IdentifierContext>(_ctx, getState());
   enterRule(_localctx, 230, vhdlParser::RuleIdentifier);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9345,28 +9345,28 @@ Ref<vhdlParser::IdentifierContext> vhdlParser::identifier() {
 
 //----------------- Identifier_listContext ------------------------------------------------------------------
 
-vhdlParser::Identifier_listContext::Identifier_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Identifier_listContext::Identifier_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Identifier_listContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Identifier_listContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Identifier_listContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Identifier_listContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Identifier_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Identifier_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Identifier_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Identifier_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Identifier_listContext::getRuleIndex() const {
+size_t vhdlParser::Identifier_listContext::getRuleIndex() const {
   return vhdlParser::RuleIdentifier_list;
 }
 
@@ -9377,10 +9377,10 @@ antlrcpp::Any vhdlParser::Identifier_listContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::identifier_list() {
-  Ref<Identifier_listContext> _localctx = std::make_shared<Identifier_listContext>(_ctx, getState());
+vhdlParser::Identifier_listContext* vhdlParser::identifier_list() {
+  Identifier_listContext *_localctx = _tracker.createInstance<Identifier_listContext>(_ctx, getState());
   enterRule(_localctx, 232, vhdlParser::RuleIdentifier_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9414,72 +9414,72 @@ Ref<vhdlParser::Identifier_listContext> vhdlParser::identifier_list() {
 
 //----------------- If_statementContext ------------------------------------------------------------------
 
-vhdlParser::If_statementContext::If_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::If_statementContext::If_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::If_statementContext::IF() {
+std::vector<tree::TerminalNode *> vhdlParser::If_statementContext::IF() {
   return getTokens(vhdlParser::IF);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::IF(int i) {
-  return getToken(vhdlParser::IF, (size_t)i);
+tree::TerminalNode* vhdlParser::If_statementContext::IF(size_t i) {
+  return getToken(vhdlParser::IF, i);
 }
 
-std::vector<Ref<vhdlParser::ConditionContext>> vhdlParser::If_statementContext::condition() {
+std::vector<vhdlParser::ConditionContext *> vhdlParser::If_statementContext::condition() {
   return getRuleContexts<vhdlParser::ConditionContext>();
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::If_statementContext::condition(int i) {
-  return getRuleContext<vhdlParser::ConditionContext>((size_t)i);
+vhdlParser::ConditionContext* vhdlParser::If_statementContext::condition(size_t i) {
+  return getRuleContext<vhdlParser::ConditionContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::If_statementContext::THEN() {
+std::vector<tree::TerminalNode *> vhdlParser::If_statementContext::THEN() {
   return getTokens(vhdlParser::THEN);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::THEN(int i) {
-  return getToken(vhdlParser::THEN, (size_t)i);
+tree::TerminalNode* vhdlParser::If_statementContext::THEN(size_t i) {
+  return getToken(vhdlParser::THEN, i);
 }
 
-std::vector<Ref<vhdlParser::Sequence_of_statementsContext>> vhdlParser::If_statementContext::sequence_of_statements() {
+std::vector<vhdlParser::Sequence_of_statementsContext *> vhdlParser::If_statementContext::sequence_of_statements() {
   return getRuleContexts<vhdlParser::Sequence_of_statementsContext>();
 }
 
-Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::If_statementContext::sequence_of_statements(int i) {
-  return getRuleContext<vhdlParser::Sequence_of_statementsContext>((size_t)i);
+vhdlParser::Sequence_of_statementsContext* vhdlParser::If_statementContext::sequence_of_statements(size_t i) {
+  return getRuleContext<vhdlParser::Sequence_of_statementsContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::END() {
+tree::TerminalNode* vhdlParser::If_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::If_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::If_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::If_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::If_statementContext::ELSIF() {
+std::vector<tree::TerminalNode *> vhdlParser::If_statementContext::ELSIF() {
   return getTokens(vhdlParser::ELSIF);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::ELSIF(int i) {
-  return getToken(vhdlParser::ELSIF, (size_t)i);
+tree::TerminalNode* vhdlParser::If_statementContext::ELSIF(size_t i) {
+  return getToken(vhdlParser::ELSIF, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::If_statementContext::ELSE() {
+tree::TerminalNode* vhdlParser::If_statementContext::ELSE() {
   return getToken(vhdlParser::ELSE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::If_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::If_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::If_statementContext::getRuleIndex() const {
+size_t vhdlParser::If_statementContext::getRuleIndex() const {
   return vhdlParser::RuleIf_statement;
 }
 
@@ -9490,10 +9490,10 @@ antlrcpp::Any vhdlParser::If_statementContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::If_statementContext> vhdlParser::if_statement() {
-  Ref<If_statementContext> _localctx = std::make_shared<If_statementContext>(_ctx, getState());
+vhdlParser::If_statementContext* vhdlParser::if_statement() {
+  If_statementContext *_localctx = _tracker.createInstance<If_statementContext>(_ctx, getState());
   enterRule(_localctx, 234, vhdlParser::RuleIf_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9570,36 +9570,36 @@ Ref<vhdlParser::If_statementContext> vhdlParser::if_statement() {
 
 //----------------- Index_constraintContext ------------------------------------------------------------------
 
-vhdlParser::Index_constraintContext::Index_constraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Index_constraintContext::Index_constraintContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Index_constraintContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Index_constraintContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Discrete_rangeContext>> vhdlParser::Index_constraintContext::discrete_range() {
+std::vector<vhdlParser::Discrete_rangeContext *> vhdlParser::Index_constraintContext::discrete_range() {
   return getRuleContexts<vhdlParser::Discrete_rangeContext>();
 }
 
-Ref<vhdlParser::Discrete_rangeContext> vhdlParser::Index_constraintContext::discrete_range(int i) {
-  return getRuleContext<vhdlParser::Discrete_rangeContext>((size_t)i);
+vhdlParser::Discrete_rangeContext* vhdlParser::Index_constraintContext::discrete_range(size_t i) {
+  return getRuleContext<vhdlParser::Discrete_rangeContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Index_constraintContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Index_constraintContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Index_constraintContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Index_constraintContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Index_constraintContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Index_constraintContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Index_constraintContext::getRuleIndex() const {
+size_t vhdlParser::Index_constraintContext::getRuleIndex() const {
   return vhdlParser::RuleIndex_constraint;
 }
 
@@ -9610,10 +9610,10 @@ antlrcpp::Any vhdlParser::Index_constraintContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Index_constraintContext> vhdlParser::index_constraint() {
-  Ref<Index_constraintContext> _localctx = std::make_shared<Index_constraintContext>(_ctx, getState());
+vhdlParser::Index_constraintContext* vhdlParser::index_constraint() {
+  Index_constraintContext *_localctx = _tracker.createInstance<Index_constraintContext>(_ctx, getState());
   enterRule(_localctx, 236, vhdlParser::RuleIndex_constraint);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9651,20 +9651,20 @@ Ref<vhdlParser::Index_constraintContext> vhdlParser::index_constraint() {
 
 //----------------- Index_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Index_specificationContext::Index_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Index_specificationContext::Index_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Discrete_rangeContext> vhdlParser::Index_specificationContext::discrete_range() {
+vhdlParser::Discrete_rangeContext* vhdlParser::Index_specificationContext::discrete_range() {
   return getRuleContext<vhdlParser::Discrete_rangeContext>(0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Index_specificationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Index_specificationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Index_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Index_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleIndex_specification;
 }
 
@@ -9675,8 +9675,8 @@ antlrcpp::Any vhdlParser::Index_specificationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Index_specificationContext> vhdlParser::index_specification() {
-  Ref<Index_specificationContext> _localctx = std::make_shared<Index_specificationContext>(_ctx, getState());
+vhdlParser::Index_specificationContext* vhdlParser::index_specification() {
+  Index_specificationContext *_localctx = _tracker.createInstance<Index_specificationContext>(_ctx, getState());
   enterRule(_localctx, 238, vhdlParser::RuleIndex_specification);
 
   auto onExit = finally([=] {
@@ -9714,24 +9714,24 @@ Ref<vhdlParser::Index_specificationContext> vhdlParser::index_specification() {
 
 //----------------- Index_subtype_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Index_subtype_definitionContext::Index_subtype_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Index_subtype_definitionContext::Index_subtype_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Index_subtype_definitionContext::name() {
+vhdlParser::NameContext* vhdlParser::Index_subtype_definitionContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Index_subtype_definitionContext::RANGE() {
+tree::TerminalNode* vhdlParser::Index_subtype_definitionContext::RANGE() {
   return getToken(vhdlParser::RANGE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Index_subtype_definitionContext::BOX() {
+tree::TerminalNode* vhdlParser::Index_subtype_definitionContext::BOX() {
   return getToken(vhdlParser::BOX, 0);
 }
 
 
-ssize_t vhdlParser::Index_subtype_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Index_subtype_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleIndex_subtype_definition;
 }
 
@@ -9742,8 +9742,8 @@ antlrcpp::Any vhdlParser::Index_subtype_definitionContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Index_subtype_definitionContext> vhdlParser::index_subtype_definition() {
-  Ref<Index_subtype_definitionContext> _localctx = std::make_shared<Index_subtype_definitionContext>(_ctx, getState());
+vhdlParser::Index_subtype_definitionContext* vhdlParser::index_subtype_definition() {
+  Index_subtype_definitionContext *_localctx = _tracker.createInstance<Index_subtype_definitionContext>(_ctx, getState());
   enterRule(_localctx, 240, vhdlParser::RuleIndex_subtype_definition);
 
   auto onExit = finally([=] {
@@ -9770,40 +9770,40 @@ Ref<vhdlParser::Index_subtype_definitionContext> vhdlParser::index_subtype_defin
 
 //----------------- Instantiated_unitContext ------------------------------------------------------------------
 
-vhdlParser::Instantiated_unitContext::Instantiated_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Instantiated_unitContext::Instantiated_unitContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Instantiated_unitContext::name() {
+vhdlParser::NameContext* vhdlParser::Instantiated_unitContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiated_unitContext::COMPONENT() {
+tree::TerminalNode* vhdlParser::Instantiated_unitContext::COMPONENT() {
   return getToken(vhdlParser::COMPONENT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiated_unitContext::ENTITY() {
+tree::TerminalNode* vhdlParser::Instantiated_unitContext::ENTITY() {
   return getToken(vhdlParser::ENTITY, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiated_unitContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Instantiated_unitContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Instantiated_unitContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Instantiated_unitContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiated_unitContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Instantiated_unitContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiated_unitContext::CONFIGURATION() {
+tree::TerminalNode* vhdlParser::Instantiated_unitContext::CONFIGURATION() {
   return getToken(vhdlParser::CONFIGURATION, 0);
 }
 
 
-ssize_t vhdlParser::Instantiated_unitContext::getRuleIndex() const {
+size_t vhdlParser::Instantiated_unitContext::getRuleIndex() const {
   return vhdlParser::RuleInstantiated_unit;
 }
 
@@ -9814,10 +9814,10 @@ antlrcpp::Any vhdlParser::Instantiated_unitContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Instantiated_unitContext> vhdlParser::instantiated_unit() {
-  Ref<Instantiated_unitContext> _localctx = std::make_shared<Instantiated_unitContext>(_ctx, getState());
+vhdlParser::Instantiated_unitContext* vhdlParser::instantiated_unit() {
+  Instantiated_unitContext *_localctx = _tracker.createInstance<Instantiated_unitContext>(_ctx, getState());
   enterRule(_localctx, 242, vhdlParser::RuleInstantiated_unit);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9887,36 +9887,36 @@ Ref<vhdlParser::Instantiated_unitContext> vhdlParser::instantiated_unit() {
 
 //----------------- Instantiation_listContext ------------------------------------------------------------------
 
-vhdlParser::Instantiation_listContext::Instantiation_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Instantiation_listContext::Instantiation_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Instantiation_listContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Instantiation_listContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Instantiation_listContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Instantiation_listContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Instantiation_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Instantiation_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiation_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Instantiation_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiation_listContext::OTHERS() {
+tree::TerminalNode* vhdlParser::Instantiation_listContext::OTHERS() {
   return getToken(vhdlParser::OTHERS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Instantiation_listContext::ALL() {
+tree::TerminalNode* vhdlParser::Instantiation_listContext::ALL() {
   return getToken(vhdlParser::ALL, 0);
 }
 
 
-ssize_t vhdlParser::Instantiation_listContext::getRuleIndex() const {
+size_t vhdlParser::Instantiation_listContext::getRuleIndex() const {
   return vhdlParser::RuleInstantiation_list;
 }
 
@@ -9927,10 +9927,10 @@ antlrcpp::Any vhdlParser::Instantiation_listContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Instantiation_listContext> vhdlParser::instantiation_list() {
-  Ref<Instantiation_listContext> _localctx = std::make_shared<Instantiation_listContext>(_ctx, getState());
+vhdlParser::Instantiation_listContext* vhdlParser::instantiation_list() {
+  Instantiation_listContext *_localctx = _tracker.createInstance<Instantiation_listContext>(_ctx, getState());
   enterRule(_localctx, 244, vhdlParser::RuleInstantiation_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -9989,40 +9989,40 @@ Ref<vhdlParser::Instantiation_listContext> vhdlParser::instantiation_list() {
 
 //----------------- Interface_constant_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_constant_declarationContext::Interface_constant_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_constant_declarationContext::Interface_constant_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_constant_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_constant_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_constant_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_constant_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_constant_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_constant_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_constant_declarationContext::CONSTANT() {
+tree::TerminalNode* vhdlParser::Interface_constant_declarationContext::CONSTANT() {
   return getToken(vhdlParser::CONSTANT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_constant_declarationContext::IN() {
+tree::TerminalNode* vhdlParser::Interface_constant_declarationContext::IN() {
   return getToken(vhdlParser::IN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_constant_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Interface_constant_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Interface_constant_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Interface_constant_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_constant_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_constant_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_constant_declaration;
 }
 
@@ -10033,10 +10033,10 @@ antlrcpp::Any vhdlParser::Interface_constant_declarationContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_constant_declarationContext> vhdlParser::interface_constant_declaration() {
-  Ref<Interface_constant_declarationContext> _localctx = std::make_shared<Interface_constant_declarationContext>(_ctx, getState());
+vhdlParser::Interface_constant_declarationContext* vhdlParser::interface_constant_declaration() {
+  Interface_constant_declarationContext *_localctx = _tracker.createInstance<Interface_constant_declarationContext>(_ctx, getState());
   enterRule(_localctx, 246, vhdlParser::RuleInterface_constant_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10085,36 +10085,36 @@ Ref<vhdlParser::Interface_constant_declarationContext> vhdlParser::interface_con
 
 //----------------- Interface_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_declarationContext::Interface_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_declarationContext::Interface_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Interface_constant_declarationContext> vhdlParser::Interface_declarationContext::interface_constant_declaration() {
+vhdlParser::Interface_constant_declarationContext* vhdlParser::Interface_declarationContext::interface_constant_declaration() {
   return getRuleContext<vhdlParser::Interface_constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Interface_signal_declarationContext> vhdlParser::Interface_declarationContext::interface_signal_declaration() {
+vhdlParser::Interface_signal_declarationContext* vhdlParser::Interface_declarationContext::interface_signal_declaration() {
   return getRuleContext<vhdlParser::Interface_signal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Interface_variable_declarationContext> vhdlParser::Interface_declarationContext::interface_variable_declaration() {
+vhdlParser::Interface_variable_declarationContext* vhdlParser::Interface_declarationContext::interface_variable_declaration() {
   return getRuleContext<vhdlParser::Interface_variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::Interface_file_declarationContext> vhdlParser::Interface_declarationContext::interface_file_declaration() {
+vhdlParser::Interface_file_declarationContext* vhdlParser::Interface_declarationContext::interface_file_declaration() {
   return getRuleContext<vhdlParser::Interface_file_declarationContext>(0);
 }
 
-Ref<vhdlParser::Interface_terminal_declarationContext> vhdlParser::Interface_declarationContext::interface_terminal_declaration() {
+vhdlParser::Interface_terminal_declarationContext* vhdlParser::Interface_declarationContext::interface_terminal_declaration() {
   return getRuleContext<vhdlParser::Interface_terminal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Interface_quantity_declarationContext> vhdlParser::Interface_declarationContext::interface_quantity_declaration() {
+vhdlParser::Interface_quantity_declarationContext* vhdlParser::Interface_declarationContext::interface_quantity_declaration() {
   return getRuleContext<vhdlParser::Interface_quantity_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_declaration;
 }
 
@@ -10125,8 +10125,8 @@ antlrcpp::Any vhdlParser::Interface_declarationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_declarationContext> vhdlParser::interface_declaration() {
-  Ref<Interface_declarationContext> _localctx = std::make_shared<Interface_declarationContext>(_ctx, getState());
+vhdlParser::Interface_declarationContext* vhdlParser::interface_declaration() {
+  Interface_declarationContext *_localctx = _tracker.createInstance<Interface_declarationContext>(_ctx, getState());
   enterRule(_localctx, 248, vhdlParser::RuleInterface_declaration);
 
   auto onExit = finally([=] {
@@ -10192,16 +10192,16 @@ Ref<vhdlParser::Interface_declarationContext> vhdlParser::interface_declaration(
 
 //----------------- Interface_elementContext ------------------------------------------------------------------
 
-vhdlParser::Interface_elementContext::Interface_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_elementContext::Interface_elementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Interface_declarationContext> vhdlParser::Interface_elementContext::interface_declaration() {
+vhdlParser::Interface_declarationContext* vhdlParser::Interface_elementContext::interface_declaration() {
   return getRuleContext<vhdlParser::Interface_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_elementContext::getRuleIndex() const {
+size_t vhdlParser::Interface_elementContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_element;
 }
 
@@ -10212,8 +10212,8 @@ antlrcpp::Any vhdlParser::Interface_elementContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_elementContext> vhdlParser::interface_element() {
-  Ref<Interface_elementContext> _localctx = std::make_shared<Interface_elementContext>(_ctx, getState());
+vhdlParser::Interface_elementContext* vhdlParser::interface_element() {
+  Interface_elementContext *_localctx = _tracker.createInstance<Interface_elementContext>(_ctx, getState());
   enterRule(_localctx, 250, vhdlParser::RuleInterface_element);
 
   auto onExit = finally([=] {
@@ -10236,28 +10236,28 @@ Ref<vhdlParser::Interface_elementContext> vhdlParser::interface_element() {
 
 //----------------- Interface_file_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_file_declarationContext::Interface_file_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_file_declarationContext::Interface_file_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_file_declarationContext::FILE() {
+tree::TerminalNode* vhdlParser::Interface_file_declarationContext::FILE() {
   return getToken(vhdlParser::FILE, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_file_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_file_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_file_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_file_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_file_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_file_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_file_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_file_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_file_declaration;
 }
 
@@ -10268,8 +10268,8 @@ antlrcpp::Any vhdlParser::Interface_file_declarationContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_file_declarationContext> vhdlParser::interface_file_declaration() {
-  Ref<Interface_file_declarationContext> _localctx = std::make_shared<Interface_file_declarationContext>(_ctx, getState());
+vhdlParser::Interface_file_declarationContext* vhdlParser::interface_file_declaration() {
+  Interface_file_declarationContext *_localctx = _tracker.createInstance<Interface_file_declarationContext>(_ctx, getState());
   enterRule(_localctx, 252, vhdlParser::RuleInterface_file_declaration);
 
   auto onExit = finally([=] {
@@ -10298,28 +10298,28 @@ Ref<vhdlParser::Interface_file_declarationContext> vhdlParser::interface_file_de
 
 //----------------- Interface_signal_listContext ------------------------------------------------------------------
 
-vhdlParser::Interface_signal_listContext::Interface_signal_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_signal_listContext::Interface_signal_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Interface_signal_declarationContext>> vhdlParser::Interface_signal_listContext::interface_signal_declaration() {
+std::vector<vhdlParser::Interface_signal_declarationContext *> vhdlParser::Interface_signal_listContext::interface_signal_declaration() {
   return getRuleContexts<vhdlParser::Interface_signal_declarationContext>();
 }
 
-Ref<vhdlParser::Interface_signal_declarationContext> vhdlParser::Interface_signal_listContext::interface_signal_declaration(int i) {
-  return getRuleContext<vhdlParser::Interface_signal_declarationContext>((size_t)i);
+vhdlParser::Interface_signal_declarationContext* vhdlParser::Interface_signal_listContext::interface_signal_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Interface_signal_declarationContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Interface_signal_listContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Interface_signal_listContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_listContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Interface_signal_listContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
 
-ssize_t vhdlParser::Interface_signal_listContext::getRuleIndex() const {
+size_t vhdlParser::Interface_signal_listContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_signal_list;
 }
 
@@ -10330,10 +10330,10 @@ antlrcpp::Any vhdlParser::Interface_signal_listContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_signal_listContext> vhdlParser::interface_signal_list() {
-  Ref<Interface_signal_listContext> _localctx = std::make_shared<Interface_signal_listContext>(_ctx, getState());
+vhdlParser::Interface_signal_listContext* vhdlParser::interface_signal_list() {
+  Interface_signal_listContext *_localctx = _tracker.createInstance<Interface_signal_listContext>(_ctx, getState());
   enterRule(_localctx, 254, vhdlParser::RuleInterface_signal_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10367,28 +10367,28 @@ Ref<vhdlParser::Interface_signal_listContext> vhdlParser::interface_signal_list(
 
 //----------------- Interface_port_listContext ------------------------------------------------------------------
 
-vhdlParser::Interface_port_listContext::Interface_port_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_port_listContext::Interface_port_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Interface_port_declarationContext>> vhdlParser::Interface_port_listContext::interface_port_declaration() {
+std::vector<vhdlParser::Interface_port_declarationContext *> vhdlParser::Interface_port_listContext::interface_port_declaration() {
   return getRuleContexts<vhdlParser::Interface_port_declarationContext>();
 }
 
-Ref<vhdlParser::Interface_port_declarationContext> vhdlParser::Interface_port_listContext::interface_port_declaration(int i) {
-  return getRuleContext<vhdlParser::Interface_port_declarationContext>((size_t)i);
+vhdlParser::Interface_port_declarationContext* vhdlParser::Interface_port_listContext::interface_port_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Interface_port_declarationContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Interface_port_listContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Interface_port_listContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_port_listContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Interface_port_listContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
 
-ssize_t vhdlParser::Interface_port_listContext::getRuleIndex() const {
+size_t vhdlParser::Interface_port_listContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_port_list;
 }
 
@@ -10399,10 +10399,10 @@ antlrcpp::Any vhdlParser::Interface_port_listContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_port_listContext> vhdlParser::interface_port_list() {
-  Ref<Interface_port_listContext> _localctx = std::make_shared<Interface_port_listContext>(_ctx, getState());
+vhdlParser::Interface_port_listContext* vhdlParser::interface_port_list() {
+  Interface_port_listContext *_localctx = _tracker.createInstance<Interface_port_listContext>(_ctx, getState());
   enterRule(_localctx, 256, vhdlParser::RuleInterface_port_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10436,28 +10436,28 @@ Ref<vhdlParser::Interface_port_listContext> vhdlParser::interface_port_list() {
 
 //----------------- Interface_listContext ------------------------------------------------------------------
 
-vhdlParser::Interface_listContext::Interface_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_listContext::Interface_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Interface_elementContext>> vhdlParser::Interface_listContext::interface_element() {
+std::vector<vhdlParser::Interface_elementContext *> vhdlParser::Interface_listContext::interface_element() {
   return getRuleContexts<vhdlParser::Interface_elementContext>();
 }
 
-Ref<vhdlParser::Interface_elementContext> vhdlParser::Interface_listContext::interface_element(int i) {
-  return getRuleContext<vhdlParser::Interface_elementContext>((size_t)i);
+vhdlParser::Interface_elementContext* vhdlParser::Interface_listContext::interface_element(size_t i) {
+  return getRuleContext<vhdlParser::Interface_elementContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Interface_listContext::SEMI() {
+std::vector<tree::TerminalNode *> vhdlParser::Interface_listContext::SEMI() {
   return getTokens(vhdlParser::SEMI);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_listContext::SEMI(int i) {
-  return getToken(vhdlParser::SEMI, (size_t)i);
+tree::TerminalNode* vhdlParser::Interface_listContext::SEMI(size_t i) {
+  return getToken(vhdlParser::SEMI, i);
 }
 
 
-ssize_t vhdlParser::Interface_listContext::getRuleIndex() const {
+size_t vhdlParser::Interface_listContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_list;
 }
 
@@ -10468,10 +10468,10 @@ antlrcpp::Any vhdlParser::Interface_listContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_listContext> vhdlParser::interface_list() {
-  Ref<Interface_listContext> _localctx = std::make_shared<Interface_listContext>(_ctx, getState());
+vhdlParser::Interface_listContext* vhdlParser::interface_list() {
+  Interface_listContext *_localctx = _tracker.createInstance<Interface_listContext>(_ctx, getState());
   enterRule(_localctx, 258, vhdlParser::RuleInterface_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10505,44 +10505,44 @@ Ref<vhdlParser::Interface_listContext> vhdlParser::interface_list() {
 
 //----------------- Interface_quantity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_quantity_declarationContext::Interface_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_quantity_declarationContext::Interface_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_quantity_declarationContext::QUANTITY() {
+tree::TerminalNode* vhdlParser::Interface_quantity_declarationContext::QUANTITY() {
   return getToken(vhdlParser::QUANTITY, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_quantity_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_quantity_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_quantity_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_quantity_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_quantity_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_quantity_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_quantity_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Interface_quantity_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Interface_quantity_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Interface_quantity_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_quantity_declarationContext::IN() {
+tree::TerminalNode* vhdlParser::Interface_quantity_declarationContext::IN() {
   return getToken(vhdlParser::IN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_quantity_declarationContext::OUT() {
+tree::TerminalNode* vhdlParser::Interface_quantity_declarationContext::OUT() {
   return getToken(vhdlParser::OUT, 0);
 }
 
 
-ssize_t vhdlParser::Interface_quantity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_quantity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_quantity_declaration;
 }
 
@@ -10553,10 +10553,10 @@ antlrcpp::Any vhdlParser::Interface_quantity_declarationContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_quantity_declarationContext> vhdlParser::interface_quantity_declaration() {
-  Ref<Interface_quantity_declarationContext> _localctx = std::make_shared<Interface_quantity_declarationContext>(_ctx, getState());
+vhdlParser::Interface_quantity_declarationContext* vhdlParser::interface_quantity_declaration() {
+  Interface_quantity_declarationContext *_localctx = _tracker.createInstance<Interface_quantity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 260, vhdlParser::RuleInterface_quantity_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10609,40 +10609,40 @@ Ref<vhdlParser::Interface_quantity_declarationContext> vhdlParser::interface_qua
 
 //----------------- Interface_port_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_port_declarationContext::Interface_port_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_port_declarationContext::Interface_port_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_port_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_port_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_port_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_port_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Signal_modeContext> vhdlParser::Interface_port_declarationContext::signal_mode() {
+vhdlParser::Signal_modeContext* vhdlParser::Interface_port_declarationContext::signal_mode() {
   return getRuleContext<vhdlParser::Signal_modeContext>(0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_port_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_port_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_port_declarationContext::BUS() {
+tree::TerminalNode* vhdlParser::Interface_port_declarationContext::BUS() {
   return getToken(vhdlParser::BUS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_port_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Interface_port_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Interface_port_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Interface_port_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_port_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_port_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_port_declaration;
 }
 
@@ -10653,10 +10653,10 @@ antlrcpp::Any vhdlParser::Interface_port_declarationContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_port_declarationContext> vhdlParser::interface_port_declaration() {
-  Ref<Interface_port_declarationContext> _localctx = std::make_shared<Interface_port_declarationContext>(_ctx, getState());
+vhdlParser::Interface_port_declarationContext* vhdlParser::interface_port_declaration() {
+  Interface_port_declarationContext *_localctx = _tracker.createInstance<Interface_port_declarationContext>(_ctx, getState());
   enterRule(_localctx, 262, vhdlParser::RuleInterface_port_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10700,52 +10700,52 @@ Ref<vhdlParser::Interface_port_declarationContext> vhdlParser::interface_port_de
 
 //----------------- Interface_signal_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_signal_declarationContext::Interface_signal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_signal_declarationContext::Interface_signal_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::SIGNAL() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::SIGNAL() {
   return getToken(vhdlParser::SIGNAL, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_signal_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_signal_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_signal_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_signal_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::BUS() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::BUS() {
   return getToken(vhdlParser::BUS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Interface_signal_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Interface_signal_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::IN() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::IN() {
   return getToken(vhdlParser::IN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::OUT() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::OUT() {
   return getToken(vhdlParser::OUT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_signal_declarationContext::INOUT() {
+tree::TerminalNode* vhdlParser::Interface_signal_declarationContext::INOUT() {
   return getToken(vhdlParser::INOUT, 0);
 }
 
 
-ssize_t vhdlParser::Interface_signal_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_signal_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_signal_declaration;
 }
 
@@ -10756,10 +10756,10 @@ antlrcpp::Any vhdlParser::Interface_signal_declarationContext::accept(tree::Pars
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_signal_declarationContext> vhdlParser::interface_signal_declaration() {
-  Ref<Interface_signal_declarationContext> _localctx = std::make_shared<Interface_signal_declarationContext>(_ctx, getState());
+vhdlParser::Interface_signal_declarationContext* vhdlParser::interface_signal_declaration() {
+  Interface_signal_declarationContext *_localctx = _tracker.createInstance<Interface_signal_declarationContext>(_ctx, getState());
   enterRule(_localctx, 264, vhdlParser::RuleInterface_signal_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10775,13 +10775,13 @@ Ref<vhdlParser::Interface_signal_declarationContext> vhdlParser::interface_signa
     setState(1576);
 
     _la = _input->LA(1);
-    if ((((_la & ~(ssize_t)0x3f) == 0) &&
+    if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::IN)
       | (1ULL << vhdlParser::INOUT)
       | (1ULL << vhdlParser::OUT))) != 0)) {
       setState(1575);
       _la = _input->LA(1);
-      if (!((((_la & ~(ssize_t)0x3f) == 0) &&
+      if (!((((_la & ~ 0x3fULL) == 0) &&
         ((1ULL << _la) & ((1ULL << vhdlParser::IN)
         | (1ULL << vhdlParser::INOUT)
         | (1ULL << vhdlParser::OUT))) != 0))) {
@@ -10821,28 +10821,28 @@ Ref<vhdlParser::Interface_signal_declarationContext> vhdlParser::interface_signa
 
 //----------------- Interface_terminal_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_terminal_declarationContext::Interface_terminal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_terminal_declarationContext::Interface_terminal_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_terminal_declarationContext::TERMINAL() {
+tree::TerminalNode* vhdlParser::Interface_terminal_declarationContext::TERMINAL() {
   return getToken(vhdlParser::TERMINAL, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_terminal_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_terminal_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_terminal_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_terminal_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Interface_terminal_declarationContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Interface_terminal_declarationContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_terminal_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_terminal_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_terminal_declaration;
 }
 
@@ -10853,8 +10853,8 @@ antlrcpp::Any vhdlParser::Interface_terminal_declarationContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_terminal_declarationContext> vhdlParser::interface_terminal_declaration() {
-  Ref<Interface_terminal_declarationContext> _localctx = std::make_shared<Interface_terminal_declarationContext>(_ctx, getState());
+vhdlParser::Interface_terminal_declarationContext* vhdlParser::interface_terminal_declaration() {
+  Interface_terminal_declarationContext *_localctx = _tracker.createInstance<Interface_terminal_declarationContext>(_ctx, getState());
   enterRule(_localctx, 266, vhdlParser::RuleInterface_terminal_declaration);
 
   auto onExit = finally([=] {
@@ -10883,40 +10883,40 @@ Ref<vhdlParser::Interface_terminal_declarationContext> vhdlParser::interface_ter
 
 //----------------- Interface_variable_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Interface_variable_declarationContext::Interface_variable_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Interface_variable_declarationContext::Interface_variable_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Interface_variable_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Interface_variable_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_variable_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Interface_variable_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Interface_variable_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Interface_variable_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_variable_declarationContext::VARIABLE() {
+tree::TerminalNode* vhdlParser::Interface_variable_declarationContext::VARIABLE() {
   return getToken(vhdlParser::VARIABLE, 0);
 }
 
-Ref<vhdlParser::Signal_modeContext> vhdlParser::Interface_variable_declarationContext::signal_mode() {
+vhdlParser::Signal_modeContext* vhdlParser::Interface_variable_declarationContext::signal_mode() {
   return getRuleContext<vhdlParser::Signal_modeContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Interface_variable_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Interface_variable_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Interface_variable_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Interface_variable_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Interface_variable_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Interface_variable_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleInterface_variable_declaration;
 }
 
@@ -10927,10 +10927,10 @@ antlrcpp::Any vhdlParser::Interface_variable_declarationContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Interface_variable_declarationContext> vhdlParser::interface_variable_declaration() {
-  Ref<Interface_variable_declarationContext> _localctx = std::make_shared<Interface_variable_declarationContext>(_ctx, getState());
+vhdlParser::Interface_variable_declarationContext* vhdlParser::interface_variable_declaration() {
+  Interface_variable_declarationContext *_localctx = _tracker.createInstance<Interface_variable_declarationContext>(_ctx, getState());
   enterRule(_localctx, 268, vhdlParser::RuleInterface_variable_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -10951,7 +10951,7 @@ Ref<vhdlParser::Interface_variable_declarationContext> vhdlParser::interface_var
     setState(1597);
 
     _la = _input->LA(1);
-    if ((((_la & ~(ssize_t)0x3f) == 0) &&
+    if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::BUFFER)
       | (1ULL << vhdlParser::IN)
       | (1ULL << vhdlParser::INOUT)
@@ -10984,28 +10984,28 @@ Ref<vhdlParser::Interface_variable_declarationContext> vhdlParser::interface_var
 
 //----------------- Iteration_schemeContext ------------------------------------------------------------------
 
-vhdlParser::Iteration_schemeContext::Iteration_schemeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Iteration_schemeContext::Iteration_schemeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Iteration_schemeContext::WHILE() {
+tree::TerminalNode* vhdlParser::Iteration_schemeContext::WHILE() {
   return getToken(vhdlParser::WHILE, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Iteration_schemeContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Iteration_schemeContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Iteration_schemeContext::FOR() {
+tree::TerminalNode* vhdlParser::Iteration_schemeContext::FOR() {
   return getToken(vhdlParser::FOR, 0);
 }
 
-Ref<vhdlParser::Parameter_specificationContext> vhdlParser::Iteration_schemeContext::parameter_specification() {
+vhdlParser::Parameter_specificationContext* vhdlParser::Iteration_schemeContext::parameter_specification() {
   return getRuleContext<vhdlParser::Parameter_specificationContext>(0);
 }
 
 
-ssize_t vhdlParser::Iteration_schemeContext::getRuleIndex() const {
+size_t vhdlParser::Iteration_schemeContext::getRuleIndex() const {
   return vhdlParser::RuleIteration_scheme;
 }
 
@@ -11016,8 +11016,8 @@ antlrcpp::Any vhdlParser::Iteration_schemeContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Iteration_schemeContext> vhdlParser::iteration_scheme() {
-  Ref<Iteration_schemeContext> _localctx = std::make_shared<Iteration_schemeContext>(_ctx, getState());
+vhdlParser::Iteration_schemeContext* vhdlParser::iteration_scheme() {
+  Iteration_schemeContext *_localctx = _tracker.createInstance<Iteration_schemeContext>(_ctx, getState());
   enterRule(_localctx, 270, vhdlParser::RuleIteration_scheme);
 
   auto onExit = finally([=] {
@@ -11061,20 +11061,20 @@ Ref<vhdlParser::Iteration_schemeContext> vhdlParser::iteration_scheme() {
 
 //----------------- Label_colonContext ------------------------------------------------------------------
 
-vhdlParser::Label_colonContext::Label_colonContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Label_colonContext::Label_colonContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Label_colonContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Label_colonContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Label_colonContext::COLON() {
+tree::TerminalNode* vhdlParser::Label_colonContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
 
-ssize_t vhdlParser::Label_colonContext::getRuleIndex() const {
+size_t vhdlParser::Label_colonContext::getRuleIndex() const {
   return vhdlParser::RuleLabel_colon;
 }
 
@@ -11085,8 +11085,8 @@ antlrcpp::Any vhdlParser::Label_colonContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::label_colon() {
-  Ref<Label_colonContext> _localctx = std::make_shared<Label_colonContext>(_ctx, getState());
+vhdlParser::Label_colonContext* vhdlParser::label_colon() {
+  Label_colonContext *_localctx = _tracker.createInstance<Label_colonContext>(_ctx, getState());
   enterRule(_localctx, 272, vhdlParser::RuleLabel_colon);
 
   auto onExit = finally([=] {
@@ -11111,24 +11111,24 @@ Ref<vhdlParser::Label_colonContext> vhdlParser::label_colon() {
 
 //----------------- Library_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Library_clauseContext::Library_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Library_clauseContext::Library_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Library_clauseContext::LIBRARY() {
+tree::TerminalNode* vhdlParser::Library_clauseContext::LIBRARY() {
   return getToken(vhdlParser::LIBRARY, 0);
 }
 
-Ref<vhdlParser::Logical_name_listContext> vhdlParser::Library_clauseContext::logical_name_list() {
+vhdlParser::Logical_name_listContext* vhdlParser::Library_clauseContext::logical_name_list() {
   return getRuleContext<vhdlParser::Logical_name_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Library_clauseContext::SEMI() {
+tree::TerminalNode* vhdlParser::Library_clauseContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Library_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Library_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleLibrary_clause;
 }
 
@@ -11139,8 +11139,8 @@ antlrcpp::Any vhdlParser::Library_clauseContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Library_clauseContext> vhdlParser::library_clause() {
-  Ref<Library_clauseContext> _localctx = std::make_shared<Library_clauseContext>(_ctx, getState());
+vhdlParser::Library_clauseContext* vhdlParser::library_clause() {
+  Library_clauseContext *_localctx = _tracker.createInstance<Library_clauseContext>(_ctx, getState());
   enterRule(_localctx, 274, vhdlParser::RuleLibrary_clause);
 
   auto onExit = finally([=] {
@@ -11167,20 +11167,20 @@ Ref<vhdlParser::Library_clauseContext> vhdlParser::library_clause() {
 
 //----------------- Library_unitContext ------------------------------------------------------------------
 
-vhdlParser::Library_unitContext::Library_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Library_unitContext::Library_unitContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Secondary_unitContext> vhdlParser::Library_unitContext::secondary_unit() {
+vhdlParser::Secondary_unitContext* vhdlParser::Library_unitContext::secondary_unit() {
   return getRuleContext<vhdlParser::Secondary_unitContext>(0);
 }
 
-Ref<vhdlParser::Primary_unitContext> vhdlParser::Library_unitContext::primary_unit() {
+vhdlParser::Primary_unitContext* vhdlParser::Library_unitContext::primary_unit() {
   return getRuleContext<vhdlParser::Primary_unitContext>(0);
 }
 
 
-ssize_t vhdlParser::Library_unitContext::getRuleIndex() const {
+size_t vhdlParser::Library_unitContext::getRuleIndex() const {
   return vhdlParser::RuleLibrary_unit;
 }
 
@@ -11191,8 +11191,8 @@ antlrcpp::Any vhdlParser::Library_unitContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Library_unitContext> vhdlParser::library_unit() {
-  Ref<Library_unitContext> _localctx = std::make_shared<Library_unitContext>(_ctx, getState());
+vhdlParser::Library_unitContext* vhdlParser::library_unit() {
+  Library_unitContext *_localctx = _tracker.createInstance<Library_unitContext>(_ctx, getState());
   enterRule(_localctx, 276, vhdlParser::RuleLibrary_unit);
 
   auto onExit = finally([=] {
@@ -11230,32 +11230,32 @@ Ref<vhdlParser::Library_unitContext> vhdlParser::library_unit() {
 
 //----------------- LiteralContext ------------------------------------------------------------------
 
-vhdlParser::LiteralContext::LiteralContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::LiteralContext::LiteralContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::LiteralContext::NULL_SYM() {
+tree::TerminalNode* vhdlParser::LiteralContext::NULL_SYM() {
   return getToken(vhdlParser::NULL_SYM, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::LiteralContext::BIT_STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::LiteralContext::BIT_STRING_LITERAL() {
   return getToken(vhdlParser::BIT_STRING_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::LiteralContext::STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::LiteralContext::STRING_LITERAL() {
   return getToken(vhdlParser::STRING_LITERAL, 0);
 }
 
-Ref<vhdlParser::Enumeration_literalContext> vhdlParser::LiteralContext::enumeration_literal() {
+vhdlParser::Enumeration_literalContext* vhdlParser::LiteralContext::enumeration_literal() {
   return getRuleContext<vhdlParser::Enumeration_literalContext>(0);
 }
 
-Ref<vhdlParser::Numeric_literalContext> vhdlParser::LiteralContext::numeric_literal() {
+vhdlParser::Numeric_literalContext* vhdlParser::LiteralContext::numeric_literal() {
   return getRuleContext<vhdlParser::Numeric_literalContext>(0);
 }
 
 
-ssize_t vhdlParser::LiteralContext::getRuleIndex() const {
+size_t vhdlParser::LiteralContext::getRuleIndex() const {
   return vhdlParser::RuleLiteral;
 }
 
@@ -11266,8 +11266,8 @@ antlrcpp::Any vhdlParser::LiteralContext::accept(tree::ParseTreeVisitor *visitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::LiteralContext> vhdlParser::literal() {
-  Ref<LiteralContext> _localctx = std::make_shared<LiteralContext>(_ctx, getState());
+vhdlParser::LiteralContext* vhdlParser::literal() {
+  LiteralContext *_localctx = _tracker.createInstance<LiteralContext>(_ctx, getState());
   enterRule(_localctx, 278, vhdlParser::RuleLiteral);
 
   auto onExit = finally([=] {
@@ -11332,16 +11332,16 @@ Ref<vhdlParser::LiteralContext> vhdlParser::literal() {
 
 //----------------- Logical_nameContext ------------------------------------------------------------------
 
-vhdlParser::Logical_nameContext::Logical_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Logical_nameContext::Logical_nameContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Logical_nameContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Logical_nameContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Logical_nameContext::getRuleIndex() const {
+size_t vhdlParser::Logical_nameContext::getRuleIndex() const {
   return vhdlParser::RuleLogical_name;
 }
 
@@ -11352,8 +11352,8 @@ antlrcpp::Any vhdlParser::Logical_nameContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Logical_nameContext> vhdlParser::logical_name() {
-  Ref<Logical_nameContext> _localctx = std::make_shared<Logical_nameContext>(_ctx, getState());
+vhdlParser::Logical_nameContext* vhdlParser::logical_name() {
+  Logical_nameContext *_localctx = _tracker.createInstance<Logical_nameContext>(_ctx, getState());
   enterRule(_localctx, 280, vhdlParser::RuleLogical_name);
 
   auto onExit = finally([=] {
@@ -11376,28 +11376,28 @@ Ref<vhdlParser::Logical_nameContext> vhdlParser::logical_name() {
 
 //----------------- Logical_name_listContext ------------------------------------------------------------------
 
-vhdlParser::Logical_name_listContext::Logical_name_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Logical_name_listContext::Logical_name_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Logical_nameContext>> vhdlParser::Logical_name_listContext::logical_name() {
+std::vector<vhdlParser::Logical_nameContext *> vhdlParser::Logical_name_listContext::logical_name() {
   return getRuleContexts<vhdlParser::Logical_nameContext>();
 }
 
-Ref<vhdlParser::Logical_nameContext> vhdlParser::Logical_name_listContext::logical_name(int i) {
-  return getRuleContext<vhdlParser::Logical_nameContext>((size_t)i);
+vhdlParser::Logical_nameContext* vhdlParser::Logical_name_listContext::logical_name(size_t i) {
+  return getRuleContext<vhdlParser::Logical_nameContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Logical_name_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Logical_name_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_name_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Logical_name_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Logical_name_listContext::getRuleIndex() const {
+size_t vhdlParser::Logical_name_listContext::getRuleIndex() const {
   return vhdlParser::RuleLogical_name_list;
 }
 
@@ -11408,10 +11408,10 @@ antlrcpp::Any vhdlParser::Logical_name_listContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Logical_name_listContext> vhdlParser::logical_name_list() {
-  Ref<Logical_name_listContext> _localctx = std::make_shared<Logical_name_listContext>(_ctx, getState());
+vhdlParser::Logical_name_listContext* vhdlParser::logical_name_list() {
+  Logical_name_listContext *_localctx = _tracker.createInstance<Logical_name_listContext>(_ctx, getState());
   enterRule(_localctx, 282, vhdlParser::RuleLogical_name_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -11445,36 +11445,36 @@ Ref<vhdlParser::Logical_name_listContext> vhdlParser::logical_name_list() {
 
 //----------------- Logical_operatorContext ------------------------------------------------------------------
 
-vhdlParser::Logical_operatorContext::Logical_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Logical_operatorContext::Logical_operatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::AND() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::AND() {
   return getToken(vhdlParser::AND, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::OR() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::OR() {
   return getToken(vhdlParser::OR, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::NAND() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::NAND() {
   return getToken(vhdlParser::NAND, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::NOR() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::NOR() {
   return getToken(vhdlParser::NOR, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::XOR() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::XOR() {
   return getToken(vhdlParser::XOR, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Logical_operatorContext::XNOR() {
+tree::TerminalNode* vhdlParser::Logical_operatorContext::XNOR() {
   return getToken(vhdlParser::XNOR, 0);
 }
 
 
-ssize_t vhdlParser::Logical_operatorContext::getRuleIndex() const {
+size_t vhdlParser::Logical_operatorContext::getRuleIndex() const {
   return vhdlParser::RuleLogical_operator;
 }
 
@@ -11485,10 +11485,10 @@ antlrcpp::Any vhdlParser::Logical_operatorContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Logical_operatorContext> vhdlParser::logical_operator() {
-  Ref<Logical_operatorContext> _localctx = std::make_shared<Logical_operatorContext>(_ctx, getState());
+vhdlParser::Logical_operatorContext* vhdlParser::logical_operator() {
+  Logical_operatorContext *_localctx = _tracker.createInstance<Logical_operatorContext>(_ctx, getState());
   enterRule(_localctx, 284, vhdlParser::RuleLogical_operator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -11497,7 +11497,7 @@ Ref<vhdlParser::Logical_operatorContext> vhdlParser::logical_operator() {
     enterOuterAlt(_localctx, 1);
     setState(1638);
     _la = _input->LA(1);
-    if (!((((_la & ~(ssize_t)0x3f) == 0) &&
+    if (!((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::AND)
       | (1ULL << vhdlParser::NAND)
       | (1ULL << vhdlParser::NOR)
@@ -11521,44 +11521,44 @@ Ref<vhdlParser::Logical_operatorContext> vhdlParser::logical_operator() {
 
 //----------------- Loop_statementContext ------------------------------------------------------------------
 
-vhdlParser::Loop_statementContext::Loop_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Loop_statementContext::Loop_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Loop_statementContext::LOOP() {
+std::vector<tree::TerminalNode *> vhdlParser::Loop_statementContext::LOOP() {
   return getTokens(vhdlParser::LOOP);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Loop_statementContext::LOOP(int i) {
-  return getToken(vhdlParser::LOOP, (size_t)i);
+tree::TerminalNode* vhdlParser::Loop_statementContext::LOOP(size_t i) {
+  return getToken(vhdlParser::LOOP, i);
 }
 
-Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::Loop_statementContext::sequence_of_statements() {
+vhdlParser::Sequence_of_statementsContext* vhdlParser::Loop_statementContext::sequence_of_statements() {
   return getRuleContext<vhdlParser::Sequence_of_statementsContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Loop_statementContext::END() {
+tree::TerminalNode* vhdlParser::Loop_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Loop_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Loop_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Loop_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Loop_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Iteration_schemeContext> vhdlParser::Loop_statementContext::iteration_scheme() {
+vhdlParser::Iteration_schemeContext* vhdlParser::Loop_statementContext::iteration_scheme() {
   return getRuleContext<vhdlParser::Iteration_schemeContext>(0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Loop_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Loop_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Loop_statementContext::getRuleIndex() const {
+size_t vhdlParser::Loop_statementContext::getRuleIndex() const {
   return vhdlParser::RuleLoop_statement;
 }
 
@@ -11569,10 +11569,10 @@ antlrcpp::Any vhdlParser::Loop_statementContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Loop_statementContext> vhdlParser::loop_statement() {
-  Ref<Loop_statementContext> _localctx = std::make_shared<Loop_statementContext>(_ctx, getState());
+vhdlParser::Loop_statementContext* vhdlParser::loop_statement() {
+  Loop_statementContext *_localctx = _tracker.createInstance<Loop_statementContext>(_ctx, getState());
   enterRule(_localctx, 286, vhdlParser::RuleLoop_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -11627,32 +11627,32 @@ Ref<vhdlParser::Loop_statementContext> vhdlParser::loop_statement() {
 
 //----------------- Signal_modeContext ------------------------------------------------------------------
 
-vhdlParser::Signal_modeContext::Signal_modeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Signal_modeContext::Signal_modeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_modeContext::IN() {
+tree::TerminalNode* vhdlParser::Signal_modeContext::IN() {
   return getToken(vhdlParser::IN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_modeContext::OUT() {
+tree::TerminalNode* vhdlParser::Signal_modeContext::OUT() {
   return getToken(vhdlParser::OUT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_modeContext::INOUT() {
+tree::TerminalNode* vhdlParser::Signal_modeContext::INOUT() {
   return getToken(vhdlParser::INOUT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_modeContext::BUFFER() {
+tree::TerminalNode* vhdlParser::Signal_modeContext::BUFFER() {
   return getToken(vhdlParser::BUFFER, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_modeContext::LINKAGE() {
+tree::TerminalNode* vhdlParser::Signal_modeContext::LINKAGE() {
   return getToken(vhdlParser::LINKAGE, 0);
 }
 
 
-ssize_t vhdlParser::Signal_modeContext::getRuleIndex() const {
+size_t vhdlParser::Signal_modeContext::getRuleIndex() const {
   return vhdlParser::RuleSignal_mode;
 }
 
@@ -11663,10 +11663,10 @@ antlrcpp::Any vhdlParser::Signal_modeContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Signal_modeContext> vhdlParser::signal_mode() {
-  Ref<Signal_modeContext> _localctx = std::make_shared<Signal_modeContext>(_ctx, getState());
+vhdlParser::Signal_modeContext* vhdlParser::signal_mode() {
+  Signal_modeContext *_localctx = _tracker.createInstance<Signal_modeContext>(_ctx, getState());
   enterRule(_localctx, 288, vhdlParser::RuleSignal_mode);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -11675,7 +11675,7 @@ Ref<vhdlParser::Signal_modeContext> vhdlParser::signal_mode() {
     enterOuterAlt(_localctx, 1);
     setState(1655);
     _la = _input->LA(1);
-    if (!((((_la & ~(ssize_t)0x3f) == 0) &&
+    if (!((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::BUFFER)
       | (1ULL << vhdlParser::IN)
       | (1ULL << vhdlParser::INOUT)
@@ -11698,28 +11698,28 @@ Ref<vhdlParser::Signal_modeContext> vhdlParser::signal_mode() {
 
 //----------------- Multiplying_operatorContext ------------------------------------------------------------------
 
-vhdlParser::Multiplying_operatorContext::Multiplying_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Multiplying_operatorContext::Multiplying_operatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Multiplying_operatorContext::MUL() {
+tree::TerminalNode* vhdlParser::Multiplying_operatorContext::MUL() {
   return getToken(vhdlParser::MUL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Multiplying_operatorContext::DIV() {
+tree::TerminalNode* vhdlParser::Multiplying_operatorContext::DIV() {
   return getToken(vhdlParser::DIV, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Multiplying_operatorContext::MOD() {
+tree::TerminalNode* vhdlParser::Multiplying_operatorContext::MOD() {
   return getToken(vhdlParser::MOD, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Multiplying_operatorContext::REM() {
+tree::TerminalNode* vhdlParser::Multiplying_operatorContext::REM() {
   return getToken(vhdlParser::REM, 0);
 }
 
 
-ssize_t vhdlParser::Multiplying_operatorContext::getRuleIndex() const {
+size_t vhdlParser::Multiplying_operatorContext::getRuleIndex() const {
   return vhdlParser::RuleMultiplying_operator;
 }
 
@@ -11730,10 +11730,10 @@ antlrcpp::Any vhdlParser::Multiplying_operatorContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Multiplying_operatorContext> vhdlParser::multiplying_operator() {
-  Ref<Multiplying_operatorContext> _localctx = std::make_shared<Multiplying_operatorContext>(_ctx, getState());
+vhdlParser::Multiplying_operatorContext* vhdlParser::multiplying_operator() {
+  Multiplying_operatorContext *_localctx = _tracker.createInstance<Multiplying_operatorContext>(_ctx, getState());
   enterRule(_localctx, 290, vhdlParser::RuleMultiplying_operator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -11764,32 +11764,32 @@ Ref<vhdlParser::Multiplying_operatorContext> vhdlParser::multiplying_operator() 
 
 //----------------- NameContext ------------------------------------------------------------------
 
-vhdlParser::NameContext::NameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::NameContext::NameContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::NameContext::selected_name() {
+vhdlParser::Selected_nameContext* vhdlParser::NameContext::selected_name() {
   return getRuleContext<vhdlParser::Selected_nameContext>(0);
 }
 
-std::vector<Ref<vhdlParser::Name_partContext>> vhdlParser::NameContext::name_part() {
+std::vector<vhdlParser::Name_partContext *> vhdlParser::NameContext::name_part() {
   return getRuleContexts<vhdlParser::Name_partContext>();
 }
 
-Ref<vhdlParser::Name_partContext> vhdlParser::NameContext::name_part(int i) {
-  return getRuleContext<vhdlParser::Name_partContext>((size_t)i);
+vhdlParser::Name_partContext* vhdlParser::NameContext::name_part(size_t i) {
+  return getRuleContext<vhdlParser::Name_partContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::NameContext::DOT() {
+std::vector<tree::TerminalNode *> vhdlParser::NameContext::DOT() {
   return getTokens(vhdlParser::DOT);
 }
 
-Ref<tree::TerminalNode> vhdlParser::NameContext::DOT(int i) {
-  return getToken(vhdlParser::DOT, (size_t)i);
+tree::TerminalNode* vhdlParser::NameContext::DOT(size_t i) {
+  return getToken(vhdlParser::DOT, i);
 }
 
 
-ssize_t vhdlParser::NameContext::getRuleIndex() const {
+size_t vhdlParser::NameContext::getRuleIndex() const {
   return vhdlParser::RuleName;
 }
 
@@ -11800,15 +11800,15 @@ antlrcpp::Any vhdlParser::NameContext::accept(tree::ParseTreeVisitor *visitor) {
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::name() {
-  Ref<NameContext> _localctx = std::make_shared<NameContext>(_ctx, getState());
+vhdlParser::NameContext* vhdlParser::name() {
+  NameContext *_localctx = _tracker.createInstance<NameContext>(_ctx, getState());
   enterRule(_localctx, 292, vhdlParser::RuleName);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     setState(1668);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 168, _ctx)) {
@@ -11854,24 +11854,24 @@ Ref<vhdlParser::NameContext> vhdlParser::name() {
 
 //----------------- Name_partContext ------------------------------------------------------------------
 
-vhdlParser::Name_partContext::Name_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Name_partContext::Name_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::Name_partContext::selected_name() {
+vhdlParser::Selected_nameContext* vhdlParser::Name_partContext::selected_name() {
   return getRuleContext<vhdlParser::Selected_nameContext>(0);
 }
 
-std::vector<Ref<vhdlParser::Name_part_specificatorContext>> vhdlParser::Name_partContext::name_part_specificator() {
+std::vector<vhdlParser::Name_part_specificatorContext *> vhdlParser::Name_partContext::name_part_specificator() {
   return getRuleContexts<vhdlParser::Name_part_specificatorContext>();
 }
 
-Ref<vhdlParser::Name_part_specificatorContext> vhdlParser::Name_partContext::name_part_specificator(int i) {
-  return getRuleContext<vhdlParser::Name_part_specificatorContext>((size_t)i);
+vhdlParser::Name_part_specificatorContext* vhdlParser::Name_partContext::name_part_specificator(size_t i) {
+  return getRuleContext<vhdlParser::Name_part_specificatorContext>(i);
 }
 
 
-ssize_t vhdlParser::Name_partContext::getRuleIndex() const {
+size_t vhdlParser::Name_partContext::getRuleIndex() const {
   return vhdlParser::RuleName_part;
 }
 
@@ -11882,15 +11882,15 @@ antlrcpp::Any vhdlParser::Name_partContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Name_partContext> vhdlParser::name_part() {
-  Ref<Name_partContext> _localctx = std::make_shared<Name_partContext>(_ctx, getState());
+vhdlParser::Name_partContext* vhdlParser::name_part() {
+  Name_partContext *_localctx = _tracker.createInstance<Name_partContext>(_ctx, getState());
   enterRule(_localctx, 294, vhdlParser::RuleName_part);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(1670);
     selected_name();
@@ -11919,24 +11919,24 @@ Ref<vhdlParser::Name_partContext> vhdlParser::name_part() {
 
 //----------------- Name_part_specificatorContext ------------------------------------------------------------------
 
-vhdlParser::Name_part_specificatorContext::Name_part_specificatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Name_part_specificatorContext::Name_part_specificatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Name_attribute_partContext> vhdlParser::Name_part_specificatorContext::name_attribute_part() {
+vhdlParser::Name_attribute_partContext* vhdlParser::Name_part_specificatorContext::name_attribute_part() {
   return getRuleContext<vhdlParser::Name_attribute_partContext>(0);
 }
 
-Ref<vhdlParser::Name_function_call_or_indexed_partContext> vhdlParser::Name_part_specificatorContext::name_function_call_or_indexed_part() {
+vhdlParser::Name_function_call_or_indexed_partContext* vhdlParser::Name_part_specificatorContext::name_function_call_or_indexed_part() {
   return getRuleContext<vhdlParser::Name_function_call_or_indexed_partContext>(0);
 }
 
-Ref<vhdlParser::Name_slice_partContext> vhdlParser::Name_part_specificatorContext::name_slice_part() {
+vhdlParser::Name_slice_partContext* vhdlParser::Name_part_specificatorContext::name_slice_part() {
   return getRuleContext<vhdlParser::Name_slice_partContext>(0);
 }
 
 
-ssize_t vhdlParser::Name_part_specificatorContext::getRuleIndex() const {
+size_t vhdlParser::Name_part_specificatorContext::getRuleIndex() const {
   return vhdlParser::RuleName_part_specificator;
 }
 
@@ -11947,8 +11947,8 @@ antlrcpp::Any vhdlParser::Name_part_specificatorContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Name_part_specificatorContext> vhdlParser::name_part_specificator() {
-  Ref<Name_part_specificatorContext> _localctx = std::make_shared<Name_part_specificatorContext>(_ctx, getState());
+vhdlParser::Name_part_specificatorContext* vhdlParser::name_part_specificator() {
+  Name_part_specificatorContext *_localctx = _tracker.createInstance<Name_part_specificatorContext>(_ctx, getState());
   enterRule(_localctx, 296, vhdlParser::RuleName_part_specificator);
 
   auto onExit = finally([=] {
@@ -11993,36 +11993,36 @@ Ref<vhdlParser::Name_part_specificatorContext> vhdlParser::name_part_specificato
 
 //----------------- Name_attribute_partContext ------------------------------------------------------------------
 
-vhdlParser::Name_attribute_partContext::Name_attribute_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Name_attribute_partContext::Name_attribute_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_attribute_partContext::APOSTROPHE() {
+tree::TerminalNode* vhdlParser::Name_attribute_partContext::APOSTROPHE() {
   return getToken(vhdlParser::APOSTROPHE, 0);
 }
 
-Ref<vhdlParser::Attribute_designatorContext> vhdlParser::Name_attribute_partContext::attribute_designator() {
+vhdlParser::Attribute_designatorContext* vhdlParser::Name_attribute_partContext::attribute_designator() {
   return getRuleContext<vhdlParser::Attribute_designatorContext>(0);
 }
 
-std::vector<Ref<vhdlParser::ExpressionContext>> vhdlParser::Name_attribute_partContext::expression() {
+std::vector<vhdlParser::ExpressionContext *> vhdlParser::Name_attribute_partContext::expression() {
   return getRuleContexts<vhdlParser::ExpressionContext>();
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Name_attribute_partContext::expression(int i) {
-  return getRuleContext<vhdlParser::ExpressionContext>((size_t)i);
+vhdlParser::ExpressionContext* vhdlParser::Name_attribute_partContext::expression(size_t i) {
+  return getRuleContext<vhdlParser::ExpressionContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Name_attribute_partContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Name_attribute_partContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_attribute_partContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Name_attribute_partContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Name_attribute_partContext::getRuleIndex() const {
+size_t vhdlParser::Name_attribute_partContext::getRuleIndex() const {
   return vhdlParser::RuleName_attribute_part;
 }
 
@@ -12033,15 +12033,15 @@ antlrcpp::Any vhdlParser::Name_attribute_partContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Name_attribute_partContext> vhdlParser::name_attribute_part() {
-  Ref<Name_attribute_partContext> _localctx = std::make_shared<Name_attribute_partContext>(_ctx, getState());
+vhdlParser::Name_attribute_partContext* vhdlParser::name_attribute_part() {
+  Name_attribute_partContext *_localctx = _tracker.createInstance<Name_attribute_partContext>(_ctx, getState());
   enterRule(_localctx, 298, vhdlParser::RuleName_attribute_part);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(1682);
     match(vhdlParser::APOSTROPHE);
@@ -12085,24 +12085,24 @@ Ref<vhdlParser::Name_attribute_partContext> vhdlParser::name_attribute_part() {
 
 //----------------- Name_function_call_or_indexed_partContext ------------------------------------------------------------------
 
-vhdlParser::Name_function_call_or_indexed_partContext::Name_function_call_or_indexed_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Name_function_call_or_indexed_partContext::Name_function_call_or_indexed_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_function_call_or_indexed_partContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Name_function_call_or_indexed_partContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_function_call_or_indexed_partContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Name_function_call_or_indexed_partContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<vhdlParser::Actual_parameter_partContext> vhdlParser::Name_function_call_or_indexed_partContext::actual_parameter_part() {
+vhdlParser::Actual_parameter_partContext* vhdlParser::Name_function_call_or_indexed_partContext::actual_parameter_part() {
   return getRuleContext<vhdlParser::Actual_parameter_partContext>(0);
 }
 
 
-ssize_t vhdlParser::Name_function_call_or_indexed_partContext::getRuleIndex() const {
+size_t vhdlParser::Name_function_call_or_indexed_partContext::getRuleIndex() const {
   return vhdlParser::RuleName_function_call_or_indexed_part;
 }
 
@@ -12113,10 +12113,10 @@ antlrcpp::Any vhdlParser::Name_function_call_or_indexed_partContext::accept(tree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Name_function_call_or_indexed_partContext> vhdlParser::name_function_call_or_indexed_part() {
-  Ref<Name_function_call_or_indexed_partContext> _localctx = std::make_shared<Name_function_call_or_indexed_partContext>(_ctx, getState());
+vhdlParser::Name_function_call_or_indexed_partContext* vhdlParser::name_function_call_or_indexed_part() {
+  Name_function_call_or_indexed_partContext *_localctx = _tracker.createInstance<Name_function_call_or_indexed_partContext>(_ctx, getState());
   enterRule(_localctx, 300, vhdlParser::RuleName_function_call_or_indexed_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -12128,12 +12128,12 @@ Ref<vhdlParser::Name_function_call_or_indexed_partContext> vhdlParser::name_func
     setState(1696);
 
     _la = _input->LA(1);
-    if ((((_la & ~(ssize_t)0x3f) == 0) &&
+    if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
       | (1ULL << vhdlParser::NULL_SYM)
-      | (1ULL << vhdlParser::OPEN))) != 0) || ((((_la - 112) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::OPEN))) != 0) || ((((_la - 112) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 112)) & ((1ULL << (vhdlParser::BASE_LITERAL - 112))
       | (1ULL << (vhdlParser::BIT_STRING_LITERAL - 112))
       | (1ULL << (vhdlParser::REAL_LITERAL - 112))
@@ -12163,36 +12163,36 @@ Ref<vhdlParser::Name_function_call_or_indexed_partContext> vhdlParser::name_func
 
 //----------------- Name_slice_partContext ------------------------------------------------------------------
 
-vhdlParser::Name_slice_partContext::Name_slice_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Name_slice_partContext::Name_slice_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_slice_partContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Name_slice_partContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Explicit_rangeContext>> vhdlParser::Name_slice_partContext::explicit_range() {
+std::vector<vhdlParser::Explicit_rangeContext *> vhdlParser::Name_slice_partContext::explicit_range() {
   return getRuleContexts<vhdlParser::Explicit_rangeContext>();
 }
 
-Ref<vhdlParser::Explicit_rangeContext> vhdlParser::Name_slice_partContext::explicit_range(int i) {
-  return getRuleContext<vhdlParser::Explicit_rangeContext>((size_t)i);
+vhdlParser::Explicit_rangeContext* vhdlParser::Name_slice_partContext::explicit_range(size_t i) {
+  return getRuleContext<vhdlParser::Explicit_rangeContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_slice_partContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Name_slice_partContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Name_slice_partContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Name_slice_partContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Name_slice_partContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Name_slice_partContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Name_slice_partContext::getRuleIndex() const {
+size_t vhdlParser::Name_slice_partContext::getRuleIndex() const {
   return vhdlParser::RuleName_slice_part;
 }
 
@@ -12203,10 +12203,10 @@ antlrcpp::Any vhdlParser::Name_slice_partContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Name_slice_partContext> vhdlParser::name_slice_part() {
-  Ref<Name_slice_partContext> _localctx = std::make_shared<Name_slice_partContext>(_ctx, getState());
+vhdlParser::Name_slice_partContext* vhdlParser::name_slice_part() {
+  Name_slice_partContext *_localctx = _tracker.createInstance<Name_slice_partContext>(_ctx, getState());
   enterRule(_localctx, 302, vhdlParser::RuleName_slice_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -12244,32 +12244,32 @@ Ref<vhdlParser::Name_slice_partContext> vhdlParser::name_slice_part() {
 
 //----------------- Selected_nameContext ------------------------------------------------------------------
 
-vhdlParser::Selected_nameContext::Selected_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Selected_nameContext::Selected_nameContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Selected_nameContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Selected_nameContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Selected_nameContext::DOT() {
+std::vector<tree::TerminalNode *> vhdlParser::Selected_nameContext::DOT() {
   return getTokens(vhdlParser::DOT);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_nameContext::DOT(int i) {
-  return getToken(vhdlParser::DOT, (size_t)i);
+tree::TerminalNode* vhdlParser::Selected_nameContext::DOT(size_t i) {
+  return getToken(vhdlParser::DOT, i);
 }
 
-std::vector<Ref<vhdlParser::SuffixContext>> vhdlParser::Selected_nameContext::suffix() {
+std::vector<vhdlParser::SuffixContext *> vhdlParser::Selected_nameContext::suffix() {
   return getRuleContexts<vhdlParser::SuffixContext>();
 }
 
-Ref<vhdlParser::SuffixContext> vhdlParser::Selected_nameContext::suffix(int i) {
-  return getRuleContext<vhdlParser::SuffixContext>((size_t)i);
+vhdlParser::SuffixContext* vhdlParser::Selected_nameContext::suffix(size_t i) {
+  return getRuleContext<vhdlParser::SuffixContext>(i);
 }
 
 
-ssize_t vhdlParser::Selected_nameContext::getRuleIndex() const {
+size_t vhdlParser::Selected_nameContext::getRuleIndex() const {
   return vhdlParser::RuleSelected_name;
 }
 
@@ -12280,15 +12280,15 @@ antlrcpp::Any vhdlParser::Selected_nameContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::selected_name() {
-  Ref<Selected_nameContext> _localctx = std::make_shared<Selected_nameContext>(_ctx, getState());
+vhdlParser::Selected_nameContext* vhdlParser::selected_name() {
+  Selected_nameContext *_localctx = _tracker.createInstance<Selected_nameContext>(_ctx, getState());
   enterRule(_localctx, 304, vhdlParser::RuleSelected_name);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(1711);
     identifier();
@@ -12319,32 +12319,32 @@ Ref<vhdlParser::Selected_nameContext> vhdlParser::selected_name() {
 
 //----------------- Nature_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Nature_declarationContext::Nature_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Nature_declarationContext::Nature_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Nature_declarationContext::NATURE() {
+tree::TerminalNode* vhdlParser::Nature_declarationContext::NATURE() {
   return getToken(vhdlParser::NATURE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Nature_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Nature_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Nature_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Nature_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Nature_definitionContext> vhdlParser::Nature_declarationContext::nature_definition() {
+vhdlParser::Nature_definitionContext* vhdlParser::Nature_declarationContext::nature_definition() {
   return getRuleContext<vhdlParser::Nature_definitionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Nature_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Nature_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Nature_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Nature_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleNature_declaration;
 }
 
@@ -12355,8 +12355,8 @@ antlrcpp::Any vhdlParser::Nature_declarationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Nature_declarationContext> vhdlParser::nature_declaration() {
-  Ref<Nature_declarationContext> _localctx = std::make_shared<Nature_declarationContext>(_ctx, getState());
+vhdlParser::Nature_declarationContext* vhdlParser::nature_declaration() {
+  Nature_declarationContext *_localctx = _tracker.createInstance<Nature_declarationContext>(_ctx, getState());
   enterRule(_localctx, 306, vhdlParser::RuleNature_declaration);
 
   auto onExit = finally([=] {
@@ -12387,20 +12387,20 @@ Ref<vhdlParser::Nature_declarationContext> vhdlParser::nature_declaration() {
 
 //----------------- Nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Nature_definitionContext::Nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Nature_definitionContext::Nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Scalar_nature_definitionContext> vhdlParser::Nature_definitionContext::scalar_nature_definition() {
+vhdlParser::Scalar_nature_definitionContext* vhdlParser::Nature_definitionContext::scalar_nature_definition() {
   return getRuleContext<vhdlParser::Scalar_nature_definitionContext>(0);
 }
 
-Ref<vhdlParser::Composite_nature_definitionContext> vhdlParser::Nature_definitionContext::composite_nature_definition() {
+vhdlParser::Composite_nature_definitionContext* vhdlParser::Nature_definitionContext::composite_nature_definition() {
   return getRuleContext<vhdlParser::Composite_nature_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleNature_definition;
 }
 
@@ -12411,8 +12411,8 @@ antlrcpp::Any vhdlParser::Nature_definitionContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Nature_definitionContext> vhdlParser::nature_definition() {
-  Ref<Nature_definitionContext> _localctx = std::make_shared<Nature_definitionContext>(_ctx, getState());
+vhdlParser::Nature_definitionContext* vhdlParser::nature_definition() {
+  Nature_definitionContext *_localctx = _tracker.createInstance<Nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 308, vhdlParser::RuleNature_definition);
 
   auto onExit = finally([=] {
@@ -12454,24 +12454,24 @@ Ref<vhdlParser::Nature_definitionContext> vhdlParser::nature_definition() {
 
 //----------------- Nature_element_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Nature_element_declarationContext::Nature_element_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Nature_element_declarationContext::Nature_element_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Nature_element_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Nature_element_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Nature_element_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Nature_element_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Element_subnature_definitionContext> vhdlParser::Nature_element_declarationContext::element_subnature_definition() {
+vhdlParser::Element_subnature_definitionContext* vhdlParser::Nature_element_declarationContext::element_subnature_definition() {
   return getRuleContext<vhdlParser::Element_subnature_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Nature_element_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Nature_element_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleNature_element_declaration;
 }
 
@@ -12482,8 +12482,8 @@ antlrcpp::Any vhdlParser::Nature_element_declarationContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Nature_element_declarationContext> vhdlParser::nature_element_declaration() {
-  Ref<Nature_element_declarationContext> _localctx = std::make_shared<Nature_element_declarationContext>(_ctx, getState());
+vhdlParser::Nature_element_declarationContext* vhdlParser::nature_element_declaration() {
+  Nature_element_declarationContext *_localctx = _tracker.createInstance<Nature_element_declarationContext>(_ctx, getState());
   enterRule(_localctx, 310, vhdlParser::RuleNature_element_declaration);
 
   auto onExit = finally([=] {
@@ -12510,36 +12510,36 @@ Ref<vhdlParser::Nature_element_declarationContext> vhdlParser::nature_element_de
 
 //----------------- Next_statementContext ------------------------------------------------------------------
 
-vhdlParser::Next_statementContext::Next_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Next_statementContext::Next_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Next_statementContext::NEXT() {
+tree::TerminalNode* vhdlParser::Next_statementContext::NEXT() {
   return getToken(vhdlParser::NEXT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Next_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Next_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Next_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Next_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Next_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Next_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Next_statementContext::WHEN() {
+tree::TerminalNode* vhdlParser::Next_statementContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Next_statementContext::condition() {
+vhdlParser::ConditionContext* vhdlParser::Next_statementContext::condition() {
   return getRuleContext<vhdlParser::ConditionContext>(0);
 }
 
 
-ssize_t vhdlParser::Next_statementContext::getRuleIndex() const {
+size_t vhdlParser::Next_statementContext::getRuleIndex() const {
   return vhdlParser::RuleNext_statement;
 }
 
@@ -12550,10 +12550,10 @@ antlrcpp::Any vhdlParser::Next_statementContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Next_statementContext> vhdlParser::next_statement() {
-  Ref<Next_statementContext> _localctx = std::make_shared<Next_statementContext>(_ctx, getState());
+vhdlParser::Next_statementContext* vhdlParser::next_statement() {
+  Next_statementContext *_localctx = _tracker.createInstance<Next_statementContext>(_ctx, getState());
   enterRule(_localctx, 312, vhdlParser::RuleNext_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -12604,20 +12604,20 @@ Ref<vhdlParser::Next_statementContext> vhdlParser::next_statement() {
 
 //----------------- Numeric_literalContext ------------------------------------------------------------------
 
-vhdlParser::Numeric_literalContext::Numeric_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Numeric_literalContext::Numeric_literalContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Abstract_literalContext> vhdlParser::Numeric_literalContext::abstract_literal() {
+vhdlParser::Abstract_literalContext* vhdlParser::Numeric_literalContext::abstract_literal() {
   return getRuleContext<vhdlParser::Abstract_literalContext>(0);
 }
 
-Ref<vhdlParser::Physical_literalContext> vhdlParser::Numeric_literalContext::physical_literal() {
+vhdlParser::Physical_literalContext* vhdlParser::Numeric_literalContext::physical_literal() {
   return getRuleContext<vhdlParser::Physical_literalContext>(0);
 }
 
 
-ssize_t vhdlParser::Numeric_literalContext::getRuleIndex() const {
+size_t vhdlParser::Numeric_literalContext::getRuleIndex() const {
   return vhdlParser::RuleNumeric_literal;
 }
 
@@ -12628,8 +12628,8 @@ antlrcpp::Any vhdlParser::Numeric_literalContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Numeric_literalContext> vhdlParser::numeric_literal() {
-  Ref<Numeric_literalContext> _localctx = std::make_shared<Numeric_literalContext>(_ctx, getState());
+vhdlParser::Numeric_literalContext* vhdlParser::numeric_literal() {
+  Numeric_literalContext *_localctx = _tracker.createInstance<Numeric_literalContext>(_ctx, getState());
   enterRule(_localctx, 314, vhdlParser::RuleNumeric_literal);
 
   auto onExit = finally([=] {
@@ -12667,36 +12667,36 @@ Ref<vhdlParser::Numeric_literalContext> vhdlParser::numeric_literal() {
 
 //----------------- Object_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Object_declarationContext::Object_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Object_declarationContext::Object_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Object_declarationContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Object_declarationContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Signal_declarationContext> vhdlParser::Object_declarationContext::signal_declaration() {
+vhdlParser::Signal_declarationContext* vhdlParser::Object_declarationContext::signal_declaration() {
   return getRuleContext<vhdlParser::Signal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Object_declarationContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Object_declarationContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Object_declarationContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Object_declarationContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Terminal_declarationContext> vhdlParser::Object_declarationContext::terminal_declaration() {
+vhdlParser::Terminal_declarationContext* vhdlParser::Object_declarationContext::terminal_declaration() {
   return getRuleContext<vhdlParser::Terminal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Quantity_declarationContext> vhdlParser::Object_declarationContext::quantity_declaration() {
+vhdlParser::Quantity_declarationContext* vhdlParser::Object_declarationContext::quantity_declaration() {
   return getRuleContext<vhdlParser::Quantity_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Object_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Object_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleObject_declaration;
 }
 
@@ -12707,8 +12707,8 @@ antlrcpp::Any vhdlParser::Object_declarationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Object_declarationContext> vhdlParser::object_declaration() {
-  Ref<Object_declarationContext> _localctx = std::make_shared<Object_declarationContext>(_ctx, getState());
+vhdlParser::Object_declarationContext* vhdlParser::object_declaration() {
+  Object_declarationContext *_localctx = _tracker.createInstance<Object_declarationContext>(_ctx, getState());
   enterRule(_localctx, 316, vhdlParser::RuleObject_declaration);
 
   auto onExit = finally([=] {
@@ -12777,20 +12777,20 @@ Ref<vhdlParser::Object_declarationContext> vhdlParser::object_declaration() {
 
 //----------------- OptsContext ------------------------------------------------------------------
 
-vhdlParser::OptsContext::OptsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::OptsContext::OptsContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::OptsContext::GUARDED() {
+tree::TerminalNode* vhdlParser::OptsContext::GUARDED() {
   return getToken(vhdlParser::GUARDED, 0);
 }
 
-Ref<vhdlParser::Delay_mechanismContext> vhdlParser::OptsContext::delay_mechanism() {
+vhdlParser::Delay_mechanismContext* vhdlParser::OptsContext::delay_mechanism() {
   return getRuleContext<vhdlParser::Delay_mechanismContext>(0);
 }
 
 
-ssize_t vhdlParser::OptsContext::getRuleIndex() const {
+size_t vhdlParser::OptsContext::getRuleIndex() const {
   return vhdlParser::RuleOpts;
 }
 
@@ -12801,10 +12801,10 @@ antlrcpp::Any vhdlParser::OptsContext::accept(tree::ParseTreeVisitor *visitor) {
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::OptsContext> vhdlParser::opts() {
-  Ref<OptsContext> _localctx = std::make_shared<OptsContext>(_ctx, getState());
+vhdlParser::OptsContext* vhdlParser::opts() {
+  OptsContext *_localctx = _tracker.createInstance<OptsContext>(_ctx, getState());
   enterRule(_localctx, 318, vhdlParser::RuleOpts);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -12821,7 +12821,7 @@ Ref<vhdlParser::OptsContext> vhdlParser::opts() {
     setState(1762);
 
     _la = _input->LA(1);
-    if (((((_la - 39) & ~(ssize_t)0x3f) == 0) &&
+    if (((((_la - 39) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 39)) & ((1ULL << (vhdlParser::INERTIAL - 39))
       | (1ULL << (vhdlParser::REJECT - 39))
       | (1ULL << (vhdlParser::TRANSPORT - 39)))) != 0)) {
@@ -12841,52 +12841,52 @@ Ref<vhdlParser::OptsContext> vhdlParser::opts() {
 
 //----------------- Package_bodyContext ------------------------------------------------------------------
 
-vhdlParser::Package_bodyContext::Package_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_bodyContext::Package_bodyContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Package_bodyContext::PACKAGE() {
+std::vector<tree::TerminalNode *> vhdlParser::Package_bodyContext::PACKAGE() {
   return getTokens(vhdlParser::PACKAGE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_bodyContext::PACKAGE(int i) {
-  return getToken(vhdlParser::PACKAGE, (size_t)i);
+tree::TerminalNode* vhdlParser::Package_bodyContext::PACKAGE(size_t i) {
+  return getToken(vhdlParser::PACKAGE, i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Package_bodyContext::BODY() {
+std::vector<tree::TerminalNode *> vhdlParser::Package_bodyContext::BODY() {
   return getTokens(vhdlParser::BODY);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_bodyContext::BODY(int i) {
-  return getToken(vhdlParser::BODY, (size_t)i);
+tree::TerminalNode* vhdlParser::Package_bodyContext::BODY(size_t i) {
+  return getToken(vhdlParser::BODY, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Package_bodyContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Package_bodyContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Package_bodyContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Package_bodyContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_bodyContext::IS() {
+tree::TerminalNode* vhdlParser::Package_bodyContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Package_body_declarative_partContext> vhdlParser::Package_bodyContext::package_body_declarative_part() {
+vhdlParser::Package_body_declarative_partContext* vhdlParser::Package_bodyContext::package_body_declarative_part() {
   return getRuleContext<vhdlParser::Package_body_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_bodyContext::END() {
+tree::TerminalNode* vhdlParser::Package_bodyContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_bodyContext::SEMI() {
+tree::TerminalNode* vhdlParser::Package_bodyContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Package_bodyContext::getRuleIndex() const {
+size_t vhdlParser::Package_bodyContext::getRuleIndex() const {
   return vhdlParser::RulePackage_body;
 }
 
@@ -12897,10 +12897,10 @@ antlrcpp::Any vhdlParser::Package_bodyContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_bodyContext> vhdlParser::package_body() {
-  Ref<Package_bodyContext> _localctx = std::make_shared<Package_bodyContext>(_ctx, getState());
+vhdlParser::Package_bodyContext* vhdlParser::package_body() {
+  Package_bodyContext *_localctx = _tracker.createInstance<Package_bodyContext>(_ctx, getState());
   enterRule(_localctx, 320, vhdlParser::RulePackage_body);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -12952,56 +12952,56 @@ Ref<vhdlParser::Package_bodyContext> vhdlParser::package_body() {
 
 //----------------- Package_body_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Package_body_declarative_itemContext::Package_body_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_body_declarative_itemContext::Package_body_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Package_body_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Package_body_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Package_body_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Package_body_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Package_body_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Package_body_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Package_body_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Package_body_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Package_body_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Package_body_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Package_body_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Package_body_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Package_body_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Package_body_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Package_body_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Package_body_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Package_body_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Package_body_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Package_body_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Package_body_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Package_body_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Package_body_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Package_body_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Package_body_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RulePackage_body_declarative_item;
 }
 
@@ -13012,8 +13012,8 @@ antlrcpp::Any vhdlParser::Package_body_declarative_itemContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_body_declarative_itemContext> vhdlParser::package_body_declarative_item() {
-  Ref<Package_body_declarative_itemContext> _localctx = std::make_shared<Package_body_declarative_itemContext>(_ctx, getState());
+vhdlParser::Package_body_declarative_itemContext* vhdlParser::package_body_declarative_item() {
+  Package_body_declarative_itemContext *_localctx = _tracker.createInstance<Package_body_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 322, vhdlParser::RulePackage_body_declarative_item);
 
   auto onExit = finally([=] {
@@ -13114,20 +13114,20 @@ Ref<vhdlParser::Package_body_declarative_itemContext> vhdlParser::package_body_d
 
 //----------------- Package_body_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Package_body_declarative_partContext::Package_body_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_body_declarative_partContext::Package_body_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Package_body_declarative_itemContext>> vhdlParser::Package_body_declarative_partContext::package_body_declarative_item() {
+std::vector<vhdlParser::Package_body_declarative_itemContext *> vhdlParser::Package_body_declarative_partContext::package_body_declarative_item() {
   return getRuleContexts<vhdlParser::Package_body_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Package_body_declarative_itemContext> vhdlParser::Package_body_declarative_partContext::package_body_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Package_body_declarative_itemContext>((size_t)i);
+vhdlParser::Package_body_declarative_itemContext* vhdlParser::Package_body_declarative_partContext::package_body_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Package_body_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Package_body_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Package_body_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RulePackage_body_declarative_part;
 }
 
@@ -13138,10 +13138,10 @@ antlrcpp::Any vhdlParser::Package_body_declarative_partContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_body_declarative_partContext> vhdlParser::package_body_declarative_part() {
-  Ref<Package_body_declarative_partContext> _localctx = std::make_shared<Package_body_declarative_partContext>(_ctx, getState());
+vhdlParser::Package_body_declarative_partContext* vhdlParser::package_body_declarative_part() {
+  Package_body_declarative_partContext *_localctx = _tracker.createInstance<Package_body_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 324, vhdlParser::RulePackage_body_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -13151,13 +13151,13 @@ Ref<vhdlParser::Package_body_declarative_partContext> vhdlParser::package_body_d
     setState(1795);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::CONSTANT)
       | (1ULL << vhdlParser::FILE)
       | (1ULL << vhdlParser::FUNCTION)
       | (1ULL << vhdlParser::GROUP)
-      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::SHARED - 68))
@@ -13184,44 +13184,44 @@ Ref<vhdlParser::Package_body_declarative_partContext> vhdlParser::package_body_d
 
 //----------------- Package_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Package_declarationContext::Package_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_declarationContext::Package_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Package_declarationContext::PACKAGE() {
+std::vector<tree::TerminalNode *> vhdlParser::Package_declarationContext::PACKAGE() {
   return getTokens(vhdlParser::PACKAGE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_declarationContext::PACKAGE(int i) {
-  return getToken(vhdlParser::PACKAGE, (size_t)i);
+tree::TerminalNode* vhdlParser::Package_declarationContext::PACKAGE(size_t i) {
+  return getToken(vhdlParser::PACKAGE, i);
 }
 
-std::vector<Ref<vhdlParser::IdentifierContext>> vhdlParser::Package_declarationContext::identifier() {
+std::vector<vhdlParser::IdentifierContext *> vhdlParser::Package_declarationContext::identifier() {
   return getRuleContexts<vhdlParser::IdentifierContext>();
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Package_declarationContext::identifier(int i) {
-  return getRuleContext<vhdlParser::IdentifierContext>((size_t)i);
+vhdlParser::IdentifierContext* vhdlParser::Package_declarationContext::identifier(size_t i) {
+  return getRuleContext<vhdlParser::IdentifierContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Package_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Package_declarative_partContext> vhdlParser::Package_declarationContext::package_declarative_part() {
+vhdlParser::Package_declarative_partContext* vhdlParser::Package_declarationContext::package_declarative_part() {
   return getRuleContext<vhdlParser::Package_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_declarationContext::END() {
+tree::TerminalNode* vhdlParser::Package_declarationContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Package_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Package_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Package_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Package_declarationContext::getRuleIndex() const {
   return vhdlParser::RulePackage_declaration;
 }
 
@@ -13232,10 +13232,10 @@ antlrcpp::Any vhdlParser::Package_declarationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_declarationContext> vhdlParser::package_declaration() {
-  Ref<Package_declarationContext> _localctx = std::make_shared<Package_declarationContext>(_ctx, getState());
+vhdlParser::Package_declarationContext* vhdlParser::package_declaration() {
+  Package_declarationContext *_localctx = _tracker.createInstance<Package_declarationContext>(_ctx, getState());
   enterRule(_localctx, 326, vhdlParser::RulePackage_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -13283,84 +13283,84 @@ Ref<vhdlParser::Package_declarationContext> vhdlParser::package_declaration() {
 
 //----------------- Package_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Package_declarative_itemContext::Package_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_declarative_itemContext::Package_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Package_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Package_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Package_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Package_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Package_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Package_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Package_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Package_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Signal_declarationContext> vhdlParser::Package_declarative_itemContext::signal_declaration() {
+vhdlParser::Signal_declarationContext* vhdlParser::Package_declarative_itemContext::signal_declaration() {
   return getRuleContext<vhdlParser::Signal_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Package_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Package_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Package_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Package_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Package_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Package_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Component_declarationContext> vhdlParser::Package_declarative_itemContext::component_declaration() {
+vhdlParser::Component_declarationContext* vhdlParser::Package_declarative_itemContext::component_declaration() {
   return getRuleContext<vhdlParser::Component_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Package_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Package_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Package_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Package_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Disconnection_specificationContext> vhdlParser::Package_declarative_itemContext::disconnection_specification() {
+vhdlParser::Disconnection_specificationContext* vhdlParser::Package_declarative_itemContext::disconnection_specification() {
   return getRuleContext<vhdlParser::Disconnection_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Package_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Package_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Package_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Package_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Package_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Package_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
-Ref<vhdlParser::Nature_declarationContext> vhdlParser::Package_declarative_itemContext::nature_declaration() {
+vhdlParser::Nature_declarationContext* vhdlParser::Package_declarative_itemContext::nature_declaration() {
   return getRuleContext<vhdlParser::Nature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subnature_declarationContext> vhdlParser::Package_declarative_itemContext::subnature_declaration() {
+vhdlParser::Subnature_declarationContext* vhdlParser::Package_declarative_itemContext::subnature_declaration() {
   return getRuleContext<vhdlParser::Subnature_declarationContext>(0);
 }
 
-Ref<vhdlParser::Terminal_declarationContext> vhdlParser::Package_declarative_itemContext::terminal_declaration() {
+vhdlParser::Terminal_declarationContext* vhdlParser::Package_declarative_itemContext::terminal_declaration() {
   return getRuleContext<vhdlParser::Terminal_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Package_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Package_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RulePackage_declarative_item;
 }
 
@@ -13371,8 +13371,8 @@ antlrcpp::Any vhdlParser::Package_declarative_itemContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_declarative_itemContext> vhdlParser::package_declarative_item() {
-  Ref<Package_declarative_itemContext> _localctx = std::make_shared<Package_declarative_itemContext>(_ctx, getState());
+vhdlParser::Package_declarative_itemContext* vhdlParser::package_declarative_item() {
+  Package_declarative_itemContext *_localctx = _tracker.createInstance<Package_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 328, vhdlParser::RulePackage_declarative_item);
 
   auto onExit = finally([=] {
@@ -13522,20 +13522,20 @@ Ref<vhdlParser::Package_declarative_itemContext> vhdlParser::package_declarative
 
 //----------------- Package_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Package_declarative_partContext::Package_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Package_declarative_partContext::Package_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Package_declarative_itemContext>> vhdlParser::Package_declarative_partContext::package_declarative_item() {
+std::vector<vhdlParser::Package_declarative_itemContext *> vhdlParser::Package_declarative_partContext::package_declarative_item() {
   return getRuleContexts<vhdlParser::Package_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Package_declarative_itemContext> vhdlParser::Package_declarative_partContext::package_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Package_declarative_itemContext>((size_t)i);
+vhdlParser::Package_declarative_itemContext* vhdlParser::Package_declarative_partContext::package_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Package_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Package_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Package_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RulePackage_declarative_part;
 }
 
@@ -13546,10 +13546,10 @@ antlrcpp::Any vhdlParser::Package_declarative_partContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Package_declarative_partContext> vhdlParser::package_declarative_part() {
-  Ref<Package_declarative_partContext> _localctx = std::make_shared<Package_declarative_partContext>(_ctx, getState());
+vhdlParser::Package_declarative_partContext* vhdlParser::package_declarative_part() {
+  Package_declarative_partContext *_localctx = _tracker.createInstance<Package_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 330, vhdlParser::RulePackage_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -13559,7 +13559,7 @@ Ref<vhdlParser::Package_declarative_partContext> vhdlParser::package_declarative
     setState(1834);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::COMPONENT)
@@ -13569,7 +13569,7 @@ Ref<vhdlParser::Package_declarative_partContext> vhdlParser::package_declarative
       | (1ULL << vhdlParser::FUNCTION)
       | (1ULL << vhdlParser::GROUP)
       | (1ULL << vhdlParser::IMPURE)
-      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NATURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::SHARED - 68))
@@ -13599,24 +13599,24 @@ Ref<vhdlParser::Package_declarative_partContext> vhdlParser::package_declarative
 
 //----------------- Parameter_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Parameter_specificationContext::Parameter_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Parameter_specificationContext::Parameter_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Parameter_specificationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Parameter_specificationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Parameter_specificationContext::IN() {
+tree::TerminalNode* vhdlParser::Parameter_specificationContext::IN() {
   return getToken(vhdlParser::IN, 0);
 }
 
-Ref<vhdlParser::Discrete_rangeContext> vhdlParser::Parameter_specificationContext::discrete_range() {
+vhdlParser::Discrete_rangeContext* vhdlParser::Parameter_specificationContext::discrete_range() {
   return getRuleContext<vhdlParser::Discrete_rangeContext>(0);
 }
 
 
-ssize_t vhdlParser::Parameter_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Parameter_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleParameter_specification;
 }
 
@@ -13627,8 +13627,8 @@ antlrcpp::Any vhdlParser::Parameter_specificationContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Parameter_specificationContext> vhdlParser::parameter_specification() {
-  Ref<Parameter_specificationContext> _localctx = std::make_shared<Parameter_specificationContext>(_ctx, getState());
+vhdlParser::Parameter_specificationContext* vhdlParser::parameter_specification() {
+  Parameter_specificationContext *_localctx = _tracker.createInstance<Parameter_specificationContext>(_ctx, getState());
   enterRule(_localctx, 332, vhdlParser::RuleParameter_specification);
 
   auto onExit = finally([=] {
@@ -13655,20 +13655,20 @@ Ref<vhdlParser::Parameter_specificationContext> vhdlParser::parameter_specificat
 
 //----------------- Physical_literalContext ------------------------------------------------------------------
 
-vhdlParser::Physical_literalContext::Physical_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Physical_literalContext::Physical_literalContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Abstract_literalContext> vhdlParser::Physical_literalContext::abstract_literal() {
+vhdlParser::Abstract_literalContext* vhdlParser::Physical_literalContext::abstract_literal() {
   return getRuleContext<vhdlParser::Abstract_literalContext>(0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Physical_literalContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Physical_literalContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Physical_literalContext::getRuleIndex() const {
+size_t vhdlParser::Physical_literalContext::getRuleIndex() const {
   return vhdlParser::RulePhysical_literal;
 }
 
@@ -13679,8 +13679,8 @@ antlrcpp::Any vhdlParser::Physical_literalContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Physical_literalContext> vhdlParser::physical_literal() {
-  Ref<Physical_literalContext> _localctx = std::make_shared<Physical_literalContext>(_ctx, getState());
+vhdlParser::Physical_literalContext* vhdlParser::physical_literal() {
+  Physical_literalContext *_localctx = _tracker.createInstance<Physical_literalContext>(_ctx, getState());
   enterRule(_localctx, 334, vhdlParser::RulePhysical_literal);
 
   auto onExit = finally([=] {
@@ -13706,44 +13706,44 @@ Ref<vhdlParser::Physical_literalContext> vhdlParser::physical_literal() {
 
 //----------------- Physical_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Physical_type_definitionContext::Physical_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Physical_type_definitionContext::Physical_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Range_constraintContext> vhdlParser::Physical_type_definitionContext::range_constraint() {
+vhdlParser::Range_constraintContext* vhdlParser::Physical_type_definitionContext::range_constraint() {
   return getRuleContext<vhdlParser::Range_constraintContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Physical_type_definitionContext::UNITS() {
+std::vector<tree::TerminalNode *> vhdlParser::Physical_type_definitionContext::UNITS() {
   return getTokens(vhdlParser::UNITS);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Physical_type_definitionContext::UNITS(int i) {
-  return getToken(vhdlParser::UNITS, (size_t)i);
+tree::TerminalNode* vhdlParser::Physical_type_definitionContext::UNITS(size_t i) {
+  return getToken(vhdlParser::UNITS, i);
 }
 
-Ref<vhdlParser::Base_unit_declarationContext> vhdlParser::Physical_type_definitionContext::base_unit_declaration() {
+vhdlParser::Base_unit_declarationContext* vhdlParser::Physical_type_definitionContext::base_unit_declaration() {
   return getRuleContext<vhdlParser::Base_unit_declarationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Physical_type_definitionContext::END() {
+tree::TerminalNode* vhdlParser::Physical_type_definitionContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-std::vector<Ref<vhdlParser::Secondary_unit_declarationContext>> vhdlParser::Physical_type_definitionContext::secondary_unit_declaration() {
+std::vector<vhdlParser::Secondary_unit_declarationContext *> vhdlParser::Physical_type_definitionContext::secondary_unit_declaration() {
   return getRuleContexts<vhdlParser::Secondary_unit_declarationContext>();
 }
 
-Ref<vhdlParser::Secondary_unit_declarationContext> vhdlParser::Physical_type_definitionContext::secondary_unit_declaration(int i) {
-  return getRuleContext<vhdlParser::Secondary_unit_declarationContext>((size_t)i);
+vhdlParser::Secondary_unit_declarationContext* vhdlParser::Physical_type_definitionContext::secondary_unit_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Secondary_unit_declarationContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Physical_type_definitionContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Physical_type_definitionContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Physical_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Physical_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RulePhysical_type_definition;
 }
 
@@ -13754,10 +13754,10 @@ antlrcpp::Any vhdlParser::Physical_type_definitionContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Physical_type_definitionContext> vhdlParser::physical_type_definition() {
-  Ref<Physical_type_definitionContext> _localctx = std::make_shared<Physical_type_definitionContext>(_ctx, getState());
+vhdlParser::Physical_type_definitionContext* vhdlParser::physical_type_definition() {
+  Physical_type_definitionContext *_localctx = _tracker.createInstance<Physical_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 336, vhdlParser::RulePhysical_type_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -13808,32 +13808,32 @@ Ref<vhdlParser::Physical_type_definitionContext> vhdlParser::physical_type_defin
 
 //----------------- Port_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Port_clauseContext::Port_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Port_clauseContext::Port_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_clauseContext::PORT() {
+tree::TerminalNode* vhdlParser::Port_clauseContext::PORT() {
   return getToken(vhdlParser::PORT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_clauseContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Port_clauseContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Port_listContext> vhdlParser::Port_clauseContext::port_list() {
+vhdlParser::Port_listContext* vhdlParser::Port_clauseContext::port_list() {
   return getRuleContext<vhdlParser::Port_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_clauseContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Port_clauseContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_clauseContext::SEMI() {
+tree::TerminalNode* vhdlParser::Port_clauseContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Port_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Port_clauseContext::getRuleIndex() const {
   return vhdlParser::RulePort_clause;
 }
 
@@ -13844,8 +13844,8 @@ antlrcpp::Any vhdlParser::Port_clauseContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Port_clauseContext> vhdlParser::port_clause() {
-  Ref<Port_clauseContext> _localctx = std::make_shared<Port_clauseContext>(_ctx, getState());
+vhdlParser::Port_clauseContext* vhdlParser::port_clause() {
+  Port_clauseContext *_localctx = _tracker.createInstance<Port_clauseContext>(_ctx, getState());
   enterRule(_localctx, 338, vhdlParser::RulePort_clause);
 
   auto onExit = finally([=] {
@@ -13876,16 +13876,16 @@ Ref<vhdlParser::Port_clauseContext> vhdlParser::port_clause() {
 
 //----------------- Port_listContext ------------------------------------------------------------------
 
-vhdlParser::Port_listContext::Port_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Port_listContext::Port_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Interface_port_listContext> vhdlParser::Port_listContext::interface_port_list() {
+vhdlParser::Interface_port_listContext* vhdlParser::Port_listContext::interface_port_list() {
   return getRuleContext<vhdlParser::Interface_port_listContext>(0);
 }
 
 
-ssize_t vhdlParser::Port_listContext::getRuleIndex() const {
+size_t vhdlParser::Port_listContext::getRuleIndex() const {
   return vhdlParser::RulePort_list;
 }
 
@@ -13896,8 +13896,8 @@ antlrcpp::Any vhdlParser::Port_listContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Port_listContext> vhdlParser::port_list() {
-  Ref<Port_listContext> _localctx = std::make_shared<Port_listContext>(_ctx, getState());
+vhdlParser::Port_listContext* vhdlParser::port_list() {
+  Port_listContext *_localctx = _tracker.createInstance<Port_listContext>(_ctx, getState());
   enterRule(_localctx, 340, vhdlParser::RulePort_list);
 
   auto onExit = finally([=] {
@@ -13920,32 +13920,32 @@ Ref<vhdlParser::Port_listContext> vhdlParser::port_list() {
 
 //----------------- Port_map_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Port_map_aspectContext::Port_map_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Port_map_aspectContext::Port_map_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_map_aspectContext::PORT() {
+tree::TerminalNode* vhdlParser::Port_map_aspectContext::PORT() {
   return getToken(vhdlParser::PORT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_map_aspectContext::MAP() {
+tree::TerminalNode* vhdlParser::Port_map_aspectContext::MAP() {
   return getToken(vhdlParser::MAP, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_map_aspectContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Port_map_aspectContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Association_listContext> vhdlParser::Port_map_aspectContext::association_list() {
+vhdlParser::Association_listContext* vhdlParser::Port_map_aspectContext::association_list() {
   return getRuleContext<vhdlParser::Association_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Port_map_aspectContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Port_map_aspectContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Port_map_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Port_map_aspectContext::getRuleIndex() const {
   return vhdlParser::RulePort_map_aspect;
 }
 
@@ -13956,8 +13956,8 @@ antlrcpp::Any vhdlParser::Port_map_aspectContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Port_map_aspectContext> vhdlParser::port_map_aspect() {
-  Ref<Port_map_aspectContext> _localctx = std::make_shared<Port_map_aspectContext>(_ctx, getState());
+vhdlParser::Port_map_aspectContext* vhdlParser::port_map_aspect() {
+  Port_map_aspectContext *_localctx = _tracker.createInstance<Port_map_aspectContext>(_ctx, getState());
   enterRule(_localctx, 342, vhdlParser::RulePort_map_aspect);
 
   auto onExit = finally([=] {
@@ -13988,44 +13988,44 @@ Ref<vhdlParser::Port_map_aspectContext> vhdlParser::port_map_aspect() {
 
 //----------------- PrimaryContext ------------------------------------------------------------------
 
-vhdlParser::PrimaryContext::PrimaryContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::PrimaryContext::PrimaryContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::LiteralContext> vhdlParser::PrimaryContext::literal() {
+vhdlParser::LiteralContext* vhdlParser::PrimaryContext::literal() {
   return getRuleContext<vhdlParser::LiteralContext>(0);
 }
 
-Ref<vhdlParser::Qualified_expressionContext> vhdlParser::PrimaryContext::qualified_expression() {
+vhdlParser::Qualified_expressionContext* vhdlParser::PrimaryContext::qualified_expression() {
   return getRuleContext<vhdlParser::Qualified_expressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::PrimaryContext::LPAREN() {
+tree::TerminalNode* vhdlParser::PrimaryContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::PrimaryContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::PrimaryContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::PrimaryContext::RPAREN() {
+tree::TerminalNode* vhdlParser::PrimaryContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<vhdlParser::AllocatorContext> vhdlParser::PrimaryContext::allocator() {
+vhdlParser::AllocatorContext* vhdlParser::PrimaryContext::allocator() {
   return getRuleContext<vhdlParser::AllocatorContext>(0);
 }
 
-Ref<vhdlParser::AggregateContext> vhdlParser::PrimaryContext::aggregate() {
+vhdlParser::AggregateContext* vhdlParser::PrimaryContext::aggregate() {
   return getRuleContext<vhdlParser::AggregateContext>(0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::PrimaryContext::name() {
+vhdlParser::NameContext* vhdlParser::PrimaryContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::PrimaryContext::getRuleIndex() const {
+size_t vhdlParser::PrimaryContext::getRuleIndex() const {
   return vhdlParser::RulePrimary;
 }
 
@@ -14036,8 +14036,8 @@ antlrcpp::Any vhdlParser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::PrimaryContext> vhdlParser::primary() {
-  Ref<PrimaryContext> _localctx = std::make_shared<PrimaryContext>(_ctx, getState());
+vhdlParser::PrimaryContext* vhdlParser::primary() {
+  PrimaryContext *_localctx = _tracker.createInstance<PrimaryContext>(_ctx, getState());
   enterRule(_localctx, 344, vhdlParser::RulePrimary);
 
   auto onExit = finally([=] {
@@ -14107,24 +14107,24 @@ Ref<vhdlParser::PrimaryContext> vhdlParser::primary() {
 
 //----------------- Primary_unitContext ------------------------------------------------------------------
 
-vhdlParser::Primary_unitContext::Primary_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Primary_unitContext::Primary_unitContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Entity_declarationContext> vhdlParser::Primary_unitContext::entity_declaration() {
+vhdlParser::Entity_declarationContext* vhdlParser::Primary_unitContext::entity_declaration() {
   return getRuleContext<vhdlParser::Entity_declarationContext>(0);
 }
 
-Ref<vhdlParser::Configuration_declarationContext> vhdlParser::Primary_unitContext::configuration_declaration() {
+vhdlParser::Configuration_declarationContext* vhdlParser::Primary_unitContext::configuration_declaration() {
   return getRuleContext<vhdlParser::Configuration_declarationContext>(0);
 }
 
-Ref<vhdlParser::Package_declarationContext> vhdlParser::Primary_unitContext::package_declaration() {
+vhdlParser::Package_declarationContext* vhdlParser::Primary_unitContext::package_declaration() {
   return getRuleContext<vhdlParser::Package_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Primary_unitContext::getRuleIndex() const {
+size_t vhdlParser::Primary_unitContext::getRuleIndex() const {
   return vhdlParser::RulePrimary_unit;
 }
 
@@ -14135,8 +14135,8 @@ antlrcpp::Any vhdlParser::Primary_unitContext::accept(tree::ParseTreeVisitor *vi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Primary_unitContext> vhdlParser::primary_unit() {
-  Ref<Primary_unitContext> _localctx = std::make_shared<Primary_unitContext>(_ctx, getState());
+vhdlParser::Primary_unitContext* vhdlParser::primary_unit() {
+  Primary_unitContext *_localctx = _tracker.createInstance<Primary_unitContext>(_ctx, getState());
   enterRule(_localctx, 346, vhdlParser::RulePrimary_unit);
 
   auto onExit = finally([=] {
@@ -14183,60 +14183,60 @@ Ref<vhdlParser::Primary_unitContext> vhdlParser::primary_unit() {
 
 //----------------- Procedural_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Procedural_declarative_itemContext::Procedural_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedural_declarative_itemContext::Procedural_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Procedural_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Procedural_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Procedural_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Procedural_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Procedural_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Procedural_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Procedural_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Procedural_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Procedural_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Procedural_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Procedural_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Procedural_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Procedural_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Procedural_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Procedural_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Procedural_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Procedural_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Procedural_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Procedural_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Procedural_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Procedural_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Procedural_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Procedural_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Procedural_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Procedural_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Procedural_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleProcedural_declarative_item;
 }
 
@@ -14247,8 +14247,8 @@ antlrcpp::Any vhdlParser::Procedural_declarative_itemContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedural_declarative_itemContext> vhdlParser::procedural_declarative_item() {
-  Ref<Procedural_declarative_itemContext> _localctx = std::make_shared<Procedural_declarative_itemContext>(_ctx, getState());
+vhdlParser::Procedural_declarative_itemContext* vhdlParser::procedural_declarative_item() {
+  Procedural_declarative_itemContext *_localctx = _tracker.createInstance<Procedural_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 348, vhdlParser::RuleProcedural_declarative_item);
 
   auto onExit = finally([=] {
@@ -14356,20 +14356,20 @@ Ref<vhdlParser::Procedural_declarative_itemContext> vhdlParser::procedural_decla
 
 //----------------- Procedural_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Procedural_declarative_partContext::Procedural_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedural_declarative_partContext::Procedural_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Procedural_declarative_itemContext>> vhdlParser::Procedural_declarative_partContext::procedural_declarative_item() {
+std::vector<vhdlParser::Procedural_declarative_itemContext *> vhdlParser::Procedural_declarative_partContext::procedural_declarative_item() {
   return getRuleContexts<vhdlParser::Procedural_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Procedural_declarative_itemContext> vhdlParser::Procedural_declarative_partContext::procedural_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Procedural_declarative_itemContext>((size_t)i);
+vhdlParser::Procedural_declarative_itemContext* vhdlParser::Procedural_declarative_partContext::procedural_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Procedural_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Procedural_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Procedural_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleProcedural_declarative_part;
 }
 
@@ -14380,10 +14380,10 @@ antlrcpp::Any vhdlParser::Procedural_declarative_partContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedural_declarative_partContext> vhdlParser::procedural_declarative_part() {
-  Ref<Procedural_declarative_partContext> _localctx = std::make_shared<Procedural_declarative_partContext>(_ctx, getState());
+vhdlParser::Procedural_declarative_partContext* vhdlParser::procedural_declarative_part() {
+  Procedural_declarative_partContext *_localctx = _tracker.createInstance<Procedural_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 350, vhdlParser::RuleProcedural_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -14393,13 +14393,13 @@ Ref<vhdlParser::Procedural_declarative_partContext> vhdlParser::procedural_decla
     setState(1905);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::CONSTANT)
       | (1ULL << vhdlParser::FUNCTION)
       | (1ULL << vhdlParser::GROUP)
-      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::SHARED - 68))
@@ -14426,20 +14426,20 @@ Ref<vhdlParser::Procedural_declarative_partContext> vhdlParser::procedural_decla
 
 //----------------- Procedural_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Procedural_statement_partContext::Procedural_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedural_statement_partContext::Procedural_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Sequential_statementContext>> vhdlParser::Procedural_statement_partContext::sequential_statement() {
+std::vector<vhdlParser::Sequential_statementContext *> vhdlParser::Procedural_statement_partContext::sequential_statement() {
   return getRuleContexts<vhdlParser::Sequential_statementContext>();
 }
 
-Ref<vhdlParser::Sequential_statementContext> vhdlParser::Procedural_statement_partContext::sequential_statement(int i) {
-  return getRuleContext<vhdlParser::Sequential_statementContext>((size_t)i);
+vhdlParser::Sequential_statementContext* vhdlParser::Procedural_statement_partContext::sequential_statement(size_t i) {
+  return getRuleContext<vhdlParser::Sequential_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Procedural_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Procedural_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleProcedural_statement_part;
 }
 
@@ -14450,10 +14450,10 @@ antlrcpp::Any vhdlParser::Procedural_statement_partContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedural_statement_partContext> vhdlParser::procedural_statement_part() {
-  Ref<Procedural_statement_partContext> _localctx = std::make_shared<Procedural_statement_partContext>(_ctx, getState());
+vhdlParser::Procedural_statement_partContext* vhdlParser::procedural_statement_part() {
+  Procedural_statement_partContext *_localctx = _tracker.createInstance<Procedural_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 352, vhdlParser::RuleProcedural_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -14463,7 +14463,7 @@ Ref<vhdlParser::Procedural_statement_partContext> vhdlParser::procedural_stateme
     setState(1911);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
       | (1ULL << vhdlParser::CASE)
@@ -14472,7 +14472,7 @@ Ref<vhdlParser::Procedural_statement_partContext> vhdlParser::procedural_stateme
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::LOOP)
       | (1ULL << vhdlParser::NEXT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 79)) & ((1ULL << (vhdlParser::REPORT - 79))
       | (1ULL << (vhdlParser::RETURN - 79))
       | (1ULL << (vhdlParser::WAIT - 79))
@@ -14499,28 +14499,28 @@ Ref<vhdlParser::Procedural_statement_partContext> vhdlParser::procedural_stateme
 
 //----------------- Procedure_callContext ------------------------------------------------------------------
 
-vhdlParser::Procedure_callContext::Procedure_callContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedure_callContext::Procedure_callContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::Procedure_callContext::selected_name() {
+vhdlParser::Selected_nameContext* vhdlParser::Procedure_callContext::selected_name() {
   return getRuleContext<vhdlParser::Selected_nameContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_callContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Procedure_callContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Actual_parameter_partContext> vhdlParser::Procedure_callContext::actual_parameter_part() {
+vhdlParser::Actual_parameter_partContext* vhdlParser::Procedure_callContext::actual_parameter_part() {
   return getRuleContext<vhdlParser::Actual_parameter_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_callContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Procedure_callContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Procedure_callContext::getRuleIndex() const {
+size_t vhdlParser::Procedure_callContext::getRuleIndex() const {
   return vhdlParser::RuleProcedure_call;
 }
 
@@ -14531,10 +14531,10 @@ antlrcpp::Any vhdlParser::Procedure_callContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedure_callContext> vhdlParser::procedure_call() {
-  Ref<Procedure_callContext> _localctx = std::make_shared<Procedure_callContext>(_ctx, getState());
+vhdlParser::Procedure_callContext* vhdlParser::procedure_call() {
+  Procedure_callContext *_localctx = _tracker.createInstance<Procedure_callContext>(_ctx, getState());
   enterRule(_localctx, 354, vhdlParser::RuleProcedure_call);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -14567,24 +14567,24 @@ Ref<vhdlParser::Procedure_callContext> vhdlParser::procedure_call() {
 
 //----------------- Procedure_call_statementContext ------------------------------------------------------------------
 
-vhdlParser::Procedure_call_statementContext::Procedure_call_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedure_call_statementContext::Procedure_call_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Procedure_callContext> vhdlParser::Procedure_call_statementContext::procedure_call() {
+vhdlParser::Procedure_callContext* vhdlParser::Procedure_call_statementContext::procedure_call() {
   return getRuleContext<vhdlParser::Procedure_callContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_call_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Procedure_call_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Procedure_call_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Procedure_call_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
 
-ssize_t vhdlParser::Procedure_call_statementContext::getRuleIndex() const {
+size_t vhdlParser::Procedure_call_statementContext::getRuleIndex() const {
   return vhdlParser::RuleProcedure_call_statement;
 }
 
@@ -14595,8 +14595,8 @@ antlrcpp::Any vhdlParser::Procedure_call_statementContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedure_call_statementContext> vhdlParser::procedure_call_statement() {
-  Ref<Procedure_call_statementContext> _localctx = std::make_shared<Procedure_call_statementContext>(_ctx, getState());
+vhdlParser::Procedure_call_statementContext* vhdlParser::procedure_call_statement() {
+  Procedure_call_statementContext *_localctx = _tracker.createInstance<Procedure_call_statementContext>(_ctx, getState());
   enterRule(_localctx, 356, vhdlParser::RuleProcedure_call_statement);
 
   auto onExit = finally([=] {
@@ -14632,64 +14632,64 @@ Ref<vhdlParser::Procedure_call_statementContext> vhdlParser::procedure_call_stat
 
 //----------------- Process_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Process_declarative_itemContext::Process_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Process_declarative_itemContext::Process_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Process_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Process_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Process_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Process_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Process_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Process_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Process_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Process_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Process_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Process_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Process_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Process_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Process_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Process_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Process_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Process_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Process_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Process_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Process_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Process_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Process_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Process_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Process_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Process_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Process_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Process_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Process_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Process_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleProcess_declarative_item;
 }
 
@@ -14700,8 +14700,8 @@ antlrcpp::Any vhdlParser::Process_declarative_itemContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Process_declarative_itemContext> vhdlParser::process_declarative_item() {
-  Ref<Process_declarative_itemContext> _localctx = std::make_shared<Process_declarative_itemContext>(_ctx, getState());
+vhdlParser::Process_declarative_itemContext* vhdlParser::process_declarative_item() {
+  Process_declarative_itemContext *_localctx = _tracker.createInstance<Process_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 358, vhdlParser::RuleProcess_declarative_item);
 
   auto onExit = finally([=] {
@@ -14816,20 +14816,20 @@ Ref<vhdlParser::Process_declarative_itemContext> vhdlParser::process_declarative
 
 //----------------- Process_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Process_declarative_partContext::Process_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Process_declarative_partContext::Process_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Process_declarative_itemContext>> vhdlParser::Process_declarative_partContext::process_declarative_item() {
+std::vector<vhdlParser::Process_declarative_itemContext *> vhdlParser::Process_declarative_partContext::process_declarative_item() {
   return getRuleContexts<vhdlParser::Process_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Process_declarative_itemContext> vhdlParser::Process_declarative_partContext::process_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Process_declarative_itemContext>((size_t)i);
+vhdlParser::Process_declarative_itemContext* vhdlParser::Process_declarative_partContext::process_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Process_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Process_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Process_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleProcess_declarative_part;
 }
 
@@ -14840,10 +14840,10 @@ antlrcpp::Any vhdlParser::Process_declarative_partContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Process_declarative_partContext> vhdlParser::process_declarative_part() {
-  Ref<Process_declarative_partContext> _localctx = std::make_shared<Process_declarative_partContext>(_ctx, getState());
+vhdlParser::Process_declarative_partContext* vhdlParser::process_declarative_part() {
+  Process_declarative_partContext *_localctx = _tracker.createInstance<Process_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 360, vhdlParser::RuleProcess_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -14853,14 +14853,14 @@ Ref<vhdlParser::Process_declarative_partContext> vhdlParser::process_declarative
     setState(1945);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::CONSTANT)
       | (1ULL << vhdlParser::FILE)
       | (1ULL << vhdlParser::FUNCTION)
       | (1ULL << vhdlParser::GROUP)
-      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::SHARED - 68))
@@ -14887,72 +14887,72 @@ Ref<vhdlParser::Process_declarative_partContext> vhdlParser::process_declarative
 
 //----------------- Process_statementContext ------------------------------------------------------------------
 
-vhdlParser::Process_statementContext::Process_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Process_statementContext::Process_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Process_statementContext::PROCESS() {
+std::vector<tree::TerminalNode *> vhdlParser::Process_statementContext::PROCESS() {
   return getTokens(vhdlParser::PROCESS);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::PROCESS(int i) {
-  return getToken(vhdlParser::PROCESS, (size_t)i);
+tree::TerminalNode* vhdlParser::Process_statementContext::PROCESS(size_t i) {
+  return getToken(vhdlParser::PROCESS, i);
 }
 
-Ref<vhdlParser::Process_declarative_partContext> vhdlParser::Process_statementContext::process_declarative_part() {
+vhdlParser::Process_declarative_partContext* vhdlParser::Process_statementContext::process_declarative_part() {
   return getRuleContext<vhdlParser::Process_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Process_statementContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Process_statement_partContext> vhdlParser::Process_statementContext::process_statement_part() {
+vhdlParser::Process_statement_partContext* vhdlParser::Process_statementContext::process_statement_part() {
   return getRuleContext<vhdlParser::Process_statement_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::END() {
+tree::TerminalNode* vhdlParser::Process_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Process_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Process_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Process_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Process_statementContext::POSTPONED() {
+std::vector<tree::TerminalNode *> vhdlParser::Process_statementContext::POSTPONED() {
   return getTokens(vhdlParser::POSTPONED);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::POSTPONED(int i) {
-  return getToken(vhdlParser::POSTPONED, (size_t)i);
+tree::TerminalNode* vhdlParser::Process_statementContext::POSTPONED(size_t i) {
+  return getToken(vhdlParser::POSTPONED, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Process_statementContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Sensitivity_listContext> vhdlParser::Process_statementContext::sensitivity_list() {
+vhdlParser::Sensitivity_listContext* vhdlParser::Process_statementContext::sensitivity_list() {
   return getRuleContext<vhdlParser::Sensitivity_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Process_statementContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Process_statementContext::IS() {
+tree::TerminalNode* vhdlParser::Process_statementContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Process_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Process_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Process_statementContext::getRuleIndex() const {
+size_t vhdlParser::Process_statementContext::getRuleIndex() const {
   return vhdlParser::RuleProcess_statement;
 }
 
@@ -14963,10 +14963,10 @@ antlrcpp::Any vhdlParser::Process_statementContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Process_statementContext> vhdlParser::process_statement() {
-  Ref<Process_statementContext> _localctx = std::make_shared<Process_statementContext>(_ctx, getState());
+vhdlParser::Process_statementContext* vhdlParser::process_statement() {
+  Process_statementContext *_localctx = _tracker.createInstance<Process_statementContext>(_ctx, getState());
   enterRule(_localctx, 362, vhdlParser::RuleProcess_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15050,20 +15050,20 @@ Ref<vhdlParser::Process_statementContext> vhdlParser::process_statement() {
 
 //----------------- Process_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Process_statement_partContext::Process_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Process_statement_partContext::Process_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Sequential_statementContext>> vhdlParser::Process_statement_partContext::sequential_statement() {
+std::vector<vhdlParser::Sequential_statementContext *> vhdlParser::Process_statement_partContext::sequential_statement() {
   return getRuleContexts<vhdlParser::Sequential_statementContext>();
 }
 
-Ref<vhdlParser::Sequential_statementContext> vhdlParser::Process_statement_partContext::sequential_statement(int i) {
-  return getRuleContext<vhdlParser::Sequential_statementContext>((size_t)i);
+vhdlParser::Sequential_statementContext* vhdlParser::Process_statement_partContext::sequential_statement(size_t i) {
+  return getRuleContext<vhdlParser::Sequential_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Process_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Process_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleProcess_statement_part;
 }
 
@@ -15074,10 +15074,10 @@ antlrcpp::Any vhdlParser::Process_statement_partContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Process_statement_partContext> vhdlParser::process_statement_part() {
-  Ref<Process_statement_partContext> _localctx = std::make_shared<Process_statement_partContext>(_ctx, getState());
+vhdlParser::Process_statement_partContext* vhdlParser::process_statement_part() {
+  Process_statement_partContext *_localctx = _tracker.createInstance<Process_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 364, vhdlParser::RuleProcess_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15087,7 +15087,7 @@ Ref<vhdlParser::Process_statement_partContext> vhdlParser::process_statement_par
     setState(1980);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
       | (1ULL << vhdlParser::CASE)
@@ -15096,7 +15096,7 @@ Ref<vhdlParser::Process_statement_partContext> vhdlParser::process_statement_par
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::LOOP)
       | (1ULL << vhdlParser::NEXT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 79)) & ((1ULL << (vhdlParser::REPORT - 79))
       | (1ULL << (vhdlParser::RETURN - 79))
       | (1ULL << (vhdlParser::WAIT - 79))
@@ -15123,36 +15123,36 @@ Ref<vhdlParser::Process_statement_partContext> vhdlParser::process_statement_par
 
 //----------------- Qualified_expressionContext ------------------------------------------------------------------
 
-vhdlParser::Qualified_expressionContext::Qualified_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Qualified_expressionContext::Qualified_expressionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Qualified_expressionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Qualified_expressionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Qualified_expressionContext::APOSTROPHE() {
+tree::TerminalNode* vhdlParser::Qualified_expressionContext::APOSTROPHE() {
   return getToken(vhdlParser::APOSTROPHE, 0);
 }
 
-Ref<vhdlParser::AggregateContext> vhdlParser::Qualified_expressionContext::aggregate() {
+vhdlParser::AggregateContext* vhdlParser::Qualified_expressionContext::aggregate() {
   return getRuleContext<vhdlParser::AggregateContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Qualified_expressionContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Qualified_expressionContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Qualified_expressionContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Qualified_expressionContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Qualified_expressionContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Qualified_expressionContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Qualified_expressionContext::getRuleIndex() const {
+size_t vhdlParser::Qualified_expressionContext::getRuleIndex() const {
   return vhdlParser::RuleQualified_expression;
 }
 
@@ -15163,8 +15163,8 @@ antlrcpp::Any vhdlParser::Qualified_expressionContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Qualified_expressionContext> vhdlParser::qualified_expression() {
-  Ref<Qualified_expressionContext> _localctx = std::make_shared<Qualified_expressionContext>(_ctx, getState());
+vhdlParser::Qualified_expressionContext* vhdlParser::qualified_expression() {
+  Qualified_expressionContext *_localctx = _tracker.createInstance<Qualified_expressionContext>(_ctx, getState());
   enterRule(_localctx, 366, vhdlParser::RuleQualified_expression);
 
   auto onExit = finally([=] {
@@ -15209,24 +15209,24 @@ Ref<vhdlParser::Qualified_expressionContext> vhdlParser::qualified_expression() 
 
 //----------------- Quantity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Quantity_declarationContext::Quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Quantity_declarationContext::Quantity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Free_quantity_declarationContext> vhdlParser::Quantity_declarationContext::free_quantity_declaration() {
+vhdlParser::Free_quantity_declarationContext* vhdlParser::Quantity_declarationContext::free_quantity_declaration() {
   return getRuleContext<vhdlParser::Free_quantity_declarationContext>(0);
 }
 
-Ref<vhdlParser::Branch_quantity_declarationContext> vhdlParser::Quantity_declarationContext::branch_quantity_declaration() {
+vhdlParser::Branch_quantity_declarationContext* vhdlParser::Quantity_declarationContext::branch_quantity_declaration() {
   return getRuleContext<vhdlParser::Branch_quantity_declarationContext>(0);
 }
 
-Ref<vhdlParser::Source_quantity_declarationContext> vhdlParser::Quantity_declarationContext::source_quantity_declaration() {
+vhdlParser::Source_quantity_declarationContext* vhdlParser::Quantity_declarationContext::source_quantity_declaration() {
   return getRuleContext<vhdlParser::Source_quantity_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Quantity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Quantity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleQuantity_declaration;
 }
 
@@ -15237,8 +15237,8 @@ antlrcpp::Any vhdlParser::Quantity_declarationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Quantity_declarationContext> vhdlParser::quantity_declaration() {
-  Ref<Quantity_declarationContext> _localctx = std::make_shared<Quantity_declarationContext>(_ctx, getState());
+vhdlParser::Quantity_declarationContext* vhdlParser::quantity_declaration() {
+  Quantity_declarationContext *_localctx = _tracker.createInstance<Quantity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 368, vhdlParser::RuleQuantity_declaration);
 
   auto onExit = finally([=] {
@@ -15283,36 +15283,36 @@ Ref<vhdlParser::Quantity_declarationContext> vhdlParser::quantity_declaration() 
 
 //----------------- Quantity_listContext ------------------------------------------------------------------
 
-vhdlParser::Quantity_listContext::Quantity_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Quantity_listContext::Quantity_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::Quantity_listContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::Quantity_listContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Quantity_listContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::Quantity_listContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Quantity_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Quantity_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Quantity_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Quantity_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Quantity_listContext::OTHERS() {
+tree::TerminalNode* vhdlParser::Quantity_listContext::OTHERS() {
   return getToken(vhdlParser::OTHERS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Quantity_listContext::ALL() {
+tree::TerminalNode* vhdlParser::Quantity_listContext::ALL() {
   return getToken(vhdlParser::ALL, 0);
 }
 
 
-ssize_t vhdlParser::Quantity_listContext::getRuleIndex() const {
+size_t vhdlParser::Quantity_listContext::getRuleIndex() const {
   return vhdlParser::RuleQuantity_list;
 }
 
@@ -15323,10 +15323,10 @@ antlrcpp::Any vhdlParser::Quantity_listContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Quantity_listContext> vhdlParser::quantity_list() {
-  Ref<Quantity_listContext> _localctx = std::make_shared<Quantity_listContext>(_ctx, getState());
+vhdlParser::Quantity_listContext* vhdlParser::quantity_list() {
+  Quantity_listContext *_localctx = _tracker.createInstance<Quantity_listContext>(_ctx, getState());
   enterRule(_localctx, 370, vhdlParser::RuleQuantity_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15385,24 +15385,24 @@ Ref<vhdlParser::Quantity_listContext> vhdlParser::quantity_list() {
 
 //----------------- Quantity_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Quantity_specificationContext::Quantity_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Quantity_specificationContext::Quantity_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Quantity_listContext> vhdlParser::Quantity_specificationContext::quantity_list() {
+vhdlParser::Quantity_listContext* vhdlParser::Quantity_specificationContext::quantity_list() {
   return getRuleContext<vhdlParser::Quantity_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Quantity_specificationContext::COLON() {
+tree::TerminalNode* vhdlParser::Quantity_specificationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Quantity_specificationContext::name() {
+vhdlParser::NameContext* vhdlParser::Quantity_specificationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::Quantity_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Quantity_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleQuantity_specification;
 }
 
@@ -15413,8 +15413,8 @@ antlrcpp::Any vhdlParser::Quantity_specificationContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Quantity_specificationContext> vhdlParser::quantity_specification() {
-  Ref<Quantity_specificationContext> _localctx = std::make_shared<Quantity_specificationContext>(_ctx, getState());
+vhdlParser::Quantity_specificationContext* vhdlParser::quantity_specification() {
+  Quantity_specificationContext *_localctx = _tracker.createInstance<Quantity_specificationContext>(_ctx, getState());
   enterRule(_localctx, 372, vhdlParser::RuleQuantity_specification);
 
   auto onExit = finally([=] {
@@ -15441,20 +15441,20 @@ Ref<vhdlParser::Quantity_specificationContext> vhdlParser::quantity_specificatio
 
 //----------------- RangeContext ------------------------------------------------------------------
 
-vhdlParser::RangeContext::RangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::RangeContext::RangeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Explicit_rangeContext> vhdlParser::RangeContext::explicit_range() {
+vhdlParser::Explicit_rangeContext* vhdlParser::RangeContext::explicit_range() {
   return getRuleContext<vhdlParser::Explicit_rangeContext>(0);
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::RangeContext::name() {
+vhdlParser::NameContext* vhdlParser::RangeContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
 
-ssize_t vhdlParser::RangeContext::getRuleIndex() const {
+size_t vhdlParser::RangeContext::getRuleIndex() const {
   return vhdlParser::RuleRange;
 }
 
@@ -15465,8 +15465,8 @@ antlrcpp::Any vhdlParser::RangeContext::accept(tree::ParseTreeVisitor *visitor) 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::RangeContext> vhdlParser::range() {
-  Ref<RangeContext> _localctx = std::make_shared<RangeContext>(_ctx, getState());
+vhdlParser::RangeContext* vhdlParser::range() {
+  RangeContext *_localctx = _tracker.createInstance<RangeContext>(_ctx, getState());
   enterRule(_localctx, 374, vhdlParser::RuleRange);
 
   auto onExit = finally([=] {
@@ -15504,24 +15504,24 @@ Ref<vhdlParser::RangeContext> vhdlParser::range() {
 
 //----------------- Explicit_rangeContext ------------------------------------------------------------------
 
-vhdlParser::Explicit_rangeContext::Explicit_rangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Explicit_rangeContext::Explicit_rangeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Simple_expressionContext>> vhdlParser::Explicit_rangeContext::simple_expression() {
+std::vector<vhdlParser::Simple_expressionContext *> vhdlParser::Explicit_rangeContext::simple_expression() {
   return getRuleContexts<vhdlParser::Simple_expressionContext>();
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::Explicit_rangeContext::simple_expression(int i) {
-  return getRuleContext<vhdlParser::Simple_expressionContext>((size_t)i);
+vhdlParser::Simple_expressionContext* vhdlParser::Explicit_rangeContext::simple_expression(size_t i) {
+  return getRuleContext<vhdlParser::Simple_expressionContext>(i);
 }
 
-Ref<vhdlParser::DirectionContext> vhdlParser::Explicit_rangeContext::direction() {
+vhdlParser::DirectionContext* vhdlParser::Explicit_rangeContext::direction() {
   return getRuleContext<vhdlParser::DirectionContext>(0);
 }
 
 
-ssize_t vhdlParser::Explicit_rangeContext::getRuleIndex() const {
+size_t vhdlParser::Explicit_rangeContext::getRuleIndex() const {
   return vhdlParser::RuleExplicit_range;
 }
 
@@ -15532,8 +15532,8 @@ antlrcpp::Any vhdlParser::Explicit_rangeContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Explicit_rangeContext> vhdlParser::explicit_range() {
-  Ref<Explicit_rangeContext> _localctx = std::make_shared<Explicit_rangeContext>(_ctx, getState());
+vhdlParser::Explicit_rangeContext* vhdlParser::explicit_range() {
+  Explicit_rangeContext *_localctx = _tracker.createInstance<Explicit_rangeContext>(_ctx, getState());
   enterRule(_localctx, 376, vhdlParser::RuleExplicit_range);
 
   auto onExit = finally([=] {
@@ -15560,20 +15560,20 @@ Ref<vhdlParser::Explicit_rangeContext> vhdlParser::explicit_range() {
 
 //----------------- Range_constraintContext ------------------------------------------------------------------
 
-vhdlParser::Range_constraintContext::Range_constraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Range_constraintContext::Range_constraintContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Range_constraintContext::RANGE() {
+tree::TerminalNode* vhdlParser::Range_constraintContext::RANGE() {
   return getToken(vhdlParser::RANGE, 0);
 }
 
-Ref<vhdlParser::RangeContext> vhdlParser::Range_constraintContext::range() {
+vhdlParser::RangeContext* vhdlParser::Range_constraintContext::range() {
   return getRuleContext<vhdlParser::RangeContext>(0);
 }
 
 
-ssize_t vhdlParser::Range_constraintContext::getRuleIndex() const {
+size_t vhdlParser::Range_constraintContext::getRuleIndex() const {
   return vhdlParser::RuleRange_constraint;
 }
 
@@ -15584,8 +15584,8 @@ antlrcpp::Any vhdlParser::Range_constraintContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Range_constraintContext> vhdlParser::range_constraint() {
-  Ref<Range_constraintContext> _localctx = std::make_shared<Range_constraintContext>(_ctx, getState());
+vhdlParser::Range_constraintContext* vhdlParser::range_constraint() {
+  Range_constraintContext *_localctx = _tracker.createInstance<Range_constraintContext>(_ctx, getState());
   enterRule(_localctx, 378, vhdlParser::RuleRange_constraint);
 
   auto onExit = finally([=] {
@@ -15610,36 +15610,36 @@ Ref<vhdlParser::Range_constraintContext> vhdlParser::range_constraint() {
 
 //----------------- Record_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Record_nature_definitionContext::Record_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Record_nature_definitionContext::Record_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Record_nature_definitionContext::RECORD() {
+std::vector<tree::TerminalNode *> vhdlParser::Record_nature_definitionContext::RECORD() {
   return getTokens(vhdlParser::RECORD);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Record_nature_definitionContext::RECORD(int i) {
-  return getToken(vhdlParser::RECORD, (size_t)i);
+tree::TerminalNode* vhdlParser::Record_nature_definitionContext::RECORD(size_t i) {
+  return getToken(vhdlParser::RECORD, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Record_nature_definitionContext::END() {
+tree::TerminalNode* vhdlParser::Record_nature_definitionContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-std::vector<Ref<vhdlParser::Nature_element_declarationContext>> vhdlParser::Record_nature_definitionContext::nature_element_declaration() {
+std::vector<vhdlParser::Nature_element_declarationContext *> vhdlParser::Record_nature_definitionContext::nature_element_declaration() {
   return getRuleContexts<vhdlParser::Nature_element_declarationContext>();
 }
 
-Ref<vhdlParser::Nature_element_declarationContext> vhdlParser::Record_nature_definitionContext::nature_element_declaration(int i) {
-  return getRuleContext<vhdlParser::Nature_element_declarationContext>((size_t)i);
+vhdlParser::Nature_element_declarationContext* vhdlParser::Record_nature_definitionContext::nature_element_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Nature_element_declarationContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Record_nature_definitionContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Record_nature_definitionContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Record_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Record_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleRecord_nature_definition;
 }
 
@@ -15650,10 +15650,10 @@ antlrcpp::Any vhdlParser::Record_nature_definitionContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Record_nature_definitionContext> vhdlParser::record_nature_definition() {
-  Ref<Record_nature_definitionContext> _localctx = std::make_shared<Record_nature_definitionContext>(_ctx, getState());
+vhdlParser::Record_nature_definitionContext* vhdlParser::record_nature_definition() {
+  Record_nature_definitionContext *_localctx = _tracker.createInstance<Record_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 380, vhdlParser::RuleRecord_nature_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15700,36 +15700,36 @@ Ref<vhdlParser::Record_nature_definitionContext> vhdlParser::record_nature_defin
 
 //----------------- Record_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Record_type_definitionContext::Record_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Record_type_definitionContext::Record_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Record_type_definitionContext::RECORD() {
+std::vector<tree::TerminalNode *> vhdlParser::Record_type_definitionContext::RECORD() {
   return getTokens(vhdlParser::RECORD);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Record_type_definitionContext::RECORD(int i) {
-  return getToken(vhdlParser::RECORD, (size_t)i);
+tree::TerminalNode* vhdlParser::Record_type_definitionContext::RECORD(size_t i) {
+  return getToken(vhdlParser::RECORD, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Record_type_definitionContext::END() {
+tree::TerminalNode* vhdlParser::Record_type_definitionContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-std::vector<Ref<vhdlParser::Element_declarationContext>> vhdlParser::Record_type_definitionContext::element_declaration() {
+std::vector<vhdlParser::Element_declarationContext *> vhdlParser::Record_type_definitionContext::element_declaration() {
   return getRuleContexts<vhdlParser::Element_declarationContext>();
 }
 
-Ref<vhdlParser::Element_declarationContext> vhdlParser::Record_type_definitionContext::element_declaration(int i) {
-  return getRuleContext<vhdlParser::Element_declarationContext>((size_t)i);
+vhdlParser::Element_declarationContext* vhdlParser::Record_type_definitionContext::element_declaration(size_t i) {
+  return getRuleContext<vhdlParser::Element_declarationContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Record_type_definitionContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Record_type_definitionContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Record_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Record_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleRecord_type_definition;
 }
 
@@ -15740,10 +15740,10 @@ antlrcpp::Any vhdlParser::Record_type_definitionContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Record_type_definitionContext> vhdlParser::record_type_definition() {
-  Ref<Record_type_definitionContext> _localctx = std::make_shared<Record_type_definitionContext>(_ctx, getState());
+vhdlParser::Record_type_definitionContext* vhdlParser::record_type_definition() {
+  Record_type_definitionContext *_localctx = _tracker.createInstance<Record_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 382, vhdlParser::RuleRecord_type_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15790,24 +15790,24 @@ Ref<vhdlParser::Record_type_definitionContext> vhdlParser::record_type_definitio
 
 //----------------- RelationContext ------------------------------------------------------------------
 
-vhdlParser::RelationContext::RelationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::RelationContext::RelationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Shift_expressionContext>> vhdlParser::RelationContext::shift_expression() {
+std::vector<vhdlParser::Shift_expressionContext *> vhdlParser::RelationContext::shift_expression() {
   return getRuleContexts<vhdlParser::Shift_expressionContext>();
 }
 
-Ref<vhdlParser::Shift_expressionContext> vhdlParser::RelationContext::shift_expression(int i) {
-  return getRuleContext<vhdlParser::Shift_expressionContext>((size_t)i);
+vhdlParser::Shift_expressionContext* vhdlParser::RelationContext::shift_expression(size_t i) {
+  return getRuleContext<vhdlParser::Shift_expressionContext>(i);
 }
 
-Ref<vhdlParser::Relational_operatorContext> vhdlParser::RelationContext::relational_operator() {
+vhdlParser::Relational_operatorContext* vhdlParser::RelationContext::relational_operator() {
   return getRuleContext<vhdlParser::Relational_operatorContext>(0);
 }
 
 
-ssize_t vhdlParser::RelationContext::getRuleIndex() const {
+size_t vhdlParser::RelationContext::getRuleIndex() const {
   return vhdlParser::RuleRelation;
 }
 
@@ -15818,8 +15818,8 @@ antlrcpp::Any vhdlParser::RelationContext::accept(tree::ParseTreeVisitor *visito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::RelationContext> vhdlParser::relation() {
-  Ref<RelationContext> _localctx = std::make_shared<RelationContext>(_ctx, getState());
+vhdlParser::RelationContext* vhdlParser::relation() {
+  RelationContext *_localctx = _tracker.createInstance<RelationContext>(_ctx, getState());
   enterRule(_localctx, 384, vhdlParser::RuleRelation);
 
   auto onExit = finally([=] {
@@ -15855,36 +15855,36 @@ Ref<vhdlParser::RelationContext> vhdlParser::relation() {
 
 //----------------- Relational_operatorContext ------------------------------------------------------------------
 
-vhdlParser::Relational_operatorContext::Relational_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Relational_operatorContext::Relational_operatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::EQ() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::EQ() {
   return getToken(vhdlParser::EQ, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::NEQ() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::NEQ() {
   return getToken(vhdlParser::NEQ, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::LOWERTHAN() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::LOWERTHAN() {
   return getToken(vhdlParser::LOWERTHAN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::LE() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::LE() {
   return getToken(vhdlParser::LE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::GREATERTHAN() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::GREATERTHAN() {
   return getToken(vhdlParser::GREATERTHAN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Relational_operatorContext::GE() {
+tree::TerminalNode* vhdlParser::Relational_operatorContext::GE() {
   return getToken(vhdlParser::GE, 0);
 }
 
 
-ssize_t vhdlParser::Relational_operatorContext::getRuleIndex() const {
+size_t vhdlParser::Relational_operatorContext::getRuleIndex() const {
   return vhdlParser::RuleRelational_operator;
 }
 
@@ -15895,10 +15895,10 @@ antlrcpp::Any vhdlParser::Relational_operatorContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Relational_operatorContext> vhdlParser::relational_operator() {
-  Ref<Relational_operatorContext> _localctx = std::make_shared<Relational_operatorContext>(_ctx, getState());
+vhdlParser::Relational_operatorContext* vhdlParser::relational_operator() {
+  Relational_operatorContext *_localctx = _tracker.createInstance<Relational_operatorContext>(_ctx, getState());
   enterRule(_localctx, 386, vhdlParser::RuleRelational_operator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -15907,7 +15907,7 @@ Ref<vhdlParser::Relational_operatorContext> vhdlParser::relational_operator() {
     enterOuterAlt(_localctx, 1);
     setState(2052);
     _la = _input->LA(1);
-    if (!(((((_la - 131) & ~(ssize_t)0x3f) == 0) &&
+    if (!(((((_la - 131) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 131)) & ((1ULL << (vhdlParser::LE - 131))
       | (1ULL << (vhdlParser::GE - 131))
       | (1ULL << (vhdlParser::NEQ - 131))
@@ -15931,36 +15931,36 @@ Ref<vhdlParser::Relational_operatorContext> vhdlParser::relational_operator() {
 
 //----------------- Report_statementContext ------------------------------------------------------------------
 
-vhdlParser::Report_statementContext::Report_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Report_statementContext::Report_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Report_statementContext::REPORT() {
+tree::TerminalNode* vhdlParser::Report_statementContext::REPORT() {
   return getToken(vhdlParser::REPORT, 0);
 }
 
-std::vector<Ref<vhdlParser::ExpressionContext>> vhdlParser::Report_statementContext::expression() {
+std::vector<vhdlParser::ExpressionContext *> vhdlParser::Report_statementContext::expression() {
   return getRuleContexts<vhdlParser::ExpressionContext>();
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Report_statementContext::expression(int i) {
-  return getRuleContext<vhdlParser::ExpressionContext>((size_t)i);
+vhdlParser::ExpressionContext* vhdlParser::Report_statementContext::expression(size_t i) {
+  return getRuleContext<vhdlParser::ExpressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Report_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Report_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Report_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Report_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Report_statementContext::SEVERITY() {
+tree::TerminalNode* vhdlParser::Report_statementContext::SEVERITY() {
   return getToken(vhdlParser::SEVERITY, 0);
 }
 
 
-ssize_t vhdlParser::Report_statementContext::getRuleIndex() const {
+size_t vhdlParser::Report_statementContext::getRuleIndex() const {
   return vhdlParser::RuleReport_statement;
 }
 
@@ -15971,10 +15971,10 @@ antlrcpp::Any vhdlParser::Report_statementContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Report_statementContext> vhdlParser::report_statement() {
-  Ref<Report_statementContext> _localctx = std::make_shared<Report_statementContext>(_ctx, getState());
+vhdlParser::Report_statementContext* vhdlParser::report_statement() {
+  Report_statementContext *_localctx = _tracker.createInstance<Report_statementContext>(_ctx, getState());
   enterRule(_localctx, 388, vhdlParser::RuleReport_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16018,28 +16018,28 @@ Ref<vhdlParser::Report_statementContext> vhdlParser::report_statement() {
 
 //----------------- Return_statementContext ------------------------------------------------------------------
 
-vhdlParser::Return_statementContext::Return_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Return_statementContext::Return_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Return_statementContext::RETURN() {
+tree::TerminalNode* vhdlParser::Return_statementContext::RETURN() {
   return getToken(vhdlParser::RETURN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Return_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Return_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Return_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Return_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Return_statementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Return_statementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Return_statementContext::getRuleIndex() const {
+size_t vhdlParser::Return_statementContext::getRuleIndex() const {
   return vhdlParser::RuleReturn_statement;
 }
 
@@ -16050,10 +16050,10 @@ antlrcpp::Any vhdlParser::Return_statementContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Return_statementContext> vhdlParser::return_statement() {
-  Ref<Return_statementContext> _localctx = std::make_shared<Return_statementContext>(_ctx, getState());
+vhdlParser::Return_statementContext* vhdlParser::return_statement() {
+  Return_statementContext *_localctx = _tracker.createInstance<Return_statementContext>(_ctx, getState());
   enterRule(_localctx, 390, vhdlParser::RuleReturn_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16074,11 +16074,11 @@ Ref<vhdlParser::Return_statementContext> vhdlParser::return_statement() {
     setState(2070);
 
     _la = _input->LA(1);
-    if ((((_la & ~(ssize_t)0x3f) == 0) &&
+    if ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 112) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 112) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 112)) & ((1ULL << (vhdlParser::BASE_LITERAL - 112))
       | (1ULL << (vhdlParser::BIT_STRING_LITERAL - 112))
       | (1ULL << (vhdlParser::REAL_LITERAL - 112))
@@ -16108,32 +16108,32 @@ Ref<vhdlParser::Return_statementContext> vhdlParser::return_statement() {
 
 //----------------- Scalar_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Scalar_nature_definitionContext::Scalar_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Scalar_nature_definitionContext::Scalar_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::Scalar_nature_definitionContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::Scalar_nature_definitionContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Scalar_nature_definitionContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::Scalar_nature_definitionContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Scalar_nature_definitionContext::ACROSS() {
+tree::TerminalNode* vhdlParser::Scalar_nature_definitionContext::ACROSS() {
   return getToken(vhdlParser::ACROSS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Scalar_nature_definitionContext::THROUGH() {
+tree::TerminalNode* vhdlParser::Scalar_nature_definitionContext::THROUGH() {
   return getToken(vhdlParser::THROUGH, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Scalar_nature_definitionContext::REFERENCE() {
+tree::TerminalNode* vhdlParser::Scalar_nature_definitionContext::REFERENCE() {
   return getToken(vhdlParser::REFERENCE, 0);
 }
 
 
-ssize_t vhdlParser::Scalar_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Scalar_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleScalar_nature_definition;
 }
 
@@ -16144,8 +16144,8 @@ antlrcpp::Any vhdlParser::Scalar_nature_definitionContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Scalar_nature_definitionContext> vhdlParser::scalar_nature_definition() {
-  Ref<Scalar_nature_definitionContext> _localctx = std::make_shared<Scalar_nature_definitionContext>(_ctx, getState());
+vhdlParser::Scalar_nature_definitionContext* vhdlParser::scalar_nature_definition() {
+  Scalar_nature_definitionContext *_localctx = _tracker.createInstance<Scalar_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 392, vhdlParser::RuleScalar_nature_definition);
 
   auto onExit = finally([=] {
@@ -16178,24 +16178,24 @@ Ref<vhdlParser::Scalar_nature_definitionContext> vhdlParser::scalar_nature_defin
 
 //----------------- Scalar_type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Scalar_type_definitionContext::Scalar_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Scalar_type_definitionContext::Scalar_type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Physical_type_definitionContext> vhdlParser::Scalar_type_definitionContext::physical_type_definition() {
+vhdlParser::Physical_type_definitionContext* vhdlParser::Scalar_type_definitionContext::physical_type_definition() {
   return getRuleContext<vhdlParser::Physical_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::Enumeration_type_definitionContext> vhdlParser::Scalar_type_definitionContext::enumeration_type_definition() {
+vhdlParser::Enumeration_type_definitionContext* vhdlParser::Scalar_type_definitionContext::enumeration_type_definition() {
   return getRuleContext<vhdlParser::Enumeration_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::Range_constraintContext> vhdlParser::Scalar_type_definitionContext::range_constraint() {
+vhdlParser::Range_constraintContext* vhdlParser::Scalar_type_definitionContext::range_constraint() {
   return getRuleContext<vhdlParser::Range_constraintContext>(0);
 }
 
 
-ssize_t vhdlParser::Scalar_type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Scalar_type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleScalar_type_definition;
 }
 
@@ -16206,8 +16206,8 @@ antlrcpp::Any vhdlParser::Scalar_type_definitionContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Scalar_type_definitionContext> vhdlParser::scalar_type_definition() {
-  Ref<Scalar_type_definitionContext> _localctx = std::make_shared<Scalar_type_definitionContext>(_ctx, getState());
+vhdlParser::Scalar_type_definitionContext* vhdlParser::scalar_type_definition() {
+  Scalar_type_definitionContext *_localctx = _tracker.createInstance<Scalar_type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 394, vhdlParser::RuleScalar_type_definition);
 
   auto onExit = finally([=] {
@@ -16252,20 +16252,20 @@ Ref<vhdlParser::Scalar_type_definitionContext> vhdlParser::scalar_type_definitio
 
 //----------------- Secondary_unitContext ------------------------------------------------------------------
 
-vhdlParser::Secondary_unitContext::Secondary_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Secondary_unitContext::Secondary_unitContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Architecture_bodyContext> vhdlParser::Secondary_unitContext::architecture_body() {
+vhdlParser::Architecture_bodyContext* vhdlParser::Secondary_unitContext::architecture_body() {
   return getRuleContext<vhdlParser::Architecture_bodyContext>(0);
 }
 
-Ref<vhdlParser::Package_bodyContext> vhdlParser::Secondary_unitContext::package_body() {
+vhdlParser::Package_bodyContext* vhdlParser::Secondary_unitContext::package_body() {
   return getRuleContext<vhdlParser::Package_bodyContext>(0);
 }
 
 
-ssize_t vhdlParser::Secondary_unitContext::getRuleIndex() const {
+size_t vhdlParser::Secondary_unitContext::getRuleIndex() const {
   return vhdlParser::RuleSecondary_unit;
 }
 
@@ -16276,8 +16276,8 @@ antlrcpp::Any vhdlParser::Secondary_unitContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Secondary_unitContext> vhdlParser::secondary_unit() {
-  Ref<Secondary_unitContext> _localctx = std::make_shared<Secondary_unitContext>(_ctx, getState());
+vhdlParser::Secondary_unitContext* vhdlParser::secondary_unit() {
+  Secondary_unitContext *_localctx = _tracker.createInstance<Secondary_unitContext>(_ctx, getState());
   enterRule(_localctx, 396, vhdlParser::RuleSecondary_unit);
 
   auto onExit = finally([=] {
@@ -16317,28 +16317,28 @@ Ref<vhdlParser::Secondary_unitContext> vhdlParser::secondary_unit() {
 
 //----------------- Secondary_unit_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Secondary_unit_declarationContext::Secondary_unit_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Secondary_unit_declarationContext::Secondary_unit_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Secondary_unit_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Secondary_unit_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Secondary_unit_declarationContext::EQ() {
+tree::TerminalNode* vhdlParser::Secondary_unit_declarationContext::EQ() {
   return getToken(vhdlParser::EQ, 0);
 }
 
-Ref<vhdlParser::Physical_literalContext> vhdlParser::Secondary_unit_declarationContext::physical_literal() {
+vhdlParser::Physical_literalContext* vhdlParser::Secondary_unit_declarationContext::physical_literal() {
   return getRuleContext<vhdlParser::Physical_literalContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Secondary_unit_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Secondary_unit_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Secondary_unit_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Secondary_unit_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSecondary_unit_declaration;
 }
 
@@ -16349,8 +16349,8 @@ antlrcpp::Any vhdlParser::Secondary_unit_declarationContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Secondary_unit_declarationContext> vhdlParser::secondary_unit_declaration() {
-  Ref<Secondary_unit_declarationContext> _localctx = std::make_shared<Secondary_unit_declarationContext>(_ctx, getState());
+vhdlParser::Secondary_unit_declarationContext* vhdlParser::secondary_unit_declaration() {
+  Secondary_unit_declarationContext *_localctx = _tracker.createInstance<Secondary_unit_declarationContext>(_ctx, getState());
   enterRule(_localctx, 398, vhdlParser::RuleSecondary_unit_declaration);
 
   auto onExit = finally([=] {
@@ -16379,44 +16379,44 @@ Ref<vhdlParser::Secondary_unit_declarationContext> vhdlParser::secondary_unit_de
 
 //----------------- Selected_signal_assignmentContext ------------------------------------------------------------------
 
-vhdlParser::Selected_signal_assignmentContext::Selected_signal_assignmentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Selected_signal_assignmentContext::Selected_signal_assignmentContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_signal_assignmentContext::WITH() {
+tree::TerminalNode* vhdlParser::Selected_signal_assignmentContext::WITH() {
   return getToken(vhdlParser::WITH, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Selected_signal_assignmentContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Selected_signal_assignmentContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_signal_assignmentContext::SELECT() {
+tree::TerminalNode* vhdlParser::Selected_signal_assignmentContext::SELECT() {
   return getToken(vhdlParser::SELECT, 0);
 }
 
-Ref<vhdlParser::TargetContext> vhdlParser::Selected_signal_assignmentContext::target() {
+vhdlParser::TargetContext* vhdlParser::Selected_signal_assignmentContext::target() {
   return getRuleContext<vhdlParser::TargetContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_signal_assignmentContext::LE() {
+tree::TerminalNode* vhdlParser::Selected_signal_assignmentContext::LE() {
   return getToken(vhdlParser::LE, 0);
 }
 
-Ref<vhdlParser::OptsContext> vhdlParser::Selected_signal_assignmentContext::opts() {
+vhdlParser::OptsContext* vhdlParser::Selected_signal_assignmentContext::opts() {
   return getRuleContext<vhdlParser::OptsContext>(0);
 }
 
-Ref<vhdlParser::Selected_waveformsContext> vhdlParser::Selected_signal_assignmentContext::selected_waveforms() {
+vhdlParser::Selected_waveformsContext* vhdlParser::Selected_signal_assignmentContext::selected_waveforms() {
   return getRuleContext<vhdlParser::Selected_waveformsContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_signal_assignmentContext::SEMI() {
+tree::TerminalNode* vhdlParser::Selected_signal_assignmentContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Selected_signal_assignmentContext::getRuleIndex() const {
+size_t vhdlParser::Selected_signal_assignmentContext::getRuleIndex() const {
   return vhdlParser::RuleSelected_signal_assignment;
 }
 
@@ -16427,8 +16427,8 @@ antlrcpp::Any vhdlParser::Selected_signal_assignmentContext::accept(tree::ParseT
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Selected_signal_assignmentContext> vhdlParser::selected_signal_assignment() {
-  Ref<Selected_signal_assignmentContext> _localctx = std::make_shared<Selected_signal_assignmentContext>(_ctx, getState());
+vhdlParser::Selected_signal_assignmentContext* vhdlParser::selected_signal_assignment() {
+  Selected_signal_assignmentContext *_localctx = _tracker.createInstance<Selected_signal_assignmentContext>(_ctx, getState());
   enterRule(_localctx, 400, vhdlParser::RuleSelected_signal_assignment);
 
   auto onExit = finally([=] {
@@ -16465,44 +16465,44 @@ Ref<vhdlParser::Selected_signal_assignmentContext> vhdlParser::selected_signal_a
 
 //----------------- Selected_waveformsContext ------------------------------------------------------------------
 
-vhdlParser::Selected_waveformsContext::Selected_waveformsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Selected_waveformsContext::Selected_waveformsContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::WaveformContext>> vhdlParser::Selected_waveformsContext::waveform() {
+std::vector<vhdlParser::WaveformContext *> vhdlParser::Selected_waveformsContext::waveform() {
   return getRuleContexts<vhdlParser::WaveformContext>();
 }
 
-Ref<vhdlParser::WaveformContext> vhdlParser::Selected_waveformsContext::waveform(int i) {
-  return getRuleContext<vhdlParser::WaveformContext>((size_t)i);
+vhdlParser::WaveformContext* vhdlParser::Selected_waveformsContext::waveform(size_t i) {
+  return getRuleContext<vhdlParser::WaveformContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Selected_waveformsContext::WHEN() {
+std::vector<tree::TerminalNode *> vhdlParser::Selected_waveformsContext::WHEN() {
   return getTokens(vhdlParser::WHEN);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_waveformsContext::WHEN(int i) {
-  return getToken(vhdlParser::WHEN, (size_t)i);
+tree::TerminalNode* vhdlParser::Selected_waveformsContext::WHEN(size_t i) {
+  return getToken(vhdlParser::WHEN, i);
 }
 
-std::vector<Ref<vhdlParser::ChoicesContext>> vhdlParser::Selected_waveformsContext::choices() {
+std::vector<vhdlParser::ChoicesContext *> vhdlParser::Selected_waveformsContext::choices() {
   return getRuleContexts<vhdlParser::ChoicesContext>();
 }
 
-Ref<vhdlParser::ChoicesContext> vhdlParser::Selected_waveformsContext::choices(int i) {
-  return getRuleContext<vhdlParser::ChoicesContext>((size_t)i);
+vhdlParser::ChoicesContext* vhdlParser::Selected_waveformsContext::choices(size_t i) {
+  return getRuleContext<vhdlParser::ChoicesContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Selected_waveformsContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Selected_waveformsContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Selected_waveformsContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Selected_waveformsContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Selected_waveformsContext::getRuleIndex() const {
+size_t vhdlParser::Selected_waveformsContext::getRuleIndex() const {
   return vhdlParser::RuleSelected_waveforms;
 }
 
@@ -16513,10 +16513,10 @@ antlrcpp::Any vhdlParser::Selected_waveformsContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Selected_waveformsContext> vhdlParser::selected_waveforms() {
-  Ref<Selected_waveformsContext> _localctx = std::make_shared<Selected_waveformsContext>(_ctx, getState());
+vhdlParser::Selected_waveformsContext* vhdlParser::selected_waveforms() {
+  Selected_waveformsContext *_localctx = _tracker.createInstance<Selected_waveformsContext>(_ctx, getState());
   enterRule(_localctx, 402, vhdlParser::RuleSelected_waveforms);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16558,20 +16558,20 @@ Ref<vhdlParser::Selected_waveformsContext> vhdlParser::selected_waveforms() {
 
 //----------------- Sensitivity_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Sensitivity_clauseContext::Sensitivity_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Sensitivity_clauseContext::Sensitivity_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Sensitivity_clauseContext::ON() {
+tree::TerminalNode* vhdlParser::Sensitivity_clauseContext::ON() {
   return getToken(vhdlParser::ON, 0);
 }
 
-Ref<vhdlParser::Sensitivity_listContext> vhdlParser::Sensitivity_clauseContext::sensitivity_list() {
+vhdlParser::Sensitivity_listContext* vhdlParser::Sensitivity_clauseContext::sensitivity_list() {
   return getRuleContext<vhdlParser::Sensitivity_listContext>(0);
 }
 
 
-ssize_t vhdlParser::Sensitivity_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Sensitivity_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleSensitivity_clause;
 }
 
@@ -16582,8 +16582,8 @@ antlrcpp::Any vhdlParser::Sensitivity_clauseContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Sensitivity_clauseContext> vhdlParser::sensitivity_clause() {
-  Ref<Sensitivity_clauseContext> _localctx = std::make_shared<Sensitivity_clauseContext>(_ctx, getState());
+vhdlParser::Sensitivity_clauseContext* vhdlParser::sensitivity_clause() {
+  Sensitivity_clauseContext *_localctx = _tracker.createInstance<Sensitivity_clauseContext>(_ctx, getState());
   enterRule(_localctx, 404, vhdlParser::RuleSensitivity_clause);
 
   auto onExit = finally([=] {
@@ -16608,28 +16608,28 @@ Ref<vhdlParser::Sensitivity_clauseContext> vhdlParser::sensitivity_clause() {
 
 //----------------- Sensitivity_listContext ------------------------------------------------------------------
 
-vhdlParser::Sensitivity_listContext::Sensitivity_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Sensitivity_listContext::Sensitivity_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::Sensitivity_listContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::Sensitivity_listContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Sensitivity_listContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::Sensitivity_listContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Sensitivity_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Sensitivity_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Sensitivity_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Sensitivity_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Sensitivity_listContext::getRuleIndex() const {
+size_t vhdlParser::Sensitivity_listContext::getRuleIndex() const {
   return vhdlParser::RuleSensitivity_list;
 }
 
@@ -16640,10 +16640,10 @@ antlrcpp::Any vhdlParser::Sensitivity_listContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Sensitivity_listContext> vhdlParser::sensitivity_list() {
-  Ref<Sensitivity_listContext> _localctx = std::make_shared<Sensitivity_listContext>(_ctx, getState());
+vhdlParser::Sensitivity_listContext* vhdlParser::sensitivity_list() {
+  Sensitivity_listContext *_localctx = _tracker.createInstance<Sensitivity_listContext>(_ctx, getState());
   enterRule(_localctx, 406, vhdlParser::RuleSensitivity_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16677,20 +16677,20 @@ Ref<vhdlParser::Sensitivity_listContext> vhdlParser::sensitivity_list() {
 
 //----------------- Sequence_of_statementsContext ------------------------------------------------------------------
 
-vhdlParser::Sequence_of_statementsContext::Sequence_of_statementsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Sequence_of_statementsContext::Sequence_of_statementsContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Sequential_statementContext>> vhdlParser::Sequence_of_statementsContext::sequential_statement() {
+std::vector<vhdlParser::Sequential_statementContext *> vhdlParser::Sequence_of_statementsContext::sequential_statement() {
   return getRuleContexts<vhdlParser::Sequential_statementContext>();
 }
 
-Ref<vhdlParser::Sequential_statementContext> vhdlParser::Sequence_of_statementsContext::sequential_statement(int i) {
-  return getRuleContext<vhdlParser::Sequential_statementContext>((size_t)i);
+vhdlParser::Sequential_statementContext* vhdlParser::Sequence_of_statementsContext::sequential_statement(size_t i) {
+  return getRuleContext<vhdlParser::Sequential_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Sequence_of_statementsContext::getRuleIndex() const {
+size_t vhdlParser::Sequence_of_statementsContext::getRuleIndex() const {
   return vhdlParser::RuleSequence_of_statements;
 }
 
@@ -16701,10 +16701,10 @@ antlrcpp::Any vhdlParser::Sequence_of_statementsContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::sequence_of_statements() {
-  Ref<Sequence_of_statementsContext> _localctx = std::make_shared<Sequence_of_statementsContext>(_ctx, getState());
+vhdlParser::Sequence_of_statementsContext* vhdlParser::sequence_of_statements() {
+  Sequence_of_statementsContext *_localctx = _tracker.createInstance<Sequence_of_statementsContext>(_ctx, getState());
   enterRule(_localctx, 408, vhdlParser::RuleSequence_of_statements);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16714,7 +16714,7 @@ Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::sequence_of_statement
     setState(2131);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
       | (1ULL << vhdlParser::CASE)
@@ -16723,7 +16723,7 @@ Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::sequence_of_statement
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::LOOP)
       | (1ULL << vhdlParser::NEXT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 79)) & ((1ULL << (vhdlParser::REPORT - 79))
       | (1ULL << (vhdlParser::RETURN - 79))
       | (1ULL << (vhdlParser::WAIT - 79))
@@ -16750,76 +16750,76 @@ Ref<vhdlParser::Sequence_of_statementsContext> vhdlParser::sequence_of_statement
 
 //----------------- Sequential_statementContext ------------------------------------------------------------------
 
-vhdlParser::Sequential_statementContext::Sequential_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Sequential_statementContext::Sequential_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Wait_statementContext> vhdlParser::Sequential_statementContext::wait_statement() {
+vhdlParser::Wait_statementContext* vhdlParser::Sequential_statementContext::wait_statement() {
   return getRuleContext<vhdlParser::Wait_statementContext>(0);
 }
 
-Ref<vhdlParser::Assertion_statementContext> vhdlParser::Sequential_statementContext::assertion_statement() {
+vhdlParser::Assertion_statementContext* vhdlParser::Sequential_statementContext::assertion_statement() {
   return getRuleContext<vhdlParser::Assertion_statementContext>(0);
 }
 
-Ref<vhdlParser::Report_statementContext> vhdlParser::Sequential_statementContext::report_statement() {
+vhdlParser::Report_statementContext* vhdlParser::Sequential_statementContext::report_statement() {
   return getRuleContext<vhdlParser::Report_statementContext>(0);
 }
 
-Ref<vhdlParser::Signal_assignment_statementContext> vhdlParser::Sequential_statementContext::signal_assignment_statement() {
+vhdlParser::Signal_assignment_statementContext* vhdlParser::Sequential_statementContext::signal_assignment_statement() {
   return getRuleContext<vhdlParser::Signal_assignment_statementContext>(0);
 }
 
-Ref<vhdlParser::Variable_assignment_statementContext> vhdlParser::Sequential_statementContext::variable_assignment_statement() {
+vhdlParser::Variable_assignment_statementContext* vhdlParser::Sequential_statementContext::variable_assignment_statement() {
   return getRuleContext<vhdlParser::Variable_assignment_statementContext>(0);
 }
 
-Ref<vhdlParser::If_statementContext> vhdlParser::Sequential_statementContext::if_statement() {
+vhdlParser::If_statementContext* vhdlParser::Sequential_statementContext::if_statement() {
   return getRuleContext<vhdlParser::If_statementContext>(0);
 }
 
-Ref<vhdlParser::Case_statementContext> vhdlParser::Sequential_statementContext::case_statement() {
+vhdlParser::Case_statementContext* vhdlParser::Sequential_statementContext::case_statement() {
   return getRuleContext<vhdlParser::Case_statementContext>(0);
 }
 
-Ref<vhdlParser::Loop_statementContext> vhdlParser::Sequential_statementContext::loop_statement() {
+vhdlParser::Loop_statementContext* vhdlParser::Sequential_statementContext::loop_statement() {
   return getRuleContext<vhdlParser::Loop_statementContext>(0);
 }
 
-Ref<vhdlParser::Next_statementContext> vhdlParser::Sequential_statementContext::next_statement() {
+vhdlParser::Next_statementContext* vhdlParser::Sequential_statementContext::next_statement() {
   return getRuleContext<vhdlParser::Next_statementContext>(0);
 }
 
-Ref<vhdlParser::Exit_statementContext> vhdlParser::Sequential_statementContext::exit_statement() {
+vhdlParser::Exit_statementContext* vhdlParser::Sequential_statementContext::exit_statement() {
   return getRuleContext<vhdlParser::Exit_statementContext>(0);
 }
 
-Ref<vhdlParser::Return_statementContext> vhdlParser::Sequential_statementContext::return_statement() {
+vhdlParser::Return_statementContext* vhdlParser::Sequential_statementContext::return_statement() {
   return getRuleContext<vhdlParser::Return_statementContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Sequential_statementContext::NULL_SYM() {
+tree::TerminalNode* vhdlParser::Sequential_statementContext::NULL_SYM() {
   return getToken(vhdlParser::NULL_SYM, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Sequential_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Sequential_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Sequential_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Sequential_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Break_statementContext> vhdlParser::Sequential_statementContext::break_statement() {
+vhdlParser::Break_statementContext* vhdlParser::Sequential_statementContext::break_statement() {
   return getRuleContext<vhdlParser::Break_statementContext>(0);
 }
 
-Ref<vhdlParser::Procedure_call_statementContext> vhdlParser::Sequential_statementContext::procedure_call_statement() {
+vhdlParser::Procedure_call_statementContext* vhdlParser::Sequential_statementContext::procedure_call_statement() {
   return getRuleContext<vhdlParser::Procedure_call_statementContext>(0);
 }
 
 
-ssize_t vhdlParser::Sequential_statementContext::getRuleIndex() const {
+size_t vhdlParser::Sequential_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSequential_statement;
 }
 
@@ -16830,10 +16830,10 @@ antlrcpp::Any vhdlParser::Sequential_statementContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Sequential_statementContext> vhdlParser::sequential_statement() {
-  Ref<Sequential_statementContext> _localctx = std::make_shared<Sequential_statementContext>(_ctx, getState());
+vhdlParser::Sequential_statementContext* vhdlParser::sequential_statement() {
+  Sequential_statementContext *_localctx = _tracker.createInstance<Sequential_statementContext>(_ctx, getState());
   enterRule(_localctx, 410, vhdlParser::RuleSequential_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -16965,24 +16965,24 @@ Ref<vhdlParser::Sequential_statementContext> vhdlParser::sequential_statement() 
 
 //----------------- Shift_expressionContext ------------------------------------------------------------------
 
-vhdlParser::Shift_expressionContext::Shift_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Shift_expressionContext::Shift_expressionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Simple_expressionContext>> vhdlParser::Shift_expressionContext::simple_expression() {
+std::vector<vhdlParser::Simple_expressionContext *> vhdlParser::Shift_expressionContext::simple_expression() {
   return getRuleContexts<vhdlParser::Simple_expressionContext>();
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::Shift_expressionContext::simple_expression(int i) {
-  return getRuleContext<vhdlParser::Simple_expressionContext>((size_t)i);
+vhdlParser::Simple_expressionContext* vhdlParser::Shift_expressionContext::simple_expression(size_t i) {
+  return getRuleContext<vhdlParser::Simple_expressionContext>(i);
 }
 
-Ref<vhdlParser::Shift_operatorContext> vhdlParser::Shift_expressionContext::shift_operator() {
+vhdlParser::Shift_operatorContext* vhdlParser::Shift_expressionContext::shift_operator() {
   return getRuleContext<vhdlParser::Shift_operatorContext>(0);
 }
 
 
-ssize_t vhdlParser::Shift_expressionContext::getRuleIndex() const {
+size_t vhdlParser::Shift_expressionContext::getRuleIndex() const {
   return vhdlParser::RuleShift_expression;
 }
 
@@ -16993,8 +16993,8 @@ antlrcpp::Any vhdlParser::Shift_expressionContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Shift_expressionContext> vhdlParser::shift_expression() {
-  Ref<Shift_expressionContext> _localctx = std::make_shared<Shift_expressionContext>(_ctx, getState());
+vhdlParser::Shift_expressionContext* vhdlParser::shift_expression() {
+  Shift_expressionContext *_localctx = _tracker.createInstance<Shift_expressionContext>(_ctx, getState());
   enterRule(_localctx, 412, vhdlParser::RuleShift_expression);
 
   auto onExit = finally([=] {
@@ -17030,36 +17030,36 @@ Ref<vhdlParser::Shift_expressionContext> vhdlParser::shift_expression() {
 
 //----------------- Shift_operatorContext ------------------------------------------------------------------
 
-vhdlParser::Shift_operatorContext::Shift_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Shift_operatorContext::Shift_operatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::SLL() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::SLL() {
   return getToken(vhdlParser::SLL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::SRL() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::SRL() {
   return getToken(vhdlParser::SRL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::SLA() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::SLA() {
   return getToken(vhdlParser::SLA, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::SRA() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::SRA() {
   return getToken(vhdlParser::SRA, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::ROL() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::ROL() {
   return getToken(vhdlParser::ROL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Shift_operatorContext::ROR() {
+tree::TerminalNode* vhdlParser::Shift_operatorContext::ROR() {
   return getToken(vhdlParser::ROR, 0);
 }
 
 
-ssize_t vhdlParser::Shift_operatorContext::getRuleIndex() const {
+size_t vhdlParser::Shift_operatorContext::getRuleIndex() const {
   return vhdlParser::RuleShift_operator;
 }
 
@@ -17070,10 +17070,10 @@ antlrcpp::Any vhdlParser::Shift_operatorContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Shift_operatorContext> vhdlParser::shift_operator() {
-  Ref<Shift_operatorContext> _localctx = std::make_shared<Shift_operatorContext>(_ctx, getState());
+vhdlParser::Shift_operatorContext* vhdlParser::shift_operator() {
+  Shift_operatorContext *_localctx = _tracker.createInstance<Shift_operatorContext>(_ctx, getState());
   enterRule(_localctx, 414, vhdlParser::RuleShift_operator);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17082,7 +17082,7 @@ Ref<vhdlParser::Shift_operatorContext> vhdlParser::shift_operator() {
     enterOuterAlt(_localctx, 1);
     setState(2160);
     _la = _input->LA(1);
-    if (!(((((_la - 81) & ~(ssize_t)0x3f) == 0) &&
+    if (!(((((_la - 81) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 81)) & ((1ULL << (vhdlParser::ROL - 81))
       | (1ULL << (vhdlParser::ROR - 81))
       | (1ULL << (vhdlParser::SLA - 81))
@@ -17106,36 +17106,36 @@ Ref<vhdlParser::Shift_operatorContext> vhdlParser::shift_operator() {
 
 //----------------- Signal_assignment_statementContext ------------------------------------------------------------------
 
-vhdlParser::Signal_assignment_statementContext::Signal_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Signal_assignment_statementContext::Signal_assignment_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::TargetContext> vhdlParser::Signal_assignment_statementContext::target() {
+vhdlParser::TargetContext* vhdlParser::Signal_assignment_statementContext::target() {
   return getRuleContext<vhdlParser::TargetContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_assignment_statementContext::LE() {
+tree::TerminalNode* vhdlParser::Signal_assignment_statementContext::LE() {
   return getToken(vhdlParser::LE, 0);
 }
 
-Ref<vhdlParser::WaveformContext> vhdlParser::Signal_assignment_statementContext::waveform() {
+vhdlParser::WaveformContext* vhdlParser::Signal_assignment_statementContext::waveform() {
   return getRuleContext<vhdlParser::WaveformContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_assignment_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Signal_assignment_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Signal_assignment_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Signal_assignment_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Delay_mechanismContext> vhdlParser::Signal_assignment_statementContext::delay_mechanism() {
+vhdlParser::Delay_mechanismContext* vhdlParser::Signal_assignment_statementContext::delay_mechanism() {
   return getRuleContext<vhdlParser::Delay_mechanismContext>(0);
 }
 
 
-ssize_t vhdlParser::Signal_assignment_statementContext::getRuleIndex() const {
+size_t vhdlParser::Signal_assignment_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSignal_assignment_statement;
 }
 
@@ -17146,10 +17146,10 @@ antlrcpp::Any vhdlParser::Signal_assignment_statementContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Signal_assignment_statementContext> vhdlParser::signal_assignment_statement() {
-  Ref<Signal_assignment_statementContext> _localctx = std::make_shared<Signal_assignment_statementContext>(_ctx, getState());
+vhdlParser::Signal_assignment_statementContext* vhdlParser::signal_assignment_statement() {
+  Signal_assignment_statementContext *_localctx = _tracker.createInstance<Signal_assignment_statementContext>(_ctx, getState());
   enterRule(_localctx, 416, vhdlParser::RuleSignal_assignment_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17174,7 +17174,7 @@ Ref<vhdlParser::Signal_assignment_statementContext> vhdlParser::signal_assignmen
     setState(2168);
 
     _la = _input->LA(1);
-    if (((((_la - 39) & ~(ssize_t)0x3f) == 0) &&
+    if (((((_la - 39) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 39)) & ((1ULL << (vhdlParser::INERTIAL - 39))
       | (1ULL << (vhdlParser::REJECT - 39))
       | (1ULL << (vhdlParser::TRANSPORT - 39)))) != 0)) {
@@ -17198,44 +17198,44 @@ Ref<vhdlParser::Signal_assignment_statementContext> vhdlParser::signal_assignmen
 
 //----------------- Signal_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Signal_declarationContext::Signal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Signal_declarationContext::Signal_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_declarationContext::SIGNAL() {
+tree::TerminalNode* vhdlParser::Signal_declarationContext::SIGNAL() {
   return getToken(vhdlParser::SIGNAL, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Signal_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Signal_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Signal_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Signal_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Signal_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Signal_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Signal_kindContext> vhdlParser::Signal_declarationContext::signal_kind() {
+vhdlParser::Signal_kindContext* vhdlParser::Signal_declarationContext::signal_kind() {
   return getRuleContext<vhdlParser::Signal_kindContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Signal_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Signal_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Signal_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Signal_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Signal_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSignal_declaration;
 }
 
@@ -17246,10 +17246,10 @@ antlrcpp::Any vhdlParser::Signal_declarationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Signal_declarationContext> vhdlParser::signal_declaration() {
-  Ref<Signal_declarationContext> _localctx = std::make_shared<Signal_declarationContext>(_ctx, getState());
+vhdlParser::Signal_declarationContext* vhdlParser::signal_declaration() {
+  Signal_declarationContext *_localctx = _tracker.createInstance<Signal_declarationContext>(_ctx, getState());
   enterRule(_localctx, 418, vhdlParser::RuleSignal_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17297,20 +17297,20 @@ Ref<vhdlParser::Signal_declarationContext> vhdlParser::signal_declaration() {
 
 //----------------- Signal_kindContext ------------------------------------------------------------------
 
-vhdlParser::Signal_kindContext::Signal_kindContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Signal_kindContext::Signal_kindContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_kindContext::REGISTER() {
+tree::TerminalNode* vhdlParser::Signal_kindContext::REGISTER() {
   return getToken(vhdlParser::REGISTER, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_kindContext::BUS() {
+tree::TerminalNode* vhdlParser::Signal_kindContext::BUS() {
   return getToken(vhdlParser::BUS, 0);
 }
 
 
-ssize_t vhdlParser::Signal_kindContext::getRuleIndex() const {
+size_t vhdlParser::Signal_kindContext::getRuleIndex() const {
   return vhdlParser::RuleSignal_kind;
 }
 
@@ -17321,10 +17321,10 @@ antlrcpp::Any vhdlParser::Signal_kindContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Signal_kindContext> vhdlParser::signal_kind() {
-  Ref<Signal_kindContext> _localctx = std::make_shared<Signal_kindContext>(_ctx, getState());
+vhdlParser::Signal_kindContext* vhdlParser::signal_kind() {
+  Signal_kindContext *_localctx = _tracker.createInstance<Signal_kindContext>(_ctx, getState());
   enterRule(_localctx, 420, vhdlParser::RuleSignal_kind);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17353,36 +17353,36 @@ Ref<vhdlParser::Signal_kindContext> vhdlParser::signal_kind() {
 
 //----------------- Signal_listContext ------------------------------------------------------------------
 
-vhdlParser::Signal_listContext::Signal_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Signal_listContext::Signal_listContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::Signal_listContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::Signal_listContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Signal_listContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::Signal_listContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Signal_listContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Signal_listContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_listContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Signal_listContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_listContext::OTHERS() {
+tree::TerminalNode* vhdlParser::Signal_listContext::OTHERS() {
   return getToken(vhdlParser::OTHERS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Signal_listContext::ALL() {
+tree::TerminalNode* vhdlParser::Signal_listContext::ALL() {
   return getToken(vhdlParser::ALL, 0);
 }
 
 
-ssize_t vhdlParser::Signal_listContext::getRuleIndex() const {
+size_t vhdlParser::Signal_listContext::getRuleIndex() const {
   return vhdlParser::RuleSignal_list;
 }
 
@@ -17393,10 +17393,10 @@ antlrcpp::Any vhdlParser::Signal_listContext::accept(tree::ParseTreeVisitor *vis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Signal_listContext> vhdlParser::signal_list() {
-  Ref<Signal_listContext> _localctx = std::make_shared<Signal_listContext>(_ctx, getState());
+vhdlParser::Signal_listContext* vhdlParser::signal_list() {
+  Signal_listContext *_localctx = _tracker.createInstance<Signal_listContext>(_ctx, getState());
   enterRule(_localctx, 422, vhdlParser::RuleSignal_list);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17455,40 +17455,40 @@ Ref<vhdlParser::Signal_listContext> vhdlParser::signal_list() {
 
 //----------------- SignatureContext ------------------------------------------------------------------
 
-vhdlParser::SignatureContext::SignatureContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::SignatureContext::SignatureContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::SignatureContext::LBRACKET() {
+tree::TerminalNode* vhdlParser::SignatureContext::LBRACKET() {
   return getToken(vhdlParser::LBRACKET, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SignatureContext::RBRACKET() {
+tree::TerminalNode* vhdlParser::SignatureContext::RBRACKET() {
   return getToken(vhdlParser::RBRACKET, 0);
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::SignatureContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::SignatureContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::SignatureContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::SignatureContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SignatureContext::RETURN() {
+tree::TerminalNode* vhdlParser::SignatureContext::RETURN() {
   return getToken(vhdlParser::RETURN, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::SignatureContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::SignatureContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SignatureContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::SignatureContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::SignatureContext::getRuleIndex() const {
+size_t vhdlParser::SignatureContext::getRuleIndex() const {
   return vhdlParser::RuleSignature;
 }
 
@@ -17499,10 +17499,10 @@ antlrcpp::Any vhdlParser::SignatureContext::accept(tree::ParseTreeVisitor *visit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::SignatureContext> vhdlParser::signature() {
-  Ref<SignatureContext> _localctx = std::make_shared<SignatureContext>(_ctx, getState());
+vhdlParser::SignatureContext* vhdlParser::signature() {
+  SignatureContext *_localctx = _tracker.createInstance<SignatureContext>(_ctx, getState());
   enterRule(_localctx, 424, vhdlParser::RuleSignature);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17556,36 +17556,36 @@ Ref<vhdlParser::SignatureContext> vhdlParser::signature() {
 
 //----------------- Simple_expressionContext ------------------------------------------------------------------
 
-vhdlParser::Simple_expressionContext::Simple_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simple_expressionContext::Simple_expressionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::TermContext>> vhdlParser::Simple_expressionContext::term() {
+std::vector<vhdlParser::TermContext *> vhdlParser::Simple_expressionContext::term() {
   return getRuleContexts<vhdlParser::TermContext>();
 }
 
-Ref<vhdlParser::TermContext> vhdlParser::Simple_expressionContext::term(int i) {
-  return getRuleContext<vhdlParser::TermContext>((size_t)i);
+vhdlParser::TermContext* vhdlParser::Simple_expressionContext::term(size_t i) {
+  return getRuleContext<vhdlParser::TermContext>(i);
 }
 
-std::vector<Ref<vhdlParser::Adding_operatorContext>> vhdlParser::Simple_expressionContext::adding_operator() {
+std::vector<vhdlParser::Adding_operatorContext *> vhdlParser::Simple_expressionContext::adding_operator() {
   return getRuleContexts<vhdlParser::Adding_operatorContext>();
 }
 
-Ref<vhdlParser::Adding_operatorContext> vhdlParser::Simple_expressionContext::adding_operator(int i) {
-  return getRuleContext<vhdlParser::Adding_operatorContext>((size_t)i);
+vhdlParser::Adding_operatorContext* vhdlParser::Simple_expressionContext::adding_operator(size_t i) {
+  return getRuleContext<vhdlParser::Adding_operatorContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simple_expressionContext::PLUS() {
+tree::TerminalNode* vhdlParser::Simple_expressionContext::PLUS() {
   return getToken(vhdlParser::PLUS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simple_expressionContext::MINUS() {
+tree::TerminalNode* vhdlParser::Simple_expressionContext::MINUS() {
   return getToken(vhdlParser::MINUS, 0);
 }
 
 
-ssize_t vhdlParser::Simple_expressionContext::getRuleIndex() const {
+size_t vhdlParser::Simple_expressionContext::getRuleIndex() const {
   return vhdlParser::RuleSimple_expression;
 }
 
@@ -17596,16 +17596,16 @@ antlrcpp::Any vhdlParser::Simple_expressionContext::accept(tree::ParseTreeVisito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::simple_expression() {
-  Ref<Simple_expressionContext> _localctx = std::make_shared<Simple_expressionContext>(_ctx, getState());
+vhdlParser::Simple_expressionContext* vhdlParser::simple_expression() {
+  Simple_expressionContext *_localctx = _tracker.createInstance<Simple_expressionContext>(_ctx, getState());
   enterRule(_localctx, 426, vhdlParser::RuleSimple_expression);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(2218);
 
@@ -17652,36 +17652,36 @@ Ref<vhdlParser::Simple_expressionContext> vhdlParser::simple_expression() {
 
 //----------------- Simple_simultaneous_statementContext ------------------------------------------------------------------
 
-vhdlParser::Simple_simultaneous_statementContext::Simple_simultaneous_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simple_simultaneous_statementContext::Simple_simultaneous_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Simple_expressionContext>> vhdlParser::Simple_simultaneous_statementContext::simple_expression() {
+std::vector<vhdlParser::Simple_expressionContext *> vhdlParser::Simple_simultaneous_statementContext::simple_expression() {
   return getRuleContexts<vhdlParser::Simple_expressionContext>();
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::Simple_simultaneous_statementContext::simple_expression(int i) {
-  return getRuleContext<vhdlParser::Simple_expressionContext>((size_t)i);
+vhdlParser::Simple_expressionContext* vhdlParser::Simple_simultaneous_statementContext::simple_expression(size_t i) {
+  return getRuleContext<vhdlParser::Simple_expressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simple_simultaneous_statementContext::ASSIGN() {
+tree::TerminalNode* vhdlParser::Simple_simultaneous_statementContext::ASSIGN() {
   return getToken(vhdlParser::ASSIGN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simple_simultaneous_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Simple_simultaneous_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Simple_simultaneous_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Simple_simultaneous_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::Simple_simultaneous_statementContext::tolerance_aspect() {
+vhdlParser::Tolerance_aspectContext* vhdlParser::Simple_simultaneous_statementContext::tolerance_aspect() {
   return getRuleContext<vhdlParser::Tolerance_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Simple_simultaneous_statementContext::getRuleIndex() const {
+size_t vhdlParser::Simple_simultaneous_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSimple_simultaneous_statement;
 }
 
@@ -17692,10 +17692,10 @@ antlrcpp::Any vhdlParser::Simple_simultaneous_statementContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simple_simultaneous_statementContext> vhdlParser::simple_simultaneous_statement() {
-  Ref<Simple_simultaneous_statementContext> _localctx = std::make_shared<Simple_simultaneous_statementContext>(_ctx, getState());
+vhdlParser::Simple_simultaneous_statementContext* vhdlParser::simple_simultaneous_statement() {
+  Simple_simultaneous_statementContext *_localctx = _tracker.createInstance<Simple_simultaneous_statementContext>(_ctx, getState());
   enterRule(_localctx, 428, vhdlParser::RuleSimple_simultaneous_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17741,28 +17741,28 @@ Ref<vhdlParser::Simple_simultaneous_statementContext> vhdlParser::simple_simulta
 
 //----------------- Simultaneous_alternativeContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_alternativeContext::Simultaneous_alternativeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_alternativeContext::Simultaneous_alternativeContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_alternativeContext::WHEN() {
+tree::TerminalNode* vhdlParser::Simultaneous_alternativeContext::WHEN() {
   return getToken(vhdlParser::WHEN, 0);
 }
 
-Ref<vhdlParser::ChoicesContext> vhdlParser::Simultaneous_alternativeContext::choices() {
+vhdlParser::ChoicesContext* vhdlParser::Simultaneous_alternativeContext::choices() {
   return getRuleContext<vhdlParser::ChoicesContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_alternativeContext::ARROW() {
+tree::TerminalNode* vhdlParser::Simultaneous_alternativeContext::ARROW() {
   return getToken(vhdlParser::ARROW, 0);
 }
 
-Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::Simultaneous_alternativeContext::simultaneous_statement_part() {
+vhdlParser::Simultaneous_statement_partContext* vhdlParser::Simultaneous_alternativeContext::simultaneous_statement_part() {
   return getRuleContext<vhdlParser::Simultaneous_statement_partContext>(0);
 }
 
 
-ssize_t vhdlParser::Simultaneous_alternativeContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_alternativeContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_alternative;
 }
 
@@ -17773,8 +17773,8 @@ antlrcpp::Any vhdlParser::Simultaneous_alternativeContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_alternativeContext> vhdlParser::simultaneous_alternative() {
-  Ref<Simultaneous_alternativeContext> _localctx = std::make_shared<Simultaneous_alternativeContext>(_ctx, getState());
+vhdlParser::Simultaneous_alternativeContext* vhdlParser::simultaneous_alternative() {
+  Simultaneous_alternativeContext *_localctx = _tracker.createInstance<Simultaneous_alternativeContext>(_ctx, getState());
   enterRule(_localctx, 430, vhdlParser::RuleSimultaneous_alternative);
 
   auto onExit = finally([=] {
@@ -17803,52 +17803,52 @@ Ref<vhdlParser::Simultaneous_alternativeContext> vhdlParser::simultaneous_altern
 
 //----------------- Simultaneous_case_statementContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_case_statementContext::Simultaneous_case_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_case_statementContext::Simultaneous_case_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Simultaneous_case_statementContext::CASE() {
+std::vector<tree::TerminalNode *> vhdlParser::Simultaneous_case_statementContext::CASE() {
   return getTokens(vhdlParser::CASE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_case_statementContext::CASE(int i) {
-  return getToken(vhdlParser::CASE, (size_t)i);
+tree::TerminalNode* vhdlParser::Simultaneous_case_statementContext::CASE(size_t i) {
+  return getToken(vhdlParser::CASE, i);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Simultaneous_case_statementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Simultaneous_case_statementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_case_statementContext::USE() {
+tree::TerminalNode* vhdlParser::Simultaneous_case_statementContext::USE() {
   return getToken(vhdlParser::USE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_case_statementContext::END() {
+tree::TerminalNode* vhdlParser::Simultaneous_case_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_case_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Simultaneous_case_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Simultaneous_case_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Simultaneous_case_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<vhdlParser::Simultaneous_alternativeContext>> vhdlParser::Simultaneous_case_statementContext::simultaneous_alternative() {
+std::vector<vhdlParser::Simultaneous_alternativeContext *> vhdlParser::Simultaneous_case_statementContext::simultaneous_alternative() {
   return getRuleContexts<vhdlParser::Simultaneous_alternativeContext>();
 }
 
-Ref<vhdlParser::Simultaneous_alternativeContext> vhdlParser::Simultaneous_case_statementContext::simultaneous_alternative(int i) {
-  return getRuleContext<vhdlParser::Simultaneous_alternativeContext>((size_t)i);
+vhdlParser::Simultaneous_alternativeContext* vhdlParser::Simultaneous_case_statementContext::simultaneous_alternative(size_t i) {
+  return getRuleContext<vhdlParser::Simultaneous_alternativeContext>(i);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Simultaneous_case_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Simultaneous_case_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Simultaneous_case_statementContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_case_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_case_statement;
 }
 
@@ -17859,10 +17859,10 @@ antlrcpp::Any vhdlParser::Simultaneous_case_statementContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_case_statementContext> vhdlParser::simultaneous_case_statement() {
-  Ref<Simultaneous_case_statementContext> _localctx = std::make_shared<Simultaneous_case_statementContext>(_ctx, getState());
+vhdlParser::Simultaneous_case_statementContext* vhdlParser::simultaneous_case_statement() {
+  Simultaneous_case_statementContext *_localctx = _tracker.createInstance<Simultaneous_case_statementContext>(_ctx, getState());
   enterRule(_localctx, 432, vhdlParser::RuleSimultaneous_case_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -17922,68 +17922,68 @@ Ref<vhdlParser::Simultaneous_case_statementContext> vhdlParser::simultaneous_cas
 
 //----------------- Simultaneous_if_statementContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_if_statementContext::Simultaneous_if_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_if_statementContext::Simultaneous_if_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::IF() {
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::IF() {
   return getToken(vhdlParser::IF, 0);
 }
 
-std::vector<Ref<vhdlParser::ConditionContext>> vhdlParser::Simultaneous_if_statementContext::condition() {
+std::vector<vhdlParser::ConditionContext *> vhdlParser::Simultaneous_if_statementContext::condition() {
   return getRuleContexts<vhdlParser::ConditionContext>();
 }
 
-Ref<vhdlParser::ConditionContext> vhdlParser::Simultaneous_if_statementContext::condition(int i) {
-  return getRuleContext<vhdlParser::ConditionContext>((size_t)i);
+vhdlParser::ConditionContext* vhdlParser::Simultaneous_if_statementContext::condition(size_t i) {
+  return getRuleContext<vhdlParser::ConditionContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Simultaneous_if_statementContext::USE() {
+std::vector<tree::TerminalNode *> vhdlParser::Simultaneous_if_statementContext::USE() {
   return getTokens(vhdlParser::USE);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::USE(int i) {
-  return getToken(vhdlParser::USE, (size_t)i);
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::USE(size_t i) {
+  return getToken(vhdlParser::USE, i);
 }
 
-std::vector<Ref<vhdlParser::Simultaneous_statement_partContext>> vhdlParser::Simultaneous_if_statementContext::simultaneous_statement_part() {
+std::vector<vhdlParser::Simultaneous_statement_partContext *> vhdlParser::Simultaneous_if_statementContext::simultaneous_statement_part() {
   return getRuleContexts<vhdlParser::Simultaneous_statement_partContext>();
 }
 
-Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::Simultaneous_if_statementContext::simultaneous_statement_part(int i) {
-  return getRuleContext<vhdlParser::Simultaneous_statement_partContext>((size_t)i);
+vhdlParser::Simultaneous_statement_partContext* vhdlParser::Simultaneous_if_statementContext::simultaneous_statement_part(size_t i) {
+  return getRuleContext<vhdlParser::Simultaneous_statement_partContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::END() {
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Simultaneous_if_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Simultaneous_if_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Simultaneous_if_statementContext::ELSIF() {
+std::vector<tree::TerminalNode *> vhdlParser::Simultaneous_if_statementContext::ELSIF() {
   return getTokens(vhdlParser::ELSIF);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::ELSIF(int i) {
-  return getToken(vhdlParser::ELSIF, (size_t)i);
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::ELSIF(size_t i) {
+  return getToken(vhdlParser::ELSIF, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_if_statementContext::ELSE() {
+tree::TerminalNode* vhdlParser::Simultaneous_if_statementContext::ELSE() {
   return getToken(vhdlParser::ELSE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Simultaneous_if_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Simultaneous_if_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Simultaneous_if_statementContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_if_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_if_statement;
 }
 
@@ -17994,10 +17994,10 @@ antlrcpp::Any vhdlParser::Simultaneous_if_statementContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_if_statementContext> vhdlParser::simultaneous_if_statement() {
-  Ref<Simultaneous_if_statementContext> _localctx = std::make_shared<Simultaneous_if_statementContext>(_ctx, getState());
+vhdlParser::Simultaneous_if_statementContext* vhdlParser::simultaneous_if_statement() {
+  Simultaneous_if_statementContext *_localctx = _tracker.createInstance<Simultaneous_if_statementContext>(_ctx, getState());
   enterRule(_localctx, 434, vhdlParser::RuleSimultaneous_if_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18074,52 +18074,52 @@ Ref<vhdlParser::Simultaneous_if_statementContext> vhdlParser::simultaneous_if_st
 
 //----------------- Simultaneous_procedural_statementContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_procedural_statementContext::Simultaneous_procedural_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_procedural_statementContext::Simultaneous_procedural_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Simultaneous_procedural_statementContext::PROCEDURAL() {
+std::vector<tree::TerminalNode *> vhdlParser::Simultaneous_procedural_statementContext::PROCEDURAL() {
   return getTokens(vhdlParser::PROCEDURAL);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_procedural_statementContext::PROCEDURAL(int i) {
-  return getToken(vhdlParser::PROCEDURAL, (size_t)i);
+tree::TerminalNode* vhdlParser::Simultaneous_procedural_statementContext::PROCEDURAL(size_t i) {
+  return getToken(vhdlParser::PROCEDURAL, i);
 }
 
-Ref<vhdlParser::Procedural_declarative_partContext> vhdlParser::Simultaneous_procedural_statementContext::procedural_declarative_part() {
+vhdlParser::Procedural_declarative_partContext* vhdlParser::Simultaneous_procedural_statementContext::procedural_declarative_part() {
   return getRuleContext<vhdlParser::Procedural_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_procedural_statementContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Simultaneous_procedural_statementContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Procedural_statement_partContext> vhdlParser::Simultaneous_procedural_statementContext::procedural_statement_part() {
+vhdlParser::Procedural_statement_partContext* vhdlParser::Simultaneous_procedural_statementContext::procedural_statement_part() {
   return getRuleContext<vhdlParser::Procedural_statement_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_procedural_statementContext::END() {
+tree::TerminalNode* vhdlParser::Simultaneous_procedural_statementContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_procedural_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Simultaneous_procedural_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Simultaneous_procedural_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Simultaneous_procedural_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_procedural_statementContext::IS() {
+tree::TerminalNode* vhdlParser::Simultaneous_procedural_statementContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Simultaneous_procedural_statementContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Simultaneous_procedural_statementContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
 
-ssize_t vhdlParser::Simultaneous_procedural_statementContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_procedural_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_procedural_statement;
 }
 
@@ -18130,10 +18130,10 @@ antlrcpp::Any vhdlParser::Simultaneous_procedural_statementContext::accept(tree:
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_procedural_statementContext> vhdlParser::simultaneous_procedural_statement() {
-  Ref<Simultaneous_procedural_statementContext> _localctx = std::make_shared<Simultaneous_procedural_statementContext>(_ctx, getState());
+vhdlParser::Simultaneous_procedural_statementContext* vhdlParser::simultaneous_procedural_statement() {
+  Simultaneous_procedural_statementContext *_localctx = _tracker.createInstance<Simultaneous_procedural_statementContext>(_ctx, getState());
   enterRule(_localctx, 436, vhdlParser::RuleSimultaneous_procedural_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18192,40 +18192,40 @@ Ref<vhdlParser::Simultaneous_procedural_statementContext> vhdlParser::simultaneo
 
 //----------------- Simultaneous_statementContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_statementContext::Simultaneous_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_statementContext::Simultaneous_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Simple_simultaneous_statementContext> vhdlParser::Simultaneous_statementContext::simple_simultaneous_statement() {
+vhdlParser::Simple_simultaneous_statementContext* vhdlParser::Simultaneous_statementContext::simple_simultaneous_statement() {
   return getRuleContext<vhdlParser::Simple_simultaneous_statementContext>(0);
 }
 
-Ref<vhdlParser::Simultaneous_if_statementContext> vhdlParser::Simultaneous_statementContext::simultaneous_if_statement() {
+vhdlParser::Simultaneous_if_statementContext* vhdlParser::Simultaneous_statementContext::simultaneous_if_statement() {
   return getRuleContext<vhdlParser::Simultaneous_if_statementContext>(0);
 }
 
-Ref<vhdlParser::Simultaneous_case_statementContext> vhdlParser::Simultaneous_statementContext::simultaneous_case_statement() {
+vhdlParser::Simultaneous_case_statementContext* vhdlParser::Simultaneous_statementContext::simultaneous_case_statement() {
   return getRuleContext<vhdlParser::Simultaneous_case_statementContext>(0);
 }
 
-Ref<vhdlParser::Simultaneous_procedural_statementContext> vhdlParser::Simultaneous_statementContext::simultaneous_procedural_statement() {
+vhdlParser::Simultaneous_procedural_statementContext* vhdlParser::Simultaneous_statementContext::simultaneous_procedural_statement() {
   return getRuleContext<vhdlParser::Simultaneous_procedural_statementContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_statementContext::NULL_SYM() {
+tree::TerminalNode* vhdlParser::Simultaneous_statementContext::NULL_SYM() {
   return getToken(vhdlParser::NULL_SYM, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Simultaneous_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Simultaneous_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Simultaneous_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Simultaneous_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
 
-ssize_t vhdlParser::Simultaneous_statementContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_statementContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_statement;
 }
 
@@ -18236,10 +18236,10 @@ antlrcpp::Any vhdlParser::Simultaneous_statementContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_statementContext> vhdlParser::simultaneous_statement() {
-  Ref<Simultaneous_statementContext> _localctx = std::make_shared<Simultaneous_statementContext>(_ctx, getState());
+vhdlParser::Simultaneous_statementContext* vhdlParser::simultaneous_statement() {
+  Simultaneous_statementContext *_localctx = _tracker.createInstance<Simultaneous_statementContext>(_ctx, getState());
   enterRule(_localctx, 438, vhdlParser::RuleSimultaneous_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18308,20 +18308,20 @@ Ref<vhdlParser::Simultaneous_statementContext> vhdlParser::simultaneous_statemen
 
 //----------------- Simultaneous_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Simultaneous_statement_partContext::Simultaneous_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Simultaneous_statement_partContext::Simultaneous_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Simultaneous_statementContext>> vhdlParser::Simultaneous_statement_partContext::simultaneous_statement() {
+std::vector<vhdlParser::Simultaneous_statementContext *> vhdlParser::Simultaneous_statement_partContext::simultaneous_statement() {
   return getRuleContexts<vhdlParser::Simultaneous_statementContext>();
 }
 
-Ref<vhdlParser::Simultaneous_statementContext> vhdlParser::Simultaneous_statement_partContext::simultaneous_statement(int i) {
-  return getRuleContext<vhdlParser::Simultaneous_statementContext>((size_t)i);
+vhdlParser::Simultaneous_statementContext* vhdlParser::Simultaneous_statement_partContext::simultaneous_statement(size_t i) {
+  return getRuleContext<vhdlParser::Simultaneous_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Simultaneous_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Simultaneous_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleSimultaneous_statement_part;
 }
 
@@ -18332,10 +18332,10 @@ antlrcpp::Any vhdlParser::Simultaneous_statement_partContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::simultaneous_statement_part() {
-  Ref<Simultaneous_statement_partContext> _localctx = std::make_shared<Simultaneous_statement_partContext>(_ctx, getState());
+vhdlParser::Simultaneous_statement_partContext* vhdlParser::simultaneous_statement_part() {
+  Simultaneous_statement_partContext *_localctx = _tracker.createInstance<Simultaneous_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 440, vhdlParser::RuleSimultaneous_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18345,13 +18345,13 @@ Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::simultaneous_sta
     setState(2322);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ABS)
       | (1ULL << vhdlParser::CASE)
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::NEW)
       | (1ULL << vhdlParser::NOT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 69) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 69) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 69)) & ((1ULL << (vhdlParser::PROCEDURAL - 69))
       | (1ULL << (vhdlParser::BASE_LITERAL - 69))
       | (1ULL << (vhdlParser::BIT_STRING_LITERAL - 69))
@@ -18359,7 +18359,7 @@ Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::simultaneous_sta
       | (1ULL << (vhdlParser::BASIC_IDENTIFIER - 69))
       | (1ULL << (vhdlParser::EXTENDED_IDENTIFIER - 69))
       | (1ULL << (vhdlParser::CHARACTER_LITERAL - 69))
-      | (1ULL << (vhdlParser::STRING_LITERAL - 69)))) != 0) || ((((_la - 141) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << (vhdlParser::STRING_LITERAL - 69)))) != 0) || ((((_la - 141) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 141)) & ((1ULL << (vhdlParser::LPAREN - 141))
       | (1ULL << (vhdlParser::PLUS - 141))
       | (1ULL << (vhdlParser::MINUS - 141))
@@ -18383,32 +18383,32 @@ Ref<vhdlParser::Simultaneous_statement_partContext> vhdlParser::simultaneous_sta
 
 //----------------- Source_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Source_aspectContext::Source_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Source_aspectContext::Source_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_aspectContext::SPECTRUM() {
+tree::TerminalNode* vhdlParser::Source_aspectContext::SPECTRUM() {
   return getToken(vhdlParser::SPECTRUM, 0);
 }
 
-std::vector<Ref<vhdlParser::Simple_expressionContext>> vhdlParser::Source_aspectContext::simple_expression() {
+std::vector<vhdlParser::Simple_expressionContext *> vhdlParser::Source_aspectContext::simple_expression() {
   return getRuleContexts<vhdlParser::Simple_expressionContext>();
 }
 
-Ref<vhdlParser::Simple_expressionContext> vhdlParser::Source_aspectContext::simple_expression(int i) {
-  return getRuleContext<vhdlParser::Simple_expressionContext>((size_t)i);
+vhdlParser::Simple_expressionContext* vhdlParser::Source_aspectContext::simple_expression(size_t i) {
+  return getRuleContext<vhdlParser::Simple_expressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_aspectContext::COMMA() {
+tree::TerminalNode* vhdlParser::Source_aspectContext::COMMA() {
   return getToken(vhdlParser::COMMA, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_aspectContext::NOISE() {
+tree::TerminalNode* vhdlParser::Source_aspectContext::NOISE() {
   return getToken(vhdlParser::NOISE, 0);
 }
 
 
-ssize_t vhdlParser::Source_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Source_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleSource_aspect;
 }
 
@@ -18419,8 +18419,8 @@ antlrcpp::Any vhdlParser::Source_aspectContext::accept(tree::ParseTreeVisitor *v
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Source_aspectContext> vhdlParser::source_aspect() {
-  Ref<Source_aspectContext> _localctx = std::make_shared<Source_aspectContext>(_ctx, getState());
+vhdlParser::Source_aspectContext* vhdlParser::source_aspect() {
+  Source_aspectContext *_localctx = _tracker.createInstance<Source_aspectContext>(_ctx, getState());
   enterRule(_localctx, 442, vhdlParser::RuleSource_aspect);
 
   auto onExit = finally([=] {
@@ -18468,36 +18468,36 @@ Ref<vhdlParser::Source_aspectContext> vhdlParser::source_aspect() {
 
 //----------------- Source_quantity_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Source_quantity_declarationContext::Source_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Source_quantity_declarationContext::Source_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_quantity_declarationContext::QUANTITY() {
+tree::TerminalNode* vhdlParser::Source_quantity_declarationContext::QUANTITY() {
   return getToken(vhdlParser::QUANTITY, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Source_quantity_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Source_quantity_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_quantity_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Source_quantity_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Source_quantity_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Source_quantity_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<vhdlParser::Source_aspectContext> vhdlParser::Source_quantity_declarationContext::source_aspect() {
+vhdlParser::Source_aspectContext* vhdlParser::Source_quantity_declarationContext::source_aspect() {
   return getRuleContext<vhdlParser::Source_aspectContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Source_quantity_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Source_quantity_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Source_quantity_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Source_quantity_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSource_quantity_declaration;
 }
 
@@ -18508,8 +18508,8 @@ antlrcpp::Any vhdlParser::Source_quantity_declarationContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Source_quantity_declarationContext> vhdlParser::source_quantity_declaration() {
-  Ref<Source_quantity_declarationContext> _localctx = std::make_shared<Source_quantity_declarationContext>(_ctx, getState());
+vhdlParser::Source_quantity_declarationContext* vhdlParser::source_quantity_declaration() {
+  Source_quantity_declarationContext *_localctx = _tracker.createInstance<Source_quantity_declarationContext>(_ctx, getState());
   enterRule(_localctx, 444, vhdlParser::RuleSource_quantity_declaration);
 
   auto onExit = finally([=] {
@@ -18542,32 +18542,32 @@ Ref<vhdlParser::Source_quantity_declarationContext> vhdlParser::source_quantity_
 
 //----------------- Step_limit_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Step_limit_specificationContext::Step_limit_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Step_limit_specificationContext::Step_limit_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Step_limit_specificationContext::LIMIT() {
+tree::TerminalNode* vhdlParser::Step_limit_specificationContext::LIMIT() {
   return getToken(vhdlParser::LIMIT, 0);
 }
 
-Ref<vhdlParser::Quantity_specificationContext> vhdlParser::Step_limit_specificationContext::quantity_specification() {
+vhdlParser::Quantity_specificationContext* vhdlParser::Step_limit_specificationContext::quantity_specification() {
   return getRuleContext<vhdlParser::Quantity_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Step_limit_specificationContext::WITH() {
+tree::TerminalNode* vhdlParser::Step_limit_specificationContext::WITH() {
   return getToken(vhdlParser::WITH, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Step_limit_specificationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Step_limit_specificationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Step_limit_specificationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Step_limit_specificationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Step_limit_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Step_limit_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleStep_limit_specification;
 }
 
@@ -18578,8 +18578,8 @@ antlrcpp::Any vhdlParser::Step_limit_specificationContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Step_limit_specificationContext> vhdlParser::step_limit_specification() {
-  Ref<Step_limit_specificationContext> _localctx = std::make_shared<Step_limit_specificationContext>(_ctx, getState());
+vhdlParser::Step_limit_specificationContext* vhdlParser::step_limit_specification() {
+  Step_limit_specificationContext *_localctx = _tracker.createInstance<Step_limit_specificationContext>(_ctx, getState());
   enterRule(_localctx, 446, vhdlParser::RuleStep_limit_specification);
 
   auto onExit = finally([=] {
@@ -18610,32 +18610,32 @@ Ref<vhdlParser::Step_limit_specificationContext> vhdlParser::step_limit_specific
 
 //----------------- Subnature_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Subnature_declarationContext::Subnature_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subnature_declarationContext::Subnature_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_declarationContext::SUBNATURE() {
+tree::TerminalNode* vhdlParser::Subnature_declarationContext::SUBNATURE() {
   return getToken(vhdlParser::SUBNATURE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Subnature_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Subnature_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Subnature_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Subnature_declarationContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Subnature_declarationContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Subnature_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Subnature_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Subnature_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSubnature_declaration;
 }
 
@@ -18646,8 +18646,8 @@ antlrcpp::Any vhdlParser::Subnature_declarationContext::accept(tree::ParseTreeVi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subnature_declarationContext> vhdlParser::subnature_declaration() {
-  Ref<Subnature_declarationContext> _localctx = std::make_shared<Subnature_declarationContext>(_ctx, getState());
+vhdlParser::Subnature_declarationContext* vhdlParser::subnature_declaration() {
+  Subnature_declarationContext *_localctx = _tracker.createInstance<Subnature_declarationContext>(_ctx, getState());
   enterRule(_localctx, 448, vhdlParser::RuleSubnature_declaration);
 
   auto onExit = finally([=] {
@@ -18678,40 +18678,40 @@ Ref<vhdlParser::Subnature_declarationContext> vhdlParser::subnature_declaration(
 
 //----------------- Subnature_indicationContext ------------------------------------------------------------------
 
-vhdlParser::Subnature_indicationContext::Subnature_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subnature_indicationContext::Subnature_indicationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Subnature_indicationContext::name() {
+vhdlParser::NameContext* vhdlParser::Subnature_indicationContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<vhdlParser::Index_constraintContext> vhdlParser::Subnature_indicationContext::index_constraint() {
+vhdlParser::Index_constraintContext* vhdlParser::Subnature_indicationContext::index_constraint() {
   return getRuleContext<vhdlParser::Index_constraintContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_indicationContext::TOLERANCE() {
+tree::TerminalNode* vhdlParser::Subnature_indicationContext::TOLERANCE() {
   return getToken(vhdlParser::TOLERANCE, 0);
 }
 
-std::vector<Ref<vhdlParser::ExpressionContext>> vhdlParser::Subnature_indicationContext::expression() {
+std::vector<vhdlParser::ExpressionContext *> vhdlParser::Subnature_indicationContext::expression() {
   return getRuleContexts<vhdlParser::ExpressionContext>();
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Subnature_indicationContext::expression(int i) {
-  return getRuleContext<vhdlParser::ExpressionContext>((size_t)i);
+vhdlParser::ExpressionContext* vhdlParser::Subnature_indicationContext::expression(size_t i) {
+  return getRuleContext<vhdlParser::ExpressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_indicationContext::ACROSS() {
+tree::TerminalNode* vhdlParser::Subnature_indicationContext::ACROSS() {
   return getToken(vhdlParser::ACROSS, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subnature_indicationContext::THROUGH() {
+tree::TerminalNode* vhdlParser::Subnature_indicationContext::THROUGH() {
   return getToken(vhdlParser::THROUGH, 0);
 }
 
 
-ssize_t vhdlParser::Subnature_indicationContext::getRuleIndex() const {
+size_t vhdlParser::Subnature_indicationContext::getRuleIndex() const {
   return vhdlParser::RuleSubnature_indication;
 }
 
@@ -18722,10 +18722,10 @@ antlrcpp::Any vhdlParser::Subnature_indicationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::subnature_indication() {
-  Ref<Subnature_indicationContext> _localctx = std::make_shared<Subnature_indicationContext>(_ctx, getState());
+vhdlParser::Subnature_indicationContext* vhdlParser::subnature_indication() {
+  Subnature_indicationContext *_localctx = _tracker.createInstance<Subnature_indicationContext>(_ctx, getState());
   enterRule(_localctx, 450, vhdlParser::RuleSubnature_indication);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18769,48 +18769,48 @@ Ref<vhdlParser::Subnature_indicationContext> vhdlParser::subnature_indication() 
 
 //----------------- Subprogram_bodyContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_bodyContext::Subprogram_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_bodyContext::Subprogram_bodyContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_specificationContext> vhdlParser::Subprogram_bodyContext::subprogram_specification() {
+vhdlParser::Subprogram_specificationContext* vhdlParser::Subprogram_bodyContext::subprogram_specification() {
   return getRuleContext<vhdlParser::Subprogram_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_bodyContext::IS() {
+tree::TerminalNode* vhdlParser::Subprogram_bodyContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Subprogram_declarative_partContext> vhdlParser::Subprogram_bodyContext::subprogram_declarative_part() {
+vhdlParser::Subprogram_declarative_partContext* vhdlParser::Subprogram_bodyContext::subprogram_declarative_part() {
   return getRuleContext<vhdlParser::Subprogram_declarative_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_bodyContext::BEGIN() {
+tree::TerminalNode* vhdlParser::Subprogram_bodyContext::BEGIN() {
   return getToken(vhdlParser::BEGIN, 0);
 }
 
-Ref<vhdlParser::Subprogram_statement_partContext> vhdlParser::Subprogram_bodyContext::subprogram_statement_part() {
+vhdlParser::Subprogram_statement_partContext* vhdlParser::Subprogram_bodyContext::subprogram_statement_part() {
   return getRuleContext<vhdlParser::Subprogram_statement_partContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_bodyContext::END() {
+tree::TerminalNode* vhdlParser::Subprogram_bodyContext::END() {
   return getToken(vhdlParser::END, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_bodyContext::SEMI() {
+tree::TerminalNode* vhdlParser::Subprogram_bodyContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Subprogram_kindContext> vhdlParser::Subprogram_bodyContext::subprogram_kind() {
+vhdlParser::Subprogram_kindContext* vhdlParser::Subprogram_bodyContext::subprogram_kind() {
   return getRuleContext<vhdlParser::Subprogram_kindContext>(0);
 }
 
-Ref<vhdlParser::DesignatorContext> vhdlParser::Subprogram_bodyContext::designator() {
+vhdlParser::DesignatorContext* vhdlParser::Subprogram_bodyContext::designator() {
   return getRuleContext<vhdlParser::DesignatorContext>(0);
 }
 
 
-ssize_t vhdlParser::Subprogram_bodyContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_bodyContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_body;
 }
 
@@ -18821,10 +18821,10 @@ antlrcpp::Any vhdlParser::Subprogram_bodyContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::subprogram_body() {
-  Ref<Subprogram_bodyContext> _localctx = std::make_shared<Subprogram_bodyContext>(_ctx, getState());
+vhdlParser::Subprogram_bodyContext* vhdlParser::subprogram_body() {
+  Subprogram_bodyContext *_localctx = _tracker.createInstance<Subprogram_bodyContext>(_ctx, getState());
   enterRule(_localctx, 452, vhdlParser::RuleSubprogram_body);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -18855,7 +18855,7 @@ Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::subprogram_body() {
     setState(2375);
 
     _la = _input->LA(1);
-    if (((((_la - 118) & ~(ssize_t)0x3f) == 0) &&
+    if (((((_la - 118) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 118)) & ((1ULL << (vhdlParser::BASIC_IDENTIFIER - 118))
       | (1ULL << (vhdlParser::EXTENDED_IDENTIFIER - 118))
       | (1ULL << (vhdlParser::STRING_LITERAL - 118)))) != 0)) {
@@ -18877,20 +18877,20 @@ Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::subprogram_body() {
 
 //----------------- Subprogram_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_declarationContext::Subprogram_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_declarationContext::Subprogram_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_specificationContext> vhdlParser::Subprogram_declarationContext::subprogram_specification() {
+vhdlParser::Subprogram_specificationContext* vhdlParser::Subprogram_declarationContext::subprogram_specification() {
   return getRuleContext<vhdlParser::Subprogram_specificationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Subprogram_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Subprogram_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_declaration;
 }
 
@@ -18901,8 +18901,8 @@ antlrcpp::Any vhdlParser::Subprogram_declarationContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::subprogram_declaration() {
-  Ref<Subprogram_declarationContext> _localctx = std::make_shared<Subprogram_declarationContext>(_ctx, getState());
+vhdlParser::Subprogram_declarationContext* vhdlParser::subprogram_declaration() {
+  Subprogram_declarationContext *_localctx = _tracker.createInstance<Subprogram_declarationContext>(_ctx, getState());
   enterRule(_localctx, 454, vhdlParser::RuleSubprogram_declaration);
 
   auto onExit = finally([=] {
@@ -18927,64 +18927,64 @@ Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::subprogram_declaratio
 
 //----------------- Subprogram_declarative_itemContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_declarative_itemContext::Subprogram_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_declarative_itemContext::Subprogram_declarative_itemContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Subprogram_declarationContext> vhdlParser::Subprogram_declarative_itemContext::subprogram_declaration() {
+vhdlParser::Subprogram_declarationContext* vhdlParser::Subprogram_declarative_itemContext::subprogram_declaration() {
   return getRuleContext<vhdlParser::Subprogram_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subprogram_bodyContext> vhdlParser::Subprogram_declarative_itemContext::subprogram_body() {
+vhdlParser::Subprogram_bodyContext* vhdlParser::Subprogram_declarative_itemContext::subprogram_body() {
   return getRuleContext<vhdlParser::Subprogram_bodyContext>(0);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::Subprogram_declarative_itemContext::type_declaration() {
+vhdlParser::Type_declarationContext* vhdlParser::Subprogram_declarative_itemContext::type_declaration() {
   return getRuleContext<vhdlParser::Type_declarationContext>(0);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::Subprogram_declarative_itemContext::subtype_declaration() {
+vhdlParser::Subtype_declarationContext* vhdlParser::Subprogram_declarative_itemContext::subtype_declaration() {
   return getRuleContext<vhdlParser::Subtype_declarationContext>(0);
 }
 
-Ref<vhdlParser::Constant_declarationContext> vhdlParser::Subprogram_declarative_itemContext::constant_declaration() {
+vhdlParser::Constant_declarationContext* vhdlParser::Subprogram_declarative_itemContext::constant_declaration() {
   return getRuleContext<vhdlParser::Constant_declarationContext>(0);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::Subprogram_declarative_itemContext::variable_declaration() {
+vhdlParser::Variable_declarationContext* vhdlParser::Subprogram_declarative_itemContext::variable_declaration() {
   return getRuleContext<vhdlParser::Variable_declarationContext>(0);
 }
 
-Ref<vhdlParser::File_declarationContext> vhdlParser::Subprogram_declarative_itemContext::file_declaration() {
+vhdlParser::File_declarationContext* vhdlParser::Subprogram_declarative_itemContext::file_declaration() {
   return getRuleContext<vhdlParser::File_declarationContext>(0);
 }
 
-Ref<vhdlParser::Alias_declarationContext> vhdlParser::Subprogram_declarative_itemContext::alias_declaration() {
+vhdlParser::Alias_declarationContext* vhdlParser::Subprogram_declarative_itemContext::alias_declaration() {
   return getRuleContext<vhdlParser::Alias_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_declarationContext> vhdlParser::Subprogram_declarative_itemContext::attribute_declaration() {
+vhdlParser::Attribute_declarationContext* vhdlParser::Subprogram_declarative_itemContext::attribute_declaration() {
   return getRuleContext<vhdlParser::Attribute_declarationContext>(0);
 }
 
-Ref<vhdlParser::Attribute_specificationContext> vhdlParser::Subprogram_declarative_itemContext::attribute_specification() {
+vhdlParser::Attribute_specificationContext* vhdlParser::Subprogram_declarative_itemContext::attribute_specification() {
   return getRuleContext<vhdlParser::Attribute_specificationContext>(0);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::Subprogram_declarative_itemContext::use_clause() {
+vhdlParser::Use_clauseContext* vhdlParser::Subprogram_declarative_itemContext::use_clause() {
   return getRuleContext<vhdlParser::Use_clauseContext>(0);
 }
 
-Ref<vhdlParser::Group_template_declarationContext> vhdlParser::Subprogram_declarative_itemContext::group_template_declaration() {
+vhdlParser::Group_template_declarationContext* vhdlParser::Subprogram_declarative_itemContext::group_template_declaration() {
   return getRuleContext<vhdlParser::Group_template_declarationContext>(0);
 }
 
-Ref<vhdlParser::Group_declarationContext> vhdlParser::Subprogram_declarative_itemContext::group_declaration() {
+vhdlParser::Group_declarationContext* vhdlParser::Subprogram_declarative_itemContext::group_declaration() {
   return getRuleContext<vhdlParser::Group_declarationContext>(0);
 }
 
 
-ssize_t vhdlParser::Subprogram_declarative_itemContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_declarative_itemContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_declarative_item;
 }
 
@@ -18995,8 +18995,8 @@ antlrcpp::Any vhdlParser::Subprogram_declarative_itemContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_declarative_itemContext> vhdlParser::subprogram_declarative_item() {
-  Ref<Subprogram_declarative_itemContext> _localctx = std::make_shared<Subprogram_declarative_itemContext>(_ctx, getState());
+vhdlParser::Subprogram_declarative_itemContext* vhdlParser::subprogram_declarative_item() {
+  Subprogram_declarative_itemContext *_localctx = _tracker.createInstance<Subprogram_declarative_itemContext>(_ctx, getState());
   enterRule(_localctx, 456, vhdlParser::RuleSubprogram_declarative_item);
 
   auto onExit = finally([=] {
@@ -19111,20 +19111,20 @@ Ref<vhdlParser::Subprogram_declarative_itemContext> vhdlParser::subprogram_decla
 
 //----------------- Subprogram_declarative_partContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_declarative_partContext::Subprogram_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_declarative_partContext::Subprogram_declarative_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Subprogram_declarative_itemContext>> vhdlParser::Subprogram_declarative_partContext::subprogram_declarative_item() {
+std::vector<vhdlParser::Subprogram_declarative_itemContext *> vhdlParser::Subprogram_declarative_partContext::subprogram_declarative_item() {
   return getRuleContexts<vhdlParser::Subprogram_declarative_itemContext>();
 }
 
-Ref<vhdlParser::Subprogram_declarative_itemContext> vhdlParser::Subprogram_declarative_partContext::subprogram_declarative_item(int i) {
-  return getRuleContext<vhdlParser::Subprogram_declarative_itemContext>((size_t)i);
+vhdlParser::Subprogram_declarative_itemContext* vhdlParser::Subprogram_declarative_partContext::subprogram_declarative_item(size_t i) {
+  return getRuleContext<vhdlParser::Subprogram_declarative_itemContext>(i);
 }
 
 
-ssize_t vhdlParser::Subprogram_declarative_partContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_declarative_partContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_declarative_part;
 }
 
@@ -19135,10 +19135,10 @@ antlrcpp::Any vhdlParser::Subprogram_declarative_partContext::accept(tree::Parse
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_declarative_partContext> vhdlParser::subprogram_declarative_part() {
-  Ref<Subprogram_declarative_partContext> _localctx = std::make_shared<Subprogram_declarative_partContext>(_ctx, getState());
+vhdlParser::Subprogram_declarative_partContext* vhdlParser::subprogram_declarative_part() {
+  Subprogram_declarative_partContext *_localctx = _tracker.createInstance<Subprogram_declarative_partContext>(_ctx, getState());
   enterRule(_localctx, 458, vhdlParser::RuleSubprogram_declarative_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -19148,14 +19148,14 @@ Ref<vhdlParser::Subprogram_declarative_partContext> vhdlParser::subprogram_decla
     setState(2400);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ALIAS)
       | (1ULL << vhdlParser::ATTRIBUTE)
       | (1ULL << vhdlParser::CONSTANT)
       | (1ULL << vhdlParser::FILE)
       | (1ULL << vhdlParser::FUNCTION)
       | (1ULL << vhdlParser::GROUP)
-      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::IMPURE))) != 0) || ((((_la - 68) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 68)) & ((1ULL << (vhdlParser::PROCEDURE - 68))
       | (1ULL << (vhdlParser::PURE - 68))
       | (1ULL << (vhdlParser::SHARED - 68))
@@ -19182,20 +19182,20 @@ Ref<vhdlParser::Subprogram_declarative_partContext> vhdlParser::subprogram_decla
 
 //----------------- Subprogram_kindContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_kindContext::Subprogram_kindContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_kindContext::Subprogram_kindContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_kindContext::PROCEDURE() {
+tree::TerminalNode* vhdlParser::Subprogram_kindContext::PROCEDURE() {
   return getToken(vhdlParser::PROCEDURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subprogram_kindContext::FUNCTION() {
+tree::TerminalNode* vhdlParser::Subprogram_kindContext::FUNCTION() {
   return getToken(vhdlParser::FUNCTION, 0);
 }
 
 
-ssize_t vhdlParser::Subprogram_kindContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_kindContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_kind;
 }
 
@@ -19206,10 +19206,10 @@ antlrcpp::Any vhdlParser::Subprogram_kindContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_kindContext> vhdlParser::subprogram_kind() {
-  Ref<Subprogram_kindContext> _localctx = std::make_shared<Subprogram_kindContext>(_ctx, getState());
+vhdlParser::Subprogram_kindContext* vhdlParser::subprogram_kind() {
+  Subprogram_kindContext *_localctx = _tracker.createInstance<Subprogram_kindContext>(_ctx, getState());
   enterRule(_localctx, 460, vhdlParser::RuleSubprogram_kind);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -19238,20 +19238,20 @@ Ref<vhdlParser::Subprogram_kindContext> vhdlParser::subprogram_kind() {
 
 //----------------- Subprogram_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_specificationContext::Subprogram_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_specificationContext::Subprogram_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Procedure_specificationContext> vhdlParser::Subprogram_specificationContext::procedure_specification() {
+vhdlParser::Procedure_specificationContext* vhdlParser::Subprogram_specificationContext::procedure_specification() {
   return getRuleContext<vhdlParser::Procedure_specificationContext>(0);
 }
 
-Ref<vhdlParser::Function_specificationContext> vhdlParser::Subprogram_specificationContext::function_specification() {
+vhdlParser::Function_specificationContext* vhdlParser::Subprogram_specificationContext::function_specification() {
   return getRuleContext<vhdlParser::Function_specificationContext>(0);
 }
 
 
-ssize_t vhdlParser::Subprogram_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_specification;
 }
 
@@ -19262,8 +19262,8 @@ antlrcpp::Any vhdlParser::Subprogram_specificationContext::accept(tree::ParseTre
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_specificationContext> vhdlParser::subprogram_specification() {
-  Ref<Subprogram_specificationContext> _localctx = std::make_shared<Subprogram_specificationContext>(_ctx, getState());
+vhdlParser::Subprogram_specificationContext* vhdlParser::subprogram_specification() {
+  Subprogram_specificationContext *_localctx = _tracker.createInstance<Subprogram_specificationContext>(_ctx, getState());
   enterRule(_localctx, 462, vhdlParser::RuleSubprogram_specification);
 
   auto onExit = finally([=] {
@@ -19305,32 +19305,32 @@ Ref<vhdlParser::Subprogram_specificationContext> vhdlParser::subprogram_specific
 
 //----------------- Procedure_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Procedure_specificationContext::Procedure_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Procedure_specificationContext::Procedure_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_specificationContext::PROCEDURE() {
+tree::TerminalNode* vhdlParser::Procedure_specificationContext::PROCEDURE() {
   return getToken(vhdlParser::PROCEDURE, 0);
 }
 
-Ref<vhdlParser::DesignatorContext> vhdlParser::Procedure_specificationContext::designator() {
+vhdlParser::DesignatorContext* vhdlParser::Procedure_specificationContext::designator() {
   return getRuleContext<vhdlParser::DesignatorContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_specificationContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Procedure_specificationContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Formal_parameter_listContext> vhdlParser::Procedure_specificationContext::formal_parameter_list() {
+vhdlParser::Formal_parameter_listContext* vhdlParser::Procedure_specificationContext::formal_parameter_list() {
   return getRuleContext<vhdlParser::Formal_parameter_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Procedure_specificationContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Procedure_specificationContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
 
-ssize_t vhdlParser::Procedure_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Procedure_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleProcedure_specification;
 }
 
@@ -19341,10 +19341,10 @@ antlrcpp::Any vhdlParser::Procedure_specificationContext::accept(tree::ParseTree
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Procedure_specificationContext> vhdlParser::procedure_specification() {
-  Ref<Procedure_specificationContext> _localctx = std::make_shared<Procedure_specificationContext>(_ctx, getState());
+vhdlParser::Procedure_specificationContext* vhdlParser::procedure_specification() {
+  Procedure_specificationContext *_localctx = _tracker.createInstance<Procedure_specificationContext>(_ctx, getState());
   enterRule(_localctx, 464, vhdlParser::RuleProcedure_specification);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -19379,48 +19379,48 @@ Ref<vhdlParser::Procedure_specificationContext> vhdlParser::procedure_specificat
 
 //----------------- Function_specificationContext ------------------------------------------------------------------
 
-vhdlParser::Function_specificationContext::Function_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Function_specificationContext::Function_specificationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::FUNCTION() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::FUNCTION() {
   return getToken(vhdlParser::FUNCTION, 0);
 }
 
-Ref<vhdlParser::DesignatorContext> vhdlParser::Function_specificationContext::designator() {
+vhdlParser::DesignatorContext* vhdlParser::Function_specificationContext::designator() {
   return getRuleContext<vhdlParser::DesignatorContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::RETURN() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::RETURN() {
   return getToken(vhdlParser::RETURN, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Function_specificationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Function_specificationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-Ref<vhdlParser::Formal_parameter_listContext> vhdlParser::Function_specificationContext::formal_parameter_list() {
+vhdlParser::Formal_parameter_listContext* vhdlParser::Function_specificationContext::formal_parameter_list() {
   return getRuleContext<vhdlParser::Formal_parameter_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::PURE() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::PURE() {
   return getToken(vhdlParser::PURE, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Function_specificationContext::IMPURE() {
+tree::TerminalNode* vhdlParser::Function_specificationContext::IMPURE() {
   return getToken(vhdlParser::IMPURE, 0);
 }
 
 
-ssize_t vhdlParser::Function_specificationContext::getRuleIndex() const {
+size_t vhdlParser::Function_specificationContext::getRuleIndex() const {
   return vhdlParser::RuleFunction_specification;
 }
 
@@ -19431,10 +19431,10 @@ antlrcpp::Any vhdlParser::Function_specificationContext::accept(tree::ParseTreeV
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Function_specificationContext> vhdlParser::function_specification() {
-  Ref<Function_specificationContext> _localctx = std::make_shared<Function_specificationContext>(_ctx, getState());
+vhdlParser::Function_specificationContext* vhdlParser::function_specification() {
+  Function_specificationContext *_localctx = _tracker.createInstance<Function_specificationContext>(_ctx, getState());
   enterRule(_localctx, 466, vhdlParser::RuleFunction_specification);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -19489,20 +19489,20 @@ Ref<vhdlParser::Function_specificationContext> vhdlParser::function_specificatio
 
 //----------------- Subprogram_statement_partContext ------------------------------------------------------------------
 
-vhdlParser::Subprogram_statement_partContext::Subprogram_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subprogram_statement_partContext::Subprogram_statement_partContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Sequential_statementContext>> vhdlParser::Subprogram_statement_partContext::sequential_statement() {
+std::vector<vhdlParser::Sequential_statementContext *> vhdlParser::Subprogram_statement_partContext::sequential_statement() {
   return getRuleContexts<vhdlParser::Sequential_statementContext>();
 }
 
-Ref<vhdlParser::Sequential_statementContext> vhdlParser::Subprogram_statement_partContext::sequential_statement(int i) {
-  return getRuleContext<vhdlParser::Sequential_statementContext>((size_t)i);
+vhdlParser::Sequential_statementContext* vhdlParser::Subprogram_statement_partContext::sequential_statement(size_t i) {
+  return getRuleContext<vhdlParser::Sequential_statementContext>(i);
 }
 
 
-ssize_t vhdlParser::Subprogram_statement_partContext::getRuleIndex() const {
+size_t vhdlParser::Subprogram_statement_partContext::getRuleIndex() const {
   return vhdlParser::RuleSubprogram_statement_part;
 }
 
@@ -19513,10 +19513,10 @@ antlrcpp::Any vhdlParser::Subprogram_statement_partContext::accept(tree::ParseTr
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subprogram_statement_partContext> vhdlParser::subprogram_statement_part() {
-  Ref<Subprogram_statement_partContext> _localctx = std::make_shared<Subprogram_statement_partContext>(_ctx, getState());
+vhdlParser::Subprogram_statement_partContext* vhdlParser::subprogram_statement_part() {
+  Subprogram_statement_partContext *_localctx = _tracker.createInstance<Subprogram_statement_partContext>(_ctx, getState());
   enterRule(_localctx, 468, vhdlParser::RuleSubprogram_statement_part);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -19526,7 +19526,7 @@ Ref<vhdlParser::Subprogram_statement_partContext> vhdlParser::subprogram_stateme
     setState(2434);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while ((((_la & ~(ssize_t)0x3f) == 0) &&
+    while ((((_la & ~ 0x3fULL) == 0) &&
       ((1ULL << _la) & ((1ULL << vhdlParser::ASSERT)
       | (1ULL << vhdlParser::BREAK)
       | (1ULL << vhdlParser::CASE)
@@ -19535,7 +19535,7 @@ Ref<vhdlParser::Subprogram_statement_partContext> vhdlParser::subprogram_stateme
       | (1ULL << vhdlParser::IF)
       | (1ULL << vhdlParser::LOOP)
       | (1ULL << vhdlParser::NEXT)
-      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~(ssize_t)0x3f) == 0) &&
+      | (1ULL << vhdlParser::NULL_SYM))) != 0) || ((((_la - 79) & ~ 0x3fULL) == 0) &&
       ((1ULL << (_la - 79)) & ((1ULL << (vhdlParser::REPORT - 79))
       | (1ULL << (vhdlParser::RETURN - 79))
       | (1ULL << (vhdlParser::WAIT - 79))
@@ -19562,32 +19562,32 @@ Ref<vhdlParser::Subprogram_statement_partContext> vhdlParser::subprogram_stateme
 
 //----------------- Subtype_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Subtype_declarationContext::Subtype_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subtype_declarationContext::Subtype_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subtype_declarationContext::SUBTYPE() {
+tree::TerminalNode* vhdlParser::Subtype_declarationContext::SUBTYPE() {
   return getToken(vhdlParser::SUBTYPE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Subtype_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Subtype_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subtype_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Subtype_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Subtype_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Subtype_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Subtype_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Subtype_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Subtype_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Subtype_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleSubtype_declaration;
 }
 
@@ -19598,8 +19598,8 @@ antlrcpp::Any vhdlParser::Subtype_declarationContext::accept(tree::ParseTreeVisi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subtype_declarationContext> vhdlParser::subtype_declaration() {
-  Ref<Subtype_declarationContext> _localctx = std::make_shared<Subtype_declarationContext>(_ctx, getState());
+vhdlParser::Subtype_declarationContext* vhdlParser::subtype_declaration() {
+  Subtype_declarationContext *_localctx = _tracker.createInstance<Subtype_declarationContext>(_ctx, getState());
   enterRule(_localctx, 470, vhdlParser::RuleSubtype_declaration);
 
   auto onExit = finally([=] {
@@ -19630,28 +19630,28 @@ Ref<vhdlParser::Subtype_declarationContext> vhdlParser::subtype_declaration() {
 
 //----------------- Subtype_indicationContext ------------------------------------------------------------------
 
-vhdlParser::Subtype_indicationContext::Subtype_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Subtype_indicationContext::Subtype_indicationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Selected_nameContext>> vhdlParser::Subtype_indicationContext::selected_name() {
+std::vector<vhdlParser::Selected_nameContext *> vhdlParser::Subtype_indicationContext::selected_name() {
   return getRuleContexts<vhdlParser::Selected_nameContext>();
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::Subtype_indicationContext::selected_name(int i) {
-  return getRuleContext<vhdlParser::Selected_nameContext>((size_t)i);
+vhdlParser::Selected_nameContext* vhdlParser::Subtype_indicationContext::selected_name(size_t i) {
+  return getRuleContext<vhdlParser::Selected_nameContext>(i);
 }
 
-Ref<vhdlParser::ConstraintContext> vhdlParser::Subtype_indicationContext::constraint() {
+vhdlParser::ConstraintContext* vhdlParser::Subtype_indicationContext::constraint() {
   return getRuleContext<vhdlParser::ConstraintContext>(0);
 }
 
-Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::Subtype_indicationContext::tolerance_aspect() {
+vhdlParser::Tolerance_aspectContext* vhdlParser::Subtype_indicationContext::tolerance_aspect() {
   return getRuleContext<vhdlParser::Tolerance_aspectContext>(0);
 }
 
 
-ssize_t vhdlParser::Subtype_indicationContext::getRuleIndex() const {
+size_t vhdlParser::Subtype_indicationContext::getRuleIndex() const {
   return vhdlParser::RuleSubtype_indication;
 }
 
@@ -19662,8 +19662,8 @@ antlrcpp::Any vhdlParser::Subtype_indicationContext::accept(tree::ParseTreeVisit
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::subtype_indication() {
-  Ref<Subtype_indicationContext> _localctx = std::make_shared<Subtype_indicationContext>(_ctx, getState());
+vhdlParser::Subtype_indicationContext* vhdlParser::subtype_indication() {
+  Subtype_indicationContext *_localctx = _tracker.createInstance<Subtype_indicationContext>(_ctx, getState());
   enterRule(_localctx, 472, vhdlParser::RuleSubtype_indication);
 
   auto onExit = finally([=] {
@@ -19719,28 +19719,28 @@ Ref<vhdlParser::Subtype_indicationContext> vhdlParser::subtype_indication() {
 
 //----------------- SuffixContext ------------------------------------------------------------------
 
-vhdlParser::SuffixContext::SuffixContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::SuffixContext::SuffixContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::SuffixContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::SuffixContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SuffixContext::CHARACTER_LITERAL() {
+tree::TerminalNode* vhdlParser::SuffixContext::CHARACTER_LITERAL() {
   return getToken(vhdlParser::CHARACTER_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SuffixContext::STRING_LITERAL() {
+tree::TerminalNode* vhdlParser::SuffixContext::STRING_LITERAL() {
   return getToken(vhdlParser::STRING_LITERAL, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::SuffixContext::ALL() {
+tree::TerminalNode* vhdlParser::SuffixContext::ALL() {
   return getToken(vhdlParser::ALL, 0);
 }
 
 
-ssize_t vhdlParser::SuffixContext::getRuleIndex() const {
+size_t vhdlParser::SuffixContext::getRuleIndex() const {
   return vhdlParser::RuleSuffix;
 }
 
@@ -19751,8 +19751,8 @@ antlrcpp::Any vhdlParser::SuffixContext::accept(tree::ParseTreeVisitor *visitor)
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::SuffixContext> vhdlParser::suffix() {
-  Ref<SuffixContext> _localctx = std::make_shared<SuffixContext>(_ctx, getState());
+vhdlParser::SuffixContext* vhdlParser::suffix() {
+  SuffixContext *_localctx = _tracker.createInstance<SuffixContext>(_ctx, getState());
   enterRule(_localctx, 474, vhdlParser::RuleSuffix);
 
   auto onExit = finally([=] {
@@ -19807,20 +19807,20 @@ Ref<vhdlParser::SuffixContext> vhdlParser::suffix() {
 
 //----------------- TargetContext ------------------------------------------------------------------
 
-vhdlParser::TargetContext::TargetContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::TargetContext::TargetContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::TargetContext::name() {
+vhdlParser::NameContext* vhdlParser::TargetContext::name() {
   return getRuleContext<vhdlParser::NameContext>(0);
 }
 
-Ref<vhdlParser::AggregateContext> vhdlParser::TargetContext::aggregate() {
+vhdlParser::AggregateContext* vhdlParser::TargetContext::aggregate() {
   return getRuleContext<vhdlParser::AggregateContext>(0);
 }
 
 
-ssize_t vhdlParser::TargetContext::getRuleIndex() const {
+size_t vhdlParser::TargetContext::getRuleIndex() const {
   return vhdlParser::RuleTarget;
 }
 
@@ -19831,8 +19831,8 @@ antlrcpp::Any vhdlParser::TargetContext::accept(tree::ParseTreeVisitor *visitor)
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::TargetContext> vhdlParser::target() {
-  Ref<TargetContext> _localctx = std::make_shared<TargetContext>(_ctx, getState());
+vhdlParser::TargetContext* vhdlParser::target() {
+  TargetContext *_localctx = _tracker.createInstance<TargetContext>(_ctx, getState());
   enterRule(_localctx, 476, vhdlParser::RuleTarget);
 
   auto onExit = finally([=] {
@@ -19873,28 +19873,28 @@ Ref<vhdlParser::TargetContext> vhdlParser::target() {
 
 //----------------- TermContext ------------------------------------------------------------------
 
-vhdlParser::TermContext::TermContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::TermContext::TermContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::FactorContext>> vhdlParser::TermContext::factor() {
+std::vector<vhdlParser::FactorContext *> vhdlParser::TermContext::factor() {
   return getRuleContexts<vhdlParser::FactorContext>();
 }
 
-Ref<vhdlParser::FactorContext> vhdlParser::TermContext::factor(int i) {
-  return getRuleContext<vhdlParser::FactorContext>((size_t)i);
+vhdlParser::FactorContext* vhdlParser::TermContext::factor(size_t i) {
+  return getRuleContext<vhdlParser::FactorContext>(i);
 }
 
-std::vector<Ref<vhdlParser::Multiplying_operatorContext>> vhdlParser::TermContext::multiplying_operator() {
+std::vector<vhdlParser::Multiplying_operatorContext *> vhdlParser::TermContext::multiplying_operator() {
   return getRuleContexts<vhdlParser::Multiplying_operatorContext>();
 }
 
-Ref<vhdlParser::Multiplying_operatorContext> vhdlParser::TermContext::multiplying_operator(int i) {
-  return getRuleContext<vhdlParser::Multiplying_operatorContext>((size_t)i);
+vhdlParser::Multiplying_operatorContext* vhdlParser::TermContext::multiplying_operator(size_t i) {
+  return getRuleContext<vhdlParser::Multiplying_operatorContext>(i);
 }
 
 
-ssize_t vhdlParser::TermContext::getRuleIndex() const {
+size_t vhdlParser::TermContext::getRuleIndex() const {
   return vhdlParser::RuleTerm;
 }
 
@@ -19905,15 +19905,15 @@ antlrcpp::Any vhdlParser::TermContext::accept(tree::ParseTreeVisitor *visitor) {
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::TermContext> vhdlParser::term() {
-  Ref<TermContext> _localctx = std::make_shared<TermContext>(_ctx, getState());
+vhdlParser::TermContext* vhdlParser::term() {
+  TermContext *_localctx = _tracker.createInstance<TermContext>(_ctx, getState());
   enterRule(_localctx, 478, vhdlParser::RuleTerm);
 
   auto onExit = finally([=] {
     exitRule();
   });
   try {
-    int alt;
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(2463);
     factor();
@@ -19944,24 +19944,24 @@ Ref<vhdlParser::TermContext> vhdlParser::term() {
 
 //----------------- Terminal_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Terminal_aspectContext::Terminal_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Terminal_aspectContext::Terminal_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::NameContext>> vhdlParser::Terminal_aspectContext::name() {
+std::vector<vhdlParser::NameContext *> vhdlParser::Terminal_aspectContext::name() {
   return getRuleContexts<vhdlParser::NameContext>();
 }
 
-Ref<vhdlParser::NameContext> vhdlParser::Terminal_aspectContext::name(int i) {
-  return getRuleContext<vhdlParser::NameContext>((size_t)i);
+vhdlParser::NameContext* vhdlParser::Terminal_aspectContext::name(size_t i) {
+  return getRuleContext<vhdlParser::NameContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Terminal_aspectContext::TO() {
+tree::TerminalNode* vhdlParser::Terminal_aspectContext::TO() {
   return getToken(vhdlParser::TO, 0);
 }
 
 
-ssize_t vhdlParser::Terminal_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Terminal_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleTerminal_aspect;
 }
 
@@ -19972,10 +19972,10 @@ antlrcpp::Any vhdlParser::Terminal_aspectContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Terminal_aspectContext> vhdlParser::terminal_aspect() {
-  Ref<Terminal_aspectContext> _localctx = std::make_shared<Terminal_aspectContext>(_ctx, getState());
+vhdlParser::Terminal_aspectContext* vhdlParser::terminal_aspect() {
+  Terminal_aspectContext *_localctx = _tracker.createInstance<Terminal_aspectContext>(_ctx, getState());
   enterRule(_localctx, 480, vhdlParser::RuleTerminal_aspect);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20006,32 +20006,32 @@ Ref<vhdlParser::Terminal_aspectContext> vhdlParser::terminal_aspect() {
 
 //----------------- Terminal_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Terminal_declarationContext::Terminal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Terminal_declarationContext::Terminal_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Terminal_declarationContext::TERMINAL() {
+tree::TerminalNode* vhdlParser::Terminal_declarationContext::TERMINAL() {
   return getToken(vhdlParser::TERMINAL, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Terminal_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Terminal_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Terminal_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Terminal_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Terminal_declarationContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Terminal_declarationContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Terminal_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Terminal_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
 
-ssize_t vhdlParser::Terminal_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Terminal_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleTerminal_declaration;
 }
 
@@ -20042,8 +20042,8 @@ antlrcpp::Any vhdlParser::Terminal_declarationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Terminal_declarationContext> vhdlParser::terminal_declaration() {
-  Ref<Terminal_declarationContext> _localctx = std::make_shared<Terminal_declarationContext>(_ctx, getState());
+vhdlParser::Terminal_declarationContext* vhdlParser::terminal_declaration() {
+  Terminal_declarationContext *_localctx = _tracker.createInstance<Terminal_declarationContext>(_ctx, getState());
   enterRule(_localctx, 482, vhdlParser::RuleTerminal_declaration);
 
   auto onExit = finally([=] {
@@ -20074,32 +20074,32 @@ Ref<vhdlParser::Terminal_declarationContext> vhdlParser::terminal_declaration() 
 
 //----------------- Through_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Through_aspectContext::Through_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Through_aspectContext::Through_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Through_aspectContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Through_aspectContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Through_aspectContext::THROUGH() {
+tree::TerminalNode* vhdlParser::Through_aspectContext::THROUGH() {
   return getToken(vhdlParser::THROUGH, 0);
 }
 
-Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::Through_aspectContext::tolerance_aspect() {
+vhdlParser::Tolerance_aspectContext* vhdlParser::Through_aspectContext::tolerance_aspect() {
   return getRuleContext<vhdlParser::Tolerance_aspectContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Through_aspectContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Through_aspectContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Through_aspectContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Through_aspectContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Through_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Through_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleThrough_aspect;
 }
 
@@ -20110,10 +20110,10 @@ antlrcpp::Any vhdlParser::Through_aspectContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Through_aspectContext> vhdlParser::through_aspect() {
-  Ref<Through_aspectContext> _localctx = std::make_shared<Through_aspectContext>(_ctx, getState());
+vhdlParser::Through_aspectContext* vhdlParser::through_aspect() {
+  Through_aspectContext *_localctx = _tracker.createInstance<Through_aspectContext>(_ctx, getState());
   enterRule(_localctx, 484, vhdlParser::RuleThrough_aspect);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20153,20 +20153,20 @@ Ref<vhdlParser::Through_aspectContext> vhdlParser::through_aspect() {
 
 //----------------- Timeout_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Timeout_clauseContext::Timeout_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Timeout_clauseContext::Timeout_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Timeout_clauseContext::FOR() {
+tree::TerminalNode* vhdlParser::Timeout_clauseContext::FOR() {
   return getToken(vhdlParser::FOR, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Timeout_clauseContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Timeout_clauseContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Timeout_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Timeout_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleTimeout_clause;
 }
 
@@ -20177,8 +20177,8 @@ antlrcpp::Any vhdlParser::Timeout_clauseContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Timeout_clauseContext> vhdlParser::timeout_clause() {
-  Ref<Timeout_clauseContext> _localctx = std::make_shared<Timeout_clauseContext>(_ctx, getState());
+vhdlParser::Timeout_clauseContext* vhdlParser::timeout_clause() {
+  Timeout_clauseContext *_localctx = _tracker.createInstance<Timeout_clauseContext>(_ctx, getState());
   enterRule(_localctx, 486, vhdlParser::RuleTimeout_clause);
 
   auto onExit = finally([=] {
@@ -20203,20 +20203,20 @@ Ref<vhdlParser::Timeout_clauseContext> vhdlParser::timeout_clause() {
 
 //----------------- Tolerance_aspectContext ------------------------------------------------------------------
 
-vhdlParser::Tolerance_aspectContext::Tolerance_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Tolerance_aspectContext::Tolerance_aspectContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Tolerance_aspectContext::TOLERANCE() {
+tree::TerminalNode* vhdlParser::Tolerance_aspectContext::TOLERANCE() {
   return getToken(vhdlParser::TOLERANCE, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Tolerance_aspectContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Tolerance_aspectContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Tolerance_aspectContext::getRuleIndex() const {
+size_t vhdlParser::Tolerance_aspectContext::getRuleIndex() const {
   return vhdlParser::RuleTolerance_aspect;
 }
 
@@ -20227,8 +20227,8 @@ antlrcpp::Any vhdlParser::Tolerance_aspectContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::tolerance_aspect() {
-  Ref<Tolerance_aspectContext> _localctx = std::make_shared<Tolerance_aspectContext>(_ctx, getState());
+vhdlParser::Tolerance_aspectContext* vhdlParser::tolerance_aspect() {
+  Tolerance_aspectContext *_localctx = _tracker.createInstance<Tolerance_aspectContext>(_ctx, getState());
   enterRule(_localctx, 488, vhdlParser::RuleTolerance_aspect);
 
   auto onExit = finally([=] {
@@ -20253,32 +20253,32 @@ Ref<vhdlParser::Tolerance_aspectContext> vhdlParser::tolerance_aspect() {
 
 //----------------- Type_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Type_declarationContext::Type_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Type_declarationContext::Type_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Type_declarationContext::TYPE() {
+tree::TerminalNode* vhdlParser::Type_declarationContext::TYPE() {
   return getToken(vhdlParser::TYPE, 0);
 }
 
-Ref<vhdlParser::IdentifierContext> vhdlParser::Type_declarationContext::identifier() {
+vhdlParser::IdentifierContext* vhdlParser::Type_declarationContext::identifier() {
   return getRuleContext<vhdlParser::IdentifierContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Type_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Type_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Type_declarationContext::IS() {
+tree::TerminalNode* vhdlParser::Type_declarationContext::IS() {
   return getToken(vhdlParser::IS, 0);
 }
 
-Ref<vhdlParser::Type_definitionContext> vhdlParser::Type_declarationContext::type_definition() {
+vhdlParser::Type_definitionContext* vhdlParser::Type_declarationContext::type_definition() {
   return getRuleContext<vhdlParser::Type_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Type_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Type_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleType_declaration;
 }
 
@@ -20289,10 +20289,10 @@ antlrcpp::Any vhdlParser::Type_declarationContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Type_declarationContext> vhdlParser::type_declaration() {
-  Ref<Type_declarationContext> _localctx = std::make_shared<Type_declarationContext>(_ctx, getState());
+vhdlParser::Type_declarationContext* vhdlParser::type_declaration() {
+  Type_declarationContext *_localctx = _tracker.createInstance<Type_declarationContext>(_ctx, getState());
   enterRule(_localctx, 490, vhdlParser::RuleType_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20327,28 +20327,28 @@ Ref<vhdlParser::Type_declarationContext> vhdlParser::type_declaration() {
 
 //----------------- Type_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Type_definitionContext::Type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Type_definitionContext::Type_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::Scalar_type_definitionContext> vhdlParser::Type_definitionContext::scalar_type_definition() {
+vhdlParser::Scalar_type_definitionContext* vhdlParser::Type_definitionContext::scalar_type_definition() {
   return getRuleContext<vhdlParser::Scalar_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::Composite_type_definitionContext> vhdlParser::Type_definitionContext::composite_type_definition() {
+vhdlParser::Composite_type_definitionContext* vhdlParser::Type_definitionContext::composite_type_definition() {
   return getRuleContext<vhdlParser::Composite_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::Access_type_definitionContext> vhdlParser::Type_definitionContext::access_type_definition() {
+vhdlParser::Access_type_definitionContext* vhdlParser::Type_definitionContext::access_type_definition() {
   return getRuleContext<vhdlParser::Access_type_definitionContext>(0);
 }
 
-Ref<vhdlParser::File_type_definitionContext> vhdlParser::Type_definitionContext::file_type_definition() {
+vhdlParser::File_type_definitionContext* vhdlParser::Type_definitionContext::file_type_definition() {
   return getRuleContext<vhdlParser::File_type_definitionContext>(0);
 }
 
 
-ssize_t vhdlParser::Type_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Type_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleType_definition;
 }
 
@@ -20359,8 +20359,8 @@ antlrcpp::Any vhdlParser::Type_definitionContext::accept(tree::ParseTreeVisitor 
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Type_definitionContext> vhdlParser::type_definition() {
-  Ref<Type_definitionContext> _localctx = std::make_shared<Type_definitionContext>(_ctx, getState());
+vhdlParser::Type_definitionContext* vhdlParser::type_definition() {
+  Type_definitionContext *_localctx = _tracker.createInstance<Type_definitionContext>(_ctx, getState());
   enterRule(_localctx, 492, vhdlParser::RuleType_definition);
 
   auto onExit = finally([=] {
@@ -20416,48 +20416,48 @@ Ref<vhdlParser::Type_definitionContext> vhdlParser::type_definition() {
 
 //----------------- Unconstrained_array_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Unconstrained_array_definitionContext::Unconstrained_array_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Unconstrained_array_definitionContext::Unconstrained_array_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_array_definitionContext::ARRAY() {
+tree::TerminalNode* vhdlParser::Unconstrained_array_definitionContext::ARRAY() {
   return getToken(vhdlParser::ARRAY, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_array_definitionContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Unconstrained_array_definitionContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Index_subtype_definitionContext>> vhdlParser::Unconstrained_array_definitionContext::index_subtype_definition() {
+std::vector<vhdlParser::Index_subtype_definitionContext *> vhdlParser::Unconstrained_array_definitionContext::index_subtype_definition() {
   return getRuleContexts<vhdlParser::Index_subtype_definitionContext>();
 }
 
-Ref<vhdlParser::Index_subtype_definitionContext> vhdlParser::Unconstrained_array_definitionContext::index_subtype_definition(int i) {
-  return getRuleContext<vhdlParser::Index_subtype_definitionContext>((size_t)i);
+vhdlParser::Index_subtype_definitionContext* vhdlParser::Unconstrained_array_definitionContext::index_subtype_definition(size_t i) {
+  return getRuleContext<vhdlParser::Index_subtype_definitionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_array_definitionContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Unconstrained_array_definitionContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_array_definitionContext::OF() {
+tree::TerminalNode* vhdlParser::Unconstrained_array_definitionContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Unconstrained_array_definitionContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Unconstrained_array_definitionContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Unconstrained_array_definitionContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Unconstrained_array_definitionContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_array_definitionContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Unconstrained_array_definitionContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Unconstrained_array_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Unconstrained_array_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleUnconstrained_array_definition;
 }
 
@@ -20468,10 +20468,10 @@ antlrcpp::Any vhdlParser::Unconstrained_array_definitionContext::accept(tree::Pa
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Unconstrained_array_definitionContext> vhdlParser::unconstrained_array_definition() {
-  Ref<Unconstrained_array_definitionContext> _localctx = std::make_shared<Unconstrained_array_definitionContext>(_ctx, getState());
+vhdlParser::Unconstrained_array_definitionContext* vhdlParser::unconstrained_array_definition() {
+  Unconstrained_array_definitionContext *_localctx = _tracker.createInstance<Unconstrained_array_definitionContext>(_ctx, getState());
   enterRule(_localctx, 494, vhdlParser::RuleUnconstrained_array_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20515,48 +20515,48 @@ Ref<vhdlParser::Unconstrained_array_definitionContext> vhdlParser::unconstrained
 
 //----------------- Unconstrained_nature_definitionContext ------------------------------------------------------------------
 
-vhdlParser::Unconstrained_nature_definitionContext::Unconstrained_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Unconstrained_nature_definitionContext::Unconstrained_nature_definitionContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_nature_definitionContext::ARRAY() {
+tree::TerminalNode* vhdlParser::Unconstrained_nature_definitionContext::ARRAY() {
   return getToken(vhdlParser::ARRAY, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_nature_definitionContext::LPAREN() {
+tree::TerminalNode* vhdlParser::Unconstrained_nature_definitionContext::LPAREN() {
   return getToken(vhdlParser::LPAREN, 0);
 }
 
-std::vector<Ref<vhdlParser::Index_subtype_definitionContext>> vhdlParser::Unconstrained_nature_definitionContext::index_subtype_definition() {
+std::vector<vhdlParser::Index_subtype_definitionContext *> vhdlParser::Unconstrained_nature_definitionContext::index_subtype_definition() {
   return getRuleContexts<vhdlParser::Index_subtype_definitionContext>();
 }
 
-Ref<vhdlParser::Index_subtype_definitionContext> vhdlParser::Unconstrained_nature_definitionContext::index_subtype_definition(int i) {
-  return getRuleContext<vhdlParser::Index_subtype_definitionContext>((size_t)i);
+vhdlParser::Index_subtype_definitionContext* vhdlParser::Unconstrained_nature_definitionContext::index_subtype_definition(size_t i) {
+  return getRuleContext<vhdlParser::Index_subtype_definitionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_nature_definitionContext::RPAREN() {
+tree::TerminalNode* vhdlParser::Unconstrained_nature_definitionContext::RPAREN() {
   return getToken(vhdlParser::RPAREN, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_nature_definitionContext::OF() {
+tree::TerminalNode* vhdlParser::Unconstrained_nature_definitionContext::OF() {
   return getToken(vhdlParser::OF, 0);
 }
 
-Ref<vhdlParser::Subnature_indicationContext> vhdlParser::Unconstrained_nature_definitionContext::subnature_indication() {
+vhdlParser::Subnature_indicationContext* vhdlParser::Unconstrained_nature_definitionContext::subnature_indication() {
   return getRuleContext<vhdlParser::Subnature_indicationContext>(0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Unconstrained_nature_definitionContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Unconstrained_nature_definitionContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Unconstrained_nature_definitionContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Unconstrained_nature_definitionContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Unconstrained_nature_definitionContext::getRuleIndex() const {
+size_t vhdlParser::Unconstrained_nature_definitionContext::getRuleIndex() const {
   return vhdlParser::RuleUnconstrained_nature_definition;
 }
 
@@ -20567,10 +20567,10 @@ antlrcpp::Any vhdlParser::Unconstrained_nature_definitionContext::accept(tree::P
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Unconstrained_nature_definitionContext> vhdlParser::unconstrained_nature_definition() {
-  Ref<Unconstrained_nature_definitionContext> _localctx = std::make_shared<Unconstrained_nature_definitionContext>(_ctx, getState());
+vhdlParser::Unconstrained_nature_definitionContext* vhdlParser::unconstrained_nature_definition() {
+  Unconstrained_nature_definitionContext *_localctx = _tracker.createInstance<Unconstrained_nature_definitionContext>(_ctx, getState());
   enterRule(_localctx, 496, vhdlParser::RuleUnconstrained_nature_definition);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20614,36 +20614,36 @@ Ref<vhdlParser::Unconstrained_nature_definitionContext> vhdlParser::unconstraine
 
 //----------------- Use_clauseContext ------------------------------------------------------------------
 
-vhdlParser::Use_clauseContext::Use_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Use_clauseContext::Use_clauseContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Use_clauseContext::USE() {
+tree::TerminalNode* vhdlParser::Use_clauseContext::USE() {
   return getToken(vhdlParser::USE, 0);
 }
 
-std::vector<Ref<vhdlParser::Selected_nameContext>> vhdlParser::Use_clauseContext::selected_name() {
+std::vector<vhdlParser::Selected_nameContext *> vhdlParser::Use_clauseContext::selected_name() {
   return getRuleContexts<vhdlParser::Selected_nameContext>();
 }
 
-Ref<vhdlParser::Selected_nameContext> vhdlParser::Use_clauseContext::selected_name(int i) {
-  return getRuleContext<vhdlParser::Selected_nameContext>((size_t)i);
+vhdlParser::Selected_nameContext* vhdlParser::Use_clauseContext::selected_name(size_t i) {
+  return getRuleContext<vhdlParser::Selected_nameContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Use_clauseContext::SEMI() {
+tree::TerminalNode* vhdlParser::Use_clauseContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::Use_clauseContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::Use_clauseContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Use_clauseContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::Use_clauseContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
 
-ssize_t vhdlParser::Use_clauseContext::getRuleIndex() const {
+size_t vhdlParser::Use_clauseContext::getRuleIndex() const {
   return vhdlParser::RuleUse_clause;
 }
 
@@ -20654,10 +20654,10 @@ antlrcpp::Any vhdlParser::Use_clauseContext::accept(tree::ParseTreeVisitor *visi
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Use_clauseContext> vhdlParser::use_clause() {
-  Ref<Use_clauseContext> _localctx = std::make_shared<Use_clauseContext>(_ctx, getState());
+vhdlParser::Use_clauseContext* vhdlParser::use_clause() {
+  Use_clauseContext *_localctx = _tracker.createInstance<Use_clauseContext>(_ctx, getState());
   enterRule(_localctx, 498, vhdlParser::RuleUse_clause);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20695,32 +20695,32 @@ Ref<vhdlParser::Use_clauseContext> vhdlParser::use_clause() {
 
 //----------------- Variable_assignment_statementContext ------------------------------------------------------------------
 
-vhdlParser::Variable_assignment_statementContext::Variable_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Variable_assignment_statementContext::Variable_assignment_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<vhdlParser::TargetContext> vhdlParser::Variable_assignment_statementContext::target() {
+vhdlParser::TargetContext* vhdlParser::Variable_assignment_statementContext::target() {
   return getRuleContext<vhdlParser::TargetContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_assignment_statementContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Variable_assignment_statementContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Variable_assignment_statementContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Variable_assignment_statementContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_assignment_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Variable_assignment_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Variable_assignment_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Variable_assignment_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
 
-ssize_t vhdlParser::Variable_assignment_statementContext::getRuleIndex() const {
+size_t vhdlParser::Variable_assignment_statementContext::getRuleIndex() const {
   return vhdlParser::RuleVariable_assignment_statement;
 }
 
@@ -20731,8 +20731,8 @@ antlrcpp::Any vhdlParser::Variable_assignment_statementContext::accept(tree::Par
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Variable_assignment_statementContext> vhdlParser::variable_assignment_statement() {
-  Ref<Variable_assignment_statementContext> _localctx = std::make_shared<Variable_assignment_statementContext>(_ctx, getState());
+vhdlParser::Variable_assignment_statementContext* vhdlParser::variable_assignment_statement() {
+  Variable_assignment_statementContext *_localctx = _tracker.createInstance<Variable_assignment_statementContext>(_ctx, getState());
   enterRule(_localctx, 500, vhdlParser::RuleVariable_assignment_statement);
 
   auto onExit = finally([=] {
@@ -20772,44 +20772,44 @@ Ref<vhdlParser::Variable_assignment_statementContext> vhdlParser::variable_assig
 
 //----------------- Variable_declarationContext ------------------------------------------------------------------
 
-vhdlParser::Variable_declarationContext::Variable_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Variable_declarationContext::Variable_declarationContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_declarationContext::VARIABLE() {
+tree::TerminalNode* vhdlParser::Variable_declarationContext::VARIABLE() {
   return getToken(vhdlParser::VARIABLE, 0);
 }
 
-Ref<vhdlParser::Identifier_listContext> vhdlParser::Variable_declarationContext::identifier_list() {
+vhdlParser::Identifier_listContext* vhdlParser::Variable_declarationContext::identifier_list() {
   return getRuleContext<vhdlParser::Identifier_listContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_declarationContext::COLON() {
+tree::TerminalNode* vhdlParser::Variable_declarationContext::COLON() {
   return getToken(vhdlParser::COLON, 0);
 }
 
-Ref<vhdlParser::Subtype_indicationContext> vhdlParser::Variable_declarationContext::subtype_indication() {
+vhdlParser::Subtype_indicationContext* vhdlParser::Variable_declarationContext::subtype_indication() {
   return getRuleContext<vhdlParser::Subtype_indicationContext>(0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_declarationContext::SEMI() {
+tree::TerminalNode* vhdlParser::Variable_declarationContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_declarationContext::SHARED() {
+tree::TerminalNode* vhdlParser::Variable_declarationContext::SHARED() {
   return getToken(vhdlParser::SHARED, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Variable_declarationContext::VARASGN() {
+tree::TerminalNode* vhdlParser::Variable_declarationContext::VARASGN() {
   return getToken(vhdlParser::VARASGN, 0);
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Variable_declarationContext::expression() {
+vhdlParser::ExpressionContext* vhdlParser::Variable_declarationContext::expression() {
   return getRuleContext<vhdlParser::ExpressionContext>(0);
 }
 
 
-ssize_t vhdlParser::Variable_declarationContext::getRuleIndex() const {
+size_t vhdlParser::Variable_declarationContext::getRuleIndex() const {
   return vhdlParser::RuleVariable_declaration;
 }
 
@@ -20820,10 +20820,10 @@ antlrcpp::Any vhdlParser::Variable_declarationContext::accept(tree::ParseTreeVis
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Variable_declarationContext> vhdlParser::variable_declaration() {
-  Ref<Variable_declarationContext> _localctx = std::make_shared<Variable_declarationContext>(_ctx, getState());
+vhdlParser::Variable_declarationContext* vhdlParser::variable_declaration() {
+  Variable_declarationContext *_localctx = _tracker.createInstance<Variable_declarationContext>(_ctx, getState());
   enterRule(_localctx, 502, vhdlParser::RuleVariable_declaration);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20869,36 +20869,36 @@ Ref<vhdlParser::Variable_declarationContext> vhdlParser::variable_declaration() 
 
 //----------------- Wait_statementContext ------------------------------------------------------------------
 
-vhdlParser::Wait_statementContext::Wait_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Wait_statementContext::Wait_statementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-Ref<tree::TerminalNode> vhdlParser::Wait_statementContext::WAIT() {
+tree::TerminalNode* vhdlParser::Wait_statementContext::WAIT() {
   return getToken(vhdlParser::WAIT, 0);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Wait_statementContext::SEMI() {
+tree::TerminalNode* vhdlParser::Wait_statementContext::SEMI() {
   return getToken(vhdlParser::SEMI, 0);
 }
 
-Ref<vhdlParser::Label_colonContext> vhdlParser::Wait_statementContext::label_colon() {
+vhdlParser::Label_colonContext* vhdlParser::Wait_statementContext::label_colon() {
   return getRuleContext<vhdlParser::Label_colonContext>(0);
 }
 
-Ref<vhdlParser::Sensitivity_clauseContext> vhdlParser::Wait_statementContext::sensitivity_clause() {
+vhdlParser::Sensitivity_clauseContext* vhdlParser::Wait_statementContext::sensitivity_clause() {
   return getRuleContext<vhdlParser::Sensitivity_clauseContext>(0);
 }
 
-Ref<vhdlParser::Condition_clauseContext> vhdlParser::Wait_statementContext::condition_clause() {
+vhdlParser::Condition_clauseContext* vhdlParser::Wait_statementContext::condition_clause() {
   return getRuleContext<vhdlParser::Condition_clauseContext>(0);
 }
 
-Ref<vhdlParser::Timeout_clauseContext> vhdlParser::Wait_statementContext::timeout_clause() {
+vhdlParser::Timeout_clauseContext* vhdlParser::Wait_statementContext::timeout_clause() {
   return getRuleContext<vhdlParser::Timeout_clauseContext>(0);
 }
 
 
-ssize_t vhdlParser::Wait_statementContext::getRuleIndex() const {
+size_t vhdlParser::Wait_statementContext::getRuleIndex() const {
   return vhdlParser::RuleWait_statement;
 }
 
@@ -20909,10 +20909,10 @@ antlrcpp::Any vhdlParser::Wait_statementContext::accept(tree::ParseTreeVisitor *
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Wait_statementContext> vhdlParser::wait_statement() {
-  Ref<Wait_statementContext> _localctx = std::make_shared<Wait_statementContext>(_ctx, getState());
+vhdlParser::Wait_statementContext* vhdlParser::wait_statement() {
+  Wait_statementContext *_localctx = _tracker.createInstance<Wait_statementContext>(_ctx, getState());
   enterRule(_localctx, 504, vhdlParser::RuleWait_statement);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -20966,32 +20966,32 @@ Ref<vhdlParser::Wait_statementContext> vhdlParser::wait_statement() {
 
 //----------------- WaveformContext ------------------------------------------------------------------
 
-vhdlParser::WaveformContext::WaveformContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::WaveformContext::WaveformContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::Waveform_elementContext>> vhdlParser::WaveformContext::waveform_element() {
+std::vector<vhdlParser::Waveform_elementContext *> vhdlParser::WaveformContext::waveform_element() {
   return getRuleContexts<vhdlParser::Waveform_elementContext>();
 }
 
-Ref<vhdlParser::Waveform_elementContext> vhdlParser::WaveformContext::waveform_element(int i) {
-  return getRuleContext<vhdlParser::Waveform_elementContext>((size_t)i);
+vhdlParser::Waveform_elementContext* vhdlParser::WaveformContext::waveform_element(size_t i) {
+  return getRuleContext<vhdlParser::Waveform_elementContext>(i);
 }
 
-std::vector<Ref<tree::TerminalNode>> vhdlParser::WaveformContext::COMMA() {
+std::vector<tree::TerminalNode *> vhdlParser::WaveformContext::COMMA() {
   return getTokens(vhdlParser::COMMA);
 }
 
-Ref<tree::TerminalNode> vhdlParser::WaveformContext::COMMA(int i) {
-  return getToken(vhdlParser::COMMA, (size_t)i);
+tree::TerminalNode* vhdlParser::WaveformContext::COMMA(size_t i) {
+  return getToken(vhdlParser::COMMA, i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::WaveformContext::UNAFFECTED() {
+tree::TerminalNode* vhdlParser::WaveformContext::UNAFFECTED() {
   return getToken(vhdlParser::UNAFFECTED, 0);
 }
 
 
-ssize_t vhdlParser::WaveformContext::getRuleIndex() const {
+size_t vhdlParser::WaveformContext::getRuleIndex() const {
   return vhdlParser::RuleWaveform;
 }
 
@@ -21002,10 +21002,10 @@ antlrcpp::Any vhdlParser::WaveformContext::accept(tree::ParseTreeVisitor *visito
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::WaveformContext> vhdlParser::waveform() {
-  Ref<WaveformContext> _localctx = std::make_shared<WaveformContext>(_ctx, getState());
+vhdlParser::WaveformContext* vhdlParser::waveform() {
+  WaveformContext *_localctx = _tracker.createInstance<WaveformContext>(_ctx, getState());
   enterRule(_localctx, 506, vhdlParser::RuleWaveform);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -21070,24 +21070,24 @@ Ref<vhdlParser::WaveformContext> vhdlParser::waveform() {
 
 //----------------- Waveform_elementContext ------------------------------------------------------------------
 
-vhdlParser::Waveform_elementContext::Waveform_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState)
+vhdlParser::Waveform_elementContext::Waveform_elementContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<Ref<vhdlParser::ExpressionContext>> vhdlParser::Waveform_elementContext::expression() {
+std::vector<vhdlParser::ExpressionContext *> vhdlParser::Waveform_elementContext::expression() {
   return getRuleContexts<vhdlParser::ExpressionContext>();
 }
 
-Ref<vhdlParser::ExpressionContext> vhdlParser::Waveform_elementContext::expression(int i) {
-  return getRuleContext<vhdlParser::ExpressionContext>((size_t)i);
+vhdlParser::ExpressionContext* vhdlParser::Waveform_elementContext::expression(size_t i) {
+  return getRuleContext<vhdlParser::ExpressionContext>(i);
 }
 
-Ref<tree::TerminalNode> vhdlParser::Waveform_elementContext::AFTER() {
+tree::TerminalNode* vhdlParser::Waveform_elementContext::AFTER() {
   return getToken(vhdlParser::AFTER, 0);
 }
 
 
-ssize_t vhdlParser::Waveform_elementContext::getRuleIndex() const {
+size_t vhdlParser::Waveform_elementContext::getRuleIndex() const {
   return vhdlParser::RuleWaveform_element;
 }
 
@@ -21098,10 +21098,10 @@ antlrcpp::Any vhdlParser::Waveform_elementContext::accept(tree::ParseTreeVisitor
     return visitor->visitChildren(this);
 }
 
-Ref<vhdlParser::Waveform_elementContext> vhdlParser::waveform_element() {
-  Ref<Waveform_elementContext> _localctx = std::make_shared<Waveform_elementContext>(_ctx, getState());
+vhdlParser::Waveform_elementContext* vhdlParser::waveform_element() {
+  Waveform_elementContext *_localctx = _tracker.createInstance<Waveform_elementContext>(_ctx, getState());
   enterRule(_localctx, 508, vhdlParser::RuleWaveform_element);
-  ssize_t _la;
+  size_t _la = 0;
 
   auto onExit = finally([=] {
     exitRule();
@@ -23243,8 +23243,10 @@ vhdlParser::Initializer::Initializer() {
   atn::ATNDeserializer deserializer;
   _atn = deserializer.deserialize(_serializedATN);
 
-  for (int i = 0; i < _atn.getNumberOfDecisions(); i++) { 
-    _decisionToDFA.push_back(dfa::DFA(_atn.getDecisionState(i), i));
+  size_t count = _atn.getNumberOfDecisions();
+  _decisionToDFA.reserve(count);
+  for (size_t i = 0; i < count; i++) { 
+    _decisionToDFA.emplace_back(_atn.getDecisionState(i), i);
   }
 }
 

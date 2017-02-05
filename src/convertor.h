@@ -21,11 +21,16 @@
 #include "svConverter/library_textParser.h"
 #endif
 
+#include "vpp/vppLexer.h"
+#include "vpp/vppParser.h"
+#include "vPreprocessor/vPreprocessor.h"
+
 #include "syntaxErrorLogger.h"
 #include "langue.h"
 #include "parserContainer.h"
 
 using namespace antlr4;
+using namespace antlr4::tree;
 using namespace vhdl;
 
 
@@ -45,5 +50,7 @@ public:
 			Langue lang,
 			bool hierarchyOnly,
 			bool debug);
+
+	void test(const char *  filename);
 
 };

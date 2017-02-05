@@ -19,7 +19,11 @@ cdef class hdlConvertor:
 
     def __cinit__(self):
         self.thisptr = new _Convertor()
-        
+    
+    def __dealloc__(self):
+        del self.thisptr
+
+
     def parse(self,filename,langue,hierarchyOnly,debug):
 #if PY_MAJOR_VERSION >= 3
         filename = filename.encode()
@@ -48,9 +52,14 @@ cdef class hdlConvertor:
         cdef object d_py
         d_py = <object> d
         return d_py
+    
+    def test(self, filename):
+#if PY_MAJOR_VERSION >= 3
+        filename = filename.encode()
+#endif
+        cdef char * filename_byte = <bytes> filename
+        self.thisptr.test(filename_byte)
 
-    def __dealloc__(self):
-        del self.thisptr
 
 def parse(filename,langue,hierarchyOnly=False,debug=False):
     cdef hdlConvertor obj
@@ -58,3 +67,8 @@ def parse(filename,langue,hierarchyOnly=False,debug=False):
     obj = hdlConvertor()
     context = obj.parse(filename,langue,hierarchyOnly,debug)
     return context
+
+def test(filename):
+    cdef hdlConvertor obj
+    obj = hdlConvertor()
+    obj.test(filename)

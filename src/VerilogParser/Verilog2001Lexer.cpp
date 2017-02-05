@@ -1268,8 +1268,10 @@ Verilog2001Lexer::Initializer::Initializer() {
   atn::ATNDeserializer deserializer;
   _atn = deserializer.deserialize(_serializedATN);
 
-  for (int i = 0; i < _atn.getNumberOfDecisions(); i++) { 
-    _decisionToDFA.push_back(dfa::DFA(_atn.getDecisionState(i), i));
+  size_t count = _atn.getNumberOfDecisions();
+  _decisionToDFA.reserve(count);
+  for (size_t i = 0; i < count; i++) { 
+    _decisionToDFA.emplace_back(_atn.getDecisionState(i), i);
   }
 }
 

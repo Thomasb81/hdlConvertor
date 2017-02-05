@@ -411,4077 +411,4077 @@ public:
 
   class Abstract_literalContext : public ParserRuleContext {
   public:
-    Abstract_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> INTEGER();
-    Ref<tree::TerminalNode> REAL_LITERAL();
-    Ref<tree::TerminalNode> BASE_LITERAL();
+    Abstract_literalContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *INTEGER();
+    tree::TerminalNode *REAL_LITERAL();
+    tree::TerminalNode *BASE_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Abstract_literalContext> abstract_literal();
+  Abstract_literalContext* abstract_literal();
 
   class Access_type_definitionContext : public ParserRuleContext {
   public:
-    Access_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ACCESS();
-    Ref<Subtype_indicationContext> subtype_indication();
+    Access_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ACCESS();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Access_type_definitionContext> access_type_definition();
+  Access_type_definitionContext* access_type_definition();
 
   class Across_aspectContext : public ParserRuleContext {
   public:
-    Across_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> ACROSS();
-    Ref<Tolerance_aspectContext> tolerance_aspect();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Across_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *ACROSS();
+    Tolerance_aspectContext *tolerance_aspect();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Across_aspectContext> across_aspect();
+  Across_aspectContext* across_aspect();
 
   class Actual_designatorContext : public ParserRuleContext {
   public:
-    Actual_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> OPEN();
+    Actual_designatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
+    tree::TerminalNode *OPEN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Actual_designatorContext> actual_designator();
+  Actual_designatorContext* actual_designator();
 
   class Actual_parameter_partContext : public ParserRuleContext {
   public:
-    Actual_parameter_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Association_listContext> association_list();
+    Actual_parameter_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Association_listContext *association_list();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Actual_parameter_partContext> actual_parameter_part();
+  Actual_parameter_partContext* actual_parameter_part();
 
   class Actual_partContext : public ParserRuleContext {
   public:
-    Actual_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Actual_designatorContext> actual_designator();
-    Ref<tree::TerminalNode> RPAREN();
+    Actual_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    tree::TerminalNode *LPAREN();
+    Actual_designatorContext *actual_designator();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Actual_partContext> actual_part();
+  Actual_partContext* actual_part();
 
   class Adding_operatorContext : public ParserRuleContext {
   public:
-    Adding_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> PLUS();
-    Ref<tree::TerminalNode> MINUS();
-    Ref<tree::TerminalNode> AMPERSAND();
+    Adding_operatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *PLUS();
+    tree::TerminalNode *MINUS();
+    tree::TerminalNode *AMPERSAND();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Adding_operatorContext> adding_operator();
+  Adding_operatorContext* adding_operator();
 
   class AggregateContext : public ParserRuleContext {
   public:
-    AggregateContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Element_associationContext>> element_association();
-    Ref<Element_associationContext> element_association(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    AggregateContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LPAREN();
+    std::vector<Element_associationContext *> element_association();
+    Element_associationContext* element_association(size_t i);
+    tree::TerminalNode *RPAREN();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<AggregateContext> aggregate();
+  AggregateContext* aggregate();
 
   class Alias_declarationContext : public ParserRuleContext {
   public:
-    Alias_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ALIAS();
-    Ref<Alias_designatorContext> alias_designator();
-    Ref<tree::TerminalNode> IS();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Alias_indicationContext> alias_indication();
-    Ref<SignatureContext> signature();
+    Alias_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ALIAS();
+    Alias_designatorContext *alias_designator();
+    tree::TerminalNode *IS();
+    NameContext *name();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *COLON();
+    Alias_indicationContext *alias_indication();
+    SignatureContext *signature();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Alias_declarationContext> alias_declaration();
+  Alias_declarationContext* alias_declaration();
 
   class Alias_designatorContext : public ParserRuleContext {
   public:
-    Alias_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> CHARACTER_LITERAL();
-    Ref<tree::TerminalNode> STRING_LITERAL();
+    Alias_designatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *CHARACTER_LITERAL();
+    tree::TerminalNode *STRING_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Alias_designatorContext> alias_designator();
+  Alias_designatorContext* alias_designator();
 
   class Alias_indicationContext : public ParserRuleContext {
   public:
-    Alias_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subnature_indicationContext> subnature_indication();
-    Ref<Subtype_indicationContext> subtype_indication();
+    Alias_indicationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subnature_indicationContext *subnature_indication();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Alias_indicationContext> alias_indication();
+  Alias_indicationContext* alias_indication();
 
   class AllocatorContext : public ParserRuleContext {
   public:
-    AllocatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> NEW();
-    Ref<Qualified_expressionContext> qualified_expression();
-    Ref<Subtype_indicationContext> subtype_indication();
+    AllocatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *NEW();
+    Qualified_expressionContext *qualified_expression();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<AllocatorContext> allocator();
+  AllocatorContext* allocator();
 
   class Architecture_bodyContext : public ParserRuleContext {
   public:
-    Architecture_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> ARCHITECTURE();
-    Ref<tree::TerminalNode> ARCHITECTURE(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> OF();
-    Ref<tree::TerminalNode> IS();
-    Ref<Architecture_declarative_partContext> architecture_declarative_part();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Architecture_statement_partContext> architecture_statement_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
+    Architecture_bodyContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> ARCHITECTURE();
+    tree::TerminalNode* ARCHITECTURE(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *OF();
+    tree::TerminalNode *IS();
+    Architecture_declarative_partContext *architecture_declarative_part();
+    tree::TerminalNode *BEGIN();
+    Architecture_statement_partContext *architecture_statement_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Architecture_bodyContext> architecture_body();
+  Architecture_bodyContext* architecture_body();
 
   class Architecture_declarative_partContext : public ParserRuleContext {
   public:
-    Architecture_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Block_declarative_itemContext>> block_declarative_item();
-    Ref<Block_declarative_itemContext> block_declarative_item(int i);
+    Architecture_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Block_declarative_itemContext *> block_declarative_item();
+    Block_declarative_itemContext* block_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Architecture_declarative_partContext> architecture_declarative_part();
+  Architecture_declarative_partContext* architecture_declarative_part();
 
   class Architecture_statementContext : public ParserRuleContext {
   public:
-    Architecture_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Block_statementContext> block_statement();
-    Ref<Process_statementContext> process_statement();
-    Ref<Concurrent_procedure_call_statementContext> concurrent_procedure_call_statement();
-    Ref<Label_colonContext> label_colon();
-    Ref<Concurrent_assertion_statementContext> concurrent_assertion_statement();
-    Ref<Concurrent_signal_assignment_statementContext> concurrent_signal_assignment_statement();
-    Ref<tree::TerminalNode> POSTPONED();
-    Ref<Component_instantiation_statementContext> component_instantiation_statement();
-    Ref<Generate_statementContext> generate_statement();
-    Ref<Concurrent_break_statementContext> concurrent_break_statement();
-    Ref<Simultaneous_statementContext> simultaneous_statement();
+    Architecture_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Block_statementContext *block_statement();
+    Process_statementContext *process_statement();
+    Concurrent_procedure_call_statementContext *concurrent_procedure_call_statement();
+    Label_colonContext *label_colon();
+    Concurrent_assertion_statementContext *concurrent_assertion_statement();
+    Concurrent_signal_assignment_statementContext *concurrent_signal_assignment_statement();
+    tree::TerminalNode *POSTPONED();
+    Component_instantiation_statementContext *component_instantiation_statement();
+    Generate_statementContext *generate_statement();
+    Concurrent_break_statementContext *concurrent_break_statement();
+    Simultaneous_statementContext *simultaneous_statement();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Architecture_statementContext> architecture_statement();
+  Architecture_statementContext* architecture_statement();
 
   class Architecture_statement_partContext : public ParserRuleContext {
   public:
-    Architecture_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Architecture_statementContext>> architecture_statement();
-    Ref<Architecture_statementContext> architecture_statement(int i);
+    Architecture_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Architecture_statementContext *> architecture_statement();
+    Architecture_statementContext* architecture_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Architecture_statement_partContext> architecture_statement_part();
+  Architecture_statement_partContext* architecture_statement_part();
 
   class Array_nature_definitionContext : public ParserRuleContext {
   public:
-    Array_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Unconstrained_nature_definitionContext> unconstrained_nature_definition();
-    Ref<Constrained_nature_definitionContext> constrained_nature_definition();
+    Array_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Unconstrained_nature_definitionContext *unconstrained_nature_definition();
+    Constrained_nature_definitionContext *constrained_nature_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Array_nature_definitionContext> array_nature_definition();
+  Array_nature_definitionContext* array_nature_definition();
 
   class Array_type_definitionContext : public ParserRuleContext {
   public:
-    Array_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Unconstrained_array_definitionContext> unconstrained_array_definition();
-    Ref<Constrained_array_definitionContext> constrained_array_definition();
+    Array_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Unconstrained_array_definitionContext *unconstrained_array_definition();
+    Constrained_array_definitionContext *constrained_array_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Array_type_definitionContext> array_type_definition();
+  Array_type_definitionContext* array_type_definition();
 
   class AssertionContext : public ParserRuleContext {
   public:
-    AssertionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ASSERT();
-    Ref<ConditionContext> condition();
-    Ref<tree::TerminalNode> REPORT();
-    std::vector<Ref<ExpressionContext>> expression();
-    Ref<ExpressionContext> expression(int i);
-    Ref<tree::TerminalNode> SEVERITY();
+    AssertionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ASSERT();
+    ConditionContext *condition();
+    tree::TerminalNode *REPORT();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    tree::TerminalNode *SEVERITY();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<AssertionContext> assertion();
+  AssertionContext* assertion();
 
   class Assertion_statementContext : public ParserRuleContext {
   public:
-    Assertion_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<AssertionContext> assertion();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
+    Assertion_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    AssertionContext *assertion();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Assertion_statementContext> assertion_statement();
+  Assertion_statementContext* assertion_statement();
 
   class Association_elementContext : public ParserRuleContext {
   public:
-    Association_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Actual_partContext> actual_part();
-    Ref<Formal_partContext> formal_part();
-    Ref<tree::TerminalNode> ARROW();
+    Association_elementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Actual_partContext *actual_part();
+    Formal_partContext *formal_part();
+    tree::TerminalNode *ARROW();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Association_elementContext> association_element();
+  Association_elementContext* association_element();
 
   class Association_listContext : public ParserRuleContext {
   public:
-    Association_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Association_elementContext>> association_element();
-    Ref<Association_elementContext> association_element(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Association_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Association_elementContext *> association_element();
+    Association_elementContext* association_element(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Association_listContext> association_list();
+  Association_listContext* association_list();
 
   class Attribute_declarationContext : public ParserRuleContext {
   public:
-    Attribute_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ATTRIBUTE();
-    Ref<Label_colonContext> label_colon();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> SEMI();
+    Attribute_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ATTRIBUTE();
+    Label_colonContext *label_colon();
+    NameContext *name();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Attribute_declarationContext> attribute_declaration();
+  Attribute_declarationContext* attribute_declaration();
 
   class Attribute_designatorContext : public ParserRuleContext {
   public:
-    Attribute_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> RANGE();
-    Ref<tree::TerminalNode> REVERSE_RANGE();
-    Ref<tree::TerminalNode> ACROSS();
-    Ref<tree::TerminalNode> THROUGH();
-    Ref<tree::TerminalNode> REFERENCE();
-    Ref<tree::TerminalNode> TOLERANCE();
+    Attribute_designatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *RANGE();
+    tree::TerminalNode *REVERSE_RANGE();
+    tree::TerminalNode *ACROSS();
+    tree::TerminalNode *THROUGH();
+    tree::TerminalNode *REFERENCE();
+    tree::TerminalNode *TOLERANCE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Attribute_designatorContext> attribute_designator();
+  Attribute_designatorContext* attribute_designator();
 
   class Attribute_specificationContext : public ParserRuleContext {
   public:
-    Attribute_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ATTRIBUTE();
-    Ref<Attribute_designatorContext> attribute_designator();
-    Ref<tree::TerminalNode> OF();
-    Ref<Entity_specificationContext> entity_specification();
-    Ref<tree::TerminalNode> IS();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> SEMI();
+    Attribute_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ATTRIBUTE();
+    Attribute_designatorContext *attribute_designator();
+    tree::TerminalNode *OF();
+    Entity_specificationContext *entity_specification();
+    tree::TerminalNode *IS();
+    ExpressionContext *expression();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Attribute_specificationContext> attribute_specification();
+  Attribute_specificationContext* attribute_specification();
 
   class Base_unit_declarationContext : public ParserRuleContext {
   public:
-    Base_unit_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> SEMI();
+    Base_unit_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Base_unit_declarationContext> base_unit_declaration();
+  Base_unit_declarationContext* base_unit_declaration();
 
   class Binding_indicationContext : public ParserRuleContext {
   public:
-    Binding_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> USE();
-    Ref<Entity_aspectContext> entity_aspect();
-    Ref<Generic_map_aspectContext> generic_map_aspect();
-    Ref<Port_map_aspectContext> port_map_aspect();
+    Binding_indicationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *USE();
+    Entity_aspectContext *entity_aspect();
+    Generic_map_aspectContext *generic_map_aspect();
+    Port_map_aspectContext *port_map_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Binding_indicationContext> binding_indication();
+  Binding_indicationContext* binding_indication();
 
   class Block_configurationContext : public ParserRuleContext {
   public:
-    Block_configurationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> FOR();
-    Ref<tree::TerminalNode> FOR(int i);
-    Ref<Block_specificationContext> block_specification();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    std::vector<Ref<Use_clauseContext>> use_clause();
-    Ref<Use_clauseContext> use_clause(int i);
-    std::vector<Ref<Configuration_itemContext>> configuration_item();
-    Ref<Configuration_itemContext> configuration_item(int i);
+    Block_configurationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> FOR();
+    tree::TerminalNode* FOR(size_t i);
+    Block_specificationContext *block_specification();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    std::vector<Use_clauseContext *> use_clause();
+    Use_clauseContext* use_clause(size_t i);
+    std::vector<Configuration_itemContext *> configuration_item();
+    Configuration_itemContext* configuration_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_configurationContext> block_configuration();
+  Block_configurationContext* block_configuration();
 
   class Block_declarative_itemContext : public ParserRuleContext {
   public:
-    Block_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Signal_declarationContext> signal_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Component_declarationContext> component_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Configuration_specificationContext> configuration_specification();
-    Ref<Disconnection_specificationContext> disconnection_specification();
-    Ref<Step_limit_specificationContext> step_limit_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
-    Ref<Nature_declarationContext> nature_declaration();
-    Ref<Subnature_declarationContext> subnature_declaration();
-    Ref<Quantity_declarationContext> quantity_declaration();
-    Ref<Terminal_declarationContext> terminal_declaration();
+    Block_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Signal_declarationContext *signal_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Component_declarationContext *component_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Configuration_specificationContext *configuration_specification();
+    Disconnection_specificationContext *disconnection_specification();
+    Step_limit_specificationContext *step_limit_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
+    Nature_declarationContext *nature_declaration();
+    Subnature_declarationContext *subnature_declaration();
+    Quantity_declarationContext *quantity_declaration();
+    Terminal_declarationContext *terminal_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_declarative_itemContext> block_declarative_item();
+  Block_declarative_itemContext* block_declarative_item();
 
   class Block_declarative_partContext : public ParserRuleContext {
   public:
-    Block_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Block_declarative_itemContext>> block_declarative_item();
-    Ref<Block_declarative_itemContext> block_declarative_item(int i);
+    Block_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Block_declarative_itemContext *> block_declarative_item();
+    Block_declarative_itemContext* block_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_declarative_partContext> block_declarative_part();
+  Block_declarative_partContext* block_declarative_part();
 
   class Block_headerContext : public ParserRuleContext {
   public:
-    Block_headerContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Generic_clauseContext> generic_clause();
-    Ref<Port_clauseContext> port_clause();
-    Ref<Generic_map_aspectContext> generic_map_aspect();
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
-    Ref<Port_map_aspectContext> port_map_aspect();
+    Block_headerContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Generic_clauseContext *generic_clause();
+    Port_clauseContext *port_clause();
+    Generic_map_aspectContext *generic_map_aspect();
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
+    Port_map_aspectContext *port_map_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_headerContext> block_header();
+  Block_headerContext* block_header();
 
   class Block_specificationContext : public ParserRuleContext {
   public:
-    Block_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Index_specificationContext> index_specification();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<NameContext> name();
+    Block_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *LPAREN();
+    Index_specificationContext *index_specification();
+    tree::TerminalNode *RPAREN();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_specificationContext> block_specification();
+  Block_specificationContext* block_specification();
 
   class Block_statementContext : public ParserRuleContext {
   public:
-    Block_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<tree::TerminalNode>> BLOCK();
-    Ref<tree::TerminalNode> BLOCK(int i);
-    Ref<Block_headerContext> block_header();
-    Ref<Block_declarative_partContext> block_declarative_part();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Block_statement_partContext> block_statement_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> IS();
-    Ref<IdentifierContext> identifier();
+    Block_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Label_colonContext *label_colon();
+    std::vector<tree::TerminalNode *> BLOCK();
+    tree::TerminalNode* BLOCK(size_t i);
+    Block_headerContext *block_header();
+    Block_declarative_partContext *block_declarative_part();
+    tree::TerminalNode *BEGIN();
+    Block_statement_partContext *block_statement_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *LPAREN();
+    ExpressionContext *expression();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *IS();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_statementContext> block_statement();
+  Block_statementContext* block_statement();
 
   class Block_statement_partContext : public ParserRuleContext {
   public:
-    Block_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Architecture_statementContext>> architecture_statement();
-    Ref<Architecture_statementContext> architecture_statement(int i);
+    Block_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Architecture_statementContext *> architecture_statement();
+    Architecture_statementContext* architecture_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Block_statement_partContext> block_statement_part();
+  Block_statement_partContext* block_statement_part();
 
   class Branch_quantity_declarationContext : public ParserRuleContext {
   public:
-    Branch_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> QUANTITY();
-    Ref<Terminal_aspectContext> terminal_aspect();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Across_aspectContext> across_aspect();
-    Ref<Through_aspectContext> through_aspect();
+    Branch_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *QUANTITY();
+    Terminal_aspectContext *terminal_aspect();
+    tree::TerminalNode *SEMI();
+    Across_aspectContext *across_aspect();
+    Through_aspectContext *through_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Branch_quantity_declarationContext> branch_quantity_declaration();
+  Branch_quantity_declarationContext* branch_quantity_declaration();
 
   class Break_elementContext : public ParserRuleContext {
   public:
-    Break_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> ARROW();
-    Ref<ExpressionContext> expression();
-    Ref<Break_selector_clauseContext> break_selector_clause();
+    Break_elementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    tree::TerminalNode *ARROW();
+    ExpressionContext *expression();
+    Break_selector_clauseContext *break_selector_clause();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Break_elementContext> break_element();
+  Break_elementContext* break_element();
 
   class Break_listContext : public ParserRuleContext {
   public:
-    Break_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Break_elementContext>> break_element();
-    Ref<Break_elementContext> break_element(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Break_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Break_elementContext *> break_element();
+    Break_elementContext* break_element(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Break_listContext> break_list();
+  Break_listContext* break_list();
 
   class Break_selector_clauseContext : public ParserRuleContext {
   public:
-    Break_selector_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FOR();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> USE();
+    Break_selector_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FOR();
+    NameContext *name();
+    tree::TerminalNode *USE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Break_selector_clauseContext> break_selector_clause();
+  Break_selector_clauseContext* break_selector_clause();
 
   class Break_statementContext : public ParserRuleContext {
   public:
-    Break_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> BREAK();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Break_listContext> break_list();
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ConditionContext> condition();
+    Break_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *BREAK();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Break_listContext *break_list();
+    tree::TerminalNode *WHEN();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Break_statementContext> break_statement();
+  Break_statementContext* break_statement();
 
   class Case_statementContext : public ParserRuleContext {
   public:
-    Case_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> CASE();
-    Ref<tree::TerminalNode> CASE(int i);
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> IS();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<Case_statement_alternativeContext>> case_statement_alternative();
-    Ref<Case_statement_alternativeContext> case_statement_alternative(int i);
-    Ref<IdentifierContext> identifier();
+    Case_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> CASE();
+    tree::TerminalNode* CASE(size_t i);
+    ExpressionContext *expression();
+    tree::TerminalNode *IS();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    std::vector<Case_statement_alternativeContext *> case_statement_alternative();
+    Case_statement_alternativeContext* case_statement_alternative(size_t i);
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Case_statementContext> case_statement();
+  Case_statementContext* case_statement();
 
   class Case_statement_alternativeContext : public ParserRuleContext {
   public:
-    Case_statement_alternativeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ChoicesContext> choices();
-    Ref<tree::TerminalNode> ARROW();
-    Ref<Sequence_of_statementsContext> sequence_of_statements();
+    Case_statement_alternativeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *WHEN();
+    ChoicesContext *choices();
+    tree::TerminalNode *ARROW();
+    Sequence_of_statementsContext *sequence_of_statements();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Case_statement_alternativeContext> case_statement_alternative();
+  Case_statement_alternativeContext* case_statement_alternative();
 
   class ChoiceContext : public ParserRuleContext {
   public:
-    ChoiceContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<Discrete_rangeContext> discrete_range();
-    Ref<Simple_expressionContext> simple_expression();
-    Ref<tree::TerminalNode> OTHERS();
+    ChoiceContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    Discrete_rangeContext *discrete_range();
+    Simple_expressionContext *simple_expression();
+    tree::TerminalNode *OTHERS();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<ChoiceContext> choice();
+  ChoiceContext* choice();
 
   class ChoicesContext : public ParserRuleContext {
   public:
-    ChoicesContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<ChoiceContext>> choice();
-    Ref<ChoiceContext> choice(int i);
-    std::vector<Ref<tree::TerminalNode>> BAR();
-    Ref<tree::TerminalNode> BAR(int i);
+    ChoicesContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<ChoiceContext *> choice();
+    ChoiceContext* choice(size_t i);
+    std::vector<tree::TerminalNode *> BAR();
+    tree::TerminalNode* BAR(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<ChoicesContext> choices();
+  ChoicesContext* choices();
 
   class Component_configurationContext : public ParserRuleContext {
   public:
-    Component_configurationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> FOR();
-    Ref<tree::TerminalNode> FOR(int i);
-    Ref<Component_specificationContext> component_specification();
-    Ref<tree::TerminalNode> END();
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
-    Ref<Binding_indicationContext> binding_indication();
-    Ref<Block_configurationContext> block_configuration();
+    Component_configurationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> FOR();
+    tree::TerminalNode* FOR(size_t i);
+    Component_specificationContext *component_specification();
+    tree::TerminalNode *END();
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
+    Binding_indicationContext *binding_indication();
+    Block_configurationContext *block_configuration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Component_configurationContext> component_configuration();
+  Component_configurationContext* component_configuration();
 
   class Component_declarationContext : public ParserRuleContext {
   public:
-    Component_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> COMPONENT();
-    Ref<tree::TerminalNode> COMPONENT(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> IS();
-    Ref<Generic_clauseContext> generic_clause();
-    Ref<Port_clauseContext> port_clause();
+    Component_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> COMPONENT();
+    tree::TerminalNode* COMPONENT(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *IS();
+    Generic_clauseContext *generic_clause();
+    Port_clauseContext *port_clause();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Component_declarationContext> component_declaration();
+  Component_declarationContext* component_declaration();
 
   class Component_instantiation_statementContext : public ParserRuleContext {
   public:
-    Component_instantiation_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Label_colonContext> label_colon();
-    Ref<Instantiated_unitContext> instantiated_unit();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Generic_map_aspectContext> generic_map_aspect();
-    Ref<Port_map_aspectContext> port_map_aspect();
+    Component_instantiation_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Label_colonContext *label_colon();
+    Instantiated_unitContext *instantiated_unit();
+    tree::TerminalNode *SEMI();
+    Generic_map_aspectContext *generic_map_aspect();
+    Port_map_aspectContext *port_map_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Component_instantiation_statementContext> component_instantiation_statement();
+  Component_instantiation_statementContext* component_instantiation_statement();
 
   class Component_specificationContext : public ParserRuleContext {
   public:
-    Component_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Instantiation_listContext> instantiation_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<NameContext> name();
+    Component_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Instantiation_listContext *instantiation_list();
+    tree::TerminalNode *COLON();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Component_specificationContext> component_specification();
+  Component_specificationContext* component_specification();
 
   class Composite_nature_definitionContext : public ParserRuleContext {
   public:
-    Composite_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Array_nature_definitionContext> array_nature_definition();
-    Ref<Record_nature_definitionContext> record_nature_definition();
+    Composite_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Array_nature_definitionContext *array_nature_definition();
+    Record_nature_definitionContext *record_nature_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Composite_nature_definitionContext> composite_nature_definition();
+  Composite_nature_definitionContext* composite_nature_definition();
 
   class Composite_type_definitionContext : public ParserRuleContext {
   public:
-    Composite_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Array_type_definitionContext> array_type_definition();
-    Ref<Record_type_definitionContext> record_type_definition();
+    Composite_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Array_type_definitionContext *array_type_definition();
+    Record_type_definitionContext *record_type_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Composite_type_definitionContext> composite_type_definition();
+  Composite_type_definitionContext* composite_type_definition();
 
   class Concurrent_assertion_statementContext : public ParserRuleContext {
   public:
-    Concurrent_assertion_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<AssertionContext> assertion();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<tree::TerminalNode> POSTPONED();
+    Concurrent_assertion_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    AssertionContext *assertion();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    tree::TerminalNode *POSTPONED();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Concurrent_assertion_statementContext> concurrent_assertion_statement();
+  Concurrent_assertion_statementContext* concurrent_assertion_statement();
 
   class Concurrent_break_statementContext : public ParserRuleContext {
   public:
-    Concurrent_break_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> BREAK();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Break_listContext> break_list();
-    Ref<Sensitivity_clauseContext> sensitivity_clause();
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ConditionContext> condition();
+    Concurrent_break_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *BREAK();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Break_listContext *break_list();
+    Sensitivity_clauseContext *sensitivity_clause();
+    tree::TerminalNode *WHEN();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Concurrent_break_statementContext> concurrent_break_statement();
+  Concurrent_break_statementContext* concurrent_break_statement();
 
   class Concurrent_procedure_call_statementContext : public ParserRuleContext {
   public:
-    Concurrent_procedure_call_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Procedure_callContext> procedure_call();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<tree::TerminalNode> POSTPONED();
+    Concurrent_procedure_call_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Procedure_callContext *procedure_call();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    tree::TerminalNode *POSTPONED();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Concurrent_procedure_call_statementContext> concurrent_procedure_call_statement();
+  Concurrent_procedure_call_statementContext* concurrent_procedure_call_statement();
 
   class Concurrent_signal_assignment_statementContext : public ParserRuleContext {
   public:
-    Concurrent_signal_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Conditional_signal_assignmentContext> conditional_signal_assignment();
-    Ref<Selected_signal_assignmentContext> selected_signal_assignment();
-    Ref<Label_colonContext> label_colon();
-    Ref<tree::TerminalNode> POSTPONED();
+    Concurrent_signal_assignment_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Conditional_signal_assignmentContext *conditional_signal_assignment();
+    Selected_signal_assignmentContext *selected_signal_assignment();
+    Label_colonContext *label_colon();
+    tree::TerminalNode *POSTPONED();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Concurrent_signal_assignment_statementContext> concurrent_signal_assignment_statement();
+  Concurrent_signal_assignment_statementContext* concurrent_signal_assignment_statement();
 
   class ConditionContext : public ParserRuleContext {
   public:
-    ConditionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<ExpressionContext> expression();
+    ConditionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<ConditionContext> condition();
+  ConditionContext* condition();
 
   class Condition_clauseContext : public ParserRuleContext {
   public:
-    Condition_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> UNTIL();
-    Ref<ConditionContext> condition();
+    Condition_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *UNTIL();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Condition_clauseContext> condition_clause();
+  Condition_clauseContext* condition_clause();
 
   class Conditional_signal_assignmentContext : public ParserRuleContext {
   public:
-    Conditional_signal_assignmentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<TargetContext> target();
-    Ref<tree::TerminalNode> LE();
-    Ref<OptsContext> opts();
-    Ref<Conditional_waveformsContext> conditional_waveforms();
-    Ref<tree::TerminalNode> SEMI();
+    Conditional_signal_assignmentContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    TargetContext *target();
+    tree::TerminalNode *LE();
+    OptsContext *opts();
+    Conditional_waveformsContext *conditional_waveforms();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Conditional_signal_assignmentContext> conditional_signal_assignment();
+  Conditional_signal_assignmentContext* conditional_signal_assignment();
 
   class Conditional_waveformsContext : public ParserRuleContext {
   public:
-    Conditional_waveformsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<WaveformContext> waveform();
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ConditionContext> condition();
-    Ref<tree::TerminalNode> ELSE();
-    Ref<Conditional_waveformsContext> conditional_waveforms();
+    Conditional_waveformsContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    WaveformContext *waveform();
+    tree::TerminalNode *WHEN();
+    ConditionContext *condition();
+    tree::TerminalNode *ELSE();
+    Conditional_waveformsContext *conditional_waveforms();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Conditional_waveformsContext> conditional_waveforms();
+  Conditional_waveformsContext* conditional_waveforms();
 
   class Configuration_declarationContext : public ParserRuleContext {
   public:
-    Configuration_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> CONFIGURATION();
-    Ref<tree::TerminalNode> CONFIGURATION(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> OF();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> IS();
-    Ref<Configuration_declarative_partContext> configuration_declarative_part();
-    Ref<Block_configurationContext> block_configuration();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
+    Configuration_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> CONFIGURATION();
+    tree::TerminalNode* CONFIGURATION(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *OF();
+    NameContext *name();
+    tree::TerminalNode *IS();
+    Configuration_declarative_partContext *configuration_declarative_part();
+    Block_configurationContext *block_configuration();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Configuration_declarationContext> configuration_declaration();
+  Configuration_declarationContext* configuration_declaration();
 
   class Configuration_declarative_itemContext : public ParserRuleContext {
   public:
-    Configuration_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Use_clauseContext> use_clause();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Group_declarationContext> group_declaration();
+    Configuration_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Use_clauseContext *use_clause();
+    Attribute_specificationContext *attribute_specification();
+    Group_declarationContext *group_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Configuration_declarative_itemContext> configuration_declarative_item();
+  Configuration_declarative_itemContext* configuration_declarative_item();
 
   class Configuration_declarative_partContext : public ParserRuleContext {
   public:
-    Configuration_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Configuration_declarative_itemContext>> configuration_declarative_item();
-    Ref<Configuration_declarative_itemContext> configuration_declarative_item(int i);
+    Configuration_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Configuration_declarative_itemContext *> configuration_declarative_item();
+    Configuration_declarative_itemContext* configuration_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Configuration_declarative_partContext> configuration_declarative_part();
+  Configuration_declarative_partContext* configuration_declarative_part();
 
   class Configuration_itemContext : public ParserRuleContext {
   public:
-    Configuration_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Block_configurationContext> block_configuration();
-    Ref<Component_configurationContext> component_configuration();
+    Configuration_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Block_configurationContext *block_configuration();
+    Component_configurationContext *component_configuration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Configuration_itemContext> configuration_item();
+  Configuration_itemContext* configuration_item();
 
   class Configuration_specificationContext : public ParserRuleContext {
   public:
-    Configuration_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FOR();
-    Ref<Component_specificationContext> component_specification();
-    Ref<Binding_indicationContext> binding_indication();
-    Ref<tree::TerminalNode> SEMI();
+    Configuration_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FOR();
+    Component_specificationContext *component_specification();
+    Binding_indicationContext *binding_indication();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Configuration_specificationContext> configuration_specification();
+  Configuration_specificationContext* configuration_specification();
 
   class Constant_declarationContext : public ParserRuleContext {
   public:
-    Constant_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> CONSTANT();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Constant_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *CONSTANT();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Constant_declarationContext> constant_declaration();
+  Constant_declarationContext* constant_declaration();
 
   class Constrained_array_definitionContext : public ParserRuleContext {
   public:
-    Constrained_array_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ARRAY();
-    Ref<Index_constraintContext> index_constraint();
-    Ref<tree::TerminalNode> OF();
-    Ref<Subtype_indicationContext> subtype_indication();
+    Constrained_array_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ARRAY();
+    Index_constraintContext *index_constraint();
+    tree::TerminalNode *OF();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Constrained_array_definitionContext> constrained_array_definition();
+  Constrained_array_definitionContext* constrained_array_definition();
 
   class Constrained_nature_definitionContext : public ParserRuleContext {
   public:
-    Constrained_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ARRAY();
-    Ref<Index_constraintContext> index_constraint();
-    Ref<tree::TerminalNode> OF();
-    Ref<Subnature_indicationContext> subnature_indication();
+    Constrained_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ARRAY();
+    Index_constraintContext *index_constraint();
+    tree::TerminalNode *OF();
+    Subnature_indicationContext *subnature_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Constrained_nature_definitionContext> constrained_nature_definition();
+  Constrained_nature_definitionContext* constrained_nature_definition();
 
   class ConstraintContext : public ParserRuleContext {
   public:
-    ConstraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Range_constraintContext> range_constraint();
-    Ref<Index_constraintContext> index_constraint();
+    ConstraintContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Range_constraintContext *range_constraint();
+    Index_constraintContext *index_constraint();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<ConstraintContext> constraint();
+  ConstraintContext* constraint();
 
   class Context_clauseContext : public ParserRuleContext {
   public:
-    Context_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Context_itemContext>> context_item();
-    Ref<Context_itemContext> context_item(int i);
+    Context_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Context_itemContext *> context_item();
+    Context_itemContext* context_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Context_clauseContext> context_clause();
+  Context_clauseContext* context_clause();
 
   class Context_itemContext : public ParserRuleContext {
   public:
-    Context_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Library_clauseContext> library_clause();
-    Ref<Use_clauseContext> use_clause();
+    Context_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Library_clauseContext *library_clause();
+    Use_clauseContext *use_clause();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Context_itemContext> context_item();
+  Context_itemContext* context_item();
 
   class Delay_mechanismContext : public ParserRuleContext {
   public:
-    Delay_mechanismContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TRANSPORT();
-    Ref<tree::TerminalNode> INERTIAL();
-    Ref<tree::TerminalNode> REJECT();
-    Ref<ExpressionContext> expression();
+    Delay_mechanismContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TRANSPORT();
+    tree::TerminalNode *INERTIAL();
+    tree::TerminalNode *REJECT();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Delay_mechanismContext> delay_mechanism();
+  Delay_mechanismContext* delay_mechanism();
 
   class Design_fileContext : public ParserRuleContext {
   public:
-    Design_fileContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> EOF();
-    std::vector<Ref<Design_unitContext>> design_unit();
-    Ref<Design_unitContext> design_unit(int i);
+    Design_fileContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *EOF();
+    std::vector<Design_unitContext *> design_unit();
+    Design_unitContext* design_unit(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Design_fileContext> design_file();
+  Design_fileContext* design_file();
 
   class Design_unitContext : public ParserRuleContext {
   public:
-    Design_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Context_clauseContext> context_clause();
-    Ref<Library_unitContext> library_unit();
+    Design_unitContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Context_clauseContext *context_clause();
+    Library_unitContext *library_unit();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Design_unitContext> design_unit();
+  Design_unitContext* design_unit();
 
   class DesignatorContext : public ParserRuleContext {
   public:
-    DesignatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> STRING_LITERAL();
+    DesignatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *STRING_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<DesignatorContext> designator();
+  DesignatorContext* designator();
 
   class DirectionContext : public ParserRuleContext {
   public:
-    DirectionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TO();
-    Ref<tree::TerminalNode> DOWNTO();
+    DirectionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TO();
+    tree::TerminalNode *DOWNTO();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<DirectionContext> direction();
+  DirectionContext* direction();
 
   class Disconnection_specificationContext : public ParserRuleContext {
   public:
-    Disconnection_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> DISCONNECT();
-    Ref<Guarded_signal_specificationContext> guarded_signal_specification();
-    Ref<tree::TerminalNode> AFTER();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> SEMI();
+    Disconnection_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *DISCONNECT();
+    Guarded_signal_specificationContext *guarded_signal_specification();
+    tree::TerminalNode *AFTER();
+    ExpressionContext *expression();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Disconnection_specificationContext> disconnection_specification();
+  Disconnection_specificationContext* disconnection_specification();
 
   class Discrete_rangeContext : public ParserRuleContext {
   public:
-    Discrete_rangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<RangeContext> range();
-    Ref<Subtype_indicationContext> subtype_indication();
+    Discrete_rangeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    RangeContext *range();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Discrete_rangeContext> discrete_range();
+  Discrete_rangeContext* discrete_range();
 
   class Element_associationContext : public ParserRuleContext {
   public:
-    Element_associationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<ExpressionContext> expression();
-    Ref<ChoicesContext> choices();
-    Ref<tree::TerminalNode> ARROW();
+    Element_associationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
+    ChoicesContext *choices();
+    tree::TerminalNode *ARROW();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Element_associationContext> element_association();
+  Element_associationContext* element_association();
 
   class Element_declarationContext : public ParserRuleContext {
   public:
-    Element_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Element_subtype_definitionContext> element_subtype_definition();
-    Ref<tree::TerminalNode> SEMI();
+    Element_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Element_subtype_definitionContext *element_subtype_definition();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Element_declarationContext> element_declaration();
+  Element_declarationContext* element_declaration();
 
   class Element_subnature_definitionContext : public ParserRuleContext {
   public:
-    Element_subnature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subnature_indicationContext> subnature_indication();
+    Element_subnature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subnature_indicationContext *subnature_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Element_subnature_definitionContext> element_subnature_definition();
+  Element_subnature_definitionContext* element_subnature_definition();
 
   class Element_subtype_definitionContext : public ParserRuleContext {
   public:
-    Element_subtype_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subtype_indicationContext> subtype_indication();
+    Element_subtype_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Element_subtype_definitionContext> element_subtype_definition();
+  Element_subtype_definitionContext* element_subtype_definition();
 
   class Entity_aspectContext : public ParserRuleContext {
   public:
-    Entity_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ENTITY();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> CONFIGURATION();
-    Ref<tree::TerminalNode> OPEN();
+    Entity_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ENTITY();
+    NameContext *name();
+    tree::TerminalNode *LPAREN();
+    IdentifierContext *identifier();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *CONFIGURATION();
+    tree::TerminalNode *OPEN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_aspectContext> entity_aspect();
+  Entity_aspectContext* entity_aspect();
 
   class Entity_classContext : public ParserRuleContext {
   public:
-    Entity_classContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ENTITY();
-    Ref<tree::TerminalNode> ARCHITECTURE();
-    Ref<tree::TerminalNode> CONFIGURATION();
-    Ref<tree::TerminalNode> PROCEDURE();
-    Ref<tree::TerminalNode> FUNCTION();
-    Ref<tree::TerminalNode> PACKAGE();
-    Ref<tree::TerminalNode> TYPE();
-    Ref<tree::TerminalNode> SUBTYPE();
-    Ref<tree::TerminalNode> CONSTANT();
-    Ref<tree::TerminalNode> SIGNAL();
-    Ref<tree::TerminalNode> VARIABLE();
-    Ref<tree::TerminalNode> COMPONENT();
-    Ref<tree::TerminalNode> LABEL();
-    Ref<tree::TerminalNode> LITERAL();
-    Ref<tree::TerminalNode> UNITS();
-    Ref<tree::TerminalNode> GROUP();
-    Ref<tree::TerminalNode> FILE();
-    Ref<tree::TerminalNode> NATURE();
-    Ref<tree::TerminalNode> SUBNATURE();
-    Ref<tree::TerminalNode> QUANTITY();
-    Ref<tree::TerminalNode> TERMINAL();
+    Entity_classContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ENTITY();
+    tree::TerminalNode *ARCHITECTURE();
+    tree::TerminalNode *CONFIGURATION();
+    tree::TerminalNode *PROCEDURE();
+    tree::TerminalNode *FUNCTION();
+    tree::TerminalNode *PACKAGE();
+    tree::TerminalNode *TYPE();
+    tree::TerminalNode *SUBTYPE();
+    tree::TerminalNode *CONSTANT();
+    tree::TerminalNode *SIGNAL();
+    tree::TerminalNode *VARIABLE();
+    tree::TerminalNode *COMPONENT();
+    tree::TerminalNode *LABEL();
+    tree::TerminalNode *LITERAL();
+    tree::TerminalNode *UNITS();
+    tree::TerminalNode *GROUP();
+    tree::TerminalNode *FILE();
+    tree::TerminalNode *NATURE();
+    tree::TerminalNode *SUBNATURE();
+    tree::TerminalNode *QUANTITY();
+    tree::TerminalNode *TERMINAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_classContext> entity_class();
+  Entity_classContext* entity_class();
 
   class Entity_class_entryContext : public ParserRuleContext {
   public:
-    Entity_class_entryContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Entity_classContext> entity_class();
-    Ref<tree::TerminalNode> BOX();
+    Entity_class_entryContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Entity_classContext *entity_class();
+    tree::TerminalNode *BOX();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_class_entryContext> entity_class_entry();
+  Entity_class_entryContext* entity_class_entry();
 
   class Entity_class_entry_listContext : public ParserRuleContext {
   public:
-    Entity_class_entry_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Entity_class_entryContext>> entity_class_entry();
-    Ref<Entity_class_entryContext> entity_class_entry(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Entity_class_entry_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Entity_class_entryContext *> entity_class_entry();
+    Entity_class_entryContext* entity_class_entry(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_class_entry_listContext> entity_class_entry_list();
+  Entity_class_entry_listContext* entity_class_entry_list();
 
   class Entity_declarationContext : public ParserRuleContext {
   public:
-    Entity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> ENTITY();
-    Ref<tree::TerminalNode> ENTITY(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> IS();
-    Ref<Entity_headerContext> entity_header();
-    Ref<Entity_declarative_partContext> entity_declarative_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Entity_statement_partContext> entity_statement_part();
+    Entity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> ENTITY();
+    tree::TerminalNode* ENTITY(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *IS();
+    Entity_headerContext *entity_header();
+    Entity_declarative_partContext *entity_declarative_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *BEGIN();
+    Entity_statement_partContext *entity_statement_part();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_declarationContext> entity_declaration();
+  Entity_declarationContext* entity_declaration();
 
   class Entity_declarative_itemContext : public ParserRuleContext {
   public:
-    Entity_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Signal_declarationContext> signal_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Disconnection_specificationContext> disconnection_specification();
-    Ref<Step_limit_specificationContext> step_limit_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
-    Ref<Nature_declarationContext> nature_declaration();
-    Ref<Subnature_declarationContext> subnature_declaration();
-    Ref<Quantity_declarationContext> quantity_declaration();
-    Ref<Terminal_declarationContext> terminal_declaration();
+    Entity_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Signal_declarationContext *signal_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Disconnection_specificationContext *disconnection_specification();
+    Step_limit_specificationContext *step_limit_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
+    Nature_declarationContext *nature_declaration();
+    Subnature_declarationContext *subnature_declaration();
+    Quantity_declarationContext *quantity_declaration();
+    Terminal_declarationContext *terminal_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_declarative_itemContext> entity_declarative_item();
+  Entity_declarative_itemContext* entity_declarative_item();
 
   class Entity_declarative_partContext : public ParserRuleContext {
   public:
-    Entity_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Entity_declarative_itemContext>> entity_declarative_item();
-    Ref<Entity_declarative_itemContext> entity_declarative_item(int i);
+    Entity_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Entity_declarative_itemContext *> entity_declarative_item();
+    Entity_declarative_itemContext* entity_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_declarative_partContext> entity_declarative_part();
+  Entity_declarative_partContext* entity_declarative_part();
 
   class Entity_designatorContext : public ParserRuleContext {
   public:
-    Entity_designatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Entity_tagContext> entity_tag();
-    Ref<SignatureContext> signature();
+    Entity_designatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Entity_tagContext *entity_tag();
+    SignatureContext *signature();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_designatorContext> entity_designator();
+  Entity_designatorContext* entity_designator();
 
   class Entity_headerContext : public ParserRuleContext {
   public:
-    Entity_headerContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Generic_clauseContext> generic_clause();
-    Ref<Port_clauseContext> port_clause();
+    Entity_headerContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Generic_clauseContext *generic_clause();
+    Port_clauseContext *port_clause();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_headerContext> entity_header();
+  Entity_headerContext* entity_header();
 
   class Entity_name_listContext : public ParserRuleContext {
   public:
-    Entity_name_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Entity_designatorContext>> entity_designator();
-    Ref<Entity_designatorContext> entity_designator(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
-    Ref<tree::TerminalNode> OTHERS();
-    Ref<tree::TerminalNode> ALL();
+    Entity_name_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Entity_designatorContext *> entity_designator();
+    Entity_designatorContext* entity_designator(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
+    tree::TerminalNode *OTHERS();
+    tree::TerminalNode *ALL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_name_listContext> entity_name_list();
+  Entity_name_listContext* entity_name_list();
 
   class Entity_specificationContext : public ParserRuleContext {
   public:
-    Entity_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Entity_name_listContext> entity_name_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Entity_classContext> entity_class();
+    Entity_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Entity_name_listContext *entity_name_list();
+    tree::TerminalNode *COLON();
+    Entity_classContext *entity_class();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_specificationContext> entity_specification();
+  Entity_specificationContext* entity_specification();
 
   class Entity_statementContext : public ParserRuleContext {
   public:
-    Entity_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Concurrent_assertion_statementContext> concurrent_assertion_statement();
-    Ref<Process_statementContext> process_statement();
-    Ref<Concurrent_procedure_call_statementContext> concurrent_procedure_call_statement();
+    Entity_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Concurrent_assertion_statementContext *concurrent_assertion_statement();
+    Process_statementContext *process_statement();
+    Concurrent_procedure_call_statementContext *concurrent_procedure_call_statement();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_statementContext> entity_statement();
+  Entity_statementContext* entity_statement();
 
   class Entity_statement_partContext : public ParserRuleContext {
   public:
-    Entity_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Entity_statementContext>> entity_statement();
-    Ref<Entity_statementContext> entity_statement(int i);
+    Entity_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Entity_statementContext *> entity_statement();
+    Entity_statementContext* entity_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_statement_partContext> entity_statement_part();
+  Entity_statement_partContext* entity_statement_part();
 
   class Entity_tagContext : public ParserRuleContext {
   public:
-    Entity_tagContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> CHARACTER_LITERAL();
-    Ref<tree::TerminalNode> STRING_LITERAL();
+    Entity_tagContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *CHARACTER_LITERAL();
+    tree::TerminalNode *STRING_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Entity_tagContext> entity_tag();
+  Entity_tagContext* entity_tag();
 
   class Enumeration_literalContext : public ParserRuleContext {
   public:
-    Enumeration_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> CHARACTER_LITERAL();
+    Enumeration_literalContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *CHARACTER_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Enumeration_literalContext> enumeration_literal();
+  Enumeration_literalContext* enumeration_literal();
 
   class Enumeration_type_definitionContext : public ParserRuleContext {
   public:
-    Enumeration_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Enumeration_literalContext>> enumeration_literal();
-    Ref<Enumeration_literalContext> enumeration_literal(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Enumeration_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LPAREN();
+    std::vector<Enumeration_literalContext *> enumeration_literal();
+    Enumeration_literalContext* enumeration_literal(size_t i);
+    tree::TerminalNode *RPAREN();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Enumeration_type_definitionContext> enumeration_type_definition();
+  Enumeration_type_definitionContext* enumeration_type_definition();
 
   class Exit_statementContext : public ParserRuleContext {
   public:
-    Exit_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> EXIT();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ConditionContext> condition();
+    Exit_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *EXIT();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    IdentifierContext *identifier();
+    tree::TerminalNode *WHEN();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Exit_statementContext> exit_statement();
+  Exit_statementContext* exit_statement();
 
   class ExpressionContext : public ParserRuleContext {
   public:
-    ExpressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<RelationContext>> relation();
-    Ref<RelationContext> relation(int i);
-    std::vector<Ref<Logical_operatorContext>> logical_operator();
-    Ref<Logical_operatorContext> logical_operator(int i);
+    ExpressionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<RelationContext *> relation();
+    RelationContext* relation(size_t i);
+    std::vector<Logical_operatorContext *> logical_operator();
+    Logical_operatorContext* logical_operator(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<ExpressionContext> expression();
+  ExpressionContext* expression();
 
   class FactorContext : public ParserRuleContext {
   public:
-    FactorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<PrimaryContext>> primary();
-    Ref<PrimaryContext> primary(int i);
-    Ref<tree::TerminalNode> DOUBLESTAR();
-    Ref<tree::TerminalNode> ABS();
-    Ref<tree::TerminalNode> NOT();
+    FactorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<PrimaryContext *> primary();
+    PrimaryContext* primary(size_t i);
+    tree::TerminalNode *DOUBLESTAR();
+    tree::TerminalNode *ABS();
+    tree::TerminalNode *NOT();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<FactorContext> factor();
+  FactorContext* factor();
 
   class File_declarationContext : public ParserRuleContext {
   public:
-    File_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FILE();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<File_open_informationContext> file_open_information();
+    File_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FILE();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
+    File_open_informationContext *file_open_information();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<File_declarationContext> file_declaration();
+  File_declarationContext* file_declaration();
 
   class File_logical_nameContext : public ParserRuleContext {
   public:
-    File_logical_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<ExpressionContext> expression();
+    File_logical_nameContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<File_logical_nameContext> file_logical_name();
+  File_logical_nameContext* file_logical_name();
 
   class File_open_informationContext : public ParserRuleContext {
   public:
-    File_open_informationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> IS();
-    Ref<File_logical_nameContext> file_logical_name();
-    Ref<tree::TerminalNode> OPEN();
-    Ref<ExpressionContext> expression();
+    File_open_informationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *IS();
+    File_logical_nameContext *file_logical_name();
+    tree::TerminalNode *OPEN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<File_open_informationContext> file_open_information();
+  File_open_informationContext* file_open_information();
 
   class File_type_definitionContext : public ParserRuleContext {
   public:
-    File_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FILE();
-    Ref<tree::TerminalNode> OF();
-    Ref<Subtype_indicationContext> subtype_indication();
+    File_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FILE();
+    tree::TerminalNode *OF();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<File_type_definitionContext> file_type_definition();
+  File_type_definitionContext* file_type_definition();
 
   class Formal_parameter_listContext : public ParserRuleContext {
   public:
-    Formal_parameter_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Interface_listContext> interface_list();
+    Formal_parameter_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Interface_listContext *interface_list();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Formal_parameter_listContext> formal_parameter_list();
+  Formal_parameter_listContext* formal_parameter_list();
 
   class Formal_partContext : public ParserRuleContext {
   public:
-    Formal_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Explicit_rangeContext> explicit_range();
-    Ref<tree::TerminalNode> RPAREN();
+    Formal_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *LPAREN();
+    Explicit_rangeContext *explicit_range();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Formal_partContext> formal_part();
+  Formal_partContext* formal_part();
 
   class Free_quantity_declarationContext : public ParserRuleContext {
   public:
-    Free_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> QUANTITY();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Free_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *QUANTITY();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Free_quantity_declarationContext> free_quantity_declaration();
+  Free_quantity_declarationContext* free_quantity_declaration();
 
   class Generate_statementContext : public ParserRuleContext {
   public:
-    Generate_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Label_colonContext> label_colon();
-    Ref<Generation_schemeContext> generation_scheme();
-    std::vector<Ref<tree::TerminalNode>> GENERATE();
-    Ref<tree::TerminalNode> GENERATE(int i);
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> BEGIN();
-    std::vector<Ref<Architecture_statementContext>> architecture_statement();
-    Ref<Architecture_statementContext> architecture_statement(int i);
-    Ref<IdentifierContext> identifier();
-    std::vector<Ref<Block_declarative_itemContext>> block_declarative_item();
-    Ref<Block_declarative_itemContext> block_declarative_item(int i);
+    Generate_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Label_colonContext *label_colon();
+    Generation_schemeContext *generation_scheme();
+    std::vector<tree::TerminalNode *> GENERATE();
+    tree::TerminalNode* GENERATE(size_t i);
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *BEGIN();
+    std::vector<Architecture_statementContext *> architecture_statement();
+    Architecture_statementContext* architecture_statement(size_t i);
+    IdentifierContext *identifier();
+    std::vector<Block_declarative_itemContext *> block_declarative_item();
+    Block_declarative_itemContext* block_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Generate_statementContext> generate_statement();
+  Generate_statementContext* generate_statement();
 
   class Generation_schemeContext : public ParserRuleContext {
   public:
-    Generation_schemeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FOR();
-    Ref<Parameter_specificationContext> parameter_specification();
-    Ref<tree::TerminalNode> IF();
-    Ref<ConditionContext> condition();
+    Generation_schemeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FOR();
+    Parameter_specificationContext *parameter_specification();
+    tree::TerminalNode *IF();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Generation_schemeContext> generation_scheme();
+  Generation_schemeContext* generation_scheme();
 
   class Generic_clauseContext : public ParserRuleContext {
   public:
-    Generic_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> GENERIC();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Generic_listContext> generic_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> SEMI();
+    Generic_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *GENERIC();
+    tree::TerminalNode *LPAREN();
+    Generic_listContext *generic_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Generic_clauseContext> generic_clause();
+  Generic_clauseContext* generic_clause();
 
   class Generic_listContext : public ParserRuleContext {
   public:
-    Generic_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Interface_constant_declarationContext>> interface_constant_declaration();
-    Ref<Interface_constant_declarationContext> interface_constant_declaration(int i);
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
+    Generic_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Interface_constant_declarationContext *> interface_constant_declaration();
+    Interface_constant_declarationContext* interface_constant_declaration(size_t i);
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Generic_listContext> generic_list();
+  Generic_listContext* generic_list();
 
   class Generic_map_aspectContext : public ParserRuleContext {
   public:
-    Generic_map_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> GENERIC();
-    Ref<tree::TerminalNode> MAP();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Association_listContext> association_list();
-    Ref<tree::TerminalNode> RPAREN();
+    Generic_map_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *GENERIC();
+    tree::TerminalNode *MAP();
+    tree::TerminalNode *LPAREN();
+    Association_listContext *association_list();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Generic_map_aspectContext> generic_map_aspect();
+  Generic_map_aspectContext* generic_map_aspect();
 
   class Group_constituentContext : public ParserRuleContext {
   public:
-    Group_constituentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> CHARACTER_LITERAL();
+    Group_constituentContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    tree::TerminalNode *CHARACTER_LITERAL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Group_constituentContext> group_constituent();
+  Group_constituentContext* group_constituent();
 
   class Group_constituent_listContext : public ParserRuleContext {
   public:
-    Group_constituent_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Group_constituentContext>> group_constituent();
-    Ref<Group_constituentContext> group_constituent(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Group_constituent_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Group_constituentContext *> group_constituent();
+    Group_constituentContext* group_constituent(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Group_constituent_listContext> group_constituent_list();
+  Group_constituent_listContext* group_constituent_list();
 
   class Group_declarationContext : public ParserRuleContext {
   public:
-    Group_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> GROUP();
-    Ref<Label_colonContext> label_colon();
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Group_constituent_listContext> group_constituent_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> SEMI();
+    Group_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *GROUP();
+    Label_colonContext *label_colon();
+    NameContext *name();
+    tree::TerminalNode *LPAREN();
+    Group_constituent_listContext *group_constituent_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Group_declarationContext> group_declaration();
+  Group_declarationContext* group_declaration();
 
   class Group_template_declarationContext : public ParserRuleContext {
   public:
-    Group_template_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> GROUP();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> IS();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Entity_class_entry_listContext> entity_class_entry_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> SEMI();
+    Group_template_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *GROUP();
+    IdentifierContext *identifier();
+    tree::TerminalNode *IS();
+    tree::TerminalNode *LPAREN();
+    Entity_class_entry_listContext *entity_class_entry_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Group_template_declarationContext> group_template_declaration();
+  Group_template_declarationContext* group_template_declaration();
 
   class Guarded_signal_specificationContext : public ParserRuleContext {
   public:
-    Guarded_signal_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Signal_listContext> signal_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<NameContext> name();
+    Guarded_signal_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Signal_listContext *signal_list();
+    tree::TerminalNode *COLON();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Guarded_signal_specificationContext> guarded_signal_specification();
+  Guarded_signal_specificationContext* guarded_signal_specification();
 
   class IdentifierContext : public ParserRuleContext {
   public:
-    IdentifierContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> BASIC_IDENTIFIER();
-    Ref<tree::TerminalNode> EXTENDED_IDENTIFIER();
+    IdentifierContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *BASIC_IDENTIFIER();
+    tree::TerminalNode *EXTENDED_IDENTIFIER();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<IdentifierContext> identifier();
+  IdentifierContext* identifier();
 
   class Identifier_listContext : public ParserRuleContext {
   public:
-    Identifier_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Identifier_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Identifier_listContext> identifier_list();
+  Identifier_listContext* identifier_list();
 
   class If_statementContext : public ParserRuleContext {
   public:
-    If_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> IF();
-    Ref<tree::TerminalNode> IF(int i);
-    std::vector<Ref<ConditionContext>> condition();
-    Ref<ConditionContext> condition(int i);
-    std::vector<Ref<tree::TerminalNode>> THEN();
-    Ref<tree::TerminalNode> THEN(int i);
-    std::vector<Ref<Sequence_of_statementsContext>> sequence_of_statements();
-    Ref<Sequence_of_statementsContext> sequence_of_statements(int i);
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<tree::TerminalNode>> ELSIF();
-    Ref<tree::TerminalNode> ELSIF(int i);
-    Ref<tree::TerminalNode> ELSE();
-    Ref<IdentifierContext> identifier();
+    If_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> IF();
+    tree::TerminalNode* IF(size_t i);
+    std::vector<ConditionContext *> condition();
+    ConditionContext* condition(size_t i);
+    std::vector<tree::TerminalNode *> THEN();
+    tree::TerminalNode* THEN(size_t i);
+    std::vector<Sequence_of_statementsContext *> sequence_of_statements();
+    Sequence_of_statementsContext* sequence_of_statements(size_t i);
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    std::vector<tree::TerminalNode *> ELSIF();
+    tree::TerminalNode* ELSIF(size_t i);
+    tree::TerminalNode *ELSE();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<If_statementContext> if_statement();
+  If_statementContext* if_statement();
 
   class Index_constraintContext : public ParserRuleContext {
   public:
-    Index_constraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Discrete_rangeContext>> discrete_range();
-    Ref<Discrete_rangeContext> discrete_range(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Index_constraintContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LPAREN();
+    std::vector<Discrete_rangeContext *> discrete_range();
+    Discrete_rangeContext* discrete_range(size_t i);
+    tree::TerminalNode *RPAREN();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Index_constraintContext> index_constraint();
+  Index_constraintContext* index_constraint();
 
   class Index_specificationContext : public ParserRuleContext {
   public:
-    Index_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Discrete_rangeContext> discrete_range();
-    Ref<ExpressionContext> expression();
+    Index_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Discrete_rangeContext *discrete_range();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Index_specificationContext> index_specification();
+  Index_specificationContext* index_specification();
 
   class Index_subtype_definitionContext : public ParserRuleContext {
   public:
-    Index_subtype_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> RANGE();
-    Ref<tree::TerminalNode> BOX();
+    Index_subtype_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    tree::TerminalNode *RANGE();
+    tree::TerminalNode *BOX();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Index_subtype_definitionContext> index_subtype_definition();
+  Index_subtype_definitionContext* index_subtype_definition();
 
   class Instantiated_unitContext : public ParserRuleContext {
   public:
-    Instantiated_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<tree::TerminalNode> COMPONENT();
-    Ref<tree::TerminalNode> ENTITY();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> CONFIGURATION();
+    Instantiated_unitContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    tree::TerminalNode *COMPONENT();
+    tree::TerminalNode *ENTITY();
+    tree::TerminalNode *LPAREN();
+    IdentifierContext *identifier();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *CONFIGURATION();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Instantiated_unitContext> instantiated_unit();
+  Instantiated_unitContext* instantiated_unit();
 
   class Instantiation_listContext : public ParserRuleContext {
   public:
-    Instantiation_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
-    Ref<tree::TerminalNode> OTHERS();
-    Ref<tree::TerminalNode> ALL();
+    Instantiation_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
+    tree::TerminalNode *OTHERS();
+    tree::TerminalNode *ALL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Instantiation_listContext> instantiation_list();
+  Instantiation_listContext* instantiation_list();
 
   class Interface_constant_declarationContext : public ParserRuleContext {
   public:
-    Interface_constant_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> CONSTANT();
-    Ref<tree::TerminalNode> IN();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Interface_constant_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *CONSTANT();
+    tree::TerminalNode *IN();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_constant_declarationContext> interface_constant_declaration();
+  Interface_constant_declarationContext* interface_constant_declaration();
 
   class Interface_declarationContext : public ParserRuleContext {
   public:
-    Interface_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Interface_constant_declarationContext> interface_constant_declaration();
-    Ref<Interface_signal_declarationContext> interface_signal_declaration();
-    Ref<Interface_variable_declarationContext> interface_variable_declaration();
-    Ref<Interface_file_declarationContext> interface_file_declaration();
-    Ref<Interface_terminal_declarationContext> interface_terminal_declaration();
-    Ref<Interface_quantity_declarationContext> interface_quantity_declaration();
+    Interface_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Interface_constant_declarationContext *interface_constant_declaration();
+    Interface_signal_declarationContext *interface_signal_declaration();
+    Interface_variable_declarationContext *interface_variable_declaration();
+    Interface_file_declarationContext *interface_file_declaration();
+    Interface_terminal_declarationContext *interface_terminal_declaration();
+    Interface_quantity_declarationContext *interface_quantity_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_declarationContext> interface_declaration();
+  Interface_declarationContext* interface_declaration();
 
   class Interface_elementContext : public ParserRuleContext {
   public:
-    Interface_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Interface_declarationContext> interface_declaration();
+    Interface_elementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Interface_declarationContext *interface_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_elementContext> interface_element();
+  Interface_elementContext* interface_element();
 
   class Interface_file_declarationContext : public ParserRuleContext {
   public:
-    Interface_file_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FILE();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
+    Interface_file_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FILE();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_file_declarationContext> interface_file_declaration();
+  Interface_file_declarationContext* interface_file_declaration();
 
   class Interface_signal_listContext : public ParserRuleContext {
   public:
-    Interface_signal_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Interface_signal_declarationContext>> interface_signal_declaration();
-    Ref<Interface_signal_declarationContext> interface_signal_declaration(int i);
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
+    Interface_signal_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Interface_signal_declarationContext *> interface_signal_declaration();
+    Interface_signal_declarationContext* interface_signal_declaration(size_t i);
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_signal_listContext> interface_signal_list();
+  Interface_signal_listContext* interface_signal_list();
 
   class Interface_port_listContext : public ParserRuleContext {
   public:
-    Interface_port_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Interface_port_declarationContext>> interface_port_declaration();
-    Ref<Interface_port_declarationContext> interface_port_declaration(int i);
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
+    Interface_port_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Interface_port_declarationContext *> interface_port_declaration();
+    Interface_port_declarationContext* interface_port_declaration(size_t i);
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_port_listContext> interface_port_list();
+  Interface_port_listContext* interface_port_list();
 
   class Interface_listContext : public ParserRuleContext {
   public:
-    Interface_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Interface_elementContext>> interface_element();
-    Ref<Interface_elementContext> interface_element(int i);
-    std::vector<Ref<tree::TerminalNode>> SEMI();
-    Ref<tree::TerminalNode> SEMI(int i);
+    Interface_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Interface_elementContext *> interface_element();
+    Interface_elementContext* interface_element(size_t i);
+    std::vector<tree::TerminalNode *> SEMI();
+    tree::TerminalNode* SEMI(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_listContext> interface_list();
+  Interface_listContext* interface_list();
 
   class Interface_quantity_declarationContext : public ParserRuleContext {
   public:
-    Interface_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> QUANTITY();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> IN();
-    Ref<tree::TerminalNode> OUT();
+    Interface_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *QUANTITY();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
+    tree::TerminalNode *IN();
+    tree::TerminalNode *OUT();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_quantity_declarationContext> interface_quantity_declaration();
+  Interface_quantity_declarationContext* interface_quantity_declaration();
 
   class Interface_port_declarationContext : public ParserRuleContext {
   public:
-    Interface_port_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Signal_modeContext> signal_mode();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> BUS();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Interface_port_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Signal_modeContext *signal_mode();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *BUS();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_port_declarationContext> interface_port_declaration();
+  Interface_port_declarationContext* interface_port_declaration();
 
   class Interface_signal_declarationContext : public ParserRuleContext {
   public:
-    Interface_signal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SIGNAL();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> BUS();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> IN();
-    Ref<tree::TerminalNode> OUT();
-    Ref<tree::TerminalNode> INOUT();
+    Interface_signal_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SIGNAL();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *BUS();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
+    tree::TerminalNode *IN();
+    tree::TerminalNode *OUT();
+    tree::TerminalNode *INOUT();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_signal_declarationContext> interface_signal_declaration();
+  Interface_signal_declarationContext* interface_signal_declaration();
 
   class Interface_terminal_declarationContext : public ParserRuleContext {
   public:
-    Interface_terminal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TERMINAL();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subnature_indicationContext> subnature_indication();
+    Interface_terminal_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TERMINAL();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subnature_indicationContext *subnature_indication();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_terminal_declarationContext> interface_terminal_declaration();
+  Interface_terminal_declarationContext* interface_terminal_declaration();
 
   class Interface_variable_declarationContext : public ParserRuleContext {
   public:
-    Interface_variable_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> VARIABLE();
-    Ref<Signal_modeContext> signal_mode();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Interface_variable_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *VARIABLE();
+    Signal_modeContext *signal_mode();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Interface_variable_declarationContext> interface_variable_declaration();
+  Interface_variable_declarationContext* interface_variable_declaration();
 
   class Iteration_schemeContext : public ParserRuleContext {
   public:
-    Iteration_schemeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> WHILE();
-    Ref<ConditionContext> condition();
-    Ref<tree::TerminalNode> FOR();
-    Ref<Parameter_specificationContext> parameter_specification();
+    Iteration_schemeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *WHILE();
+    ConditionContext *condition();
+    tree::TerminalNode *FOR();
+    Parameter_specificationContext *parameter_specification();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Iteration_schemeContext> iteration_scheme();
+  Iteration_schemeContext* iteration_scheme();
 
   class Label_colonContext : public ParserRuleContext {
   public:
-    Label_colonContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> COLON();
+    Label_colonContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *COLON();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Label_colonContext> label_colon();
+  Label_colonContext* label_colon();
 
   class Library_clauseContext : public ParserRuleContext {
   public:
-    Library_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LIBRARY();
-    Ref<Logical_name_listContext> logical_name_list();
-    Ref<tree::TerminalNode> SEMI();
+    Library_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LIBRARY();
+    Logical_name_listContext *logical_name_list();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Library_clauseContext> library_clause();
+  Library_clauseContext* library_clause();
 
   class Library_unitContext : public ParserRuleContext {
   public:
-    Library_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Secondary_unitContext> secondary_unit();
-    Ref<Primary_unitContext> primary_unit();
+    Library_unitContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Secondary_unitContext *secondary_unit();
+    Primary_unitContext *primary_unit();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Library_unitContext> library_unit();
+  Library_unitContext* library_unit();
 
   class LiteralContext : public ParserRuleContext {
   public:
-    LiteralContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> NULL_SYM();
-    Ref<tree::TerminalNode> BIT_STRING_LITERAL();
-    Ref<tree::TerminalNode> STRING_LITERAL();
-    Ref<Enumeration_literalContext> enumeration_literal();
-    Ref<Numeric_literalContext> numeric_literal();
+    LiteralContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *NULL_SYM();
+    tree::TerminalNode *BIT_STRING_LITERAL();
+    tree::TerminalNode *STRING_LITERAL();
+    Enumeration_literalContext *enumeration_literal();
+    Numeric_literalContext *numeric_literal();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<LiteralContext> literal();
+  LiteralContext* literal();
 
   class Logical_nameContext : public ParserRuleContext {
   public:
-    Logical_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
+    Logical_nameContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Logical_nameContext> logical_name();
+  Logical_nameContext* logical_name();
 
   class Logical_name_listContext : public ParserRuleContext {
   public:
-    Logical_name_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Logical_nameContext>> logical_name();
-    Ref<Logical_nameContext> logical_name(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Logical_name_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Logical_nameContext *> logical_name();
+    Logical_nameContext* logical_name(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Logical_name_listContext> logical_name_list();
+  Logical_name_listContext* logical_name_list();
 
   class Logical_operatorContext : public ParserRuleContext {
   public:
-    Logical_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> AND();
-    Ref<tree::TerminalNode> OR();
-    Ref<tree::TerminalNode> NAND();
-    Ref<tree::TerminalNode> NOR();
-    Ref<tree::TerminalNode> XOR();
-    Ref<tree::TerminalNode> XNOR();
+    Logical_operatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *AND();
+    tree::TerminalNode *OR();
+    tree::TerminalNode *NAND();
+    tree::TerminalNode *NOR();
+    tree::TerminalNode *XOR();
+    tree::TerminalNode *XNOR();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Logical_operatorContext> logical_operator();
+  Logical_operatorContext* logical_operator();
 
   class Loop_statementContext : public ParserRuleContext {
   public:
-    Loop_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> LOOP();
-    Ref<tree::TerminalNode> LOOP(int i);
-    Ref<Sequence_of_statementsContext> sequence_of_statements();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Iteration_schemeContext> iteration_scheme();
-    Ref<IdentifierContext> identifier();
+    Loop_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> LOOP();
+    tree::TerminalNode* LOOP(size_t i);
+    Sequence_of_statementsContext *sequence_of_statements();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Iteration_schemeContext *iteration_scheme();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Loop_statementContext> loop_statement();
+  Loop_statementContext* loop_statement();
 
   class Signal_modeContext : public ParserRuleContext {
   public:
-    Signal_modeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> IN();
-    Ref<tree::TerminalNode> OUT();
-    Ref<tree::TerminalNode> INOUT();
-    Ref<tree::TerminalNode> BUFFER();
-    Ref<tree::TerminalNode> LINKAGE();
+    Signal_modeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *IN();
+    tree::TerminalNode *OUT();
+    tree::TerminalNode *INOUT();
+    tree::TerminalNode *BUFFER();
+    tree::TerminalNode *LINKAGE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Signal_modeContext> signal_mode();
+  Signal_modeContext* signal_mode();
 
   class Multiplying_operatorContext : public ParserRuleContext {
   public:
-    Multiplying_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> MUL();
-    Ref<tree::TerminalNode> DIV();
-    Ref<tree::TerminalNode> MOD();
-    Ref<tree::TerminalNode> REM();
+    Multiplying_operatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *MUL();
+    tree::TerminalNode *DIV();
+    tree::TerminalNode *MOD();
+    tree::TerminalNode *REM();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Multiplying_operatorContext> multiplying_operator();
+  Multiplying_operatorContext* multiplying_operator();
 
   class NameContext : public ParserRuleContext {
   public:
-    NameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Selected_nameContext> selected_name();
-    std::vector<Ref<Name_partContext>> name_part();
-    Ref<Name_partContext> name_part(int i);
-    std::vector<Ref<tree::TerminalNode>> DOT();
-    Ref<tree::TerminalNode> DOT(int i);
+    NameContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Selected_nameContext *selected_name();
+    std::vector<Name_partContext *> name_part();
+    Name_partContext* name_part(size_t i);
+    std::vector<tree::TerminalNode *> DOT();
+    tree::TerminalNode* DOT(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<NameContext> name();
+  NameContext* name();
 
   class Name_partContext : public ParserRuleContext {
   public:
-    Name_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Selected_nameContext> selected_name();
-    std::vector<Ref<Name_part_specificatorContext>> name_part_specificator();
-    Ref<Name_part_specificatorContext> name_part_specificator(int i);
+    Name_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Selected_nameContext *selected_name();
+    std::vector<Name_part_specificatorContext *> name_part_specificator();
+    Name_part_specificatorContext* name_part_specificator(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Name_partContext> name_part();
+  Name_partContext* name_part();
 
   class Name_part_specificatorContext : public ParserRuleContext {
   public:
-    Name_part_specificatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Name_attribute_partContext> name_attribute_part();
-    Ref<Name_function_call_or_indexed_partContext> name_function_call_or_indexed_part();
-    Ref<Name_slice_partContext> name_slice_part();
+    Name_part_specificatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Name_attribute_partContext *name_attribute_part();
+    Name_function_call_or_indexed_partContext *name_function_call_or_indexed_part();
+    Name_slice_partContext *name_slice_part();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Name_part_specificatorContext> name_part_specificator();
+  Name_part_specificatorContext* name_part_specificator();
 
   class Name_attribute_partContext : public ParserRuleContext {
   public:
-    Name_attribute_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> APOSTROPHE();
-    Ref<Attribute_designatorContext> attribute_designator();
-    std::vector<Ref<ExpressionContext>> expression();
-    Ref<ExpressionContext> expression(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Name_attribute_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *APOSTROPHE();
+    Attribute_designatorContext *attribute_designator();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Name_attribute_partContext> name_attribute_part();
+  Name_attribute_partContext* name_attribute_part();
 
   class Name_function_call_or_indexed_partContext : public ParserRuleContext {
   public:
-    Name_function_call_or_indexed_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<Actual_parameter_partContext> actual_parameter_part();
+    Name_function_call_or_indexed_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LPAREN();
+    tree::TerminalNode *RPAREN();
+    Actual_parameter_partContext *actual_parameter_part();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Name_function_call_or_indexed_partContext> name_function_call_or_indexed_part();
+  Name_function_call_or_indexed_partContext* name_function_call_or_indexed_part();
 
   class Name_slice_partContext : public ParserRuleContext {
   public:
-    Name_slice_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Explicit_rangeContext>> explicit_range();
-    Ref<Explicit_rangeContext> explicit_range(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Name_slice_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LPAREN();
+    std::vector<Explicit_rangeContext *> explicit_range();
+    Explicit_rangeContext* explicit_range(size_t i);
+    tree::TerminalNode *RPAREN();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Name_slice_partContext> name_slice_part();
+  Name_slice_partContext* name_slice_part();
 
   class Selected_nameContext : public ParserRuleContext {
   public:
-    Selected_nameContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    std::vector<Ref<tree::TerminalNode>> DOT();
-    Ref<tree::TerminalNode> DOT(int i);
-    std::vector<Ref<SuffixContext>> suffix();
-    Ref<SuffixContext> suffix(int i);
+    Selected_nameContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    std::vector<tree::TerminalNode *> DOT();
+    tree::TerminalNode* DOT(size_t i);
+    std::vector<SuffixContext *> suffix();
+    SuffixContext* suffix(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Selected_nameContext> selected_name();
+  Selected_nameContext* selected_name();
 
   class Nature_declarationContext : public ParserRuleContext {
   public:
-    Nature_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> NATURE();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> IS();
-    Ref<Nature_definitionContext> nature_definition();
-    Ref<tree::TerminalNode> SEMI();
+    Nature_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *NATURE();
+    IdentifierContext *identifier();
+    tree::TerminalNode *IS();
+    Nature_definitionContext *nature_definition();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Nature_declarationContext> nature_declaration();
+  Nature_declarationContext* nature_declaration();
 
   class Nature_definitionContext : public ParserRuleContext {
   public:
-    Nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Scalar_nature_definitionContext> scalar_nature_definition();
-    Ref<Composite_nature_definitionContext> composite_nature_definition();
+    Nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Scalar_nature_definitionContext *scalar_nature_definition();
+    Composite_nature_definitionContext *composite_nature_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Nature_definitionContext> nature_definition();
+  Nature_definitionContext* nature_definition();
 
   class Nature_element_declarationContext : public ParserRuleContext {
   public:
-    Nature_element_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Element_subnature_definitionContext> element_subnature_definition();
+    Nature_element_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Element_subnature_definitionContext *element_subnature_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Nature_element_declarationContext> nature_element_declaration();
+  Nature_element_declarationContext* nature_element_declaration();
 
   class Next_statementContext : public ParserRuleContext {
   public:
-    Next_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> NEXT();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ConditionContext> condition();
+    Next_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *NEXT();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    IdentifierContext *identifier();
+    tree::TerminalNode *WHEN();
+    ConditionContext *condition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Next_statementContext> next_statement();
+  Next_statementContext* next_statement();
 
   class Numeric_literalContext : public ParserRuleContext {
   public:
-    Numeric_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Abstract_literalContext> abstract_literal();
-    Ref<Physical_literalContext> physical_literal();
+    Numeric_literalContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Abstract_literalContext *abstract_literal();
+    Physical_literalContext *physical_literal();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Numeric_literalContext> numeric_literal();
+  Numeric_literalContext* numeric_literal();
 
   class Object_declarationContext : public ParserRuleContext {
   public:
-    Object_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Signal_declarationContext> signal_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Terminal_declarationContext> terminal_declaration();
-    Ref<Quantity_declarationContext> quantity_declaration();
+    Object_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Constant_declarationContext *constant_declaration();
+    Signal_declarationContext *signal_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Terminal_declarationContext *terminal_declaration();
+    Quantity_declarationContext *quantity_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Object_declarationContext> object_declaration();
+  Object_declarationContext* object_declaration();
 
   class OptsContext : public ParserRuleContext {
   public:
-    OptsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> GUARDED();
-    Ref<Delay_mechanismContext> delay_mechanism();
+    OptsContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *GUARDED();
+    Delay_mechanismContext *delay_mechanism();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<OptsContext> opts();
+  OptsContext* opts();
 
   class Package_bodyContext : public ParserRuleContext {
   public:
-    Package_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> PACKAGE();
-    Ref<tree::TerminalNode> PACKAGE(int i);
-    std::vector<Ref<tree::TerminalNode>> BODY();
-    Ref<tree::TerminalNode> BODY(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> IS();
-    Ref<Package_body_declarative_partContext> package_body_declarative_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
+    Package_bodyContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> PACKAGE();
+    tree::TerminalNode* PACKAGE(size_t i);
+    std::vector<tree::TerminalNode *> BODY();
+    tree::TerminalNode* BODY(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *IS();
+    Package_body_declarative_partContext *package_body_declarative_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_bodyContext> package_body();
+  Package_bodyContext* package_body();
 
   class Package_body_declarative_itemContext : public ParserRuleContext {
   public:
-    Package_body_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
+    Package_body_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_body_declarative_itemContext> package_body_declarative_item();
+  Package_body_declarative_itemContext* package_body_declarative_item();
 
   class Package_body_declarative_partContext : public ParserRuleContext {
   public:
-    Package_body_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Package_body_declarative_itemContext>> package_body_declarative_item();
-    Ref<Package_body_declarative_itemContext> package_body_declarative_item(int i);
+    Package_body_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Package_body_declarative_itemContext *> package_body_declarative_item();
+    Package_body_declarative_itemContext* package_body_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_body_declarative_partContext> package_body_declarative_part();
+  Package_body_declarative_partContext* package_body_declarative_part();
 
   class Package_declarationContext : public ParserRuleContext {
   public:
-    Package_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> PACKAGE();
-    Ref<tree::TerminalNode> PACKAGE(int i);
-    std::vector<Ref<IdentifierContext>> identifier();
-    Ref<IdentifierContext> identifier(int i);
-    Ref<tree::TerminalNode> IS();
-    Ref<Package_declarative_partContext> package_declarative_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
+    Package_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> PACKAGE();
+    tree::TerminalNode* PACKAGE(size_t i);
+    std::vector<IdentifierContext *> identifier();
+    IdentifierContext* identifier(size_t i);
+    tree::TerminalNode *IS();
+    Package_declarative_partContext *package_declarative_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_declarationContext> package_declaration();
+  Package_declarationContext* package_declaration();
 
   class Package_declarative_itemContext : public ParserRuleContext {
   public:
-    Package_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Signal_declarationContext> signal_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Component_declarationContext> component_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Disconnection_specificationContext> disconnection_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
-    Ref<Nature_declarationContext> nature_declaration();
-    Ref<Subnature_declarationContext> subnature_declaration();
-    Ref<Terminal_declarationContext> terminal_declaration();
+    Package_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Signal_declarationContext *signal_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Component_declarationContext *component_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Disconnection_specificationContext *disconnection_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
+    Nature_declarationContext *nature_declaration();
+    Subnature_declarationContext *subnature_declaration();
+    Terminal_declarationContext *terminal_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_declarative_itemContext> package_declarative_item();
+  Package_declarative_itemContext* package_declarative_item();
 
   class Package_declarative_partContext : public ParserRuleContext {
   public:
-    Package_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Package_declarative_itemContext>> package_declarative_item();
-    Ref<Package_declarative_itemContext> package_declarative_item(int i);
+    Package_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Package_declarative_itemContext *> package_declarative_item();
+    Package_declarative_itemContext* package_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Package_declarative_partContext> package_declarative_part();
+  Package_declarative_partContext* package_declarative_part();
 
   class Parameter_specificationContext : public ParserRuleContext {
   public:
-    Parameter_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> IN();
-    Ref<Discrete_rangeContext> discrete_range();
+    Parameter_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *IN();
+    Discrete_rangeContext *discrete_range();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Parameter_specificationContext> parameter_specification();
+  Parameter_specificationContext* parameter_specification();
 
   class Physical_literalContext : public ParserRuleContext {
   public:
-    Physical_literalContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Abstract_literalContext> abstract_literal();
-    Ref<IdentifierContext> identifier();
+    Physical_literalContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Abstract_literalContext *abstract_literal();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Physical_literalContext> physical_literal();
+  Physical_literalContext* physical_literal();
 
   class Physical_type_definitionContext : public ParserRuleContext {
   public:
-    Physical_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Range_constraintContext> range_constraint();
-    std::vector<Ref<tree::TerminalNode>> UNITS();
-    Ref<tree::TerminalNode> UNITS(int i);
-    Ref<Base_unit_declarationContext> base_unit_declaration();
-    Ref<tree::TerminalNode> END();
-    std::vector<Ref<Secondary_unit_declarationContext>> secondary_unit_declaration();
-    Ref<Secondary_unit_declarationContext> secondary_unit_declaration(int i);
-    Ref<IdentifierContext> identifier();
+    Physical_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Range_constraintContext *range_constraint();
+    std::vector<tree::TerminalNode *> UNITS();
+    tree::TerminalNode* UNITS(size_t i);
+    Base_unit_declarationContext *base_unit_declaration();
+    tree::TerminalNode *END();
+    std::vector<Secondary_unit_declarationContext *> secondary_unit_declaration();
+    Secondary_unit_declarationContext* secondary_unit_declaration(size_t i);
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Physical_type_definitionContext> physical_type_definition();
+  Physical_type_definitionContext* physical_type_definition();
 
   class Port_clauseContext : public ParserRuleContext {
   public:
-    Port_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> PORT();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Port_listContext> port_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> SEMI();
+    Port_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *PORT();
+    tree::TerminalNode *LPAREN();
+    Port_listContext *port_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Port_clauseContext> port_clause();
+  Port_clauseContext* port_clause();
 
   class Port_listContext : public ParserRuleContext {
   public:
-    Port_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Interface_port_listContext> interface_port_list();
+    Port_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Interface_port_listContext *interface_port_list();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Port_listContext> port_list();
+  Port_listContext* port_list();
 
   class Port_map_aspectContext : public ParserRuleContext {
   public:
-    Port_map_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> PORT();
-    Ref<tree::TerminalNode> MAP();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Association_listContext> association_list();
-    Ref<tree::TerminalNode> RPAREN();
+    Port_map_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *PORT();
+    tree::TerminalNode *MAP();
+    tree::TerminalNode *LPAREN();
+    Association_listContext *association_list();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Port_map_aspectContext> port_map_aspect();
+  Port_map_aspectContext* port_map_aspect();
 
   class PrimaryContext : public ParserRuleContext {
   public:
-    PrimaryContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<LiteralContext> literal();
-    Ref<Qualified_expressionContext> qualified_expression();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<AllocatorContext> allocator();
-    Ref<AggregateContext> aggregate();
-    Ref<NameContext> name();
+    PrimaryContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    LiteralContext *literal();
+    Qualified_expressionContext *qualified_expression();
+    tree::TerminalNode *LPAREN();
+    ExpressionContext *expression();
+    tree::TerminalNode *RPAREN();
+    AllocatorContext *allocator();
+    AggregateContext *aggregate();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<PrimaryContext> primary();
+  PrimaryContext* primary();
 
   class Primary_unitContext : public ParserRuleContext {
   public:
-    Primary_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Entity_declarationContext> entity_declaration();
-    Ref<Configuration_declarationContext> configuration_declaration();
-    Ref<Package_declarationContext> package_declaration();
+    Primary_unitContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Entity_declarationContext *entity_declaration();
+    Configuration_declarationContext *configuration_declaration();
+    Package_declarationContext *package_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Primary_unitContext> primary_unit();
+  Primary_unitContext* primary_unit();
 
   class Procedural_declarative_itemContext : public ParserRuleContext {
   public:
-    Procedural_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
+    Procedural_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Variable_declarationContext *variable_declaration();
+    Alias_declarationContext *alias_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedural_declarative_itemContext> procedural_declarative_item();
+  Procedural_declarative_itemContext* procedural_declarative_item();
 
   class Procedural_declarative_partContext : public ParserRuleContext {
   public:
-    Procedural_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Procedural_declarative_itemContext>> procedural_declarative_item();
-    Ref<Procedural_declarative_itemContext> procedural_declarative_item(int i);
+    Procedural_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Procedural_declarative_itemContext *> procedural_declarative_item();
+    Procedural_declarative_itemContext* procedural_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedural_declarative_partContext> procedural_declarative_part();
+  Procedural_declarative_partContext* procedural_declarative_part();
 
   class Procedural_statement_partContext : public ParserRuleContext {
   public:
-    Procedural_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Sequential_statementContext>> sequential_statement();
-    Ref<Sequential_statementContext> sequential_statement(int i);
+    Procedural_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Sequential_statementContext *> sequential_statement();
+    Sequential_statementContext* sequential_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedural_statement_partContext> procedural_statement_part();
+  Procedural_statement_partContext* procedural_statement_part();
 
   class Procedure_callContext : public ParserRuleContext {
   public:
-    Procedure_callContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Selected_nameContext> selected_name();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Actual_parameter_partContext> actual_parameter_part();
-    Ref<tree::TerminalNode> RPAREN();
+    Procedure_callContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Selected_nameContext *selected_name();
+    tree::TerminalNode *LPAREN();
+    Actual_parameter_partContext *actual_parameter_part();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedure_callContext> procedure_call();
+  Procedure_callContext* procedure_call();
 
   class Procedure_call_statementContext : public ParserRuleContext {
   public:
-    Procedure_call_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Procedure_callContext> procedure_call();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
+    Procedure_call_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Procedure_callContext *procedure_call();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedure_call_statementContext> procedure_call_statement();
+  Procedure_call_statementContext* procedure_call_statement();
 
   class Process_declarative_itemContext : public ParserRuleContext {
   public:
-    Process_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
+    Process_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Process_declarative_itemContext> process_declarative_item();
+  Process_declarative_itemContext* process_declarative_item();
 
   class Process_declarative_partContext : public ParserRuleContext {
   public:
-    Process_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Process_declarative_itemContext>> process_declarative_item();
-    Ref<Process_declarative_itemContext> process_declarative_item(int i);
+    Process_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Process_declarative_itemContext *> process_declarative_item();
+    Process_declarative_itemContext* process_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Process_declarative_partContext> process_declarative_part();
+  Process_declarative_partContext* process_declarative_part();
 
   class Process_statementContext : public ParserRuleContext {
   public:
-    Process_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> PROCESS();
-    Ref<tree::TerminalNode> PROCESS(int i);
-    Ref<Process_declarative_partContext> process_declarative_part();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Process_statement_partContext> process_statement_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<tree::TerminalNode>> POSTPONED();
-    Ref<tree::TerminalNode> POSTPONED(int i);
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Sensitivity_listContext> sensitivity_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> IS();
-    Ref<IdentifierContext> identifier();
+    Process_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> PROCESS();
+    tree::TerminalNode* PROCESS(size_t i);
+    Process_declarative_partContext *process_declarative_part();
+    tree::TerminalNode *BEGIN();
+    Process_statement_partContext *process_statement_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    std::vector<tree::TerminalNode *> POSTPONED();
+    tree::TerminalNode* POSTPONED(size_t i);
+    tree::TerminalNode *LPAREN();
+    Sensitivity_listContext *sensitivity_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *IS();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Process_statementContext> process_statement();
+  Process_statementContext* process_statement();
 
   class Process_statement_partContext : public ParserRuleContext {
   public:
-    Process_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Sequential_statementContext>> sequential_statement();
-    Ref<Sequential_statementContext> sequential_statement(int i);
+    Process_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Sequential_statementContext *> sequential_statement();
+    Sequential_statementContext* sequential_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Process_statement_partContext> process_statement_part();
+  Process_statement_partContext* process_statement_part();
 
   class Qualified_expressionContext : public ParserRuleContext {
   public:
-    Qualified_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> APOSTROPHE();
-    Ref<AggregateContext> aggregate();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> RPAREN();
+    Qualified_expressionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *APOSTROPHE();
+    AggregateContext *aggregate();
+    tree::TerminalNode *LPAREN();
+    ExpressionContext *expression();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Qualified_expressionContext> qualified_expression();
+  Qualified_expressionContext* qualified_expression();
 
   class Quantity_declarationContext : public ParserRuleContext {
   public:
-    Quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Free_quantity_declarationContext> free_quantity_declaration();
-    Ref<Branch_quantity_declarationContext> branch_quantity_declaration();
-    Ref<Source_quantity_declarationContext> source_quantity_declaration();
+    Quantity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Free_quantity_declarationContext *free_quantity_declaration();
+    Branch_quantity_declarationContext *branch_quantity_declaration();
+    Source_quantity_declarationContext *source_quantity_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Quantity_declarationContext> quantity_declaration();
+  Quantity_declarationContext* quantity_declaration();
 
   class Quantity_listContext : public ParserRuleContext {
   public:
-    Quantity_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
-    Ref<tree::TerminalNode> OTHERS();
-    Ref<tree::TerminalNode> ALL();
+    Quantity_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
+    tree::TerminalNode *OTHERS();
+    tree::TerminalNode *ALL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Quantity_listContext> quantity_list();
+  Quantity_listContext* quantity_list();
 
   class Quantity_specificationContext : public ParserRuleContext {
   public:
-    Quantity_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Quantity_listContext> quantity_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<NameContext> name();
+    Quantity_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Quantity_listContext *quantity_list();
+    tree::TerminalNode *COLON();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Quantity_specificationContext> quantity_specification();
+  Quantity_specificationContext* quantity_specification();
 
   class RangeContext : public ParserRuleContext {
   public:
-    RangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Explicit_rangeContext> explicit_range();
-    Ref<NameContext> name();
+    RangeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Explicit_rangeContext *explicit_range();
+    NameContext *name();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<RangeContext> range();
+  RangeContext* range();
 
   class Explicit_rangeContext : public ParserRuleContext {
   public:
-    Explicit_rangeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Simple_expressionContext>> simple_expression();
-    Ref<Simple_expressionContext> simple_expression(int i);
-    Ref<DirectionContext> direction();
+    Explicit_rangeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Simple_expressionContext *> simple_expression();
+    Simple_expressionContext* simple_expression(size_t i);
+    DirectionContext *direction();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Explicit_rangeContext> explicit_range();
+  Explicit_rangeContext* explicit_range();
 
   class Range_constraintContext : public ParserRuleContext {
   public:
-    Range_constraintContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> RANGE();
-    Ref<RangeContext> range();
+    Range_constraintContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *RANGE();
+    RangeContext *range();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Range_constraintContext> range_constraint();
+  Range_constraintContext* range_constraint();
 
   class Record_nature_definitionContext : public ParserRuleContext {
   public:
-    Record_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> RECORD();
-    Ref<tree::TerminalNode> RECORD(int i);
-    Ref<tree::TerminalNode> END();
-    std::vector<Ref<Nature_element_declarationContext>> nature_element_declaration();
-    Ref<Nature_element_declarationContext> nature_element_declaration(int i);
-    Ref<IdentifierContext> identifier();
+    Record_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> RECORD();
+    tree::TerminalNode* RECORD(size_t i);
+    tree::TerminalNode *END();
+    std::vector<Nature_element_declarationContext *> nature_element_declaration();
+    Nature_element_declarationContext* nature_element_declaration(size_t i);
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Record_nature_definitionContext> record_nature_definition();
+  Record_nature_definitionContext* record_nature_definition();
 
   class Record_type_definitionContext : public ParserRuleContext {
   public:
-    Record_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> RECORD();
-    Ref<tree::TerminalNode> RECORD(int i);
-    Ref<tree::TerminalNode> END();
-    std::vector<Ref<Element_declarationContext>> element_declaration();
-    Ref<Element_declarationContext> element_declaration(int i);
-    Ref<IdentifierContext> identifier();
+    Record_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> RECORD();
+    tree::TerminalNode* RECORD(size_t i);
+    tree::TerminalNode *END();
+    std::vector<Element_declarationContext *> element_declaration();
+    Element_declarationContext* element_declaration(size_t i);
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Record_type_definitionContext> record_type_definition();
+  Record_type_definitionContext* record_type_definition();
 
   class RelationContext : public ParserRuleContext {
   public:
-    RelationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Shift_expressionContext>> shift_expression();
-    Ref<Shift_expressionContext> shift_expression(int i);
-    Ref<Relational_operatorContext> relational_operator();
+    RelationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Shift_expressionContext *> shift_expression();
+    Shift_expressionContext* shift_expression(size_t i);
+    Relational_operatorContext *relational_operator();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<RelationContext> relation();
+  RelationContext* relation();
 
   class Relational_operatorContext : public ParserRuleContext {
   public:
-    Relational_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> EQ();
-    Ref<tree::TerminalNode> NEQ();
-    Ref<tree::TerminalNode> LOWERTHAN();
-    Ref<tree::TerminalNode> LE();
-    Ref<tree::TerminalNode> GREATERTHAN();
-    Ref<tree::TerminalNode> GE();
+    Relational_operatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *EQ();
+    tree::TerminalNode *NEQ();
+    tree::TerminalNode *LOWERTHAN();
+    tree::TerminalNode *LE();
+    tree::TerminalNode *GREATERTHAN();
+    tree::TerminalNode *GE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Relational_operatorContext> relational_operator();
+  Relational_operatorContext* relational_operator();
 
   class Report_statementContext : public ParserRuleContext {
   public:
-    Report_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> REPORT();
-    std::vector<Ref<ExpressionContext>> expression();
-    Ref<ExpressionContext> expression(int i);
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<tree::TerminalNode> SEVERITY();
+    Report_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *REPORT();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    tree::TerminalNode *SEVERITY();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Report_statementContext> report_statement();
+  Report_statementContext* report_statement();
 
   class Return_statementContext : public ParserRuleContext {
   public:
-    Return_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> RETURN();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<ExpressionContext> expression();
+    Return_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *RETURN();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Return_statementContext> return_statement();
+  Return_statementContext* return_statement();
 
   class Scalar_nature_definitionContext : public ParserRuleContext {
   public:
-    Scalar_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    Ref<tree::TerminalNode> ACROSS();
-    Ref<tree::TerminalNode> THROUGH();
-    Ref<tree::TerminalNode> REFERENCE();
+    Scalar_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    tree::TerminalNode *ACROSS();
+    tree::TerminalNode *THROUGH();
+    tree::TerminalNode *REFERENCE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Scalar_nature_definitionContext> scalar_nature_definition();
+  Scalar_nature_definitionContext* scalar_nature_definition();
 
   class Scalar_type_definitionContext : public ParserRuleContext {
   public:
-    Scalar_type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Physical_type_definitionContext> physical_type_definition();
-    Ref<Enumeration_type_definitionContext> enumeration_type_definition();
-    Ref<Range_constraintContext> range_constraint();
+    Scalar_type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Physical_type_definitionContext *physical_type_definition();
+    Enumeration_type_definitionContext *enumeration_type_definition();
+    Range_constraintContext *range_constraint();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Scalar_type_definitionContext> scalar_type_definition();
+  Scalar_type_definitionContext* scalar_type_definition();
 
   class Secondary_unitContext : public ParserRuleContext {
   public:
-    Secondary_unitContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Architecture_bodyContext> architecture_body();
-    Ref<Package_bodyContext> package_body();
+    Secondary_unitContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Architecture_bodyContext *architecture_body();
+    Package_bodyContext *package_body();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Secondary_unitContext> secondary_unit();
+  Secondary_unitContext* secondary_unit();
 
   class Secondary_unit_declarationContext : public ParserRuleContext {
   public:
-    Secondary_unit_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> EQ();
-    Ref<Physical_literalContext> physical_literal();
-    Ref<tree::TerminalNode> SEMI();
+    Secondary_unit_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *EQ();
+    Physical_literalContext *physical_literal();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Secondary_unit_declarationContext> secondary_unit_declaration();
+  Secondary_unit_declarationContext* secondary_unit_declaration();
 
   class Selected_signal_assignmentContext : public ParserRuleContext {
   public:
-    Selected_signal_assignmentContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> WITH();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> SELECT();
-    Ref<TargetContext> target();
-    Ref<tree::TerminalNode> LE();
-    Ref<OptsContext> opts();
-    Ref<Selected_waveformsContext> selected_waveforms();
-    Ref<tree::TerminalNode> SEMI();
+    Selected_signal_assignmentContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *WITH();
+    ExpressionContext *expression();
+    tree::TerminalNode *SELECT();
+    TargetContext *target();
+    tree::TerminalNode *LE();
+    OptsContext *opts();
+    Selected_waveformsContext *selected_waveforms();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Selected_signal_assignmentContext> selected_signal_assignment();
+  Selected_signal_assignmentContext* selected_signal_assignment();
 
   class Selected_waveformsContext : public ParserRuleContext {
   public:
-    Selected_waveformsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<WaveformContext>> waveform();
-    Ref<WaveformContext> waveform(int i);
-    std::vector<Ref<tree::TerminalNode>> WHEN();
-    Ref<tree::TerminalNode> WHEN(int i);
-    std::vector<Ref<ChoicesContext>> choices();
-    Ref<ChoicesContext> choices(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Selected_waveformsContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<WaveformContext *> waveform();
+    WaveformContext* waveform(size_t i);
+    std::vector<tree::TerminalNode *> WHEN();
+    tree::TerminalNode* WHEN(size_t i);
+    std::vector<ChoicesContext *> choices();
+    ChoicesContext* choices(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Selected_waveformsContext> selected_waveforms();
+  Selected_waveformsContext* selected_waveforms();
 
   class Sensitivity_clauseContext : public ParserRuleContext {
   public:
-    Sensitivity_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ON();
-    Ref<Sensitivity_listContext> sensitivity_list();
+    Sensitivity_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ON();
+    Sensitivity_listContext *sensitivity_list();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Sensitivity_clauseContext> sensitivity_clause();
+  Sensitivity_clauseContext* sensitivity_clause();
 
   class Sensitivity_listContext : public ParserRuleContext {
   public:
-    Sensitivity_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Sensitivity_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Sensitivity_listContext> sensitivity_list();
+  Sensitivity_listContext* sensitivity_list();
 
   class Sequence_of_statementsContext : public ParserRuleContext {
   public:
-    Sequence_of_statementsContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Sequential_statementContext>> sequential_statement();
-    Ref<Sequential_statementContext> sequential_statement(int i);
+    Sequence_of_statementsContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Sequential_statementContext *> sequential_statement();
+    Sequential_statementContext* sequential_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Sequence_of_statementsContext> sequence_of_statements();
+  Sequence_of_statementsContext* sequence_of_statements();
 
   class Sequential_statementContext : public ParserRuleContext {
   public:
-    Sequential_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Wait_statementContext> wait_statement();
-    Ref<Assertion_statementContext> assertion_statement();
-    Ref<Report_statementContext> report_statement();
-    Ref<Signal_assignment_statementContext> signal_assignment_statement();
-    Ref<Variable_assignment_statementContext> variable_assignment_statement();
-    Ref<If_statementContext> if_statement();
-    Ref<Case_statementContext> case_statement();
-    Ref<Loop_statementContext> loop_statement();
-    Ref<Next_statementContext> next_statement();
-    Ref<Exit_statementContext> exit_statement();
-    Ref<Return_statementContext> return_statement();
-    Ref<tree::TerminalNode> NULL_SYM();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Break_statementContext> break_statement();
-    Ref<Procedure_call_statementContext> procedure_call_statement();
+    Sequential_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Wait_statementContext *wait_statement();
+    Assertion_statementContext *assertion_statement();
+    Report_statementContext *report_statement();
+    Signal_assignment_statementContext *signal_assignment_statement();
+    Variable_assignment_statementContext *variable_assignment_statement();
+    If_statementContext *if_statement();
+    Case_statementContext *case_statement();
+    Loop_statementContext *loop_statement();
+    Next_statementContext *next_statement();
+    Exit_statementContext *exit_statement();
+    Return_statementContext *return_statement();
+    tree::TerminalNode *NULL_SYM();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Break_statementContext *break_statement();
+    Procedure_call_statementContext *procedure_call_statement();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Sequential_statementContext> sequential_statement();
+  Sequential_statementContext* sequential_statement();
 
   class Shift_expressionContext : public ParserRuleContext {
   public:
-    Shift_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Simple_expressionContext>> simple_expression();
-    Ref<Simple_expressionContext> simple_expression(int i);
-    Ref<Shift_operatorContext> shift_operator();
+    Shift_expressionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Simple_expressionContext *> simple_expression();
+    Simple_expressionContext* simple_expression(size_t i);
+    Shift_operatorContext *shift_operator();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Shift_expressionContext> shift_expression();
+  Shift_expressionContext* shift_expression();
 
   class Shift_operatorContext : public ParserRuleContext {
   public:
-    Shift_operatorContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SLL();
-    Ref<tree::TerminalNode> SRL();
-    Ref<tree::TerminalNode> SLA();
-    Ref<tree::TerminalNode> SRA();
-    Ref<tree::TerminalNode> ROL();
-    Ref<tree::TerminalNode> ROR();
+    Shift_operatorContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SLL();
+    tree::TerminalNode *SRL();
+    tree::TerminalNode *SLA();
+    tree::TerminalNode *SRA();
+    tree::TerminalNode *ROL();
+    tree::TerminalNode *ROR();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Shift_operatorContext> shift_operator();
+  Shift_operatorContext* shift_operator();
 
   class Signal_assignment_statementContext : public ParserRuleContext {
   public:
-    Signal_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<TargetContext> target();
-    Ref<tree::TerminalNode> LE();
-    Ref<WaveformContext> waveform();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Delay_mechanismContext> delay_mechanism();
+    Signal_assignment_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    TargetContext *target();
+    tree::TerminalNode *LE();
+    WaveformContext *waveform();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Delay_mechanismContext *delay_mechanism();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Signal_assignment_statementContext> signal_assignment_statement();
+  Signal_assignment_statementContext* signal_assignment_statement();
 
   class Signal_declarationContext : public ParserRuleContext {
   public:
-    Signal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SIGNAL();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Signal_kindContext> signal_kind();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Signal_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SIGNAL();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
+    Signal_kindContext *signal_kind();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Signal_declarationContext> signal_declaration();
+  Signal_declarationContext* signal_declaration();
 
   class Signal_kindContext : public ParserRuleContext {
   public:
-    Signal_kindContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> REGISTER();
-    Ref<tree::TerminalNode> BUS();
+    Signal_kindContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *REGISTER();
+    tree::TerminalNode *BUS();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Signal_kindContext> signal_kind();
+  Signal_kindContext* signal_kind();
 
   class Signal_listContext : public ParserRuleContext {
   public:
-    Signal_listContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
-    Ref<tree::TerminalNode> OTHERS();
-    Ref<tree::TerminalNode> ALL();
+    Signal_listContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
+    tree::TerminalNode *OTHERS();
+    tree::TerminalNode *ALL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Signal_listContext> signal_list();
+  Signal_listContext* signal_list();
 
   class SignatureContext : public ParserRuleContext {
   public:
-    SignatureContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LBRACKET();
-    Ref<tree::TerminalNode> RBRACKET();
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    Ref<tree::TerminalNode> RETURN();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    SignatureContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LBRACKET();
+    tree::TerminalNode *RBRACKET();
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    tree::TerminalNode *RETURN();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<SignatureContext> signature();
+  SignatureContext* signature();
 
   class Simple_expressionContext : public ParserRuleContext {
   public:
-    Simple_expressionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<TermContext>> term();
-    Ref<TermContext> term(int i);
-    std::vector<Ref<Adding_operatorContext>> adding_operator();
-    Ref<Adding_operatorContext> adding_operator(int i);
-    Ref<tree::TerminalNode> PLUS();
-    Ref<tree::TerminalNode> MINUS();
+    Simple_expressionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<TermContext *> term();
+    TermContext* term(size_t i);
+    std::vector<Adding_operatorContext *> adding_operator();
+    Adding_operatorContext* adding_operator(size_t i);
+    tree::TerminalNode *PLUS();
+    tree::TerminalNode *MINUS();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simple_expressionContext> simple_expression();
+  Simple_expressionContext* simple_expression();
 
   class Simple_simultaneous_statementContext : public ParserRuleContext {
   public:
-    Simple_simultaneous_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Simple_expressionContext>> simple_expression();
-    Ref<Simple_expressionContext> simple_expression(int i);
-    Ref<tree::TerminalNode> ASSIGN();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Tolerance_aspectContext> tolerance_aspect();
+    Simple_simultaneous_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Simple_expressionContext *> simple_expression();
+    Simple_expressionContext* simple_expression(size_t i);
+    tree::TerminalNode *ASSIGN();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Tolerance_aspectContext *tolerance_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simple_simultaneous_statementContext> simple_simultaneous_statement();
+  Simple_simultaneous_statementContext* simple_simultaneous_statement();
 
   class Simultaneous_alternativeContext : public ParserRuleContext {
   public:
-    Simultaneous_alternativeContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> WHEN();
-    Ref<ChoicesContext> choices();
-    Ref<tree::TerminalNode> ARROW();
-    Ref<Simultaneous_statement_partContext> simultaneous_statement_part();
+    Simultaneous_alternativeContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *WHEN();
+    ChoicesContext *choices();
+    tree::TerminalNode *ARROW();
+    Simultaneous_statement_partContext *simultaneous_statement_part();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_alternativeContext> simultaneous_alternative();
+  Simultaneous_alternativeContext* simultaneous_alternative();
 
   class Simultaneous_case_statementContext : public ParserRuleContext {
   public:
-    Simultaneous_case_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> CASE();
-    Ref<tree::TerminalNode> CASE(int i);
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> USE();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<Simultaneous_alternativeContext>> simultaneous_alternative();
-    Ref<Simultaneous_alternativeContext> simultaneous_alternative(int i);
-    Ref<IdentifierContext> identifier();
+    Simultaneous_case_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> CASE();
+    tree::TerminalNode* CASE(size_t i);
+    ExpressionContext *expression();
+    tree::TerminalNode *USE();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    std::vector<Simultaneous_alternativeContext *> simultaneous_alternative();
+    Simultaneous_alternativeContext* simultaneous_alternative(size_t i);
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_case_statementContext> simultaneous_case_statement();
+  Simultaneous_case_statementContext* simultaneous_case_statement();
 
   class Simultaneous_if_statementContext : public ParserRuleContext {
   public:
-    Simultaneous_if_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> IF();
-    std::vector<Ref<ConditionContext>> condition();
-    Ref<ConditionContext> condition(int i);
-    std::vector<Ref<tree::TerminalNode>> USE();
-    Ref<tree::TerminalNode> USE(int i);
-    std::vector<Ref<Simultaneous_statement_partContext>> simultaneous_statement_part();
-    Ref<Simultaneous_statement_partContext> simultaneous_statement_part(int i);
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    std::vector<Ref<tree::TerminalNode>> ELSIF();
-    Ref<tree::TerminalNode> ELSIF(int i);
-    Ref<tree::TerminalNode> ELSE();
-    Ref<IdentifierContext> identifier();
+    Simultaneous_if_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *IF();
+    std::vector<ConditionContext *> condition();
+    ConditionContext* condition(size_t i);
+    std::vector<tree::TerminalNode *> USE();
+    tree::TerminalNode* USE(size_t i);
+    std::vector<Simultaneous_statement_partContext *> simultaneous_statement_part();
+    Simultaneous_statement_partContext* simultaneous_statement_part(size_t i);
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    std::vector<tree::TerminalNode *> ELSIF();
+    tree::TerminalNode* ELSIF(size_t i);
+    tree::TerminalNode *ELSE();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_if_statementContext> simultaneous_if_statement();
+  Simultaneous_if_statementContext* simultaneous_if_statement();
 
   class Simultaneous_procedural_statementContext : public ParserRuleContext {
   public:
-    Simultaneous_procedural_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<tree::TerminalNode>> PROCEDURAL();
-    Ref<tree::TerminalNode> PROCEDURAL(int i);
-    Ref<Procedural_declarative_partContext> procedural_declarative_part();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Procedural_statement_partContext> procedural_statement_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<tree::TerminalNode> IS();
-    Ref<IdentifierContext> identifier();
+    Simultaneous_procedural_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<tree::TerminalNode *> PROCEDURAL();
+    tree::TerminalNode* PROCEDURAL(size_t i);
+    Procedural_declarative_partContext *procedural_declarative_part();
+    tree::TerminalNode *BEGIN();
+    Procedural_statement_partContext *procedural_statement_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    tree::TerminalNode *IS();
+    IdentifierContext *identifier();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_procedural_statementContext> simultaneous_procedural_statement();
+  Simultaneous_procedural_statementContext* simultaneous_procedural_statement();
 
   class Simultaneous_statementContext : public ParserRuleContext {
   public:
-    Simultaneous_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Simple_simultaneous_statementContext> simple_simultaneous_statement();
-    Ref<Simultaneous_if_statementContext> simultaneous_if_statement();
-    Ref<Simultaneous_case_statementContext> simultaneous_case_statement();
-    Ref<Simultaneous_procedural_statementContext> simultaneous_procedural_statement();
-    Ref<tree::TerminalNode> NULL_SYM();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
+    Simultaneous_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Simple_simultaneous_statementContext *simple_simultaneous_statement();
+    Simultaneous_if_statementContext *simultaneous_if_statement();
+    Simultaneous_case_statementContext *simultaneous_case_statement();
+    Simultaneous_procedural_statementContext *simultaneous_procedural_statement();
+    tree::TerminalNode *NULL_SYM();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_statementContext> simultaneous_statement();
+  Simultaneous_statementContext* simultaneous_statement();
 
   class Simultaneous_statement_partContext : public ParserRuleContext {
   public:
-    Simultaneous_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Simultaneous_statementContext>> simultaneous_statement();
-    Ref<Simultaneous_statementContext> simultaneous_statement(int i);
+    Simultaneous_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Simultaneous_statementContext *> simultaneous_statement();
+    Simultaneous_statementContext* simultaneous_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Simultaneous_statement_partContext> simultaneous_statement_part();
+  Simultaneous_statement_partContext* simultaneous_statement_part();
 
   class Source_aspectContext : public ParserRuleContext {
   public:
-    Source_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SPECTRUM();
-    std::vector<Ref<Simple_expressionContext>> simple_expression();
-    Ref<Simple_expressionContext> simple_expression(int i);
-    Ref<tree::TerminalNode> COMMA();
-    Ref<tree::TerminalNode> NOISE();
+    Source_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SPECTRUM();
+    std::vector<Simple_expressionContext *> simple_expression();
+    Simple_expressionContext* simple_expression(size_t i);
+    tree::TerminalNode *COMMA();
+    tree::TerminalNode *NOISE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Source_aspectContext> source_aspect();
+  Source_aspectContext* source_aspect();
 
   class Source_quantity_declarationContext : public ParserRuleContext {
   public:
-    Source_quantity_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> QUANTITY();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<Source_aspectContext> source_aspect();
-    Ref<tree::TerminalNode> SEMI();
+    Source_quantity_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *QUANTITY();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    Source_aspectContext *source_aspect();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Source_quantity_declarationContext> source_quantity_declaration();
+  Source_quantity_declarationContext* source_quantity_declaration();
 
   class Step_limit_specificationContext : public ParserRuleContext {
   public:
-    Step_limit_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> LIMIT();
-    Ref<Quantity_specificationContext> quantity_specification();
-    Ref<tree::TerminalNode> WITH();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> SEMI();
+    Step_limit_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *LIMIT();
+    Quantity_specificationContext *quantity_specification();
+    tree::TerminalNode *WITH();
+    ExpressionContext *expression();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Step_limit_specificationContext> step_limit_specification();
+  Step_limit_specificationContext* step_limit_specification();
 
   class Subnature_declarationContext : public ParserRuleContext {
   public:
-    Subnature_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SUBNATURE();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> IS();
-    Ref<Subnature_indicationContext> subnature_indication();
-    Ref<tree::TerminalNode> SEMI();
+    Subnature_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SUBNATURE();
+    IdentifierContext *identifier();
+    tree::TerminalNode *IS();
+    Subnature_indicationContext *subnature_indication();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subnature_declarationContext> subnature_declaration();
+  Subnature_declarationContext* subnature_declaration();
 
   class Subnature_indicationContext : public ParserRuleContext {
   public:
-    Subnature_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<Index_constraintContext> index_constraint();
-    Ref<tree::TerminalNode> TOLERANCE();
-    std::vector<Ref<ExpressionContext>> expression();
-    Ref<ExpressionContext> expression(int i);
-    Ref<tree::TerminalNode> ACROSS();
-    Ref<tree::TerminalNode> THROUGH();
+    Subnature_indicationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    Index_constraintContext *index_constraint();
+    tree::TerminalNode *TOLERANCE();
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    tree::TerminalNode *ACROSS();
+    tree::TerminalNode *THROUGH();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subnature_indicationContext> subnature_indication();
+  Subnature_indicationContext* subnature_indication();
 
   class Subprogram_bodyContext : public ParserRuleContext {
   public:
-    Subprogram_bodyContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_specificationContext> subprogram_specification();
-    Ref<tree::TerminalNode> IS();
-    Ref<Subprogram_declarative_partContext> subprogram_declarative_part();
-    Ref<tree::TerminalNode> BEGIN();
-    Ref<Subprogram_statement_partContext> subprogram_statement_part();
-    Ref<tree::TerminalNode> END();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Subprogram_kindContext> subprogram_kind();
-    Ref<DesignatorContext> designator();
+    Subprogram_bodyContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_specificationContext *subprogram_specification();
+    tree::TerminalNode *IS();
+    Subprogram_declarative_partContext *subprogram_declarative_part();
+    tree::TerminalNode *BEGIN();
+    Subprogram_statement_partContext *subprogram_statement_part();
+    tree::TerminalNode *END();
+    tree::TerminalNode *SEMI();
+    Subprogram_kindContext *subprogram_kind();
+    DesignatorContext *designator();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_bodyContext> subprogram_body();
+  Subprogram_bodyContext* subprogram_body();
 
   class Subprogram_declarationContext : public ParserRuleContext {
   public:
-    Subprogram_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_specificationContext> subprogram_specification();
-    Ref<tree::TerminalNode> SEMI();
+    Subprogram_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_specificationContext *subprogram_specification();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_declarationContext> subprogram_declaration();
+  Subprogram_declarationContext* subprogram_declaration();
 
   class Subprogram_declarative_itemContext : public ParserRuleContext {
   public:
-    Subprogram_declarative_itemContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Subprogram_declarationContext> subprogram_declaration();
-    Ref<Subprogram_bodyContext> subprogram_body();
-    Ref<Type_declarationContext> type_declaration();
-    Ref<Subtype_declarationContext> subtype_declaration();
-    Ref<Constant_declarationContext> constant_declaration();
-    Ref<Variable_declarationContext> variable_declaration();
-    Ref<File_declarationContext> file_declaration();
-    Ref<Alias_declarationContext> alias_declaration();
-    Ref<Attribute_declarationContext> attribute_declaration();
-    Ref<Attribute_specificationContext> attribute_specification();
-    Ref<Use_clauseContext> use_clause();
-    Ref<Group_template_declarationContext> group_template_declaration();
-    Ref<Group_declarationContext> group_declaration();
+    Subprogram_declarative_itemContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Subprogram_declarationContext *subprogram_declaration();
+    Subprogram_bodyContext *subprogram_body();
+    Type_declarationContext *type_declaration();
+    Subtype_declarationContext *subtype_declaration();
+    Constant_declarationContext *constant_declaration();
+    Variable_declarationContext *variable_declaration();
+    File_declarationContext *file_declaration();
+    Alias_declarationContext *alias_declaration();
+    Attribute_declarationContext *attribute_declaration();
+    Attribute_specificationContext *attribute_specification();
+    Use_clauseContext *use_clause();
+    Group_template_declarationContext *group_template_declaration();
+    Group_declarationContext *group_declaration();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_declarative_itemContext> subprogram_declarative_item();
+  Subprogram_declarative_itemContext* subprogram_declarative_item();
 
   class Subprogram_declarative_partContext : public ParserRuleContext {
   public:
-    Subprogram_declarative_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Subprogram_declarative_itemContext>> subprogram_declarative_item();
-    Ref<Subprogram_declarative_itemContext> subprogram_declarative_item(int i);
+    Subprogram_declarative_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Subprogram_declarative_itemContext *> subprogram_declarative_item();
+    Subprogram_declarative_itemContext* subprogram_declarative_item(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_declarative_partContext> subprogram_declarative_part();
+  Subprogram_declarative_partContext* subprogram_declarative_part();
 
   class Subprogram_kindContext : public ParserRuleContext {
   public:
-    Subprogram_kindContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> PROCEDURE();
-    Ref<tree::TerminalNode> FUNCTION();
+    Subprogram_kindContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *PROCEDURE();
+    tree::TerminalNode *FUNCTION();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_kindContext> subprogram_kind();
+  Subprogram_kindContext* subprogram_kind();
 
   class Subprogram_specificationContext : public ParserRuleContext {
   public:
-    Subprogram_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Procedure_specificationContext> procedure_specification();
-    Ref<Function_specificationContext> function_specification();
+    Subprogram_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Procedure_specificationContext *procedure_specification();
+    Function_specificationContext *function_specification();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_specificationContext> subprogram_specification();
+  Subprogram_specificationContext* subprogram_specification();
 
   class Procedure_specificationContext : public ParserRuleContext {
   public:
-    Procedure_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> PROCEDURE();
-    Ref<DesignatorContext> designator();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Formal_parameter_listContext> formal_parameter_list();
-    Ref<tree::TerminalNode> RPAREN();
+    Procedure_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *PROCEDURE();
+    DesignatorContext *designator();
+    tree::TerminalNode *LPAREN();
+    Formal_parameter_listContext *formal_parameter_list();
+    tree::TerminalNode *RPAREN();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Procedure_specificationContext> procedure_specification();
+  Procedure_specificationContext* procedure_specification();
 
   class Function_specificationContext : public ParserRuleContext {
   public:
-    Function_specificationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FUNCTION();
-    Ref<DesignatorContext> designator();
-    Ref<tree::TerminalNode> RETURN();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> LPAREN();
-    Ref<Formal_parameter_listContext> formal_parameter_list();
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> PURE();
-    Ref<tree::TerminalNode> IMPURE();
+    Function_specificationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FUNCTION();
+    DesignatorContext *designator();
+    tree::TerminalNode *RETURN();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *LPAREN();
+    Formal_parameter_listContext *formal_parameter_list();
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *PURE();
+    tree::TerminalNode *IMPURE();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Function_specificationContext> function_specification();
+  Function_specificationContext* function_specification();
 
   class Subprogram_statement_partContext : public ParserRuleContext {
   public:
-    Subprogram_statement_partContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Sequential_statementContext>> sequential_statement();
-    Ref<Sequential_statementContext> sequential_statement(int i);
+    Subprogram_statement_partContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Sequential_statementContext *> sequential_statement();
+    Sequential_statementContext* sequential_statement(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subprogram_statement_partContext> subprogram_statement_part();
+  Subprogram_statement_partContext* subprogram_statement_part();
 
   class Subtype_declarationContext : public ParserRuleContext {
   public:
-    Subtype_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> SUBTYPE();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> IS();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
+    Subtype_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *SUBTYPE();
+    IdentifierContext *identifier();
+    tree::TerminalNode *IS();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subtype_declarationContext> subtype_declaration();
+  Subtype_declarationContext* subtype_declaration();
 
   class Subtype_indicationContext : public ParserRuleContext {
   public:
-    Subtype_indicationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Selected_nameContext>> selected_name();
-    Ref<Selected_nameContext> selected_name(int i);
-    Ref<ConstraintContext> constraint();
-    Ref<Tolerance_aspectContext> tolerance_aspect();
+    Subtype_indicationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Selected_nameContext *> selected_name();
+    Selected_nameContext* selected_name(size_t i);
+    ConstraintContext *constraint();
+    Tolerance_aspectContext *tolerance_aspect();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Subtype_indicationContext> subtype_indication();
+  Subtype_indicationContext* subtype_indication();
 
   class SuffixContext : public ParserRuleContext {
   public:
-    SuffixContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> CHARACTER_LITERAL();
-    Ref<tree::TerminalNode> STRING_LITERAL();
-    Ref<tree::TerminalNode> ALL();
+    SuffixContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdentifierContext *identifier();
+    tree::TerminalNode *CHARACTER_LITERAL();
+    tree::TerminalNode *STRING_LITERAL();
+    tree::TerminalNode *ALL();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<SuffixContext> suffix();
+  SuffixContext* suffix();
 
   class TargetContext : public ParserRuleContext {
   public:
-    TargetContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<NameContext> name();
-    Ref<AggregateContext> aggregate();
+    TargetContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    NameContext *name();
+    AggregateContext *aggregate();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<TargetContext> target();
+  TargetContext* target();
 
   class TermContext : public ParserRuleContext {
   public:
-    TermContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<FactorContext>> factor();
-    Ref<FactorContext> factor(int i);
-    std::vector<Ref<Multiplying_operatorContext>> multiplying_operator();
-    Ref<Multiplying_operatorContext> multiplying_operator(int i);
+    TermContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<FactorContext *> factor();
+    FactorContext* factor(size_t i);
+    std::vector<Multiplying_operatorContext *> multiplying_operator();
+    Multiplying_operatorContext* multiplying_operator(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<TermContext> term();
+  TermContext* term();
 
   class Terminal_aspectContext : public ParserRuleContext {
   public:
-    Terminal_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<NameContext>> name();
-    Ref<NameContext> name(int i);
-    Ref<tree::TerminalNode> TO();
+    Terminal_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<NameContext *> name();
+    NameContext* name(size_t i);
+    tree::TerminalNode *TO();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Terminal_aspectContext> terminal_aspect();
+  Terminal_aspectContext* terminal_aspect();
 
   class Terminal_declarationContext : public ParserRuleContext {
   public:
-    Terminal_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TERMINAL();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subnature_indicationContext> subnature_indication();
-    Ref<tree::TerminalNode> SEMI();
+    Terminal_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TERMINAL();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subnature_indicationContext *subnature_indication();
+    tree::TerminalNode *SEMI();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Terminal_declarationContext> terminal_declaration();
+  Terminal_declarationContext* terminal_declaration();
 
   class Through_aspectContext : public ParserRuleContext {
   public:
-    Through_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> THROUGH();
-    Ref<Tolerance_aspectContext> tolerance_aspect();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Through_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *THROUGH();
+    Tolerance_aspectContext *tolerance_aspect();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Through_aspectContext> through_aspect();
+  Through_aspectContext* through_aspect();
 
   class Timeout_clauseContext : public ParserRuleContext {
   public:
-    Timeout_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> FOR();
-    Ref<ExpressionContext> expression();
+    Timeout_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *FOR();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Timeout_clauseContext> timeout_clause();
+  Timeout_clauseContext* timeout_clause();
 
   class Tolerance_aspectContext : public ParserRuleContext {
   public:
-    Tolerance_aspectContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TOLERANCE();
-    Ref<ExpressionContext> expression();
+    Tolerance_aspectContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TOLERANCE();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Tolerance_aspectContext> tolerance_aspect();
+  Tolerance_aspectContext* tolerance_aspect();
 
   class Type_declarationContext : public ParserRuleContext {
   public:
-    Type_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> TYPE();
-    Ref<IdentifierContext> identifier();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> IS();
-    Ref<Type_definitionContext> type_definition();
+    Type_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *TYPE();
+    IdentifierContext *identifier();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *IS();
+    Type_definitionContext *type_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Type_declarationContext> type_declaration();
+  Type_declarationContext* type_declaration();
 
   class Type_definitionContext : public ParserRuleContext {
   public:
-    Type_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<Scalar_type_definitionContext> scalar_type_definition();
-    Ref<Composite_type_definitionContext> composite_type_definition();
-    Ref<Access_type_definitionContext> access_type_definition();
-    Ref<File_type_definitionContext> file_type_definition();
+    Type_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    Scalar_type_definitionContext *scalar_type_definition();
+    Composite_type_definitionContext *composite_type_definition();
+    Access_type_definitionContext *access_type_definition();
+    File_type_definitionContext *file_type_definition();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Type_definitionContext> type_definition();
+  Type_definitionContext* type_definition();
 
   class Unconstrained_array_definitionContext : public ParserRuleContext {
   public:
-    Unconstrained_array_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ARRAY();
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Index_subtype_definitionContext>> index_subtype_definition();
-    Ref<Index_subtype_definitionContext> index_subtype_definition(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> OF();
-    Ref<Subtype_indicationContext> subtype_indication();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Unconstrained_array_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ARRAY();
+    tree::TerminalNode *LPAREN();
+    std::vector<Index_subtype_definitionContext *> index_subtype_definition();
+    Index_subtype_definitionContext* index_subtype_definition(size_t i);
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *OF();
+    Subtype_indicationContext *subtype_indication();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Unconstrained_array_definitionContext> unconstrained_array_definition();
+  Unconstrained_array_definitionContext* unconstrained_array_definition();
 
   class Unconstrained_nature_definitionContext : public ParserRuleContext {
   public:
-    Unconstrained_nature_definitionContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> ARRAY();
-    Ref<tree::TerminalNode> LPAREN();
-    std::vector<Ref<Index_subtype_definitionContext>> index_subtype_definition();
-    Ref<Index_subtype_definitionContext> index_subtype_definition(int i);
-    Ref<tree::TerminalNode> RPAREN();
-    Ref<tree::TerminalNode> OF();
-    Ref<Subnature_indicationContext> subnature_indication();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Unconstrained_nature_definitionContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *ARRAY();
+    tree::TerminalNode *LPAREN();
+    std::vector<Index_subtype_definitionContext *> index_subtype_definition();
+    Index_subtype_definitionContext* index_subtype_definition(size_t i);
+    tree::TerminalNode *RPAREN();
+    tree::TerminalNode *OF();
+    Subnature_indicationContext *subnature_indication();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Unconstrained_nature_definitionContext> unconstrained_nature_definition();
+  Unconstrained_nature_definitionContext* unconstrained_nature_definition();
 
   class Use_clauseContext : public ParserRuleContext {
   public:
-    Use_clauseContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> USE();
-    std::vector<Ref<Selected_nameContext>> selected_name();
-    Ref<Selected_nameContext> selected_name(int i);
-    Ref<tree::TerminalNode> SEMI();
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
+    Use_clauseContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *USE();
+    std::vector<Selected_nameContext *> selected_name();
+    Selected_nameContext* selected_name(size_t i);
+    tree::TerminalNode *SEMI();
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Use_clauseContext> use_clause();
+  Use_clauseContext* use_clause();
 
   class Variable_assignment_statementContext : public ParserRuleContext {
   public:
-    Variable_assignment_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<TargetContext> target();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
+    Variable_assignment_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    TargetContext *target();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Variable_assignment_statementContext> variable_assignment_statement();
+  Variable_assignment_statementContext* variable_assignment_statement();
 
   class Variable_declarationContext : public ParserRuleContext {
   public:
-    Variable_declarationContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> VARIABLE();
-    Ref<Identifier_listContext> identifier_list();
-    Ref<tree::TerminalNode> COLON();
-    Ref<Subtype_indicationContext> subtype_indication();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<tree::TerminalNode> SHARED();
-    Ref<tree::TerminalNode> VARASGN();
-    Ref<ExpressionContext> expression();
+    Variable_declarationContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *VARIABLE();
+    Identifier_listContext *identifier_list();
+    tree::TerminalNode *COLON();
+    Subtype_indicationContext *subtype_indication();
+    tree::TerminalNode *SEMI();
+    tree::TerminalNode *SHARED();
+    tree::TerminalNode *VARASGN();
+    ExpressionContext *expression();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Variable_declarationContext> variable_declaration();
+  Variable_declarationContext* variable_declaration();
 
   class Wait_statementContext : public ParserRuleContext {
   public:
-    Wait_statementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    Ref<tree::TerminalNode> WAIT();
-    Ref<tree::TerminalNode> SEMI();
-    Ref<Label_colonContext> label_colon();
-    Ref<Sensitivity_clauseContext> sensitivity_clause();
-    Ref<Condition_clauseContext> condition_clause();
-    Ref<Timeout_clauseContext> timeout_clause();
+    Wait_statementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    tree::TerminalNode *WAIT();
+    tree::TerminalNode *SEMI();
+    Label_colonContext *label_colon();
+    Sensitivity_clauseContext *sensitivity_clause();
+    Condition_clauseContext *condition_clause();
+    Timeout_clauseContext *timeout_clause();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Wait_statementContext> wait_statement();
+  Wait_statementContext* wait_statement();
 
   class WaveformContext : public ParserRuleContext {
   public:
-    WaveformContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<Waveform_elementContext>> waveform_element();
-    Ref<Waveform_elementContext> waveform_element(int i);
-    std::vector<Ref<tree::TerminalNode>> COMMA();
-    Ref<tree::TerminalNode> COMMA(int i);
-    Ref<tree::TerminalNode> UNAFFECTED();
+    WaveformContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<Waveform_elementContext *> waveform_element();
+    Waveform_elementContext* waveform_element(size_t i);
+    std::vector<tree::TerminalNode *> COMMA();
+    tree::TerminalNode* COMMA(size_t i);
+    tree::TerminalNode *UNAFFECTED();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<WaveformContext> waveform();
+  WaveformContext* waveform();
 
   class Waveform_elementContext : public ParserRuleContext {
   public:
-    Waveform_elementContext(std::weak_ptr<ParserRuleContext> parent, int invokingState);
-    virtual ssize_t getRuleIndex() const override;
-    std::vector<Ref<ExpressionContext>> expression();
-    Ref<ExpressionContext> expression(int i);
-    Ref<tree::TerminalNode> AFTER();
+    Waveform_elementContext(ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<ExpressionContext *> expression();
+    ExpressionContext* expression(size_t i);
+    tree::TerminalNode *AFTER();
 
     virtual antlrcpp::Any accept(tree::ParseTreeVisitor *visitor) override;
    
   };
 
-  Ref<Waveform_elementContext> waveform_element();
+  Waveform_elementContext* waveform_element();
 
 
 private:
