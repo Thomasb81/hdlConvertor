@@ -1,7 +1,9 @@
 #pragma once
 
+#include <string>
 #include <iostream>
 #include <fstream>
+#include <streambuf>
 #include <unistd.h>
 
 #include "hdlObjects/context.h"
@@ -21,8 +23,6 @@
 #include "svConverter/library_textParser.h"
 #endif
 
-#include "vpp/vppLexer.h"
-#include "vpp/vppParser.h"
 #include "vPreprocessor/vPreprocessor.h"
 
 #include "syntaxErrorLogger.h"

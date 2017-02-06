@@ -73,22 +73,16 @@ Context * Convertor::parse(const char * _fileName, Langue _lang,
 }
 
 void Convertor::test(const char * fileName) {
-	ANTLRFileStream * input = new ANTLRFileStream(fileName);
-  	vppLexer * lexer = new vppLexer(input);
-  	CommonTokenStream * tokens = new CommonTokenStream(lexer);
-  	vppParser * parser = new vppParser(tokens);
-	ParseTree *tree = parser->file();
 
-	ParseTreeWalker walker = ParseTreeWalker();
-	vPreprocessor * extractor = new vPreprocessor(tokens);
-	walker.walk( (ParseTreeListener*) extractor,tree);
-	printf("%s\n",extractor->_rewriter->getText().c_str());
+  std::ifstream t(fileName);
+  std::string str((std::istreambuf_iterator<char>(t)),
+                 std::istreambuf_iterator<char>());
 
-	delete extractor;
-	delete parser;
-	delete tree;
-	delete tokens;
-	delete lexer;
-	delete input;
+  std::string result = return_preprocessed(str,true);
+  printf("---------------------------------------------\n");
+  printf("%s\n",result.c_str());
+  
+  printf("Finish...\n");
+ 
 
 }

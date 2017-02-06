@@ -148,6 +148,14 @@ vpp_source = [
 "src/vpp/vppLexer.cpp",
 "src/vpp/vppBaseListener.cpp",
 "src/vpp/vppParser.cpp",
+"src/vpp/vppListener.cpp",
+"src/vpp/symbolLexer.cpp",
+"src/vpp/symbolParser.cpp",
+"src/vpp/symbolBaseListener.cpp",
+"src/vpp/symbolListener.cpp",
+"src/vPreprocessor/macroPrototype.cpp",
+"src/vPreprocessor/symbol.cpp",
+"src/vPreprocessor/macroSymbol.cpp",
 "src/vPreprocessor/macro_replace.cpp",
 "src/vPreprocessor/vPreprocessor.cpp",
 ]
@@ -267,6 +275,16 @@ if not os.path.exists(os.path.join('build','libsvParser.a')):
     sv_object = sv_compiler.compile(sv_source)
     sv_compiler.create_static_lib(sv_object,"svParser",output_dir="build")
 
+if not os.path.exists(os.path.join('build','vppParser.a')):
+    vpp_compiler = new_compiler()
+    customize_compiler(vpp_compiler)
+    vpp_compiler.compiler_so.append('-std=c++11')
+    vpp_compiler.compiler_so.remove("-Wstrict-prototypes")
+    vpp_compiler.add_include_dir('antlr4/runtime/src/')
+    vpp_compiler.add_include_dir(sysconfig.get_python_inc())
+    vpp_object = vpp_compiler.compile(vpp_source)
+    vpp_compiler.create_static_lib(vpp_object,"vppParser",output_dir="build")
+
 distutilsLog.set_verbosity(0)
 
 class buildWithoutStrictPrototypes(build_ext):
@@ -284,14 +302,12 @@ class buildWithoutStrictPrototypes(build_ext):
         build_ext.build_extensions(self)
 
 hdlConvertor = Extension('hdlConvertor',
-                    #include_dirs=['antlr4-install/usr/local/include/'],
                     include_dirs=['antlr4/runtime/src/'],
                     extra_compile_args=['-std=c++11'],
                     sources=all_source,
                     language="c++",
-                    #library_dirs = ['antlr4-install/usr/local/lib/',"build"],
                     library_dirs = ["build"],
-                    libraries=['antlr4-runtime','verilogParser','vhdlParser','svParser'],
+                    libraries=['antlr4-runtime','verilogParser','vhdlParser','svParser','vppParser'],
 #                    undef_macros=['SV_PARSER'],
                     )
 
