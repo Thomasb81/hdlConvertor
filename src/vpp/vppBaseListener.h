@@ -1,5 +1,5 @@
 
-// Generated from vpp.g4 by ANTLR 4.5.3
+// Generated from vpp.g4 by ANTLR 4.6
 
 #pragma once
 
@@ -13,7 +13,7 @@
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-class vppBaseListener : public vppListener {
+class  vppBaseListener : public vppListener {
 public:
 
   virtual void enterFile(vppParser::FileContext * /*ctx*/) override { }
@@ -65,10 +65,10 @@ public:
   virtual void exitMacro_toreplace(vppParser::Macro_toreplaceContext * /*ctx*/) override { }
 
 
-  virtual void enterEveryRule(ParserRuleContext * /*ctx*/) override { }
-  virtual void exitEveryRule(ParserRuleContext * /*ctx*/) override { }
-  virtual void visitTerminal(tree::TerminalNode * /*node*/) override { }
-  virtual void visitErrorNode(tree::ErrorNode * /*node*/) override { }
+  virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
+  virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
+  virtual void visitTerminal(antlr4::tree::TerminalNode * /*node*/) override { }
+  virtual void visitErrorNode(antlr4::tree::ErrorNode * /*node*/) override { }
 
 };
 

@@ -1,5 +1,5 @@
 
-// Generated from vpp.g4 by ANTLR 4.5.3
+// Generated from vpp.g4 by ANTLR 4.6
 
 
 #include "vppLexer.h"
@@ -83,7 +83,7 @@ dfa::Vocabulary vppLexer::_vocabulary(_literalNames, _symbolicNames);
 std::vector<std::string> vppLexer::_tokenNames;
 
 vppLexer::Initializer::Initializer() {
-  // This code could be in a static initializer lambda, but VS doesn't allow access to private class members from there. 
+  // This code could be in a static initializer lambda, but VS doesn't allow access to private class members from there.
 	for (size_t i = 0; i < _symbolicNames.size(); ++i) {
 		std::string name = _vocabulary.getLiteralName(i);
 		if (name.empty()) {

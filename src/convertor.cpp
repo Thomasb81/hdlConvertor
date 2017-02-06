@@ -1,5 +1,4 @@
 #include "convertor.h"
-#include "atn/PredictionMode.h"
 
 const char * Convertor::fileName = NULL;
 const char * Convertor::errStr = NULL;
@@ -11,25 +10,24 @@ ParserErrors Convertor::err = PERR_OK;
 
 void parseFnVerilog(Verilog2001Parser * antlrParser,
 		Source_textParser * hdlParser) {
-	Verilog2001Parser::Source_textContext tree =
-			antlrParser->source_text();
+	Verilog2001Parser::Source_textContext *tree = antlrParser->source_text();
 	hdlParser->visitSource_text(tree);
-	tree.reset();
+	//tree.reset();
 }
 
 void parseFnVHDL(vhdlParser * antlrParser, DesignFileParser * hdlParser) {
-	vhdlParser::Design_fileContext tree = antlrParser->design_file();
+	vhdlParser::Design_fileContext *tree = antlrParser->design_file();
 	hdlParser->visitDesign_file(tree);
-	tree.reset();
+	//tree.reset();
 }
 
 #ifdef SV_PARSER
 void parseFnSystemVerilog(sv::sv2012Parser * antlrParser,
 		Library_textParser * hdlParser) {
-	sv::sv2012Parser::Library_textContext tree =
+	sv::sv2012Parser::Library_textContext *tree =
 				antlrParser->library_text();
 		hdlParser->visitLibrary_text(tree);
-		tree.reset();
+		//tree.reset();
 }
 #endif
 
@@ -79,7 +77,7 @@ void Convertor::test(const char * fileName) {
   	vppLexer * lexer = new vppLexer(input);
   	CommonTokenStream * tokens = new CommonTokenStream(lexer);
   	vppParser * parser = new vppParser(tokens);
-	ParseTree tree = parser->file();
+	ParseTree *tree = parser->file();
 
 	ParseTreeWalker walker = ParseTreeWalker();
 	vPreprocessor * extractor = new vPreprocessor(tokens);
@@ -88,6 +86,7 @@ void Convertor::test(const char * fileName) {
 
 	delete extractor;
 	delete parser;
+	delete tree;
 	delete tokens;
 	delete lexer;
 	delete input;

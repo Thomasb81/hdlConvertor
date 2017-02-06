@@ -1,5 +1,5 @@
 
-// Generated from vpp.g4 by ANTLR 4.5.3
+// Generated from vpp.g4 by ANTLR 4.6
 
 
 #include "vppListener.h"
@@ -373,7 +373,9 @@ vppParser::ReplacementContext* vppParser::replacement() {
       _la = _input->LA(1);
       if (_la == 0 || _la == Token::EOF || (_la == vppParser::T__3)) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
       setState(81); 
@@ -637,6 +639,7 @@ vppParser::Ifdef_directiveContext* vppParser::ifdef_directive() {
       _la = _input->LA(1);
     }
     setState(106);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vppParser::ELSE) {
@@ -758,6 +761,7 @@ vppParser::Ifndef_directiveContext* vppParser::ifndef_directive() {
       _la = _input->LA(1);
     }
     setState(124);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vppParser::ELSE) {

@@ -1,5 +1,5 @@
 
-// Generated from vpp.g4 by ANTLR 4.5.3
+// Generated from vpp.g4 by ANTLR 4.6
 
 #pragma once
 
@@ -11,7 +11,7 @@
 /**
  * This interface defines an abstract listener for a parse tree produced by vppParser.
  */
-class vppListener : public antlr4::tree::ParseTreeListener {
+class  vppListener : public antlr4::tree::ParseTreeListener {
 public:
 
   virtual void enterFile(vppParser::FileContext *ctx) = 0;

@@ -1,5 +1,5 @@
 
-// Generated from sv2012.g4 by ANTLR 4.5.3
+// Generated from sv2012.g4 by ANTLR 4.6
 
 
 #include "sv2012Lexer.h"
@@ -195,7 +195,7 @@ dfa::Vocabulary sv2012Lexer::_vocabulary(_literalNames, _symbolicNames);
 std::vector<std::string> sv2012Lexer::_tokenNames;
 
 sv2012Lexer::Initializer::Initializer() {
-  // This code could be in a static initializer lambda, but VS doesn't allow access to private class members from there. 
+  // This code could be in a static initializer lambda, but VS doesn't allow access to private class members from there.
 	for (size_t i = 0; i < _symbolicNames.size(); ++i) {
 		std::string name = _vocabulary.getLiteralName(i);
 		if (name.empty()) {

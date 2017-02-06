@@ -1,5 +1,5 @@
 
-// Generated from vhdl.g4 by ANTLR 4.5.3
+// Generated from vhdl.g4 by ANTLR 4.6
 
 
 #include "vhdlVisitor.h"
@@ -56,8 +56,8 @@ size_t vhdlParser::Abstract_literalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Abstract_literalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAbstract_literal(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAbstract_literal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -79,7 +79,9 @@ vhdlParser::Abstract_literalContext* vhdlParser::abstract_literal() {
       | (1ULL << (vhdlParser::REAL_LITERAL - 112))
       | (1ULL << (vhdlParser::INTEGER - 112)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -113,8 +115,8 @@ size_t vhdlParser::Access_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Access_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAccess_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAccess_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -175,8 +177,8 @@ size_t vhdlParser::Across_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Across_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAcross_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAcross_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -194,6 +196,7 @@ vhdlParser::Across_aspectContext* vhdlParser::across_aspect() {
     setState(515);
     identifier_list();
     setState(517);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::TOLERANCE) {
@@ -201,6 +204,7 @@ vhdlParser::Across_aspectContext* vhdlParser::across_aspect() {
       tolerance_aspect();
     }
     setState(521);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -242,8 +246,8 @@ size_t vhdlParser::Actual_designatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Actual_designatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitActual_designator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitActual_designator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -317,8 +321,8 @@ size_t vhdlParser::Actual_parameter_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Actual_parameter_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitActual_parameter_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitActual_parameter_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -373,8 +377,8 @@ size_t vhdlParser::Actual_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Actual_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitActual_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitActual_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -446,8 +450,8 @@ size_t vhdlParser::Adding_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Adding_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAdding_operator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAdding_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -469,7 +473,9 @@ vhdlParser::Adding_operatorContext* vhdlParser::adding_operator() {
       | (1ULL << (vhdlParser::PLUS - 140))
       | (1ULL << (vhdlParser::MINUS - 140)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -519,8 +525,8 @@ size_t vhdlParser::AggregateContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::AggregateContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAggregate(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAggregate(this);
   else
     return visitor->visitChildren(this);
 }
@@ -608,8 +614,8 @@ size_t vhdlParser::Alias_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Alias_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAlias_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAlias_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -629,6 +635,7 @@ vhdlParser::Alias_declarationContext* vhdlParser::alias_declaration() {
     setState(553);
     alias_designator();
     setState(556);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::COLON) {
@@ -642,6 +649,7 @@ vhdlParser::Alias_declarationContext* vhdlParser::alias_declaration() {
     setState(559);
     name();
     setState(561);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LBRACKET) {
@@ -685,8 +693,8 @@ size_t vhdlParser::Alias_designatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Alias_designatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAlias_designator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAlias_designator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -758,8 +766,8 @@ size_t vhdlParser::Alias_indicationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Alias_indicationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAlias_indication(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAlias_indication(this);
   else
     return visitor->visitChildren(this);
 }
@@ -825,8 +833,8 @@ size_t vhdlParser::AllocatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::AllocatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAllocator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAllocator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -925,8 +933,8 @@ size_t vhdlParser::Architecture_bodyContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Architecture_bodyContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArchitecture_body(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArchitecture_body(this);
   else
     return visitor->visitChildren(this);
 }
@@ -960,6 +968,7 @@ vhdlParser::Architecture_bodyContext* vhdlParser::architecture_body() {
     setState(587);
     match(vhdlParser::END);
     setState(589);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ARCHITECTURE) {
@@ -967,6 +976,7 @@ vhdlParser::Architecture_bodyContext* vhdlParser::architecture_body() {
       match(vhdlParser::ARCHITECTURE);
     }
     setState(592);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -1008,8 +1018,8 @@ size_t vhdlParser::Architecture_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Architecture_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArchitecture_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArchitecture_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1124,8 +1134,8 @@ size_t vhdlParser::Architecture_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Architecture_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArchitecture_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArchitecture_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1280,8 +1290,8 @@ size_t vhdlParser::Architecture_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Architecture_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArchitecture_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArchitecture_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1360,8 +1370,8 @@ size_t vhdlParser::Array_nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Array_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArray_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArray_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1423,8 +1433,8 @@ size_t vhdlParser::Array_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Array_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitArray_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitArray_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1502,8 +1512,8 @@ size_t vhdlParser::AssertionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::AssertionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAssertion(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAssertion(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1523,6 +1533,7 @@ vhdlParser::AssertionContext* vhdlParser::assertion() {
     setState(640);
     condition();
     setState(643);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::REPORT) {
@@ -1532,6 +1543,7 @@ vhdlParser::AssertionContext* vhdlParser::assertion() {
       expression();
     }
     setState(647);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::SEVERITY) {
@@ -1575,8 +1587,8 @@ size_t vhdlParser::Assertion_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Assertion_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAssertion_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAssertion_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1592,6 +1604,7 @@ vhdlParser::Assertion_statementContext* vhdlParser::assertion_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(650);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -1639,8 +1652,8 @@ size_t vhdlParser::Association_elementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Association_elementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAssociation_element(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAssociation_element(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1708,8 +1721,8 @@ size_t vhdlParser::Association_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Association_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAssociation_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAssociation_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1777,8 +1790,8 @@ size_t vhdlParser::Attribute_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Attribute_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAttribute_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAttribute_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1851,8 +1864,8 @@ size_t vhdlParser::Attribute_designatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Attribute_designatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAttribute_designator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAttribute_designator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1972,8 +1985,8 @@ size_t vhdlParser::Attribute_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Attribute_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitAttribute_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitAttribute_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2032,8 +2045,8 @@ size_t vhdlParser::Base_unit_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Base_unit_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBase_unit_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBase_unit_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2090,8 +2103,8 @@ size_t vhdlParser::Binding_indicationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Binding_indicationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBinding_indication(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBinding_indication(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2107,6 +2120,7 @@ vhdlParser::Binding_indicationContext* vhdlParser::binding_indication() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(697);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::USE) {
@@ -2116,6 +2130,7 @@ vhdlParser::Binding_indicationContext* vhdlParser::binding_indication() {
       entity_aspect();
     }
     setState(700);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC) {
@@ -2123,6 +2138,7 @@ vhdlParser::Binding_indicationContext* vhdlParser::binding_indication() {
       generic_map_aspect();
     }
     setState(703);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PORT) {
@@ -2188,8 +2204,8 @@ size_t vhdlParser::Block_configurationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_configurationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_configuration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_configuration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2345,8 +2361,8 @@ size_t vhdlParser::Block_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2548,8 +2564,8 @@ size_t vhdlParser::Block_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2644,8 +2660,8 @@ size_t vhdlParser::Block_headerContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_headerContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_header(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_header(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2661,12 +2677,14 @@ vhdlParser::Block_headerContext* vhdlParser::block_header() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(759);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC) {
       setState(753);
       generic_clause();
       setState(757);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::GENERIC) {
@@ -2677,12 +2695,14 @@ vhdlParser::Block_headerContext* vhdlParser::block_header() {
       }
     }
     setState(767);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PORT) {
       setState(761);
       port_clause();
       setState(765);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::PORT) {
@@ -2735,8 +2755,8 @@ size_t vhdlParser::Block_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2758,6 +2778,7 @@ vhdlParser::Block_specificationContext* vhdlParser::block_specification() {
       setState(769);
       identifier();
       setState(774);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::LPAREN) {
@@ -2858,8 +2879,8 @@ size_t vhdlParser::Block_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2879,6 +2900,7 @@ vhdlParser::Block_statementContext* vhdlParser::block_statement() {
     setState(780);
     match(vhdlParser::BLOCK);
     setState(785);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -2890,6 +2912,7 @@ vhdlParser::Block_statementContext* vhdlParser::block_statement() {
       match(vhdlParser::RPAREN);
     }
     setState(788);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS) {
@@ -2909,6 +2932,7 @@ vhdlParser::Block_statementContext* vhdlParser::block_statement() {
     setState(795);
     match(vhdlParser::BLOCK);
     setState(797);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -2950,8 +2974,8 @@ size_t vhdlParser::Block_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Block_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBlock_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBlock_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3042,8 +3066,8 @@ size_t vhdlParser::Branch_quantity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Branch_quantity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBranch_quantity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBranch_quantity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3124,8 +3148,8 @@ size_t vhdlParser::Break_elementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Break_elementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBreak_element(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBreak_element(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3141,6 +3165,7 @@ vhdlParser::Break_elementContext* vhdlParser::break_element() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(818);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR) {
@@ -3192,8 +3217,8 @@ size_t vhdlParser::Break_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Break_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBreak_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBreak_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3257,8 +3282,8 @@ size_t vhdlParser::Break_selector_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Break_selector_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBreak_selector_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBreak_selector_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3325,8 +3350,8 @@ size_t vhdlParser::Break_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Break_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitBreak_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitBreak_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3342,6 +3367,7 @@ vhdlParser::Break_statementContext* vhdlParser::break_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(837);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -3353,6 +3379,7 @@ vhdlParser::Break_statementContext* vhdlParser::break_statement() {
     setState(839);
     match(vhdlParser::BREAK);
     setState(841);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR || _la == vhdlParser::BASIC_IDENTIFIER
@@ -3362,6 +3389,7 @@ vhdlParser::Break_statementContext* vhdlParser::break_statement() {
       break_list();
     }
     setState(845);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::WHEN) {
@@ -3435,8 +3463,8 @@ size_t vhdlParser::Case_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Case_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitCase_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitCase_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3452,6 +3480,7 @@ vhdlParser::Case_statementContext* vhdlParser::case_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(850);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -3481,6 +3510,7 @@ vhdlParser::Case_statementContext* vhdlParser::case_statement() {
     setState(861);
     match(vhdlParser::CASE);
     setState(863);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -3530,8 +3560,8 @@ size_t vhdlParser::Case_statement_alternativeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Case_statement_alternativeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitCase_statement_alternative(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitCase_statement_alternative(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3592,8 +3622,8 @@ size_t vhdlParser::ChoiceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::ChoiceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitChoice(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitChoice(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3677,8 +3707,8 @@ size_t vhdlParser::ChoicesContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::ChoicesContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitChoices(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitChoices(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3762,8 +3792,8 @@ size_t vhdlParser::Component_configurationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Component_configurationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComponent_configuration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComponent_configuration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3783,6 +3813,7 @@ vhdlParser::Component_configurationContext* vhdlParser::component_configuration(
     setState(887);
     component_specification();
     setState(891);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC
@@ -3796,6 +3827,7 @@ vhdlParser::Component_configurationContext* vhdlParser::component_configuration(
       match(vhdlParser::SEMI);
     }
     setState(894);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR) {
@@ -3867,8 +3899,8 @@ size_t vhdlParser::Component_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Component_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComponent_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComponent_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3888,6 +3920,7 @@ vhdlParser::Component_declarationContext* vhdlParser::component_declaration() {
     setState(901);
     identifier();
     setState(903);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS) {
@@ -3895,6 +3928,7 @@ vhdlParser::Component_declarationContext* vhdlParser::component_declaration() {
       match(vhdlParser::IS);
     }
     setState(906);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC) {
@@ -3902,6 +3936,7 @@ vhdlParser::Component_declarationContext* vhdlParser::component_declaration() {
       generic_clause();
     }
     setState(909);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PORT) {
@@ -3913,6 +3948,7 @@ vhdlParser::Component_declarationContext* vhdlParser::component_declaration() {
     setState(912);
     match(vhdlParser::COMPONENT);
     setState(914);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -3966,8 +4002,8 @@ size_t vhdlParser::Component_instantiation_statementContext::getRuleIndex() cons
 }
 
 antlrcpp::Any vhdlParser::Component_instantiation_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComponent_instantiation_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComponent_instantiation_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3987,6 +4023,7 @@ vhdlParser::Component_instantiation_statementContext* vhdlParser::component_inst
     setState(919);
     instantiated_unit();
     setState(921);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC) {
@@ -3994,6 +4031,7 @@ vhdlParser::Component_instantiation_statementContext* vhdlParser::component_inst
       generic_map_aspect();
     }
     setState(924);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PORT) {
@@ -4037,8 +4075,8 @@ size_t vhdlParser::Component_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Component_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComponent_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComponent_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4089,8 +4127,8 @@ size_t vhdlParser::Composite_nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Composite_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComposite_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComposite_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4154,8 +4192,8 @@ size_t vhdlParser::Composite_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Composite_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitComposite_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitComposite_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4227,8 +4265,8 @@ size_t vhdlParser::Concurrent_assertion_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Concurrent_assertion_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConcurrent_assertion_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConcurrent_assertion_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4244,6 +4282,7 @@ vhdlParser::Concurrent_assertion_statementContext* vhdlParser::concurrent_assert
   try {
     enterOuterAlt(_localctx, 1);
     setState(941);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -4253,6 +4292,7 @@ vhdlParser::Concurrent_assertion_statementContext* vhdlParser::concurrent_assert
       label_colon();
     }
     setState(944);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::POSTPONED) {
@@ -4314,8 +4354,8 @@ size_t vhdlParser::Concurrent_break_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Concurrent_break_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConcurrent_break_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConcurrent_break_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4331,6 +4371,7 @@ vhdlParser::Concurrent_break_statementContext* vhdlParser::concurrent_break_stat
   try {
     enterOuterAlt(_localctx, 1);
     setState(950);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -4342,6 +4383,7 @@ vhdlParser::Concurrent_break_statementContext* vhdlParser::concurrent_break_stat
     setState(952);
     match(vhdlParser::BREAK);
     setState(954);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR || _la == vhdlParser::BASIC_IDENTIFIER
@@ -4351,6 +4393,7 @@ vhdlParser::Concurrent_break_statementContext* vhdlParser::concurrent_break_stat
       break_list();
     }
     setState(957);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ON) {
@@ -4358,6 +4401,7 @@ vhdlParser::Concurrent_break_statementContext* vhdlParser::concurrent_break_stat
       sensitivity_clause();
     }
     setState(961);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::WHEN) {
@@ -4407,8 +4451,8 @@ size_t vhdlParser::Concurrent_procedure_call_statementContext::getRuleIndex() co
 }
 
 antlrcpp::Any vhdlParser::Concurrent_procedure_call_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConcurrent_procedure_call_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConcurrent_procedure_call_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4435,6 +4479,7 @@ vhdlParser::Concurrent_procedure_call_statementContext* vhdlParser::concurrent_p
 
     }
     setState(969);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::POSTPONED) {
@@ -4484,8 +4529,8 @@ size_t vhdlParser::Concurrent_signal_assignment_statementContext::getRuleIndex()
 }
 
 antlrcpp::Any vhdlParser::Concurrent_signal_assignment_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConcurrent_signal_assignment_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConcurrent_signal_assignment_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4512,6 +4557,7 @@ vhdlParser::Concurrent_signal_assignment_statementContext* vhdlParser::concurren
 
     }
     setState(978);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::POSTPONED) {
@@ -4565,8 +4611,8 @@ size_t vhdlParser::ConditionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::ConditionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitCondition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitCondition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4613,8 +4659,8 @@ size_t vhdlParser::Condition_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Condition_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitCondition_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitCondition_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4675,8 +4721,8 @@ size_t vhdlParser::Conditional_signal_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Conditional_signal_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConditional_signal_assignment(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConditional_signal_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4743,8 +4789,8 @@ size_t vhdlParser::Conditional_waveformsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Conditional_waveformsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConditional_waveforms(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConditional_waveforms(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4762,6 +4808,7 @@ vhdlParser::Conditional_waveformsContext* vhdlParser::conditional_waveforms() {
     setState(995);
     waveform();
     setState(1002);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::WHEN) {
@@ -4770,6 +4817,7 @@ vhdlParser::Conditional_waveformsContext* vhdlParser::conditional_waveforms() {
       setState(997);
       condition();
       setState(1000);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::ELSE) {
@@ -4846,8 +4894,8 @@ size_t vhdlParser::Configuration_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Configuration_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConfiguration_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConfiguration_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4879,6 +4927,7 @@ vhdlParser::Configuration_declarationContext* vhdlParser::configuration_declarat
     setState(1011);
     match(vhdlParser::END);
     setState(1013);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::CONFIGURATION) {
@@ -4886,6 +4935,7 @@ vhdlParser::Configuration_declarationContext* vhdlParser::configuration_declarat
       match(vhdlParser::CONFIGURATION);
     }
     setState(1016);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -4931,8 +4981,8 @@ size_t vhdlParser::Configuration_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Configuration_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConfiguration_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConfiguration_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5003,8 +5053,8 @@ size_t vhdlParser::Configuration_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Configuration_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConfiguration_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConfiguration_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5062,8 +5112,8 @@ size_t vhdlParser::Configuration_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Configuration_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConfiguration_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConfiguration_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5133,8 +5183,8 @@ size_t vhdlParser::Configuration_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Configuration_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConfiguration_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConfiguration_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5207,8 +5257,8 @@ size_t vhdlParser::Constant_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Constant_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConstant_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConstant_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5232,6 +5282,7 @@ vhdlParser::Constant_declarationContext* vhdlParser::constant_declaration() {
     setState(1043);
     subtype_indication();
     setState(1046);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -5281,8 +5332,8 @@ size_t vhdlParser::Constrained_array_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Constrained_array_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConstrained_array_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConstrained_array_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5343,8 +5394,8 @@ size_t vhdlParser::Constrained_nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Constrained_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConstrained_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConstrained_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5397,8 +5448,8 @@ size_t vhdlParser::ConstraintContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::ConstraintContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitConstraint(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitConstraint(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5462,8 +5513,8 @@ size_t vhdlParser::Context_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Context_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitContext_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitContext_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5521,8 +5572,8 @@ size_t vhdlParser::Context_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Context_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitContext_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitContext_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5594,8 +5645,8 @@ size_t vhdlParser::Delay_mechanismContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Delay_mechanismContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDelay_mechanism(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDelay_mechanism(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5623,6 +5674,7 @@ vhdlParser::Delay_mechanismContext* vhdlParser::delay_mechanism() {
       case vhdlParser::REJECT: {
         enterOuterAlt(_localctx, 2);
         setState(1077);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == vhdlParser::REJECT) {
@@ -5674,8 +5726,8 @@ size_t vhdlParser::Design_fileContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Design_fileContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDesign_file(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDesign_file(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5739,8 +5791,8 @@ size_t vhdlParser::Design_unitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Design_unitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDesign_unit(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDesign_unit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5789,8 +5841,8 @@ size_t vhdlParser::DesignatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::DesignatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDesignator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDesignator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5855,8 +5907,8 @@ size_t vhdlParser::DirectionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::DirectionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDirection(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDirection(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5875,7 +5927,9 @@ vhdlParser::DirectionContext* vhdlParser::direction() {
     _la = _input->LA(1);
     if (!(_la == vhdlParser::DOWNTO || _la == vhdlParser::TO)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -5921,8 +5975,8 @@ size_t vhdlParser::Disconnection_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Disconnection_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDisconnection_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDisconnection_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5977,8 +6031,8 @@ size_t vhdlParser::Discrete_rangeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Discrete_rangeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitDiscrete_range(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitDiscrete_range(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6044,8 +6098,8 @@ size_t vhdlParser::Element_associationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Element_associationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitElement_association(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitElement_association(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6113,8 +6167,8 @@ size_t vhdlParser::Element_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Element_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitElement_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitElement_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6163,8 +6217,8 @@ size_t vhdlParser::Element_subnature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Element_subnature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitElement_subnature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitElement_subnature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6207,8 +6261,8 @@ size_t vhdlParser::Element_subtype_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Element_subtype_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitElement_subtype_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitElement_subtype_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6275,8 +6329,8 @@ size_t vhdlParser::Entity_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6300,6 +6354,7 @@ vhdlParser::Entity_aspectContext* vhdlParser::entity_aspect() {
         setState(1126);
         name();
         setState(1131);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == vhdlParser::LPAREN) {
@@ -6439,8 +6494,8 @@ size_t vhdlParser::Entity_classContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_classContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_class(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_class(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6480,7 +6535,9 @@ vhdlParser::Entity_classContext* vhdlParser::entity_class() {
       | (1ULL << (vhdlParser::UNITS - 64))
       | (1ULL << (vhdlParser::VARIABLE - 64)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -6514,8 +6571,8 @@ size_t vhdlParser::Entity_class_entryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_class_entryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_class_entry(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_class_entry(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6533,6 +6590,7 @@ vhdlParser::Entity_class_entryContext* vhdlParser::entity_class_entry() {
     setState(1140);
     entity_class();
     setState(1142);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BOX) {
@@ -6578,8 +6636,8 @@ size_t vhdlParser::Entity_class_entry_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_class_entry_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_class_entry_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_class_entry_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6675,8 +6733,8 @@ size_t vhdlParser::Entity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6702,6 +6760,7 @@ vhdlParser::Entity_declarationContext* vhdlParser::entity_declaration() {
     setState(1156);
     entity_declarative_part();
     setState(1159);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BEGIN) {
@@ -6713,6 +6772,7 @@ vhdlParser::Entity_declarationContext* vhdlParser::entity_declaration() {
     setState(1161);
     match(vhdlParser::END);
     setState(1163);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ENTITY) {
@@ -6720,6 +6780,7 @@ vhdlParser::Entity_declarationContext* vhdlParser::entity_declaration() {
       match(vhdlParser::ENTITY);
     }
     setState(1166);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -6833,8 +6894,8 @@ size_t vhdlParser::Entity_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7022,8 +7083,8 @@ size_t vhdlParser::Entity_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7100,8 +7161,8 @@ size_t vhdlParser::Entity_designatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_designatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_designator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_designator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7119,6 +7180,7 @@ vhdlParser::Entity_designatorContext* vhdlParser::entity_designator() {
     setState(1198);
     entity_tag();
     setState(1200);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LBRACKET) {
@@ -7156,8 +7218,8 @@ size_t vhdlParser::Entity_headerContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_headerContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_header(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_header(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7173,6 +7235,7 @@ vhdlParser::Entity_headerContext* vhdlParser::entity_header() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1203);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GENERIC) {
@@ -7180,6 +7243,7 @@ vhdlParser::Entity_headerContext* vhdlParser::entity_header() {
       generic_clause();
     }
     setState(1206);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PORT) {
@@ -7233,8 +7297,8 @@ size_t vhdlParser::Entity_name_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_name_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_name_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_name_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7325,8 +7389,8 @@ size_t vhdlParser::Entity_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7381,8 +7445,8 @@ size_t vhdlParser::Entity_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7451,8 +7515,8 @@ size_t vhdlParser::Entity_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7516,8 +7580,8 @@ size_t vhdlParser::Entity_tagContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Entity_tagContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEntity_tag(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEntity_tag(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7589,8 +7653,8 @@ size_t vhdlParser::Enumeration_literalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Enumeration_literalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEnumeration_literal(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEnumeration_literal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7671,8 +7735,8 @@ size_t vhdlParser::Enumeration_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Enumeration_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitEnumeration_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitEnumeration_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7752,8 +7816,8 @@ size_t vhdlParser::Exit_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Exit_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitExit_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitExit_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7769,6 +7833,7 @@ vhdlParser::Exit_statementContext* vhdlParser::exit_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1256);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -7780,6 +7845,7 @@ vhdlParser::Exit_statementContext* vhdlParser::exit_statement() {
     setState(1258);
     match(vhdlParser::EXIT);
     setState(1260);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -7789,6 +7855,7 @@ vhdlParser::Exit_statementContext* vhdlParser::exit_statement() {
       identifier();
     }
     setState(1264);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::WHEN) {
@@ -7838,8 +7905,8 @@ size_t vhdlParser::ExpressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::ExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitExpression(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitExpression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7913,8 +7980,8 @@ size_t vhdlParser::FactorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::FactorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFactor(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFactor(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8028,8 +8095,8 @@ size_t vhdlParser::File_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::File_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFile_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFile_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8053,6 +8120,7 @@ vhdlParser::File_declarationContext* vhdlParser::file_declaration() {
     setState(1291);
     subtype_indication();
     setState(1293);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS
@@ -8090,8 +8158,8 @@ size_t vhdlParser::File_logical_nameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::File_logical_nameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFile_logical_name(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFile_logical_name(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8146,8 +8214,8 @@ size_t vhdlParser::File_open_informationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::File_open_informationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFile_open_information(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFile_open_information(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8163,6 +8231,7 @@ vhdlParser::File_open_informationContext* vhdlParser::file_open_information() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1301);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::OPEN) {
@@ -8210,8 +8279,8 @@ size_t vhdlParser::File_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::File_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFile_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFile_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8258,8 +8327,8 @@ size_t vhdlParser::Formal_parameter_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Formal_parameter_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFormal_parameter_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFormal_parameter_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8314,8 +8383,8 @@ size_t vhdlParser::Formal_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Formal_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFormal_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFormal_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8403,8 +8472,8 @@ size_t vhdlParser::Free_quantity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Free_quantity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFree_quantity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFree_quantity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8428,6 +8497,7 @@ vhdlParser::Free_quantity_declarationContext* vhdlParser::free_quantity_declarat
     setState(1323);
     subtype_indication();
     setState(1326);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -8509,8 +8579,8 @@ size_t vhdlParser::Generate_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Generate_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGenerate_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGenerate_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8532,6 +8602,7 @@ vhdlParser::Generate_statementContext* vhdlParser::generate_statement() {
     setState(1332);
     match(vhdlParser::GENERATE);
     setState(1340);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -8633,6 +8704,7 @@ vhdlParser::Generate_statementContext* vhdlParser::generate_statement() {
     setState(1349);
     match(vhdlParser::GENERATE);
     setState(1351);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -8682,8 +8754,8 @@ size_t vhdlParser::Generation_schemeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Generation_schemeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGeneration_scheme(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGeneration_scheme(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8763,8 +8835,8 @@ size_t vhdlParser::Generic_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Generic_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGeneric_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGeneric_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8827,8 +8899,8 @@ size_t vhdlParser::Generic_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Generic_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGeneric_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGeneric_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8900,8 +8972,8 @@ size_t vhdlParser::Generic_map_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Generic_map_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGeneric_map_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGeneric_map_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8956,8 +9028,8 @@ size_t vhdlParser::Group_constituentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Group_constituentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGroup_constituent(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGroup_constituent(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9030,8 +9102,8 @@ size_t vhdlParser::Group_constituent_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Group_constituent_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGroup_constituent_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGroup_constituent_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9111,8 +9183,8 @@ size_t vhdlParser::Group_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Group_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGroup_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGroup_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9191,8 +9263,8 @@ size_t vhdlParser::Group_template_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Group_template_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGroup_template_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGroup_template_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9255,8 +9327,8 @@ size_t vhdlParser::Guarded_signal_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Guarded_signal_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitGuarded_signal_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitGuarded_signal_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9307,8 +9379,8 @@ size_t vhdlParser::IdentifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::IdentifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIdentifier(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIdentifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9329,7 +9401,9 @@ vhdlParser::IdentifierContext* vhdlParser::identifier() {
 
     || _la == vhdlParser::EXTENDED_IDENTIFIER)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9371,8 +9445,8 @@ size_t vhdlParser::Identifier_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Identifier_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIdentifier_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIdentifier_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9484,8 +9558,8 @@ size_t vhdlParser::If_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::If_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIf_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIf_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9501,6 +9575,7 @@ vhdlParser::If_statementContext* vhdlParser::if_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1424);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -9534,6 +9609,7 @@ vhdlParser::If_statementContext* vhdlParser::if_statement() {
       _la = _input->LA(1);
     }
     setState(1442);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ELSE) {
@@ -9547,6 +9623,7 @@ vhdlParser::If_statementContext* vhdlParser::if_statement() {
     setState(1445);
     match(vhdlParser::IF);
     setState(1447);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -9604,8 +9681,8 @@ size_t vhdlParser::Index_constraintContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Index_constraintContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIndex_constraint(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIndex_constraint(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9669,8 +9746,8 @@ size_t vhdlParser::Index_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Index_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIndex_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIndex_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9736,8 +9813,8 @@ size_t vhdlParser::Index_subtype_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Index_subtype_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIndex_subtype_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIndex_subtype_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9808,8 +9885,8 @@ size_t vhdlParser::Instantiated_unitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Instantiated_unitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInstantiated_unit(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInstantiated_unit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9831,6 +9908,7 @@ vhdlParser::Instantiated_unitContext* vhdlParser::instantiated_unit() {
       case vhdlParser::EXTENDED_IDENTIFIER: {
         enterOuterAlt(_localctx, 1);
         setState(1471);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == vhdlParser::COMPONENT) {
@@ -9849,6 +9927,7 @@ vhdlParser::Instantiated_unitContext* vhdlParser::instantiated_unit() {
         setState(1475);
         name();
         setState(1480);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == vhdlParser::LPAREN) {
@@ -9921,8 +10000,8 @@ size_t vhdlParser::Instantiation_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Instantiation_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInstantiation_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInstantiation_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10027,8 +10106,8 @@ size_t vhdlParser::Interface_constant_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_constant_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_constant_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_constant_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10044,6 +10123,7 @@ vhdlParser::Interface_constant_declarationContext* vhdlParser::interface_constan
   try {
     enterOuterAlt(_localctx, 1);
     setState(1499);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::CONSTANT) {
@@ -10055,6 +10135,7 @@ vhdlParser::Interface_constant_declarationContext* vhdlParser::interface_constan
     setState(1502);
     match(vhdlParser::COLON);
     setState(1504);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IN) {
@@ -10064,6 +10145,7 @@ vhdlParser::Interface_constant_declarationContext* vhdlParser::interface_constan
     setState(1506);
     subtype_indication();
     setState(1509);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -10119,8 +10201,8 @@ size_t vhdlParser::Interface_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10206,8 +10288,8 @@ size_t vhdlParser::Interface_elementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_elementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_element(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_element(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10262,8 +10344,8 @@ size_t vhdlParser::Interface_file_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_file_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_file_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_file_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10324,8 +10406,8 @@ size_t vhdlParser::Interface_signal_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_signal_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_signal_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_signal_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10393,8 +10475,8 @@ size_t vhdlParser::Interface_port_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_port_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_port_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_port_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10462,8 +10544,8 @@ size_t vhdlParser::Interface_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10547,8 +10629,8 @@ size_t vhdlParser::Interface_quantity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_quantity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_quantity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_quantity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10570,6 +10652,7 @@ vhdlParser::Interface_quantity_declarationContext* vhdlParser::interface_quantit
     setState(1552);
     match(vhdlParser::COLON);
     setState(1554);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IN
@@ -10581,13 +10664,16 @@ vhdlParser::Interface_quantity_declarationContext* vhdlParser::interface_quantit
 
       || _la == vhdlParser::OUT)) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
     }
     setState(1556);
     subtype_indication();
     setState(1559);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -10647,8 +10733,8 @@ size_t vhdlParser::Interface_port_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_port_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_port_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_port_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10672,6 +10758,7 @@ vhdlParser::Interface_port_declarationContext* vhdlParser::interface_port_declar
     setState(1564);
     subtype_indication();
     setState(1566);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BUS) {
@@ -10679,6 +10766,7 @@ vhdlParser::Interface_port_declarationContext* vhdlParser::interface_port_declar
       match(vhdlParser::BUS);
     }
     setState(1570);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -10750,8 +10838,8 @@ size_t vhdlParser::Interface_signal_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_signal_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_signal_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_signal_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10773,6 +10861,7 @@ vhdlParser::Interface_signal_declarationContext* vhdlParser::interface_signal_de
     setState(1574);
     match(vhdlParser::COLON);
     setState(1576);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -10786,13 +10875,16 @@ vhdlParser::Interface_signal_declarationContext* vhdlParser::interface_signal_de
         | (1ULL << vhdlParser::INOUT)
         | (1ULL << vhdlParser::OUT))) != 0))) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
     }
     setState(1578);
     subtype_indication();
     setState(1580);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BUS) {
@@ -10800,6 +10892,7 @@ vhdlParser::Interface_signal_declarationContext* vhdlParser::interface_signal_de
       match(vhdlParser::BUS);
     }
     setState(1584);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -10847,8 +10940,8 @@ size_t vhdlParser::Interface_terminal_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_terminal_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_terminal_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_terminal_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10921,8 +11014,8 @@ size_t vhdlParser::Interface_variable_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Interface_variable_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitInterface_variable_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitInterface_variable_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10938,6 +11031,7 @@ vhdlParser::Interface_variable_declarationContext* vhdlParser::interface_variabl
   try {
     enterOuterAlt(_localctx, 1);
     setState(1592);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARIABLE) {
@@ -10949,6 +11043,7 @@ vhdlParser::Interface_variable_declarationContext* vhdlParser::interface_variabl
     setState(1595);
     match(vhdlParser::COLON);
     setState(1597);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -10963,6 +11058,7 @@ vhdlParser::Interface_variable_declarationContext* vhdlParser::interface_variabl
     setState(1599);
     subtype_indication();
     setState(1602);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -11010,8 +11106,8 @@ size_t vhdlParser::Iteration_schemeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Iteration_schemeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitIteration_scheme(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitIteration_scheme(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11079,8 +11175,8 @@ size_t vhdlParser::Label_colonContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Label_colonContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLabel_colon(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLabel_colon(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11133,8 +11229,8 @@ size_t vhdlParser::Library_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Library_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLibrary_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLibrary_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11185,8 +11281,8 @@ size_t vhdlParser::Library_unitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Library_unitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLibrary_unit(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLibrary_unit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11260,8 +11356,8 @@ size_t vhdlParser::LiteralContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::LiteralContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLiteral(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLiteral(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11346,8 +11442,8 @@ size_t vhdlParser::Logical_nameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Logical_nameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLogical_name(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLogical_name(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11402,8 +11498,8 @@ size_t vhdlParser::Logical_name_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Logical_name_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLogical_name_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLogical_name_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11479,8 +11575,8 @@ size_t vhdlParser::Logical_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Logical_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLogical_operator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLogical_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11505,7 +11601,9 @@ vhdlParser::Logical_operatorContext* vhdlParser::logical_operator() {
 
     || _la == vhdlParser::XOR)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -11563,8 +11661,8 @@ size_t vhdlParser::Loop_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Loop_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitLoop_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitLoop_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11580,6 +11678,7 @@ vhdlParser::Loop_statementContext* vhdlParser::loop_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1641);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -11589,6 +11688,7 @@ vhdlParser::Loop_statementContext* vhdlParser::loop_statement() {
       label_colon();
     }
     setState(1644);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR || _la == vhdlParser::WHILE) {
@@ -11604,6 +11704,7 @@ vhdlParser::Loop_statementContext* vhdlParser::loop_statement() {
     setState(1649);
     match(vhdlParser::LOOP);
     setState(1651);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -11657,8 +11758,8 @@ size_t vhdlParser::Signal_modeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Signal_modeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignal_mode(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignal_mode(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11682,7 +11783,9 @@ vhdlParser::Signal_modeContext* vhdlParser::signal_mode() {
       | (1ULL << vhdlParser::LINKAGE)
       | (1ULL << vhdlParser::OUT))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -11724,8 +11827,8 @@ size_t vhdlParser::Multiplying_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Multiplying_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitMultiplying_operator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitMultiplying_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11748,7 +11851,9 @@ vhdlParser::Multiplying_operatorContext* vhdlParser::multiplying_operator() {
 
     || _la == vhdlParser::DIV)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -11794,8 +11899,8 @@ size_t vhdlParser::NameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::NameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11876,8 +11981,8 @@ size_t vhdlParser::Name_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Name_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11941,8 +12046,8 @@ size_t vhdlParser::Name_part_specificatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Name_part_specificatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName_part_specificator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName_part_specificator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12027,8 +12132,8 @@ size_t vhdlParser::Name_attribute_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Name_attribute_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName_attribute_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName_attribute_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12107,8 +12212,8 @@ size_t vhdlParser::Name_function_call_or_indexed_partContext::getRuleIndex() con
 }
 
 antlrcpp::Any vhdlParser::Name_function_call_or_indexed_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName_function_call_or_indexed_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName_function_call_or_indexed_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12126,6 +12231,7 @@ vhdlParser::Name_function_call_or_indexed_partContext* vhdlParser::name_function
     setState(1694);
     match(vhdlParser::LPAREN);
     setState(1696);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -12197,8 +12303,8 @@ size_t vhdlParser::Name_slice_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Name_slice_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitName_slice_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitName_slice_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12274,8 +12380,8 @@ size_t vhdlParser::Selected_nameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Selected_nameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSelected_name(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSelected_name(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12349,8 +12455,8 @@ size_t vhdlParser::Nature_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Nature_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitNature_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitNature_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12405,8 +12511,8 @@ size_t vhdlParser::Nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitNature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitNature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12476,8 +12582,8 @@ size_t vhdlParser::Nature_element_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Nature_element_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitNature_element_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitNature_element_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12544,8 +12650,8 @@ size_t vhdlParser::Next_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Next_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitNext_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitNext_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12561,6 +12667,7 @@ vhdlParser::Next_statementContext* vhdlParser::next_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1734);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -12572,6 +12679,7 @@ vhdlParser::Next_statementContext* vhdlParser::next_statement() {
     setState(1736);
     match(vhdlParser::NEXT);
     setState(1738);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -12581,6 +12689,7 @@ vhdlParser::Next_statementContext* vhdlParser::next_statement() {
       identifier();
     }
     setState(1742);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::WHEN) {
@@ -12622,8 +12731,8 @@ size_t vhdlParser::Numeric_literalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Numeric_literalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitNumeric_literal(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitNumeric_literal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12701,8 +12810,8 @@ size_t vhdlParser::Object_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Object_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitObject_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitObject_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12795,8 +12904,8 @@ size_t vhdlParser::OptsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::OptsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitOpts(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitOpts(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12812,6 +12921,7 @@ vhdlParser::OptsContext* vhdlParser::opts() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1759);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::GUARDED) {
@@ -12819,6 +12929,7 @@ vhdlParser::OptsContext* vhdlParser::opts() {
       match(vhdlParser::GUARDED);
     }
     setState(1762);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (((((_la - 39) & ~ 0x3fULL) == 0) &&
@@ -12891,8 +13002,8 @@ size_t vhdlParser::Package_bodyContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_bodyContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_body(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_body(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12920,6 +13031,7 @@ vhdlParser::Package_bodyContext* vhdlParser::package_body() {
     setState(1769);
     match(vhdlParser::END);
     setState(1772);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PACKAGE) {
@@ -12929,6 +13041,7 @@ vhdlParser::Package_bodyContext* vhdlParser::package_body() {
       match(vhdlParser::BODY);
     }
     setState(1775);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -13006,8 +13119,8 @@ size_t vhdlParser::Package_body_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_body_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_body_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_body_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13132,8 +13245,8 @@ size_t vhdlParser::Package_body_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_body_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_body_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_body_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13226,8 +13339,8 @@ size_t vhdlParser::Package_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13253,6 +13366,7 @@ vhdlParser::Package_declarationContext* vhdlParser::package_declaration() {
     setState(1802);
     match(vhdlParser::END);
     setState(1804);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PACKAGE) {
@@ -13260,6 +13374,7 @@ vhdlParser::Package_declarationContext* vhdlParser::package_declaration() {
       match(vhdlParser::PACKAGE);
     }
     setState(1807);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -13365,8 +13480,8 @@ size_t vhdlParser::Package_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13540,8 +13655,8 @@ size_t vhdlParser::Package_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Package_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPackage_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPackage_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13621,8 +13736,8 @@ size_t vhdlParser::Parameter_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Parameter_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitParameter_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitParameter_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13673,8 +13788,8 @@ size_t vhdlParser::Physical_literalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Physical_literalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPhysical_literal(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPhysical_literal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13748,8 +13863,8 @@ size_t vhdlParser::Physical_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Physical_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPhysical_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPhysical_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13787,6 +13902,7 @@ vhdlParser::Physical_type_definitionContext* vhdlParser::physical_type_definitio
     setState(1854);
     match(vhdlParser::UNITS);
     setState(1856);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -13838,8 +13954,8 @@ size_t vhdlParser::Port_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Port_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPort_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPort_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13890,8 +14006,8 @@ size_t vhdlParser::Port_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Port_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPort_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPort_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13950,8 +14066,8 @@ size_t vhdlParser::Port_map_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Port_map_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPort_map_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPort_map_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14030,8 +14146,8 @@ size_t vhdlParser::PrimaryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPrimary(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPrimary(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14129,8 +14245,8 @@ size_t vhdlParser::Primary_unitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Primary_unitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitPrimary_unit(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitPrimary_unit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14241,8 +14357,8 @@ size_t vhdlParser::Procedural_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedural_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedural_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedural_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14374,8 +14490,8 @@ size_t vhdlParser::Procedural_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedural_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedural_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedural_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14444,8 +14560,8 @@ size_t vhdlParser::Procedural_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedural_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedural_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedural_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14525,8 +14641,8 @@ size_t vhdlParser::Procedure_callContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedure_callContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedure_call(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedure_call(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14544,6 +14660,7 @@ vhdlParser::Procedure_callContext* vhdlParser::procedure_call() {
     setState(1914);
     selected_name();
     setState(1919);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -14589,8 +14706,8 @@ size_t vhdlParser::Procedure_call_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedure_call_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedure_call_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedure_call_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14694,8 +14811,8 @@ size_t vhdlParser::Process_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Process_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcess_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcess_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14834,8 +14951,8 @@ size_t vhdlParser::Process_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Process_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcess_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcess_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14957,8 +15074,8 @@ size_t vhdlParser::Process_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Process_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcess_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcess_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14974,6 +15091,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(1949);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -14983,6 +15101,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
       label_colon();
     }
     setState(1952);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::POSTPONED) {
@@ -14992,6 +15111,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
     setState(1954);
     match(vhdlParser::PROCESS);
     setState(1959);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -15003,6 +15123,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
       match(vhdlParser::RPAREN);
     }
     setState(1962);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS) {
@@ -15018,6 +15139,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
     setState(1967);
     match(vhdlParser::END);
     setState(1969);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::POSTPONED) {
@@ -15027,6 +15149,7 @@ vhdlParser::Process_statementContext* vhdlParser::process_statement() {
     setState(1971);
     match(vhdlParser::PROCESS);
     setState(1973);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -15068,8 +15191,8 @@ size_t vhdlParser::Process_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Process_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcess_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcess_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15157,8 +15280,8 @@ size_t vhdlParser::Qualified_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Qualified_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitQualified_expression(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitQualified_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15231,8 +15354,8 @@ size_t vhdlParser::Quantity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Quantity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitQuantity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitQuantity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15317,8 +15440,8 @@ size_t vhdlParser::Quantity_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Quantity_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitQuantity_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitQuantity_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15407,8 +15530,8 @@ size_t vhdlParser::Quantity_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Quantity_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitQuantity_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitQuantity_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15459,8 +15582,8 @@ size_t vhdlParser::RangeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::RangeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRange(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRange(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15526,8 +15649,8 @@ size_t vhdlParser::Explicit_rangeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Explicit_rangeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitExplicit_range(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitExplicit_range(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15578,8 +15701,8 @@ size_t vhdlParser::Range_constraintContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Range_constraintContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRange_constraint(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRange_constraint(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15644,8 +15767,8 @@ size_t vhdlParser::Record_nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Record_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRecord_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRecord_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15679,6 +15802,7 @@ vhdlParser::Record_nature_definitionContext* vhdlParser::record_nature_definitio
     setState(2031);
     match(vhdlParser::RECORD);
     setState(2033);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -15734,8 +15858,8 @@ size_t vhdlParser::Record_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Record_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRecord_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRecord_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15769,6 +15893,7 @@ vhdlParser::Record_type_definitionContext* vhdlParser::record_type_definition() 
     setState(2042);
     match(vhdlParser::RECORD);
     setState(2044);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -15812,8 +15937,8 @@ size_t vhdlParser::RelationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::RelationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRelation(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRelation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15889,8 +16014,8 @@ size_t vhdlParser::Relational_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Relational_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitRelational_operator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitRelational_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15915,7 +16040,9 @@ vhdlParser::Relational_operatorContext* vhdlParser::relational_operator() {
       | (1ULL << (vhdlParser::GREATERTHAN - 131))
       | (1ULL << (vhdlParser::EQ - 131)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -15965,8 +16092,8 @@ size_t vhdlParser::Report_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Report_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitReport_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitReport_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15982,6 +16109,7 @@ vhdlParser::Report_statementContext* vhdlParser::report_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(2055);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -15995,6 +16123,7 @@ vhdlParser::Report_statementContext* vhdlParser::report_statement() {
     setState(2058);
     expression();
     setState(2061);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::SEVERITY) {
@@ -16044,8 +16173,8 @@ size_t vhdlParser::Return_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Return_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitReturn_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitReturn_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16061,6 +16190,7 @@ vhdlParser::Return_statementContext* vhdlParser::return_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(2066);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -16072,6 +16202,7 @@ vhdlParser::Return_statementContext* vhdlParser::return_statement() {
     setState(2068);
     match(vhdlParser::RETURN);
     setState(2070);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -16138,8 +16269,8 @@ size_t vhdlParser::Scalar_nature_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Scalar_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitScalar_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitScalar_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16200,8 +16331,8 @@ size_t vhdlParser::Scalar_type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Scalar_type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitScalar_type_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitScalar_type_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16270,8 +16401,8 @@ size_t vhdlParser::Secondary_unitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Secondary_unitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSecondary_unit(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSecondary_unit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16343,8 +16474,8 @@ size_t vhdlParser::Secondary_unit_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Secondary_unit_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSecondary_unit_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSecondary_unit_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16421,8 +16552,8 @@ size_t vhdlParser::Selected_signal_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Selected_signal_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSelected_signal_assignment(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSelected_signal_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16507,8 +16638,8 @@ size_t vhdlParser::Selected_waveformsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Selected_waveformsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSelected_waveforms(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSelected_waveforms(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16576,8 +16707,8 @@ size_t vhdlParser::Sensitivity_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Sensitivity_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSensitivity_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSensitivity_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16634,8 +16765,8 @@ size_t vhdlParser::Sensitivity_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Sensitivity_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSensitivity_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSensitivity_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16695,8 +16826,8 @@ size_t vhdlParser::Sequence_of_statementsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Sequence_of_statementsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSequence_of_statements(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSequence_of_statements(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16824,8 +16955,8 @@ size_t vhdlParser::Sequential_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Sequential_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSequential_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSequential_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16922,6 +17053,7 @@ vhdlParser::Sequential_statementContext* vhdlParser::sequential_statement() {
     case 12: {
       enterOuterAlt(_localctx, 12);
       setState(2146);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -16987,8 +17119,8 @@ size_t vhdlParser::Shift_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Shift_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitShift_expression(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitShift_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17064,8 +17196,8 @@ size_t vhdlParser::Shift_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Shift_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitShift_operator(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitShift_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17090,7 +17222,9 @@ vhdlParser::Shift_operatorContext* vhdlParser::shift_operator() {
       | (1ULL << (vhdlParser::SRA - 81))
       | (1ULL << (vhdlParser::SRL - 81)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -17140,8 +17274,8 @@ size_t vhdlParser::Signal_assignment_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Signal_assignment_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignal_assignment_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignal_assignment_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17172,6 +17306,7 @@ vhdlParser::Signal_assignment_statementContext* vhdlParser::signal_assignment_st
     setState(2166);
     match(vhdlParser::LE);
     setState(2168);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (((((_la - 39) & ~ 0x3fULL) == 0) &&
@@ -17240,8 +17375,8 @@ size_t vhdlParser::Signal_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Signal_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignal_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignal_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17265,6 +17400,7 @@ vhdlParser::Signal_declarationContext* vhdlParser::signal_declaration() {
     setState(2176);
     subtype_indication();
     setState(2178);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BUS
@@ -17274,6 +17410,7 @@ vhdlParser::Signal_declarationContext* vhdlParser::signal_declaration() {
       signal_kind();
     }
     setState(2182);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -17315,8 +17452,8 @@ size_t vhdlParser::Signal_kindContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Signal_kindContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignal_kind(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignal_kind(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17337,7 +17474,9 @@ vhdlParser::Signal_kindContext* vhdlParser::signal_kind() {
 
     || _la == vhdlParser::REGISTER)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -17387,8 +17526,8 @@ size_t vhdlParser::Signal_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Signal_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignal_list(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignal_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17493,8 +17632,8 @@ size_t vhdlParser::SignatureContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::SignatureContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSignature(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSignature(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17512,6 +17651,7 @@ vhdlParser::SignatureContext* vhdlParser::signature() {
     setState(2200);
     match(vhdlParser::LBRACKET);
     setState(2209);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -17533,6 +17673,7 @@ vhdlParser::SignatureContext* vhdlParser::signature() {
       }
     }
     setState(2213);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::RETURN) {
@@ -17590,8 +17731,8 @@ size_t vhdlParser::Simple_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simple_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimple_expression(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimple_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17608,6 +17749,7 @@ vhdlParser::Simple_expressionContext* vhdlParser::simple_expression() {
     size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(2218);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::PLUS
@@ -17619,7 +17761,9 @@ vhdlParser::Simple_expressionContext* vhdlParser::simple_expression() {
 
       || _la == vhdlParser::MINUS)) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
     }
@@ -17686,8 +17830,8 @@ size_t vhdlParser::Simple_simultaneous_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simple_simultaneous_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimple_simultaneous_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimple_simultaneous_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17720,6 +17864,7 @@ vhdlParser::Simple_simultaneous_statementContext* vhdlParser::simple_simultaneou
     setState(2234);
     simple_expression();
     setState(2236);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::TOLERANCE) {
@@ -17767,8 +17912,8 @@ size_t vhdlParser::Simultaneous_alternativeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_alternativeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_alternative(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_alternative(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17853,8 +17998,8 @@ size_t vhdlParser::Simultaneous_case_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_case_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_case_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_case_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17870,6 +18015,7 @@ vhdlParser::Simultaneous_case_statementContext* vhdlParser::simultaneous_case_st
   try {
     enterOuterAlt(_localctx, 1);
     setState(2246);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -17899,6 +18045,7 @@ vhdlParser::Simultaneous_case_statementContext* vhdlParser::simultaneous_case_st
     setState(2257);
     match(vhdlParser::CASE);
     setState(2259);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -17988,8 +18135,8 @@ size_t vhdlParser::Simultaneous_if_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_if_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_if_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_if_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18005,6 +18152,7 @@ vhdlParser::Simultaneous_if_statementContext* vhdlParser::simultaneous_if_statem
   try {
     enterOuterAlt(_localctx, 1);
     setState(2264);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -18038,6 +18186,7 @@ vhdlParser::Simultaneous_if_statementContext* vhdlParser::simultaneous_if_statem
       _la = _input->LA(1);
     }
     setState(2282);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ELSE) {
@@ -18051,6 +18200,7 @@ vhdlParser::Simultaneous_if_statementContext* vhdlParser::simultaneous_if_statem
     setState(2285);
     match(vhdlParser::USE);
     setState(2287);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -18124,8 +18274,8 @@ size_t vhdlParser::Simultaneous_procedural_statementContext::getRuleIndex() cons
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_procedural_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_procedural_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_procedural_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18141,6 +18291,7 @@ vhdlParser::Simultaneous_procedural_statementContext* vhdlParser::simultaneous_p
   try {
     enterOuterAlt(_localctx, 1);
     setState(2292);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -18152,6 +18303,7 @@ vhdlParser::Simultaneous_procedural_statementContext* vhdlParser::simultaneous_p
     setState(2294);
     match(vhdlParser::PROCEDURAL);
     setState(2296);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS) {
@@ -18169,6 +18321,7 @@ vhdlParser::Simultaneous_procedural_statementContext* vhdlParser::simultaneous_p
     setState(2302);
     match(vhdlParser::PROCEDURAL);
     setState(2304);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -18230,8 +18383,8 @@ size_t vhdlParser::Simultaneous_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18279,6 +18432,7 @@ vhdlParser::Simultaneous_statementContext* vhdlParser::simultaneous_statement() 
     case 5: {
       enterOuterAlt(_localctx, 5);
       setState(2313);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -18326,8 +18480,8 @@ size_t vhdlParser::Simultaneous_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Simultaneous_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSimultaneous_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSimultaneous_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18413,8 +18567,8 @@ size_t vhdlParser::Source_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Source_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSource_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSource_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18502,8 +18656,8 @@ size_t vhdlParser::Source_quantity_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Source_quantity_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSource_quantity_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSource_quantity_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18572,8 +18726,8 @@ size_t vhdlParser::Step_limit_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Step_limit_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitStep_limit_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitStep_limit_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18640,8 +18794,8 @@ size_t vhdlParser::Subnature_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subnature_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubnature_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubnature_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18716,8 +18870,8 @@ size_t vhdlParser::Subnature_indicationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subnature_indicationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubnature_indication(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubnature_indication(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18735,6 +18889,7 @@ vhdlParser::Subnature_indicationContext* vhdlParser::subnature_indication() {
     setState(2353);
     name();
     setState(2355);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -18742,6 +18897,7 @@ vhdlParser::Subnature_indicationContext* vhdlParser::subnature_indication() {
       index_constraint();
     }
     setState(2363);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::TOLERANCE) {
@@ -18815,8 +18971,8 @@ size_t vhdlParser::Subprogram_bodyContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_bodyContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_body(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_body(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18844,6 +19000,7 @@ vhdlParser::Subprogram_bodyContext* vhdlParser::subprogram_body() {
     setState(2370);
     match(vhdlParser::END);
     setState(2372);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FUNCTION
@@ -18853,6 +19010,7 @@ vhdlParser::Subprogram_bodyContext* vhdlParser::subprogram_body() {
       subprogram_kind();
     }
     setState(2375);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (((((_la - 118) & ~ 0x3fULL) == 0) &&
@@ -18895,8 +19053,8 @@ size_t vhdlParser::Subprogram_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18989,8 +19147,8 @@ size_t vhdlParser::Subprogram_declarative_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_declarative_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_declarative_item(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_declarative_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19129,8 +19287,8 @@ size_t vhdlParser::Subprogram_declarative_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_declarative_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_declarative_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_declarative_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19200,8 +19358,8 @@ size_t vhdlParser::Subprogram_kindContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_kindContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_kind(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_kind(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19222,7 +19380,9 @@ vhdlParser::Subprogram_kindContext* vhdlParser::subprogram_kind() {
 
     || _la == vhdlParser::PROCEDURE)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -19256,8 +19416,8 @@ size_t vhdlParser::Subprogram_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19335,8 +19495,8 @@ size_t vhdlParser::Procedure_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Procedure_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitProcedure_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitProcedure_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19356,6 +19516,7 @@ vhdlParser::Procedure_specificationContext* vhdlParser::procedure_specification(
     setState(2410);
     designator();
     setState(2415);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -19425,8 +19586,8 @@ size_t vhdlParser::Function_specificationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Function_specificationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitFunction_specification(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitFunction_specification(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19442,6 +19603,7 @@ vhdlParser::Function_specificationContext* vhdlParser::function_specification() 
   try {
     enterOuterAlt(_localctx, 1);
     setState(2418);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IMPURE
@@ -19453,7 +19615,9 @@ vhdlParser::Function_specificationContext* vhdlParser::function_specification() 
 
       || _la == vhdlParser::PURE)) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
     }
@@ -19462,6 +19626,7 @@ vhdlParser::Function_specificationContext* vhdlParser::function_specification() 
     setState(2421);
     designator();
     setState(2426);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::LPAREN) {
@@ -19507,8 +19672,8 @@ size_t vhdlParser::Subprogram_statement_partContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subprogram_statement_partContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubprogram_statement_part(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubprogram_statement_part(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19592,8 +19757,8 @@ size_t vhdlParser::Subtype_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subtype_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubtype_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubtype_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19656,8 +19821,8 @@ size_t vhdlParser::Subtype_indicationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Subtype_indicationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSubtype_indication(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSubtype_indication(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19745,8 +19910,8 @@ size_t vhdlParser::SuffixContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::SuffixContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitSuffix(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitSuffix(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19825,8 +19990,8 @@ size_t vhdlParser::TargetContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::TargetContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTarget(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTarget(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19899,8 +20064,8 @@ size_t vhdlParser::TermContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::TermContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTerm(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTerm(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19966,8 +20131,8 @@ size_t vhdlParser::Terminal_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Terminal_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTerminal_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTerminal_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19985,6 +20150,7 @@ vhdlParser::Terminal_aspectContext* vhdlParser::terminal_aspect() {
     setState(2472);
     name();
     setState(2475);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::TO) {
@@ -20036,8 +20202,8 @@ size_t vhdlParser::Terminal_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Terminal_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTerminal_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTerminal_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20104,8 +20270,8 @@ size_t vhdlParser::Through_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Through_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitThrough_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitThrough_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20123,6 +20289,7 @@ vhdlParser::Through_aspectContext* vhdlParser::through_aspect() {
     setState(2483);
     identifier_list();
     setState(2485);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::TOLERANCE) {
@@ -20130,6 +20297,7 @@ vhdlParser::Through_aspectContext* vhdlParser::through_aspect() {
       tolerance_aspect();
     }
     setState(2489);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -20171,8 +20339,8 @@ size_t vhdlParser::Timeout_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Timeout_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTimeout_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTimeout_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20221,8 +20389,8 @@ size_t vhdlParser::Tolerance_aspectContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Tolerance_aspectContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitTolerance_aspect(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitTolerance_aspect(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20283,8 +20451,8 @@ size_t vhdlParser::Type_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Type_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitType_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitType_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20304,6 +20472,7 @@ vhdlParser::Type_declarationContext* vhdlParser::type_declaration() {
     setState(2500);
     identifier();
     setState(2503);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::IS) {
@@ -20353,8 +20522,8 @@ size_t vhdlParser::Type_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Type_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitType_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitType_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20462,8 +20631,8 @@ size_t vhdlParser::Unconstrained_array_definitionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Unconstrained_array_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitUnconstrained_array_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitUnconstrained_array_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20561,8 +20730,8 @@ size_t vhdlParser::Unconstrained_nature_definitionContext::getRuleIndex() const 
 }
 
 antlrcpp::Any vhdlParser::Unconstrained_nature_definitionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitUnconstrained_nature_definition(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitUnconstrained_nature_definition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20648,8 +20817,8 @@ size_t vhdlParser::Use_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Use_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitUse_clause(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitUse_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20725,8 +20894,8 @@ size_t vhdlParser::Variable_assignment_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Variable_assignment_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitVariable_assignment_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitVariable_assignment_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20814,8 +20983,8 @@ size_t vhdlParser::Variable_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Variable_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitVariable_declaration(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitVariable_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20831,6 +21000,7 @@ vhdlParser::Variable_declarationContext* vhdlParser::variable_declaration() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(2561);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::SHARED) {
@@ -20846,6 +21016,7 @@ vhdlParser::Variable_declarationContext* vhdlParser::variable_declaration() {
     setState(2566);
     subtype_indication();
     setState(2569);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::VARASGN) {
@@ -20903,8 +21074,8 @@ size_t vhdlParser::Wait_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Wait_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitWait_statement(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitWait_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20920,6 +21091,7 @@ vhdlParser::Wait_statementContext* vhdlParser::wait_statement() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(2574);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::BASIC_IDENTIFIER
@@ -20931,6 +21103,7 @@ vhdlParser::Wait_statementContext* vhdlParser::wait_statement() {
     setState(2576);
     match(vhdlParser::WAIT);
     setState(2578);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::ON) {
@@ -20938,6 +21111,7 @@ vhdlParser::Wait_statementContext* vhdlParser::wait_statement() {
       sensitivity_clause();
     }
     setState(2581);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::UNTIL) {
@@ -20945,6 +21119,7 @@ vhdlParser::Wait_statementContext* vhdlParser::wait_statement() {
       condition_clause();
     }
     setState(2584);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::FOR) {
@@ -20996,8 +21171,8 @@ size_t vhdlParser::WaveformContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::WaveformContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitWaveform(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitWaveform(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21092,8 +21267,8 @@ size_t vhdlParser::Waveform_elementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any vhdlParser::Waveform_elementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<vhdlVisitor*>(visitor) != nullptr)
-    return ((vhdlVisitor *)visitor)->visitWaveform_element(this);
+  if (auto parserVisitor = dynamic_cast<vhdlVisitor*>(visitor))
+    return parserVisitor->visitWaveform_element(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21111,6 +21286,7 @@ vhdlParser::Waveform_elementContext* vhdlParser::waveform_element() {
     setState(2599);
     expression();
     setState(2602);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == vhdlParser::AFTER) {

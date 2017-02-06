@@ -1,5 +1,5 @@
 
-// Generated from Verilog2001.g4 by ANTLR 4.5.3
+// Generated from Verilog2001.g4 by ANTLR 4.6
 
 
 #include "Verilog2001Visitor.h"
@@ -60,8 +60,8 @@ size_t Verilog2001Parser::Config_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Config_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConfig_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConfig_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -138,8 +138,8 @@ size_t Verilog2001Parser::Design_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Design_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDesign_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDesign_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -226,8 +226,8 @@ size_t Verilog2001Parser::Config_rule_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Config_rule_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConfig_rule_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConfig_rule_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -312,8 +312,8 @@ size_t Verilog2001Parser::Default_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Default_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDefault_clause(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDefault_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -356,8 +356,8 @@ size_t Verilog2001Parser::Inst_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Inst_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInst_clause(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInst_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -410,8 +410,8 @@ size_t Verilog2001Parser::Inst_nameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Inst_nameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInst_name(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInst_name(this);
   else
     return visitor->visitChildren(this);
 }
@@ -471,8 +471,8 @@ size_t Verilog2001Parser::Liblist_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Liblist_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLiblist_clause(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLiblist_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -532,8 +532,8 @@ size_t Verilog2001Parser::Cell_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Cell_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCell_clause(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCell_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -595,8 +595,8 @@ size_t Verilog2001Parser::Use_clauseContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Use_clauseContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitUse_clause(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitUse_clause(this);
   else
     return visitor->visitChildren(this);
 }
@@ -629,6 +629,7 @@ Verilog2001Parser::Use_clauseContext* Verilog2001Parser::use_clause() {
     setState(697);
     cell_identifier();
     setState(699);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__10) {
@@ -682,8 +683,8 @@ size_t Verilog2001Parser::Source_textContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Source_textContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSource_text(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSource_text(this);
   else
     return visitor->visitChildren(this);
 }
@@ -699,6 +700,7 @@ Verilog2001Parser::Source_textContext* Verilog2001Parser::source_text() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(702);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__166) {
@@ -730,6 +732,7 @@ Verilog2001Parser::Source_textContext* Verilog2001Parser::source_text() {
       _la = _input->LA(1);
     }
     setState(714);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__165) {
@@ -765,8 +768,8 @@ size_t Verilog2001Parser::DescriptionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::DescriptionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDescription(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDescription(this);
   else
     return visitor->visitChildren(this);
 }
@@ -849,8 +852,8 @@ size_t Verilog2001Parser::Module_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -884,6 +887,7 @@ Verilog2001Parser::Module_declarationContext* Verilog2001Parser::module_declarat
       setState(727);
       module_identifier();
       setState(729);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -891,6 +895,7 @@ Verilog2001Parser::Module_declarationContext* Verilog2001Parser::module_declarat
         module_parameter_port_list();
       }
       setState(732);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15) {
@@ -992,6 +997,7 @@ Verilog2001Parser::Module_declarationContext* Verilog2001Parser::module_declarat
       setState(750);
       module_identifier();
       setState(752);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -999,6 +1005,7 @@ Verilog2001Parser::Module_declarationContext* Verilog2001Parser::module_declarat
         module_parameter_port_list();
       }
       setState(755);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15) {
@@ -1104,8 +1111,8 @@ size_t Verilog2001Parser::Module_keywordContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_keywordContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_keyword(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_keyword(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1126,7 +1133,9 @@ Verilog2001Parser::Module_keywordContext* Verilog2001Parser::module_keyword() {
 
     || _la == Verilog2001Parser::T__13)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -1160,8 +1169,8 @@ size_t Verilog2001Parser::Module_parameter_port_listContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Module_parameter_port_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_parameter_port_list(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_parameter_port_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1227,8 +1236,8 @@ size_t Verilog2001Parser::List_of_portsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_portsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_ports(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_ports(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1292,8 +1301,8 @@ size_t Verilog2001Parser::List_of_port_declarationsContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_port_declarationsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_port_declarations(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_port_declarations(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1374,8 +1383,8 @@ size_t Verilog2001Parser::PortContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::PortContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPort(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPort(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1399,6 +1408,7 @@ Verilog2001Parser::PortContext* Verilog2001Parser::port() {
       case Verilog2001Parser::Simple_identifier: {
         enterOuterAlt(_localctx, 1);
         setState(809);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__18 || _la == Verilog2001Parser::Escaped_identifier
@@ -1419,6 +1429,7 @@ Verilog2001Parser::PortContext* Verilog2001Parser::port() {
         setState(813);
         match(Verilog2001Parser::T__15);
         setState(815);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__18 || _la == Verilog2001Parser::Escaped_identifier
@@ -1466,8 +1477,8 @@ size_t Verilog2001Parser::Port_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Port_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPort_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPort_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1553,8 +1564,8 @@ size_t Verilog2001Parser::Port_referenceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Port_referenceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPort_reference(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPort_reference(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1647,8 +1658,8 @@ size_t Verilog2001Parser::Port_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Port_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPort_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPort_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1776,8 +1787,8 @@ size_t Verilog2001Parser::Module_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -1955,8 +1966,8 @@ size_t Verilog2001Parser::Module_or_generate_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_or_generate_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_or_generate_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_or_generate_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2148,8 +2159,8 @@ size_t Verilog2001Parser::Non_port_module_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Non_port_module_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNon_port_module_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNon_port_module_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2335,8 +2346,8 @@ size_t Verilog2001Parser::Module_or_generate_item_declarationContext::getRuleInd
 }
 
 antlrcpp::Any Verilog2001Parser::Module_or_generate_item_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_or_generate_item_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_or_generate_item_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2462,8 +2473,8 @@ size_t Verilog2001Parser::Parameter_overrideContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Parameter_overrideContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParameter_override(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParameter_override(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2514,8 +2525,8 @@ size_t Verilog2001Parser::Local_parameter_declarationContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Local_parameter_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLocal_parameter_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLocal_parameter_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2537,6 +2548,7 @@ Verilog2001Parser::Local_parameter_declarationContext* Verilog2001Parser::local_
       setState(1023);
       match(Verilog2001Parser::T__23);
       setState(1025);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -2544,6 +2556,7 @@ Verilog2001Parser::Local_parameter_declarationContext* Verilog2001Parser::local_
         match(Verilog2001Parser::T__24);
       }
       setState(1028);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -2637,8 +2650,8 @@ size_t Verilog2001Parser::Parameter_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Parameter_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParameter_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParameter_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2687,8 +2700,8 @@ size_t Verilog2001Parser::Parameter_declaration_Context::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Parameter_declaration_Context::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParameter_declaration_(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParameter_declaration_(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2710,6 +2723,7 @@ Verilog2001Parser::Parameter_declaration_Context* Verilog2001Parser::parameter_d
       setState(1058);
       match(Verilog2001Parser::T__29);
       setState(1060);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -2717,6 +2731,7 @@ Verilog2001Parser::Parameter_declaration_Context* Verilog2001Parser::parameter_d
         match(Verilog2001Parser::T__24);
       }
       setState(1063);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -2804,8 +2819,8 @@ size_t Verilog2001Parser::Specparam_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Specparam_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecparam_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecparam_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2823,6 +2838,7 @@ Verilog2001Parser::Specparam_declarationContext* Verilog2001Parser::specparam_de
     setState(1080);
     match(Verilog2001Parser::T__30);
     setState(1082);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -2868,8 +2884,8 @@ size_t Verilog2001Parser::Inout_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Inout_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInout_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInout_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2887,6 +2903,7 @@ Verilog2001Parser::Inout_declarationContext* Verilog2001Parser::inout_declaratio
     setState(1087);
     match(Verilog2001Parser::T__31);
     setState(1089);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -2904,6 +2921,7 @@ Verilog2001Parser::Inout_declarationContext* Verilog2001Parser::inout_declaratio
       net_type();
     }
     setState(1092);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__24) {
@@ -2911,6 +2929,7 @@ Verilog2001Parser::Inout_declarationContext* Verilog2001Parser::inout_declaratio
       match(Verilog2001Parser::T__24);
     }
     setState(1095);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -2954,8 +2973,8 @@ size_t Verilog2001Parser::Input_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Input_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInput_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInput_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -2973,6 +2992,7 @@ Verilog2001Parser::Input_declarationContext* Verilog2001Parser::input_declaratio
     setState(1099);
     match(Verilog2001Parser::T__32);
     setState(1101);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -2990,6 +3010,7 @@ Verilog2001Parser::Input_declarationContext* Verilog2001Parser::input_declaratio
       net_type();
     }
     setState(1104);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__24) {
@@ -2997,6 +3018,7 @@ Verilog2001Parser::Input_declarationContext* Verilog2001Parser::input_declaratio
       match(Verilog2001Parser::T__24);
     }
     setState(1107);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -3048,8 +3070,8 @@ size_t Verilog2001Parser::Output_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Output_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOutput_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOutput_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3071,6 +3093,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
       setState(1111);
       match(Verilog2001Parser::T__33);
       setState(1113);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -3088,6 +3111,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
         net_type();
       }
       setState(1116);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3095,6 +3119,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
         match(Verilog2001Parser::T__24);
       }
       setState(1119);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -3111,6 +3136,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
       setState(1122);
       match(Verilog2001Parser::T__33);
       setState(1124);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__34) {
@@ -3118,6 +3144,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
         match(Verilog2001Parser::T__34);
       }
       setState(1127);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3125,6 +3152,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
         match(Verilog2001Parser::T__24);
       }
       setState(1130);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -3143,6 +3171,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
       setState(1134);
       match(Verilog2001Parser::T__34);
       setState(1136);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3150,6 +3179,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
         match(Verilog2001Parser::T__24);
       }
       setState(1139);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -3166,6 +3196,7 @@ Verilog2001Parser::Output_declarationContext* Verilog2001Parser::output_declarat
       setState(1142);
       match(Verilog2001Parser::T__33);
       setState(1144);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__25
@@ -3218,8 +3249,8 @@ size_t Verilog2001Parser::Event_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3266,8 +3297,8 @@ size_t Verilog2001Parser::Genvar_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3314,8 +3345,8 @@ size_t Verilog2001Parser::Integer_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Integer_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInteger_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInteger_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3362,8 +3393,8 @@ size_t Verilog2001Parser::Time_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Time_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTime_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTime_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3410,8 +3441,8 @@ size_t Verilog2001Parser::Real_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Real_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitReal_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitReal_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3458,8 +3489,8 @@ size_t Verilog2001Parser::Realtime_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Realtime_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitRealtime_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitRealtime_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3510,8 +3541,8 @@ size_t Verilog2001Parser::Reg_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Reg_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitReg_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitReg_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3529,6 +3560,7 @@ Verilog2001Parser::Reg_declarationContext* Verilog2001Parser::reg_declaration() 
     setState(1177);
     match(Verilog2001Parser::T__34);
     setState(1179);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__24) {
@@ -3536,6 +3568,7 @@ Verilog2001Parser::Reg_declarationContext* Verilog2001Parser::reg_declaration() 
       match(Verilog2001Parser::T__24);
     }
     setState(1182);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -3597,8 +3630,8 @@ size_t Verilog2001Parser::Net_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -3620,6 +3653,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1187);
       net_type();
       setState(1189);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3627,6 +3661,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         match(Verilog2001Parser::T__24);
       }
       setState(1192);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3645,6 +3680,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1197);
       net_type();
       setState(1199);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -3662,6 +3698,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         drive_strength();
       }
       setState(1202);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3669,6 +3706,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         match(Verilog2001Parser::T__24);
       }
       setState(1205);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3687,6 +3725,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1210);
       match(Verilog2001Parser::T__37);
       setState(1212);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -3704,6 +3743,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         drive_strength();
       }
       setState(1215);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3711,6 +3751,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         match(Verilog2001Parser::T__24);
       }
       setState(1218);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3729,6 +3770,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1223);
       match(Verilog2001Parser::T__37);
       setState(1225);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15) {
@@ -3736,6 +3778,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         charge_strength();
       }
       setState(1228);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3743,6 +3786,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         match(Verilog2001Parser::T__24);
       }
       setState(1231);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3761,6 +3805,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1236);
       match(Verilog2001Parser::T__37);
       setState(1238);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15) {
@@ -3768,6 +3813,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         charge_strength();
       }
       setState(1241);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__38
@@ -3779,11 +3825,14 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
 
         || _la == Verilog2001Parser::T__39)) {
         _errHandler->recoverInline(this);
-        } else {
+        }
+        else {
+          _errHandler->reportMatch(this);
           consume();
         }
       }
       setState(1244);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3793,6 +3842,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1246);
       range();
       setState(1248);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3811,6 +3861,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1253);
       match(Verilog2001Parser::T__37);
       setState(1255);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -3828,6 +3879,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         drive_strength();
       }
       setState(1258);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__38
@@ -3839,11 +3891,14 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
 
         || _la == Verilog2001Parser::T__39)) {
         _errHandler->recoverInline(this);
-        } else {
+        }
+        else {
+          _errHandler->reportMatch(this);
           consume();
         }
       }
       setState(1261);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3853,6 +3908,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1263);
       range();
       setState(1265);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3871,6 +3927,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1270);
       net_type();
       setState(1272);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -3888,6 +3945,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
         drive_strength();
       }
       setState(1275);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__38
@@ -3899,11 +3957,14 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
 
         || _la == Verilog2001Parser::T__39)) {
         _errHandler->recoverInline(this);
-        } else {
+        }
+        else {
+          _errHandler->reportMatch(this);
           consume();
         }
       }
       setState(1278);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3913,6 +3974,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1280);
       range();
       setState(1282);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3931,6 +3993,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1287);
       net_type();
       setState(1289);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__38
@@ -3942,11 +4005,14 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
 
         || _la == Verilog2001Parser::T__39)) {
         _errHandler->recoverInline(this);
-        } else {
+        }
+        else {
+          _errHandler->reportMatch(this);
           consume();
         }
       }
       setState(1292);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -3956,6 +4022,7 @@ Verilog2001Parser::Net_declarationContext* Verilog2001Parser::net_declaration() 
       setState(1294);
       range();
       setState(1296);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__14) {
@@ -3993,8 +4060,8 @@ size_t Verilog2001Parser::Net_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4023,7 +4090,9 @@ Verilog2001Parser::Net_typeContext* Verilog2001Parser::net_type() {
       | (1ULL << Verilog2001Parser::T__48)
       | (1ULL << Verilog2001Parser::T__49))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -4049,8 +4118,8 @@ size_t Verilog2001Parser::Output_variable_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Output_variable_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOutput_variable_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOutput_variable_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4071,7 +4140,9 @@ Verilog2001Parser::Output_variable_typeContext* Verilog2001Parser::output_variab
 
     || _la == Verilog2001Parser::T__28)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -4113,8 +4184,8 @@ size_t Verilog2001Parser::Real_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Real_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitReal_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitReal_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4136,6 +4207,7 @@ Verilog2001Parser::Real_typeContext* Verilog2001Parser::real_type() {
       setState(1307);
       real_identifier();
       setState(1310);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__50) {
@@ -4206,8 +4278,8 @@ size_t Verilog2001Parser::Variable_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4229,6 +4301,7 @@ Verilog2001Parser::Variable_typeContext* Verilog2001Parser::variable_type() {
       setState(1322);
       variable_identifier();
       setState(1325);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__50) {
@@ -4291,8 +4364,8 @@ size_t Verilog2001Parser::Drive_strengthContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Drive_strengthContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDrive_strength(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDrive_strength(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4398,8 +4471,8 @@ size_t Verilog2001Parser::Strength0Context::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Strength0Context::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStrength0(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStrength0(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4422,7 +4495,9 @@ Verilog2001Parser::Strength0Context* Verilog2001Parser::strength0() {
       | (1ULL << Verilog2001Parser::T__54)
       | (1ULL << Verilog2001Parser::T__55))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -4448,8 +4523,8 @@ size_t Verilog2001Parser::Strength1Context::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Strength1Context::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStrength1(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStrength1(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4472,7 +4547,9 @@ Verilog2001Parser::Strength1Context* Verilog2001Parser::strength1() {
       | (1ULL << Verilog2001Parser::T__57)
       | (1ULL << Verilog2001Parser::T__58))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -4498,8 +4575,8 @@ size_t Verilog2001Parser::Charge_strengthContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Charge_strengthContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCharge_strength(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCharge_strength(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4580,8 +4657,8 @@ size_t Verilog2001Parser::Delay3Context::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delay3Context::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelay3(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelay3(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4616,6 +4693,7 @@ Verilog2001Parser::Delay3Context* Verilog2001Parser::delay3() {
       setState(1380);
       delay_value();
       setState(1387);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__16) {
@@ -4624,6 +4702,7 @@ Verilog2001Parser::Delay3Context* Verilog2001Parser::delay3() {
         setState(1382);
         delay_value();
         setState(1385);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__16) {
@@ -4670,8 +4749,8 @@ size_t Verilog2001Parser::Delay2Context::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delay2Context::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelay2(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelay2(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4706,6 +4785,7 @@ Verilog2001Parser::Delay2Context* Verilog2001Parser::delay2() {
       setState(1397);
       delay_value();
       setState(1400);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__16) {
@@ -4759,8 +4839,8 @@ size_t Verilog2001Parser::Delay_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delay_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelay_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelay_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4844,8 +4924,8 @@ size_t Verilog2001Parser::List_of_event_identifiersContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_event_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_event_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_event_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4863,6 +4943,7 @@ Verilog2001Parser::List_of_event_identifiersContext* Verilog2001Parser::list_of_
     setState(1412);
     event_identifier();
     setState(1420);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -4888,6 +4969,7 @@ Verilog2001Parser::List_of_event_identifiersContext* Verilog2001Parser::list_of_
       setState(1423);
       event_identifier();
       setState(1431);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -4947,8 +5029,8 @@ size_t Verilog2001Parser::List_of_net_identifiersContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_net_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_net_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_net_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -4966,6 +5048,7 @@ Verilog2001Parser::List_of_net_identifiersContext* Verilog2001Parser::list_of_ne
     setState(1438);
     net_identifier();
     setState(1446);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -4991,6 +5074,7 @@ Verilog2001Parser::List_of_net_identifiersContext* Verilog2001Parser::list_of_ne
       setState(1449);
       net_identifier();
       setState(1457);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -5042,8 +5126,8 @@ size_t Verilog2001Parser::List_of_genvar_identifiersContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_genvar_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_genvar_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_genvar_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5103,8 +5187,8 @@ size_t Verilog2001Parser::List_of_port_identifiersContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_port_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_port_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_port_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5166,8 +5250,8 @@ size_t Verilog2001Parser::List_of_net_decl_assignmentsContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_net_decl_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_net_decl_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_net_decl_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5227,8 +5311,8 @@ size_t Verilog2001Parser::List_of_param_assignmentsContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_param_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_param_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_param_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5290,8 +5374,8 @@ size_t Verilog2001Parser::List_of_specparam_assignmentsContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_specparam_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_specparam_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_specparam_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5351,8 +5435,8 @@ size_t Verilog2001Parser::List_of_real_identifiersContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_real_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_real_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_real_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5412,8 +5496,8 @@ size_t Verilog2001Parser::List_of_variable_identifiersContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_variable_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_variable_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_variable_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5481,8 +5565,8 @@ size_t Verilog2001Parser::List_of_variable_port_identifiersContext::getRuleIndex
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_variable_port_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_variable_port_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_variable_port_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5501,6 +5585,7 @@ Verilog2001Parser::List_of_variable_port_identifiersContext* Verilog2001Parser::
     setState(1520);
     port_identifier();
     setState(1523);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__50) {
@@ -5519,6 +5604,7 @@ Verilog2001Parser::List_of_variable_port_identifiersContext* Verilog2001Parser::
         setState(1526);
         port_identifier();
         setState(1529);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__50) {
@@ -5563,8 +5649,8 @@ size_t Verilog2001Parser::Net_decl_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_decl_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_decl_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_decl_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5615,8 +5701,8 @@ size_t Verilog2001Parser::Param_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Param_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParam_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParam_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5671,8 +5757,8 @@ size_t Verilog2001Parser::Specparam_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Specparam_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecparam_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecparam_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5749,8 +5835,8 @@ size_t Verilog2001Parser::Pulse_control_specparamContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pulse_control_specparamContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPulse_control_specparam(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPulse_control_specparam(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5778,6 +5864,7 @@ Verilog2001Parser::Pulse_control_specparamContext* Verilog2001Parser::pulse_cont
       setState(1554);
       reject_limit_value();
       setState(1557);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__16) {
@@ -5810,6 +5897,7 @@ Verilog2001Parser::Pulse_control_specparamContext* Verilog2001Parser::pulse_cont
       setState(1568);
       reject_limit_value();
       setState(1571);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__16) {
@@ -5853,8 +5941,8 @@ size_t Verilog2001Parser::Error_limit_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Error_limit_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitError_limit_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitError_limit_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5897,8 +5985,8 @@ size_t Verilog2001Parser::Reject_limit_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Reject_limit_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitReject_limit_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitReject_limit_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5941,8 +6029,8 @@ size_t Verilog2001Parser::Limit_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Limit_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLimit_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLimit_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -5989,8 +6077,8 @@ size_t Verilog2001Parser::DimensionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::DimensionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDimension(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDimension(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6045,8 +6133,8 @@ size_t Verilog2001Parser::RangeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::RangeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitRange(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitRange(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6125,8 +6213,8 @@ size_t Verilog2001Parser::Function_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6149,6 +6237,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
       setState(1596);
       match(Verilog2001Parser::T__65);
       setState(1598);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__66) {
@@ -6156,6 +6245,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         match(Verilog2001Parser::T__66);
       }
       setState(1601);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -6163,6 +6253,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         match(Verilog2001Parser::T__24);
       }
       setState(1604);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -6191,6 +6282,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 151, _ctx);
       }
       setState(1615);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15
@@ -6222,6 +6314,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
       setState(1619);
       match(Verilog2001Parser::T__65);
       setState(1621);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__66) {
@@ -6229,6 +6322,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         match(Verilog2001Parser::T__66);
       }
       setState(1624);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -6236,6 +6330,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         match(Verilog2001Parser::T__24);
       }
       setState(1627);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -6270,6 +6365,7 @@ Verilog2001Parser::Function_declarationContext* Verilog2001Parser::function_decl
         alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 156, _ctx);
       }
       setState(1641);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15
@@ -6328,8 +6424,8 @@ size_t Verilog2001Parser::Function_item_declarationContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Function_item_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_item_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_item_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6405,8 +6501,8 @@ size_t Verilog2001Parser::Function_port_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_port_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_port_list(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_port_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6470,8 +6566,8 @@ size_t Verilog2001Parser::Function_portContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_portContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_port(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_port(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6525,8 +6621,8 @@ size_t Verilog2001Parser::Range_or_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Range_or_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitRange_or_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitRange_or_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6631,8 +6727,8 @@ size_t Verilog2001Parser::Task_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6655,6 +6751,7 @@ Verilog2001Parser::Task_declarationContext* Verilog2001Parser::task_declaration(
       setState(1676);
       match(Verilog2001Parser::T__68);
       setState(1678);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__66) {
@@ -6689,6 +6786,7 @@ Verilog2001Parser::Task_declarationContext* Verilog2001Parser::task_declaration(
       setState(1691);
       match(Verilog2001Parser::T__68);
       setState(1693);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__66) {
@@ -6700,6 +6798,7 @@ Verilog2001Parser::Task_declarationContext* Verilog2001Parser::task_declaration(
       setState(1696);
       match(Verilog2001Parser::T__15);
       setState(1698);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -6773,8 +6872,8 @@ size_t Verilog2001Parser::Task_item_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_item_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_item_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_item_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6849,8 +6948,8 @@ size_t Verilog2001Parser::Task_port_listContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_port_listContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_port_list(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_port_list(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6914,8 +7013,8 @@ size_t Verilog2001Parser::Task_port_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_port_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_port_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_port_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -6977,8 +7076,8 @@ size_t Verilog2001Parser::Tf_decl_headerContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Tf_decl_headerContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTf_decl_header(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTf_decl_header(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7004,10 +7103,13 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         | (1ULL << Verilog2001Parser::T__32)
         | (1ULL << Verilog2001Parser::T__33))) != 0))) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
       setState(1743);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -7025,6 +7127,7 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         net_type();
       }
       setState(1746);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__34) {
@@ -7032,6 +7135,7 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         match(Verilog2001Parser::T__34);
       }
       setState(1749);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__24) {
@@ -7039,6 +7143,7 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         match(Verilog2001Parser::T__24);
       }
       setState(1752);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__20) {
@@ -7057,10 +7162,13 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         | (1ULL << Verilog2001Parser::T__32)
         | (1ULL << Verilog2001Parser::T__33))) != 0))) {
       _errHandler->recoverInline(this);
-      } else {
+      }
+      else {
+        _errHandler->reportMatch(this);
         consume();
       }
       setState(1756);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -7078,6 +7186,7 @@ Verilog2001Parser::Tf_decl_headerContext* Verilog2001Parser::tf_decl_header() {
         net_type();
       }
       setState(1759);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
@@ -7123,8 +7232,8 @@ size_t Verilog2001Parser::Tf_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Tf_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTf_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTf_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7165,8 +7274,8 @@ size_t Verilog2001Parser::Task_port_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_port_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_port_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_port_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7189,7 +7298,9 @@ Verilog2001Parser::Task_port_typeContext* Verilog2001Parser::task_port_type() {
       | (1ULL << Verilog2001Parser::T__27)
       | (1ULL << Verilog2001Parser::T__28))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -7255,8 +7366,8 @@ size_t Verilog2001Parser::Block_item_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Block_item_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBlock_item_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBlock_item_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7441,8 +7552,8 @@ size_t Verilog2001Parser::Block_reg_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Block_reg_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBlock_reg_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBlock_reg_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7460,6 +7571,7 @@ Verilog2001Parser::Block_reg_declarationContext* Verilog2001Parser::block_reg_de
     setState(1826);
     match(Verilog2001Parser::T__34);
     setState(1828);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__24) {
@@ -7467,6 +7579,7 @@ Verilog2001Parser::Block_reg_declarationContext* Verilog2001Parser::block_reg_de
       match(Verilog2001Parser::T__24);
     }
     setState(1831);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -7508,8 +7621,8 @@ size_t Verilog2001Parser::List_of_block_variable_identifiersContext::getRuleInde
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_block_variable_identifiersContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_block_variable_identifiers(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_block_variable_identifiers(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7573,8 +7686,8 @@ size_t Verilog2001Parser::Block_variable_typeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Block_variable_typeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBlock_variable_type(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBlock_variable_type(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7753,8 +7866,8 @@ size_t Verilog2001Parser::Gate_instantiationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Gate_instantiationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGate_instantiation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGate_instantiation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -7777,6 +7890,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1855);
         cmos_switchtype();
         setState(1857);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -7810,6 +7924,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1869);
         mos_switchtype();
         setState(1871);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -7935,6 +8050,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1922);
         enable_gatetype();
         setState(1924);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if ((((_la & ~ 0x3fULL) == 0) &&
@@ -7952,6 +8068,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
           drive_strength();
         }
         setState(1927);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -7987,6 +8104,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1939);
         n_input_gatetype();
         setState(1941);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if ((((_la & ~ 0x3fULL) == 0) &&
@@ -8004,6 +8122,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
           drive_strength();
         }
         setState(1944);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -8035,6 +8154,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1956);
         n_output_gatetype();
         setState(1958);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if ((((_la & ~ 0x3fULL) == 0) &&
@@ -8052,6 +8172,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
           drive_strength();
         }
         setState(1961);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -8085,6 +8206,7 @@ Verilog2001Parser::Gate_instantiationContext* Verilog2001Parser::gate_instantiat
         setState(1973);
         pass_en_switchtype();
         setState(1975);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__14) {
@@ -8156,8 +8278,8 @@ size_t Verilog2001Parser::Cmos_switch_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Cmos_switch_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCmos_switch_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCmos_switch_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8173,6 +8295,7 @@ Verilog2001Parser::Cmos_switch_instanceContext* Verilog2001Parser::cmos_switch_i
   try {
     enterOuterAlt(_localctx, 1);
     setState(1990);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8238,8 +8361,8 @@ size_t Verilog2001Parser::Enable_gate_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Enable_gate_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEnable_gate_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEnable_gate_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8255,6 +8378,7 @@ Verilog2001Parser::Enable_gate_instanceContext* Verilog2001Parser::enable_gate_i
   try {
     enterOuterAlt(_localctx, 1);
     setState(2003);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8316,8 +8440,8 @@ size_t Verilog2001Parser::Mos_switch_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Mos_switch_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMos_switch_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMos_switch_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8333,6 +8457,7 @@ Verilog2001Parser::Mos_switch_instanceContext* Verilog2001Parser::mos_switch_ins
   try {
     enterOuterAlt(_localctx, 1);
     setState(2014);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8394,8 +8519,8 @@ size_t Verilog2001Parser::N_input_gate_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::N_input_gate_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitN_input_gate_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitN_input_gate_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8411,6 +8536,7 @@ Verilog2001Parser::N_input_gate_instanceContext* Verilog2001Parser::n_input_gate
   try {
     enterOuterAlt(_localctx, 1);
     setState(2025);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8480,8 +8606,8 @@ size_t Verilog2001Parser::N_output_gate_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::N_output_gate_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitN_output_gate_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitN_output_gate_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8498,6 +8624,7 @@ Verilog2001Parser::N_output_gate_instanceContext* Verilog2001Parser::n_output_ga
     size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(2041);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8565,8 +8692,8 @@ size_t Verilog2001Parser::Pass_switch_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pass_switch_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPass_switch_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPass_switch_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8582,6 +8709,7 @@ Verilog2001Parser::Pass_switch_instanceContext* Verilog2001Parser::pass_switch_i
   try {
     enterOuterAlt(_localctx, 1);
     setState(2057);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8639,8 +8767,8 @@ size_t Verilog2001Parser::Pass_enable_switch_instanceContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Pass_enable_switch_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPass_enable_switch_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPass_enable_switch_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8656,6 +8784,7 @@ Verilog2001Parser::Pass_enable_switch_instanceContext* Verilog2001Parser::pass_e
   try {
     enterOuterAlt(_localctx, 1);
     setState(2066);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8709,8 +8838,8 @@ size_t Verilog2001Parser::Pull_gate_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pull_gate_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPull_gate_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPull_gate_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8726,6 +8855,7 @@ Verilog2001Parser::Pull_gate_instanceContext* Verilog2001Parser::pull_gate_insta
   try {
     enterOuterAlt(_localctx, 1);
     setState(2077);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::Escaped_identifier
@@ -8771,8 +8901,8 @@ size_t Verilog2001Parser::Name_of_gate_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Name_of_gate_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitName_of_gate_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitName_of_gate_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8790,6 +8920,7 @@ Verilog2001Parser::Name_of_gate_instanceContext* Verilog2001Parser::name_of_gate
     setState(2083);
     gate_instance_identifier();
     setState(2085);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -8827,8 +8958,8 @@ size_t Verilog2001Parser::Pulldown_strengthContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pulldown_strengthContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPulldown_strength(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPulldown_strength(this);
   else
     return visitor->visitChildren(this);
 }
@@ -8917,8 +9048,8 @@ size_t Verilog2001Parser::Pullup_strengthContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pullup_strengthContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPullup_strength(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPullup_strength(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9003,8 +9134,8 @@ size_t Verilog2001Parser::Enable_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Enable_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEnable_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEnable_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9047,8 +9178,8 @@ size_t Verilog2001Parser::Ncontrol_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Ncontrol_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNcontrol_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNcontrol_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9091,8 +9222,8 @@ size_t Verilog2001Parser::Pcontrol_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pcontrol_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPcontrol_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPcontrol_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9135,8 +9266,8 @@ size_t Verilog2001Parser::Input_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Input_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInput_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInput_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9179,8 +9310,8 @@ size_t Verilog2001Parser::Inout_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Inout_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInout_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInout_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9223,8 +9354,8 @@ size_t Verilog2001Parser::Output_terminalContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Output_terminalContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOutput_terminal(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOutput_terminal(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9263,8 +9394,8 @@ size_t Verilog2001Parser::Cmos_switchtypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Cmos_switchtypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCmos_switchtype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCmos_switchtype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9285,7 +9416,9 @@ Verilog2001Parser::Cmos_switchtypeContext* Verilog2001Parser::cmos_switchtype() 
 
     || _la == Verilog2001Parser::T__73)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9311,8 +9444,8 @@ size_t Verilog2001Parser::Enable_gatetypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Enable_gatetypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEnable_gatetype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEnable_gatetype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9335,7 +9468,9 @@ Verilog2001Parser::Enable_gatetypeContext* Verilog2001Parser::enable_gatetype() 
       | (1ULL << (Verilog2001Parser::T__76 - 75))
       | (1ULL << (Verilog2001Parser::T__77 - 75)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9361,8 +9496,8 @@ size_t Verilog2001Parser::Mos_switchtypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Mos_switchtypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMos_switchtype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMos_switchtype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9385,7 +9520,9 @@ Verilog2001Parser::Mos_switchtypeContext* Verilog2001Parser::mos_switchtype() {
       | (1ULL << (Verilog2001Parser::T__80 - 79))
       | (1ULL << (Verilog2001Parser::T__81 - 79)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9411,8 +9548,8 @@ size_t Verilog2001Parser::N_input_gatetypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::N_input_gatetypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitN_input_gatetype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitN_input_gatetype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9437,7 +9574,9 @@ Verilog2001Parser::N_input_gatetypeContext* Verilog2001Parser::n_input_gatetype(
       | (1ULL << (Verilog2001Parser::T__86 - 83))
       | (1ULL << (Verilog2001Parser::T__87 - 83)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9463,8 +9602,8 @@ size_t Verilog2001Parser::N_output_gatetypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::N_output_gatetypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitN_output_gatetype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitN_output_gatetype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9485,7 +9624,9 @@ Verilog2001Parser::N_output_gatetypeContext* Verilog2001Parser::n_output_gatetyp
 
     || _la == Verilog2001Parser::T__89)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9511,8 +9652,8 @@ size_t Verilog2001Parser::Pass_en_switchtypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pass_en_switchtypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPass_en_switchtype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPass_en_switchtype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9535,7 +9676,9 @@ Verilog2001Parser::Pass_en_switchtypeContext* Verilog2001Parser::pass_en_switcht
       | (1ULL << (Verilog2001Parser::T__92 - 91))
       | (1ULL << (Verilog2001Parser::T__93 - 91)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9561,8 +9704,8 @@ size_t Verilog2001Parser::Pass_switchtypeContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pass_switchtypeContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPass_switchtype(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPass_switchtype(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9583,7 +9726,9 @@ Verilog2001Parser::Pass_switchtypeContext* Verilog2001Parser::pass_switchtype() 
 
     || _la == Verilog2001Parser::T__95)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -9625,8 +9770,8 @@ size_t Verilog2001Parser::Module_instantiationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_instantiationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_instantiation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_instantiation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9644,6 +9789,7 @@ Verilog2001Parser::Module_instantiationContext* Verilog2001Parser::module_instan
     setState(2149);
     module_identifier();
     setState(2151);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__14) {
@@ -9693,8 +9839,8 @@ size_t Verilog2001Parser::Parameter_value_assignmentContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Parameter_value_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParameter_value_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParameter_value_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9755,8 +9901,8 @@ size_t Verilog2001Parser::List_of_parameter_assignmentsContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_parameter_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_parameter_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_parameter_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9862,8 +10008,8 @@ size_t Verilog2001Parser::Ordered_parameter_assignmentContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::Ordered_parameter_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOrdered_parameter_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOrdered_parameter_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9910,8 +10056,8 @@ size_t Verilog2001Parser::Named_parameter_assignmentContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Named_parameter_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNamed_parameter_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNamed_parameter_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -9933,6 +10079,7 @@ Verilog2001Parser::Named_parameter_assignmentContext* Verilog2001Parser::named_p
     setState(2190);
     match(Verilog2001Parser::T__15);
     setState(2192);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -9994,8 +10141,8 @@ size_t Verilog2001Parser::Module_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10048,8 +10195,8 @@ size_t Verilog2001Parser::Name_of_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Name_of_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitName_of_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitName_of_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10067,6 +10214,7 @@ Verilog2001Parser::Name_of_instanceContext* Verilog2001Parser::name_of_instance(
     setState(2201);
     module_instance_identifier();
     setState(2203);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__20) {
@@ -10112,8 +10260,8 @@ size_t Verilog2001Parser::List_of_port_connectionsContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_port_connectionsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_port_connections(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_port_connections(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10204,8 +10352,8 @@ size_t Verilog2001Parser::Ordered_port_connectionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Ordered_port_connectionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOrdered_port_connection(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOrdered_port_connection(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10234,6 +10382,7 @@ Verilog2001Parser::Ordered_port_connectionContext* Verilog2001Parser::ordered_po
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 238, _ctx);
     }
     setState(2230);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -10301,8 +10450,8 @@ size_t Verilog2001Parser::Named_port_connectionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Named_port_connectionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNamed_port_connection(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNamed_port_connection(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10334,6 +10483,7 @@ Verilog2001Parser::Named_port_connectionContext* Verilog2001Parser::named_port_c
     setState(2240);
     match(Verilog2001Parser::T__15);
     setState(2242);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -10395,8 +10545,8 @@ size_t Verilog2001Parser::Generated_instantiationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generated_instantiationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerated_instantiation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerated_instantiation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10509,8 +10659,8 @@ size_t Verilog2001Parser::Generate_item_or_nullContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_item_or_nullContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_item_or_null(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_item_or_null(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10642,8 +10792,8 @@ size_t Verilog2001Parser::Generate_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10784,8 +10934,8 @@ size_t Verilog2001Parser::Generate_conditional_statementContext::getRuleIndex() 
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_conditional_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_conditional_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_conditional_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10857,8 +11007,8 @@ size_t Verilog2001Parser::Generate_case_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_case_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_case_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_case_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -10953,8 +11103,8 @@ size_t Verilog2001Parser::Genvar_case_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_case_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_case_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_case_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11020,6 +11170,7 @@ Verilog2001Parser::Genvar_case_itemContext* Verilog2001Parser::genvar_case_item(
         setState(2299);
         match(Verilog2001Parser::T__5);
         setState(2301);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__64) {
@@ -11073,8 +11224,8 @@ size_t Verilog2001Parser::Generate_loop_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_loop_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_loop_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_loop_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11137,8 +11288,8 @@ size_t Verilog2001Parser::Genvar_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11193,8 +11344,8 @@ size_t Verilog2001Parser::Generate_blockContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_blockContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_block(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_block(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11212,6 +11363,7 @@ Verilog2001Parser::Generate_blockContext* Verilog2001Parser::generate_block() {
     setState(2320);
     match(Verilog2001Parser::T__103);
     setState(2323);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -11324,8 +11476,8 @@ size_t Verilog2001Parser::Continuous_assignContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Continuous_assignContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitContinuous_assign(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitContinuous_assign(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11343,6 +11495,7 @@ Verilog2001Parser::Continuous_assignContext* Verilog2001Parser::continuous_assig
     setState(2333);
     match(Verilog2001Parser::T__105);
     setState(2335);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
@@ -11360,6 +11513,7 @@ Verilog2001Parser::Continuous_assignContext* Verilog2001Parser::continuous_assig
       drive_strength();
     }
     setState(2338);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__14) {
@@ -11401,8 +11555,8 @@ size_t Verilog2001Parser::List_of_net_assignmentsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_net_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_net_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_net_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11462,8 +11616,8 @@ size_t Verilog2001Parser::Net_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11510,8 +11664,8 @@ size_t Verilog2001Parser::Initial_constructContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Initial_constructContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInitial_construct(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInitial_construct(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11556,8 +11710,8 @@ size_t Verilog2001Parser::Always_constructContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Always_constructContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitAlways_construct(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitAlways_construct(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11610,8 +11764,8 @@ size_t Verilog2001Parser::Blocking_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Blocking_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBlocking_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBlocking_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11631,6 +11785,7 @@ Verilog2001Parser::Blocking_assignmentContext* Verilog2001Parser::blocking_assig
     setState(2362);
     match(Verilog2001Parser::T__50);
     setState(2364);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__14 || _la == Verilog2001Parser::T__114
@@ -11676,8 +11831,8 @@ size_t Verilog2001Parser::Nonblocking_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Nonblocking_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNonblocking_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNonblocking_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11697,6 +11852,7 @@ Verilog2001Parser::Nonblocking_assignmentContext* Verilog2001Parser::nonblocking
     setState(2369);
     match(Verilog2001Parser::T__108);
     setState(2371);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__14 || _la == Verilog2001Parser::T__114
@@ -11746,8 +11902,8 @@ size_t Verilog2001Parser::Procedural_continuous_assignmentsContext::getRuleIndex
 }
 
 antlrcpp::Any Verilog2001Parser::Procedural_continuous_assignmentsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitProcedural_continuous_assignments(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitProcedural_continuous_assignments(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11849,8 +12005,8 @@ size_t Verilog2001Parser::Function_blocking_assignmentContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::Function_blocking_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_blocking_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_blocking_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11905,8 +12061,8 @@ size_t Verilog2001Parser::Function_statement_or_nullContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Function_statement_or_nullContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_statement_or_null(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_statement_or_null(this);
   else
     return visitor->visitChildren(this);
 }
@@ -11991,8 +12147,8 @@ size_t Verilog2001Parser::Function_seq_blockContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_seq_blockContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_seq_block(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_seq_block(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12011,6 +12167,7 @@ Verilog2001Parser::Function_seq_blockContext* Verilog2001Parser::function_seq_bl
     setState(2403);
     match(Verilog2001Parser::T__103);
     setState(2412);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -12089,8 +12246,8 @@ size_t Verilog2001Parser::Variable_assignmentContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_assignmentContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_assignment(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_assignment(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12153,8 +12310,8 @@ size_t Verilog2001Parser::Par_blockContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Par_blockContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPar_block(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPar_block(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12173,6 +12330,7 @@ Verilog2001Parser::Par_blockContext* Verilog2001Parser::par_block() {
     setState(2426);
     match(Verilog2001Parser::T__112);
     setState(2435);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -12272,8 +12430,8 @@ size_t Verilog2001Parser::Seq_blockContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Seq_blockContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSeq_block(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSeq_block(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12292,6 +12450,7 @@ Verilog2001Parser::Seq_blockContext* Verilog2001Parser::seq_block() {
     setState(2445);
     match(Verilog2001Parser::T__103);
     setState(2454);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -12435,8 +12594,8 @@ size_t Verilog2001Parser::StatementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::StatementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStatement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStatement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12733,8 +12892,8 @@ size_t Verilog2001Parser::Statement_or_nullContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Statement_or_nullContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStatement_or_null(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStatement_or_null(this);
   else
     return visitor->visitChildren(this);
 }
@@ -12835,8 +12994,8 @@ size_t Verilog2001Parser::Function_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13010,8 +13169,8 @@ size_t Verilog2001Parser::Delay_or_event_controlContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delay_or_event_controlContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelay_or_event_control(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelay_or_event_control(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13090,8 +13249,8 @@ size_t Verilog2001Parser::Delay_controlContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delay_controlContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelay_control(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelay_control(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13161,8 +13320,8 @@ size_t Verilog2001Parser::Disable_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Disable_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDisable_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDisable_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13232,8 +13391,8 @@ size_t Verilog2001Parser::Event_controlContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_controlContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_control(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_control(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13321,8 +13480,8 @@ size_t Verilog2001Parser::Event_triggerContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_triggerContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_trigger(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_trigger(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13373,8 +13532,8 @@ size_t Verilog2001Parser::Event_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13448,8 +13607,8 @@ size_t Verilog2001Parser::Event_primaryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_primaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_primary(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_primary(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13543,8 +13702,8 @@ size_t Verilog2001Parser::Procedural_timing_control_statementContext::getRuleInd
 }
 
 antlrcpp::Any Verilog2001Parser::Procedural_timing_control_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitProcedural_timing_control_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitProcedural_timing_control_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13593,8 +13752,8 @@ size_t Verilog2001Parser::Wait_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Wait_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitWait_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitWait_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13657,8 +13816,8 @@ size_t Verilog2001Parser::Conditional_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Conditional_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConditional_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConditional_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13749,8 +13908,8 @@ size_t Verilog2001Parser::If_else_if_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::If_else_if_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitIf_else_if_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitIf_else_if_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13849,8 +14008,8 @@ size_t Verilog2001Parser::Function_conditional_statementContext::getRuleIndex() 
 }
 
 antlrcpp::Any Verilog2001Parser::Function_conditional_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_conditional_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_conditional_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -13941,8 +14100,8 @@ size_t Verilog2001Parser::Function_if_else_if_statementContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::Function_if_else_if_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_if_else_if_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_if_else_if_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14037,8 +14196,8 @@ size_t Verilog2001Parser::Case_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Case_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCase_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCase_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14243,8 +14402,8 @@ size_t Verilog2001Parser::Case_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Case_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCase_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCase_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14310,6 +14469,7 @@ Verilog2001Parser::Case_itemContext* Verilog2001Parser::case_item() {
         setState(2825);
         match(Verilog2001Parser::T__5);
         setState(2827);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__64) {
@@ -14359,8 +14519,8 @@ size_t Verilog2001Parser::Function_case_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_case_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_case_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_case_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14565,8 +14725,8 @@ size_t Verilog2001Parser::Function_case_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_case_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_case_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_case_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14632,6 +14792,7 @@ Verilog2001Parser::Function_case_itemContext* Verilog2001Parser::function_case_i
         setState(2884);
         match(Verilog2001Parser::T__5);
         setState(2886);
+        _errHandler->sync(this);
 
         _la = _input->LA(1);
         if (_la == Verilog2001Parser::T__64) {
@@ -14685,8 +14846,8 @@ size_t Verilog2001Parser::Function_loop_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_loop_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_loop_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_loop_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14806,8 +14967,8 @@ size_t Verilog2001Parser::Loop_statementContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Loop_statementContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLoop_statement(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLoop_statement(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14923,8 +15084,8 @@ size_t Verilog2001Parser::System_task_enableContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::System_task_enableContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSystem_task_enable(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSystem_task_enable(this);
   else
     return visitor->visitChildren(this);
 }
@@ -14942,12 +15103,14 @@ Verilog2001Parser::System_task_enableContext* Verilog2001Parser::system_task_ena
     setState(2943);
     system_task_identifier();
     setState(2956);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15) {
       setState(2944);
       match(Verilog2001Parser::T__15);
       setState(2953);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15
@@ -15028,8 +15191,8 @@ size_t Verilog2001Parser::Task_enableContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_enableContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_enable(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_enable(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15047,12 +15210,14 @@ Verilog2001Parser::Task_enableContext* Verilog2001Parser::task_enable() {
     setState(2960);
     hierarchical_task_identifier();
     setState(2973);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15) {
       setState(2961);
       match(Verilog2001Parser::T__15);
       setState(2970);
+      _errHandler->sync(this);
 
       _la = _input->LA(1);
       if (_la == Verilog2001Parser::T__15
@@ -15129,8 +15294,8 @@ size_t Verilog2001Parser::Specify_blockContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Specify_blockContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecify_block(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecify_block(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15208,8 +15373,8 @@ size_t Verilog2001Parser::Specify_itemContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Specify_itemContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecify_item(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecify_item(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15289,8 +15454,8 @@ size_t Verilog2001Parser::Pulsestyle_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Pulsestyle_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPulsestyle_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPulsestyle_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15358,8 +15523,8 @@ size_t Verilog2001Parser::Showcancelled_declarationContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Showcancelled_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitShowcancelled_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitShowcancelled_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15435,8 +15600,8 @@ size_t Verilog2001Parser::Path_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Path_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPath_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPath_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15515,8 +15680,8 @@ size_t Verilog2001Parser::Simple_path_declarationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Simple_path_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSimple_path_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSimple_path_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15593,8 +15758,8 @@ size_t Verilog2001Parser::Parallel_path_descriptionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Parallel_path_descriptionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParallel_path_description(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParallel_path_description(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15612,6 +15777,7 @@ Verilog2001Parser::Parallel_path_descriptionContext* Verilog2001Parser::parallel
     setState(3033);
     specify_input_terminal_descriptor();
     setState(3035);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__135
@@ -15659,8 +15825,8 @@ size_t Verilog2001Parser::Full_path_descriptionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Full_path_descriptionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFull_path_description(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFull_path_description(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15680,6 +15846,7 @@ Verilog2001Parser::Full_path_descriptionContext* Verilog2001Parser::full_path_de
     setState(3041);
     list_of_path_inputs();
     setState(3043);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__135
@@ -15725,8 +15892,8 @@ size_t Verilog2001Parser::List_of_path_inputsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_path_inputsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_path_inputs(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_path_inputs(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15786,8 +15953,8 @@ size_t Verilog2001Parser::List_of_path_outputsContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_path_outputsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_path_outputs(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_path_outputs(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15851,8 +16018,8 @@ size_t Verilog2001Parser::Specify_input_terminal_descriptorContext::getRuleIndex
 }
 
 antlrcpp::Any Verilog2001Parser::Specify_input_terminal_descriptorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecify_input_terminal_descriptor(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecify_input_terminal_descriptor(this);
   else
     return visitor->visitChildren(this);
 }
@@ -15937,8 +16104,8 @@ size_t Verilog2001Parser::Specify_output_terminal_descriptorContext::getRuleInde
 }
 
 antlrcpp::Any Verilog2001Parser::Specify_output_terminal_descriptorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecify_output_terminal_descriptor(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecify_output_terminal_descriptor(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16019,8 +16186,8 @@ size_t Verilog2001Parser::Input_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Input_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInput_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInput_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16082,8 +16249,8 @@ size_t Verilog2001Parser::Output_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Output_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOutput_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOutput_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16141,8 +16308,8 @@ size_t Verilog2001Parser::Path_delay_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Path_delay_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPath_delay_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPath_delay_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16264,8 +16431,8 @@ size_t Verilog2001Parser::List_of_path_delay_expressionsContext::getRuleIndex() 
 }
 
 antlrcpp::Any Verilog2001Parser::List_of_path_delay_expressionsContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitList_of_path_delay_expressions(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitList_of_path_delay_expressions(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16420,8 +16587,8 @@ size_t Verilog2001Parser::T_path_delay_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::T_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16464,8 +16631,8 @@ size_t Verilog2001Parser::Trise_path_delay_expressionContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Trise_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTrise_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTrise_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16508,8 +16675,8 @@ size_t Verilog2001Parser::Tfall_path_delay_expressionContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Tfall_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTfall_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTfall_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16552,8 +16719,8 @@ size_t Verilog2001Parser::Tz_path_delay_expressionContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::Tz_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTz_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTz_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16596,8 +16763,8 @@ size_t Verilog2001Parser::T01_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T01_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT01_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT01_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16640,8 +16807,8 @@ size_t Verilog2001Parser::T10_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T10_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT10_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT10_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16684,8 +16851,8 @@ size_t Verilog2001Parser::T0z_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T0z_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT0z_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT0z_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16728,8 +16895,8 @@ size_t Verilog2001Parser::Tz1_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Tz1_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTz1_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTz1_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16772,8 +16939,8 @@ size_t Verilog2001Parser::T1z_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T1z_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT1z_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT1z_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16816,8 +16983,8 @@ size_t Verilog2001Parser::Tz0_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Tz0_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTz0_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTz0_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16860,8 +17027,8 @@ size_t Verilog2001Parser::T0x_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T0x_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT0x_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT0x_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16904,8 +17071,8 @@ size_t Verilog2001Parser::Tx1_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Tx1_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTx1_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTx1_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16948,8 +17115,8 @@ size_t Verilog2001Parser::T1x_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::T1x_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitT1x_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitT1x_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -16992,8 +17159,8 @@ size_t Verilog2001Parser::Tx0_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Tx0_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTx0_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTx0_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17036,8 +17203,8 @@ size_t Verilog2001Parser::Txz_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Txz_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTxz_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTxz_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17080,8 +17247,8 @@ size_t Verilog2001Parser::Tzx_path_delay_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Tzx_path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTzx_path_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTzx_path_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17124,8 +17291,8 @@ size_t Verilog2001Parser::Path_delay_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Path_delay_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPath_delay_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPath_delay_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17176,8 +17343,8 @@ size_t Verilog2001Parser::Edge_sensitive_path_declarationContext::getRuleIndex()
 }
 
 antlrcpp::Any Verilog2001Parser::Edge_sensitive_path_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEdge_sensitive_path_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEdge_sensitive_path_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17259,8 +17426,8 @@ size_t Verilog2001Parser::Parallel_edge_sensitive_path_descriptionContext::getRu
 }
 
 antlrcpp::Any Verilog2001Parser::Parallel_edge_sensitive_path_descriptionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParallel_edge_sensitive_path_description(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParallel_edge_sensitive_path_description(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17278,6 +17445,7 @@ Verilog2001Parser::Parallel_edge_sensitive_path_descriptionContext* Verilog2001P
     setState(3199);
     match(Verilog2001Parser::T__15);
     setState(3201);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__119
@@ -17293,6 +17461,7 @@ Verilog2001Parser::Parallel_edge_sensitive_path_descriptionContext* Verilog2001P
     setState(3205);
     specify_output_terminal_descriptor();
     setState(3207);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__135
@@ -17350,8 +17519,8 @@ size_t Verilog2001Parser::Full_edge_sensitive_path_descriptionContext::getRuleIn
 }
 
 antlrcpp::Any Verilog2001Parser::Full_edge_sensitive_path_descriptionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFull_edge_sensitive_path_description(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFull_edge_sensitive_path_description(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17369,6 +17538,7 @@ Verilog2001Parser::Full_edge_sensitive_path_descriptionContext* Verilog2001Parse
     setState(3213);
     match(Verilog2001Parser::T__15);
     setState(3215);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__119
@@ -17384,6 +17554,7 @@ Verilog2001Parser::Full_edge_sensitive_path_descriptionContext* Verilog2001Parse
     setState(3219);
     list_of_path_outputs();
     setState(3221);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__135
@@ -17425,8 +17596,8 @@ size_t Verilog2001Parser::Data_source_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Data_source_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitData_source_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitData_source_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17465,8 +17636,8 @@ size_t Verilog2001Parser::Edge_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Edge_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEdge_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEdge_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17487,7 +17658,9 @@ Verilog2001Parser::Edge_identifierContext* Verilog2001Parser::edge_identifier() 
 
     || _la == Verilog2001Parser::T__120)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -17525,8 +17698,8 @@ size_t Verilog2001Parser::State_dependent_path_declarationContext::getRuleIndex(
 }
 
 antlrcpp::Any Verilog2001Parser::State_dependent_path_declarationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitState_dependent_path_declaration(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitState_dependent_path_declaration(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17605,8 +17778,8 @@ size_t Verilog2001Parser::Polarity_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Polarity_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPolarity_operator(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPolarity_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17627,7 +17800,9 @@ Verilog2001Parser::Polarity_operatorContext* Verilog2001Parser::polarity_operato
 
     || _la == Verilog2001Parser::T__136)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -17657,8 +17832,8 @@ size_t Verilog2001Parser::Checktime_conditionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Checktime_conditionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitChecktime_condition(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitChecktime_condition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17705,8 +17880,8 @@ size_t Verilog2001Parser::Delayed_dataContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delayed_dataContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelayed_data(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelayed_data(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17774,8 +17949,8 @@ size_t Verilog2001Parser::Delayed_referenceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Delayed_referenceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDelayed_reference(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDelayed_reference(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17839,8 +18014,8 @@ size_t Verilog2001Parser::End_edge_offsetContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::End_edge_offsetContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEnd_edge_offset(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEnd_edge_offset(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17883,8 +18058,8 @@ size_t Verilog2001Parser::Event_based_flagContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_based_flagContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_based_flag(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_based_flag(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17927,8 +18102,8 @@ size_t Verilog2001Parser::Notify_regContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Notify_regContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNotify_reg(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNotify_reg(this);
   else
     return visitor->visitChildren(this);
 }
@@ -17971,8 +18146,8 @@ size_t Verilog2001Parser::Remain_active_flagContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Remain_active_flagContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitRemain_active_flag(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitRemain_active_flag(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18015,8 +18190,8 @@ size_t Verilog2001Parser::Stamptime_conditionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Stamptime_conditionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStamptime_condition(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStamptime_condition(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18059,8 +18234,8 @@ size_t Verilog2001Parser::Start_edge_offsetContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Start_edge_offsetContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitStart_edge_offset(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitStart_edge_offset(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18103,8 +18278,8 @@ size_t Verilog2001Parser::ThresholdContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::ThresholdContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitThreshold(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitThreshold(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18147,8 +18322,8 @@ size_t Verilog2001Parser::Timing_check_limitContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Timing_check_limitContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTiming_check_limit(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTiming_check_limit(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18195,8 +18370,8 @@ size_t Verilog2001Parser::ConcatenationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::ConcatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConcatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConcatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18260,8 +18435,8 @@ size_t Verilog2001Parser::Constant_concatenationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18325,8 +18500,8 @@ size_t Verilog2001Parser::Constant_multiple_concatenationContext::getRuleIndex()
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_multiple_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_multiple_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_multiple_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18379,8 +18554,8 @@ size_t Verilog2001Parser::Module_path_concatenationContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18444,8 +18619,8 @@ size_t Verilog2001Parser::Module_path_multiple_concatenationContext::getRuleInde
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_multiple_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_multiple_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_multiple_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18498,8 +18673,8 @@ size_t Verilog2001Parser::Multiple_concatenationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Multiple_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMultiple_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMultiple_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18552,8 +18727,8 @@ size_t Verilog2001Parser::Net_concatenationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18629,8 +18804,8 @@ size_t Verilog2001Parser::Net_concatenation_valueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_concatenation_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_concatenation_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_concatenation_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18769,8 +18944,8 @@ size_t Verilog2001Parser::Variable_concatenationContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_concatenationContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_concatenation(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_concatenation(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18846,8 +19021,8 @@ size_t Verilog2001Parser::Variable_concatenation_valueContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_concatenation_valueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_concatenation_value(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_concatenation_value(this);
   else
     return visitor->visitChildren(this);
 }
@@ -18998,8 +19173,8 @@ size_t Verilog2001Parser::Constant_function_callContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_function_callContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_function_call(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_function_call(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19032,6 +19207,7 @@ Verilog2001Parser::Constant_function_callContext* Verilog2001Parser::constant_fu
     setState(3438);
     match(Verilog2001Parser::T__15);
     setState(3447);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -19117,8 +19293,8 @@ size_t Verilog2001Parser::Function_callContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_callContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_call(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_call(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19151,6 +19327,7 @@ Verilog2001Parser::Function_callContext* Verilog2001Parser::function_call() {
     setState(3458);
     match(Verilog2001Parser::T__15);
     setState(3467);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -19228,8 +19405,8 @@ size_t Verilog2001Parser::System_function_callContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::System_function_callContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSystem_function_call(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSystem_function_call(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19314,8 +19491,8 @@ size_t Verilog2001Parser::Genvar_function_callContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_function_callContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_function_call(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_function_call(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19348,6 +19525,7 @@ Verilog2001Parser::Genvar_function_callContext* Verilog2001Parser::genvar_functi
     setState(3489);
     match(Verilog2001Parser::T__15);
     setState(3498);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__15
@@ -19417,8 +19595,8 @@ size_t Verilog2001Parser::Base_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Base_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBase_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBase_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19461,8 +19639,8 @@ size_t Verilog2001Parser::Constant_base_expressionContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_base_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_base_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_base_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19505,8 +19683,8 @@ size_t Verilog2001Parser::Constant_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19553,8 +19731,8 @@ size_t Verilog2001Parser::Constant_mintypmax_expressionContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_mintypmax_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_mintypmax_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_mintypmax_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19636,8 +19814,8 @@ size_t Verilog2001Parser::Constant_range_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_range_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_range_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_range_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19721,8 +19899,8 @@ size_t Verilog2001Parser::Dimension_constant_expressionContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::Dimension_constant_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDimension_constant_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDimension_constant_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19793,8 +19971,8 @@ size_t Verilog2001Parser::ExpressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::ExpressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitExpression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitExpression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -19938,8 +20116,8 @@ size_t Verilog2001Parser::TermContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::TermContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTerm(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTerm(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20040,8 +20218,8 @@ size_t Verilog2001Parser::Lsb_constant_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Lsb_constant_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLsb_constant_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLsb_constant_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20088,8 +20266,8 @@ size_t Verilog2001Parser::Mintypmax_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Mintypmax_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMintypmax_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMintypmax_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20107,6 +20285,7 @@ Verilog2001Parser::Mintypmax_expressionContext* Verilog2001Parser::mintypmax_exp
     setState(3575);
     expression();
     setState(3581);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -20158,8 +20337,8 @@ size_t Verilog2001Parser::Module_path_conditional_expressionContext::getRuleInde
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_conditional_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_conditional_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_conditional_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20251,8 +20430,8 @@ size_t Verilog2001Parser::Module_path_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20415,8 +20594,8 @@ size_t Verilog2001Parser::Module_path_mintypmax_expressionContext::getRuleIndex(
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_mintypmax_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_mintypmax_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_mintypmax_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20434,6 +20613,7 @@ Verilog2001Parser::Module_path_mintypmax_expressionContext* Verilog2001Parser::m
     setState(3632);
     module_path_expression();
     setState(3638);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__64) {
@@ -20473,8 +20653,8 @@ size_t Verilog2001Parser::Msb_constant_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Msb_constant_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMsb_constant_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMsb_constant_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20533,8 +20713,8 @@ size_t Verilog2001Parser::Range_expressionContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Range_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitRange_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitRange_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20618,8 +20798,8 @@ size_t Verilog2001Parser::Width_constant_expressionContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Width_constant_expressionContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitWidth_constant_expression(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitWidth_constant_expression(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20690,8 +20870,8 @@ size_t Verilog2001Parser::Constant_primaryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Constant_primaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConstant_primary(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConstant_primary(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20823,8 +21003,8 @@ size_t Verilog2001Parser::Module_path_primaryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_path_primaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_path_primary(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_path_primary(this);
   else
     return visitor->visitChildren(this);
 }
@@ -20968,8 +21148,8 @@ size_t Verilog2001Parser::PrimaryContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::PrimaryContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPrimary(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPrimary(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21160,8 +21340,8 @@ size_t Verilog2001Parser::Net_lvalueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_lvalueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_lvalue(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_lvalue(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21312,8 +21492,8 @@ size_t Verilog2001Parser::Variable_lvalueContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_lvalueContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_lvalue(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_lvalue(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21444,8 +21624,8 @@ size_t Verilog2001Parser::Unary_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Unary_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitUnary_operator(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitUnary_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21475,7 +21655,9 @@ Verilog2001Parser::Unary_operatorContext* Verilog2001Parser::unary_operator() {
       | (1ULL << (Verilog2001Parser::T__147 - 136))
       | (1ULL << (Verilog2001Parser::T__148 - 136)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -21501,8 +21683,8 @@ size_t Verilog2001Parser::Binary_operatorContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Binary_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBinary_operator(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBinary_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21546,7 +21728,9 @@ Verilog2001Parser::Binary_operatorContext* Verilog2001Parser::binary_operator() 
       | (1ULL << (Verilog2001Parser::T__163 - 109))
       | (1ULL << (Verilog2001Parser::T__164 - 109)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -21572,8 +21756,8 @@ size_t Verilog2001Parser::Unary_module_path_operatorContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Unary_module_path_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitUnary_module_path_operator(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitUnary_module_path_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21601,7 +21785,9 @@ Verilog2001Parser::Unary_module_path_operatorContext* Verilog2001Parser::unary_m
       | (1ULL << (Verilog2001Parser::T__147 - 141))
       | (1ULL << (Verilog2001Parser::T__148 - 141)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -21627,8 +21813,8 @@ size_t Verilog2001Parser::Binary_module_path_operatorContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Binary_module_path_operatorContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBinary_module_path_operator(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBinary_module_path_operator(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21656,7 +21842,9 @@ Verilog2001Parser::Binary_module_path_operatorContext* Verilog2001Parser::binary
       | (1ULL << (Verilog2001Parser::T__155 - 143))
       | (1ULL << (Verilog2001Parser::T__156 - 143)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -21702,8 +21890,8 @@ size_t Verilog2001Parser::NumberContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::NumberContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNumber(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNumber(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21727,7 +21915,9 @@ Verilog2001Parser::NumberContext* Verilog2001Parser::number() {
       | (1ULL << (Verilog2001Parser::Octal_number - 168))
       | (1ULL << (Verilog2001Parser::Hex_number - 168)))) != 0))) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -21757,8 +21947,8 @@ size_t Verilog2001Parser::Default_nettype_specContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Default_nettype_specContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitDefault_nettype_spec(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitDefault_nettype_spec(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21807,8 +21997,8 @@ size_t Verilog2001Parser::Timing_specContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Timing_specContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTiming_spec(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTiming_spec(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21861,8 +22051,8 @@ size_t Verilog2001Parser::Attribute_instanceContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Attribute_instanceContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitAttribute_instance(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitAttribute_instance(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21930,8 +22120,8 @@ size_t Verilog2001Parser::Attr_specContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Attr_specContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitAttr_spec(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitAttr_spec(this);
   else
     return visitor->visitChildren(this);
 }
@@ -21993,8 +22183,8 @@ size_t Verilog2001Parser::Attr_nameContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Attr_nameContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitAttr_name(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitAttr_name(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22041,8 +22231,8 @@ size_t Verilog2001Parser::Arrayed_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Arrayed_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitArrayed_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitArrayed_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22102,8 +22292,8 @@ size_t Verilog2001Parser::Block_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Block_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitBlock_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitBlock_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22146,8 +22336,8 @@ size_t Verilog2001Parser::Cell_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Cell_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitCell_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitCell_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22190,8 +22380,8 @@ size_t Verilog2001Parser::Config_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Config_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitConfig_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitConfig_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22238,8 +22428,8 @@ size_t Verilog2001Parser::Escaped_arrayed_identifierContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Escaped_arrayed_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEscaped_arrayed_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEscaped_arrayed_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22305,8 +22495,8 @@ size_t Verilog2001Parser::Escaped_hierarchical_identifierContext::getRuleIndex()
 }
 
 antlrcpp::Any Verilog2001Parser::Escaped_hierarchical_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEscaped_hierarchical_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEscaped_hierarchical_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22378,8 +22568,8 @@ size_t Verilog2001Parser::Event_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Event_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEvent_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEvent_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22422,8 +22612,8 @@ size_t Verilog2001Parser::Function_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Function_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitFunction_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitFunction_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22466,8 +22656,8 @@ size_t Verilog2001Parser::Gate_instance_identifierContext::getRuleIndex() const 
 }
 
 antlrcpp::Any Verilog2001Parser::Gate_instance_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGate_instance_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGate_instance_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22510,8 +22700,8 @@ size_t Verilog2001Parser::Generate_block_identifierContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Generate_block_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenerate_block_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenerate_block_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22554,8 +22744,8 @@ size_t Verilog2001Parser::Genvar_function_identifierContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_function_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_function_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_function_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22598,8 +22788,8 @@ size_t Verilog2001Parser::Genvar_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Genvar_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitGenvar_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitGenvar_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22642,8 +22832,8 @@ size_t Verilog2001Parser::Hierarchical_block_identifierContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_block_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_block_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_block_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22686,8 +22876,8 @@ size_t Verilog2001Parser::Hierarchical_event_identifierContext::getRuleIndex() c
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_event_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_event_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_event_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22730,8 +22920,8 @@ size_t Verilog2001Parser::Hierarchical_function_identifierContext::getRuleIndex(
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_function_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_function_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_function_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22778,8 +22968,8 @@ size_t Verilog2001Parser::Hierarchical_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22839,8 +23029,8 @@ size_t Verilog2001Parser::Hierarchical_net_identifierContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_net_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_net_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_net_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22883,8 +23073,8 @@ size_t Verilog2001Parser::Hierarchical_variable_identifierContext::getRuleIndex(
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_variable_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_variable_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_variable_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22927,8 +23117,8 @@ size_t Verilog2001Parser::Hierarchical_task_identifierContext::getRuleIndex() co
 }
 
 antlrcpp::Any Verilog2001Parser::Hierarchical_task_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitHierarchical_task_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitHierarchical_task_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22975,8 +23165,8 @@ size_t Verilog2001Parser::IdentifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::IdentifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitIdentifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitIdentifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -22997,7 +23187,9 @@ Verilog2001Parser::IdentifierContext* Verilog2001Parser::identifier() {
 
     || _la == Verilog2001Parser::Simple_identifier)) {
     _errHandler->recoverInline(this);
-    } else {
+    }
+    else {
+      _errHandler->reportMatch(this);
       consume();
     }
    
@@ -23027,8 +23219,8 @@ size_t Verilog2001Parser::Inout_port_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Inout_port_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInout_port_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInout_port_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23071,8 +23263,8 @@ size_t Verilog2001Parser::Input_port_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Input_port_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInput_port_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInput_port_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23115,8 +23307,8 @@ size_t Verilog2001Parser::Instance_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Instance_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitInstance_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitInstance_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23159,8 +23351,8 @@ size_t Verilog2001Parser::Library_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Library_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitLibrary_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitLibrary_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23203,8 +23395,8 @@ size_t Verilog2001Parser::Memory_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Memory_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitMemory_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitMemory_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23247,8 +23439,8 @@ size_t Verilog2001Parser::Module_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Module_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23291,8 +23483,8 @@ size_t Verilog2001Parser::Module_instance_identifierContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Module_instance_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitModule_instance_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitModule_instance_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23335,8 +23527,8 @@ size_t Verilog2001Parser::Net_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Net_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitNet_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitNet_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23379,8 +23571,8 @@ size_t Verilog2001Parser::Output_port_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Output_port_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitOutput_port_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitOutput_port_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23423,8 +23615,8 @@ size_t Verilog2001Parser::Parameter_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Parameter_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitParameter_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitParameter_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23467,8 +23659,8 @@ size_t Verilog2001Parser::Port_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Port_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitPort_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitPort_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23511,8 +23703,8 @@ size_t Verilog2001Parser::Real_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Real_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitReal_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitReal_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23559,8 +23751,8 @@ size_t Verilog2001Parser::Simple_arrayed_identifierContext::getRuleIndex() const
 }
 
 antlrcpp::Any Verilog2001Parser::Simple_arrayed_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSimple_arrayed_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSimple_arrayed_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23618,8 +23810,8 @@ size_t Verilog2001Parser::Simple_hierarchical_identifierContext::getRuleIndex() 
 }
 
 antlrcpp::Any Verilog2001Parser::Simple_hierarchical_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSimple_hierarchical_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSimple_hierarchical_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23637,6 +23829,7 @@ Verilog2001Parser::Simple_hierarchical_identifierContext* Verilog2001Parser::sim
     setState(3925);
     simple_hierarchical_branch();
     setState(3928);
+    _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == Verilog2001Parser::T__4) {
@@ -23672,8 +23865,8 @@ size_t Verilog2001Parser::Specparam_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Specparam_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSpecparam_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSpecparam_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23716,8 +23909,8 @@ size_t Verilog2001Parser::System_function_identifierContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::System_function_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSystem_function_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSystem_function_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23760,8 +23953,8 @@ size_t Verilog2001Parser::System_task_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::System_task_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSystem_task_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSystem_task_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23804,8 +23997,8 @@ size_t Verilog2001Parser::Task_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Task_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTask_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTask_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23848,8 +24041,8 @@ size_t Verilog2001Parser::Terminal_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Terminal_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTerminal_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTerminal_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23892,8 +24085,8 @@ size_t Verilog2001Parser::Text_macro_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Text_macro_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitText_macro_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitText_macro_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23936,8 +24129,8 @@ size_t Verilog2001Parser::Topmodule_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Topmodule_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitTopmodule_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitTopmodule_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -23980,8 +24173,8 @@ size_t Verilog2001Parser::Udp_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Udp_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitUdp_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitUdp_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -24024,8 +24217,8 @@ size_t Verilog2001Parser::Udp_instance_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Udp_instance_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitUdp_instance_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitUdp_instance_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -24068,8 +24261,8 @@ size_t Verilog2001Parser::Variable_identifierContext::getRuleIndex() const {
 }
 
 antlrcpp::Any Verilog2001Parser::Variable_identifierContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitVariable_identifier(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitVariable_identifier(this);
   else
     return visitor->visitChildren(this);
 }
@@ -24124,8 +24317,8 @@ size_t Verilog2001Parser::Simple_hierarchical_branchContext::getRuleIndex() cons
 }
 
 antlrcpp::Any Verilog2001Parser::Simple_hierarchical_branchContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitSimple_hierarchical_branch(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitSimple_hierarchical_branch(this);
   else
     return visitor->visitChildren(this);
 }
@@ -24225,8 +24418,8 @@ size_t Verilog2001Parser::Escaped_hierarchical_branchContext::getRuleIndex() con
 }
 
 antlrcpp::Any Verilog2001Parser::Escaped_hierarchical_branchContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (dynamic_cast<Verilog2001Visitor*>(visitor) != nullptr)
-    return ((Verilog2001Visitor *)visitor)->visitEscaped_hierarchical_branch(this);
+  if (auto parserVisitor = dynamic_cast<Verilog2001Visitor*>(visitor))
+    return parserVisitor->visitEscaped_hierarchical_branch(this);
   else
     return visitor->visitChildren(this);
 }

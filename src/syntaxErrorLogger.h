@@ -9,7 +9,7 @@ public:
 			IRecognizer *recognizer,
 			Token *offendingSymbol,
 			size_t line,
-			int charPositionInLine,
+			size_t charPositionInLine,
 			const std::string &msg,
 			std::exception_ptr e);
 
@@ -26,7 +26,7 @@ public:
 			const dfa::DFA &dfa,
 			size_t startIndex,
 			size_t stopIndex,
-			int prediction,
+			size_t prediction,
 			atn::ATNConfigSet *configs);
 
 	void reportAttemptingFullContext(

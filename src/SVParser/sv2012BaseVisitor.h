@@ -1,5 +1,5 @@
 
-// Generated from sv2012.g4 by ANTLR 4.5.3
+// Generated from sv2012.g4 by ANTLR 4.6
 
 #pragma once
 
@@ -14,7 +14,7 @@ namespace sv {
  * This class provides an empty implementation of sv2012Visitor, which can be
  * extended to create a visitor which only needs to handle a subset of the available methods.
  */
-class sv2012BaseVisitor : public sv2012Visitor {
+class  sv2012BaseVisitor : public sv2012Visitor {
 public:
 
   virtual antlrcpp::Any visitLibrary_text(sv2012Parser::Library_textContext *ctx) override {

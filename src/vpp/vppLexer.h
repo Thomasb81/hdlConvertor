@@ -1,5 +1,5 @@
 
-// Generated from vpp.g4 by ANTLR 4.5.3
+// Generated from vpp.g4 by ANTLR 4.6
 
 #pragma once
 
@@ -7,11 +7,9 @@
 #include "antlr4-runtime.h"
 
 
-using namespace antlr4;
 
 
-
-class vppLexer : public Lexer {
+class  vppLexer : public antlr4::Lexer {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, INCLUDE = 5, DEFINE = 6, IFNDEF = 7, 
@@ -20,7 +18,7 @@ public:
     LINE_ESCAPE = 19, LINE_COMMENT = 20, WS = 21, OTHER = 22
   };
 
-  vppLexer(CharStream *input);
+  vppLexer(antlr4::CharStream *input);
   ~vppLexer();
 
   virtual std::string getGrammarFileName() const override;
@@ -28,23 +26,22 @@ public:
 
   virtual const std::vector<std::string>& getModeNames() const override;
   virtual const std::vector<std::string>& getTokenNames() const override; // deprecated, use vocabulary instead
-  virtual dfa::Vocabulary& getVocabulary() const override;
+  virtual antlr4::dfa::Vocabulary& getVocabulary() const override;
 
   virtual const std::vector<uint16_t> getSerializedATN() const override;
-  virtual const atn::ATN& getATN() const override;
-
+  virtual const antlr4::atn::ATN& getATN() const override;
 
 private:
-  static std::vector<dfa::DFA> _decisionToDFA;
-  static atn::PredictionContextCache _sharedContextCache;
+  static std::vector<antlr4::dfa::DFA> _decisionToDFA;
+  static antlr4::atn::PredictionContextCache _sharedContextCache;
   static std::vector<std::string> _ruleNames;
   static std::vector<std::string> _tokenNames;
   static std::vector<std::string> _modeNames;
 
   static std::vector<std::string> _literalNames;
   static std::vector<std::string> _symbolicNames;
-  static dfa::Vocabulary _vocabulary;
-  static atn::ATN _atn;
+  static antlr4::dfa::Vocabulary _vocabulary;
+  static antlr4::atn::ATN _atn;
   static std::vector<uint16_t> _serializedATN;
 
 
