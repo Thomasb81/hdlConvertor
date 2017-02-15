@@ -14,7 +14,7 @@
 using namespace antlr4;
 
 class vPreprocessor : public  vppBaseListener {
-	
+
 		static macroSymbol _defineDB;
 		CommonTokenStream * _tokens;
 	public:
@@ -23,11 +23,7 @@ class vPreprocessor : public  vppBaseListener {
 		~vPreprocessor();
 
   		void enterDefine(vppParser::DefineContext * ctx);
-  		void exitDefine(vppParser::DefineContext * ); 
   		void enterUndef(vppParser::UndefContext * ctx);
-
-  		void enterMacro_toreplace(vppParser::Macro_toreplaceContext *ctx);
-  		void exitMacro_toreplace(vppParser::Macro_toreplaceContext *ctx);
 
 		void enterToken_id(vppParser::Token_idContext * ctx); 
 };

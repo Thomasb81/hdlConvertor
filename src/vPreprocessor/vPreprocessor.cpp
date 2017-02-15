@@ -44,11 +44,6 @@ void vPreprocessor::enterDefine(vppParser::DefineContext * ctx){
 				std::string(""));
 }
 
-void vPreprocessor::exitDefine(vppParser::DefineContext * ctx ){
-	
-	//_rewriter->insertBefore(ctx->getStart(),"//");
-}
-
 void vPreprocessor::enterUndef(vppParser::UndefContext * ctx) {
 	_defineDB.erase(ctx->ID()->getText());
 }
@@ -64,30 +59,6 @@ void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 				token.a-1,
 				token.b,
 				replacement);
-}
-
-void vPreprocessor::enterMacro_toreplace(vppParser::Macro_toreplaceContext *ctx){
-#if 0
-	if (_defineDB.count(ctx->ID()->getText()) > 0) {
-		std::string replacement = _defineDB[ctx->ID()->getText()]->replace();	
-		
-		misc::Interval ID = ctx->ID()->getSourceInterval();
-		//printf("|%s -> %s |\n",
-		//		ctx->ID()->getText().c_str(),
-		//		replacement.c_str()
-		//      );	
-		_rewriter->replace(
-				ID.a-1,
-				ID.b,
-				replacement);
-	}
-	else {
-		//TODO error
-	}
-#endif	
-}
-
-void vPreprocessor::exitMacro_toreplace(vppParser::Macro_toreplaceContext *ctx){
 }
 
 std::string return_preprocessed(const std::string input_token, bool eraseDB) {
