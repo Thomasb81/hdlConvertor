@@ -25,7 +25,9 @@ class vPreprocessor : public  vppBaseListener {
   		void enterDefine(vppParser::DefineContext * ctx);
   		void enterUndef(vppParser::UndefContext * ctx);
 
-		void enterToken_id(vppParser::Token_idContext * ctx); 
+		void enterToken_id(vppParser::Token_idContext * ctx);
+
+		void enterIfdef_directive(vppParser::Ifdef_directiveContext * ctx);
 };
 
 std::string return_preprocessed(const std::string input_token, bool eraseDB);

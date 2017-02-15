@@ -30,10 +30,16 @@ void vPreprocessor::enterDefine(vppParser::DefineContext * ctx){
 	}
 	else {
 		std::vector<std::string> data;
-		std::string rep_data = ctx->replacement()->getText();
-		macro_replace *item = new macro_replace(rep_data,data);
+	        if (ctx->replacement() != NULL) {
+			std::string rep_data = ctx->replacement()->getText();
+			macro_replace *item = new macro_replace(rep_data,data);
+			_defineDB.insert(std::pair<std::string,macro_replace*>(macroName,item));
+		}
+		else {
+			macro_replace *item = new macro_replace("",data);
+			_defineDB.insert(std::pair<std::string,macro_replace*>(macroName,item));
+		}
 		//_defineDB[macroName] = item;
-		_defineDB.insert(std::pair<std::string,macro_replace*>(macroName,item));
 	}
 
 	misc::Interval token = ctx->getSourceInterval();
@@ -60,6 +66,41 @@ void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 				token.b,
 				replacement);
 }
+
+void vPreprocessor::enterIfdef_directive(vppParser::Ifdef_directiveContext * ctx) {
+	
+	uint32_t ID_cpt = 0;
+	macroSymbol::iterator search;
+	std::string replacement = "";
+	misc::Interval token = ctx->getSourceInterval();
+
+	search = _defineDB.find(ctx->ID(0)->getText());
+	if (search != _defineDB.end() ) {
+		replacement = ctx->ifdef_group_of_lines()->getText();
+	}
+	else {
+		ID_cpt++;
+		bool exit_cond = true;
+		while ( exit_cond && (ID_cpt < ctx->ID().size()) ) {
+			search = _defineDB.find(ctx->ID(ID_cpt)->getText());
+			if (search != _defineDB.end() ) {
+				replacement = ctx->elsif_group_of_lines(ID_cpt)->getText();
+				exit_cond = false;
+
+			}
+			ID_cpt++;
+		}
+		if ((exit_cond == false) && (ctx->ELSE() != NULL)) {
+			replacement = ctx->else_group_of_lines()->getText();
+		
+		}
+	}
+	printf("%s\n",replacement.c_str());
+	_rewriter->replace(token.a-1,token.b,replacement);
+
+}
+
+
 
 std::string return_preprocessed(const std::string input_token, bool eraseDB) {
 
