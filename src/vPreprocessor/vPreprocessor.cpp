@@ -23,32 +23,25 @@ void vPreprocessor::enterDefine(vppParser::DefineContext * ctx){
 		for(auto arg : ctx->ID()) {
 			data.push_back(arg->getText());
 		}
-		std::string rep_data =
-		_tokens->getText(misc::Interval(
-					ctx->replacement()->start->getTokenIndex(),
-					ctx->replacement()->stop->getTokenIndex()
-					)
-				);
-		rep_data = rep_data.substr(0,rep_data.find("//"));
-		rep_data = rep_data.erase(rep_data.find_last_not_of(" \n\r\t")+1);
+		std::string rep_data = ctx->replacement()->getText();
 
 		macro_replace * item  = new macro_replace(rep_data,data);
 		_defineDB.insert(std::pair<std::string,macro_replace*>(macroName,item));
 	}
 	else {
 		std::vector<std::string> data;
-		std::string rep_data =
-		_tokens->getText(misc::Interval(
-					ctx->replacement()->start->getTokenIndex(),
-					ctx->replacement()->stop->getTokenIndex()
-					)
-				);
-		rep_data = rep_data.substr(0,rep_data.find("//"));
-		rep_data = rep_data.erase(rep_data.find_last_not_of(" \n\r\t")+1);
+		std::string rep_data = ctx->replacement()->getText();
 		macro_replace *item = new macro_replace(rep_data,data);
 		//_defineDB[macroName] = item;
 		_defineDB.insert(std::pair<std::string,macro_replace*>(macroName,item));
 	}
+
+	misc::Interval token = ctx->getSourceInterval();
+	
+	_rewriter->replace(
+				token.a,
+				token.b,
+				std::string(""));
 }
 
 void vPreprocessor::exitDefine(vppParser::DefineContext * ctx ){
@@ -60,7 +53,21 @@ void vPreprocessor::enterUndef(vppParser::UndefContext * ctx) {
 	_defineDB.erase(ctx->ID()->getText());
 }
 
+void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
+	macroPrototype macro = return_prototype(ctx->getText().substr(1,std::string::npos));
+
+	std::string replacement = _defineDB[macro.macroName]->replace(macro.args);	
+	
+	misc::Interval token = ctx->getSourceInterval();
+	
+	_rewriter->replace(
+				token.a-1,
+				token.b,
+				replacement);
+}
+
 void vPreprocessor::enterMacro_toreplace(vppParser::Macro_toreplaceContext *ctx){
+#if 0
 	if (_defineDB.count(ctx->ID()->getText()) > 0) {
 		std::string replacement = _defineDB[ctx->ID()->getText()]->replace();	
 		
@@ -76,7 +83,8 @@ void vPreprocessor::enterMacro_toreplace(vppParser::Macro_toreplaceContext *ctx)
 	}
 	else {
 		//TODO error
-	}	
+	}
+#endif	
 }
 
 void vPreprocessor::exitMacro_toreplace(vppParser::Macro_toreplaceContext *ctx){

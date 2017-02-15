@@ -5,7 +5,7 @@
 macroPrototype return_prototype(std::string input_token) {
 
   ANTLRInputStream input(input_token);
-  
+
   symbolLexer * lexer = new symbolLexer(&input);
   CommonTokenStream * tokens = new CommonTokenStream(lexer);
   symbolParser * parser = new symbolParser(tokens);

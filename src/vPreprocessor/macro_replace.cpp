@@ -15,8 +15,32 @@ void macro_replace::replaceAll(std::string& str, const std::string& from, const 
     size_t start_pos = 0;
     
     while((start_pos = str.find(from, start_pos)) != std::string::npos) {
-        str.replace(start_pos, from.length(), to);
-        start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
+	/*	
+    	printf("%s\n",str.c_str());
+	printf("%li %li\n",start_pos,from.length());
+	printf("%s\n",to.c_str());
+	*/
+	if( not (
+				(('a' <= str[start_pos+from.length()]) && (str[start_pos+from.length()] <='z')) ||
+				(('A' <= str[start_pos+from.length()]) && (str[start_pos+from.length()] <='Z')) ||
+				(('0' <= str[start_pos+from.length()]) && (str[start_pos+from.length()] <='9')) ||
+				('_' == str[start_pos+from.length()]) || ('$' == str[start_pos+from.length()])
+		)
+	  ) {
+		/*
+		 * Test what is next character. If next character is part of [a-zA-Z0-9_$] then it is not what we have to replace.
+		 * 19.3.1 `define
+		 * The text specified for macro text shall not be split across the following lexical tokens:
+		 *   Comments
+                 *   Numbers
+                 *   Strings
+                 *   Identifiers
+                 *   Keywords
+                 *   Operators
+		 * */
+        	str.replace(start_pos, from.length(), to);
+	}
+	start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
     }
 }
 
@@ -31,9 +55,17 @@ std::string macro_replace::replace(std::vector<std::string> arg) {
 		}
 		std::vector<std::string>::iterator macro= data.args.begin();
 		std::vector<std::string>::iterator instance = arg.begin();
-
+		/*
+		printf("%s\n",returnString.c_str());
+		*/
 		for ( ; macro != data.args.end(); macro++, instance++) {
+			/*
+			printf("arg: %s -> %s\n",(*macro).c_str(),(*instance).c_str());
+			*/
 			replaceAll(returnString,*macro,*instance);
+			/*
+			printf("%s\n",returnString.c_str());
+			*/
 		}
 	}
 	else {

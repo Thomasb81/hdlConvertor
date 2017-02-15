@@ -11,3 +11,5 @@ class macroPrototype {
 	std::string macroName;
 	std::vector<std::string> args;
 };
+
+macroPrototype return_prototype(std::string input_token);

@@ -6,6 +6,7 @@
 #include "../vpp/vppParser.h"
 #include "../vpp/vppBaseListener.h"
 #include "macroSymbol.h"
+#include "macroPrototype.h"
 #include <string>
 #include <map>
 
@@ -28,6 +29,7 @@ class vPreprocessor : public  vppBaseListener {
   		void enterMacro_toreplace(vppParser::Macro_toreplaceContext *ctx);
   		void exitMacro_toreplace(vppParser::Macro_toreplaceContext *ctx);
 
+		void enterToken_id(vppParser::Token_idContext * ctx); 
 };
 
 std::string return_preprocessed(const std::string input_token, bool eraseDB);
