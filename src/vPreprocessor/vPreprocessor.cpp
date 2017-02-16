@@ -67,7 +67,7 @@ void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 				replacement);
 }
 
-void vPreprocessor::enterIfdef_directive(vppParser::Ifdef_directiveContext * ctx) {
+void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx) {
 	
 	uint32_t ID_cpt = 0;
 	macroSymbol::iterator search;
@@ -76,27 +76,27 @@ void vPreprocessor::enterIfdef_directive(vppParser::Ifdef_directiveContext * ctx
 
 	search = _defineDB.find(ctx->ID(0)->getText());
 	if (search != _defineDB.end() ) {
-		replacement = ctx->ifdef_group_of_lines()->getText();
+		replacement = return_preprocessed(ctx->ifdef_group_of_lines()->getText(),false);
 	}
 	else {
 		ID_cpt++;
-		bool exit_cond = true;
-		while ( exit_cond && (ID_cpt < ctx->ID().size()) ) {
+		while (ID_cpt < ctx->ID().size() ) {
 			search = _defineDB.find(ctx->ID(ID_cpt)->getText());
 			if (search != _defineDB.end() ) {
-				replacement = ctx->elsif_group_of_lines(ID_cpt)->getText();
-				exit_cond = false;
+				replacement = return_preprocessed(ctx->elsif_group_of_lines(ID_cpt)->getText(),false);
+				goto exit_label;
 
 			}
 			ID_cpt++;
 		}
-		if ((exit_cond == false) && (ctx->ELSE() != NULL)) {
-			replacement = ctx->else_group_of_lines()->getText();
+		if (ctx->ELSE() != nullptr) {
+			replacement = return_preprocessed(ctx->else_group_of_lines()->getText(),false);
 		
 		}
 	}
-	printf("%s\n",replacement.c_str());
-	_rewriter->replace(token.a-1,token.b,replacement);
+
+	exit_label:
+	_rewriter->replace(token.a,token.b,replacement);
 
 }
 
