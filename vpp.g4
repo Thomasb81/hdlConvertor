@@ -36,13 +36,13 @@ conditional
 ifdef_directive 
     : IFDEF ID ifdef_group_of_lines 
       ( ELSIF ID elsif_group_of_lines )* 
-      ( ELSE ID else_group_of_lines )? ENDIF ;
+      ( ELSE else_group_of_lines )? ENDIF ;
 
 
 ifndef_directive 
     : IFNDEF ID ifndef_group_of_lines 
       ( ELSIF ID elsif_group_of_lines )* 
-      ( ELSE ID else_group_of_lines )? ENDIF ;
+      ( ELSE else_group_of_lines )? ENDIF ;
 
 ifdef_group_of_lines
     : group_of_lines
