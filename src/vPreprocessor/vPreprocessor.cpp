@@ -67,6 +67,7 @@ void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 				replacement);
 }
 
+
 void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx) {
 	
 	uint32_t ID_cpt = 0;
@@ -100,6 +101,37 @@ void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx)
 
 }
 
+void vPreprocessor::exitIfndef_directive(vppParser::Ifndef_directiveContext * ctx) {
+	
+	uint32_t ID_cpt = 0;
+	macroSymbol::iterator search;
+	std::string replacement = "";
+	misc::Interval token = ctx->getSourceInterval();
+
+	search = _defineDB.find(ctx->ID(0)->getText());
+	if (search != _defineDB.end() ) {
+		replacement = return_preprocessed(ctx->ifndef_group_of_lines()->getText(),false);
+	}
+	else {
+		ID_cpt++;
+		while (ID_cpt < ctx->ID().size() ) {
+			search = _defineDB.find(ctx->ID(ID_cpt)->getText());
+			if (search != _defineDB.end() ) {
+				replacement = return_preprocessed(ctx->elsif_group_of_lines(ID_cpt)->getText(),false);
+				goto exit_label;
+
+			}
+			ID_cpt++;
+		}
+		if (ctx->ELSE() != nullptr) {
+			replacement = return_preprocessed(ctx->else_group_of_lines()->getText(),false);
+		
+		}
+	}
+
+	exit_label:
+	_rewriter->replace(token.a,token.b,replacement);
+}
 
 
 std::string return_preprocessed(const std::string input_token, bool eraseDB) {
