@@ -4,6 +4,32 @@ cmake_minimum_required( VERSION 2.8.5 )
 # Set the project name
 project( HDLCONVERTOR )
 
+# Java is not necessary if building without demos.
+find_package(Java COMPONENTS Runtime REQUIRED)
+
+if (NOT ANTLR_JAR_LOCATION)
+  message(FATAL_ERROR "Missing antlr4.jar location. You can specify it's path using: -DANTLR_JAR_LOCATION=<path>")
+else()
+  get_filename_component(ANTLR_NAME ${ANTLR_JAR_LOCATION} NAME_WE)
+  if(NOT EXISTS "${ANTLR_JAR_LOCATION}")
+    message(FATAL_ERROR "Unable to find ${ANTLR_NAME} in ${ANTLR_JAR_LOCATION}")
+  else()
+    message(STATUS "Found ${ANTLR_NAME}: ${ANTLR_JAR_LOCATION}")
+  endif()
+endif()
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Make the scripts available in the 'cmake' directory available for the
 # 'include()' command, 'find_package()' command.
 set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/cmake )
