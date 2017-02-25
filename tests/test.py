@@ -3,7 +3,7 @@ from os import path
 from  pprint import pprint
 
 BASE_DIR = path.join(path.dirname(__file__), "..")
-sys.path.insert(1, path.join(BASE_DIR, ".")) 
+sys.path.insert(1, path.join(BASE_DIR, "dist")) 
 
 import hdlConvertor
 
