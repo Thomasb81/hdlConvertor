@@ -49,13 +49,13 @@ class ParserContainer {
 public:
 	Context * context;
 	ParserErrors parseFile(
-			const char * fileName,
+			std::string fileName,
 			bool hierarchyOnly,
 			bool debug,
 			std::function<
 					void(antlrParserT * antlrParser, hdlParserT * hdlParser)> parseFn) {
 		// create a CharStream that reads from standard input
-		if (!file_exists(fileName))
+		if (!file_exists(fileName.c_str()))
 			return PERR_FILE;
 
 		ANTLRFileStream * input = new ANTLRFileStream(fileName);

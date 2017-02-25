@@ -39,7 +39,7 @@ using namespace vhdl;
 class Convertor {
 
 public:
-	static const char * fileName;
+	static std::string fileName;
 	static Langue lang;
 	static bool hierarchyOnly;
 	static bool debug;
@@ -47,7 +47,7 @@ public:
 	static const char * errStr;
 
 	static Context * parse(
-			const char * fileName,
+			std::string fileName,
 			Langue lang,
 			bool hierarchyOnly,
 			bool debug);

@@ -3,6 +3,7 @@
 from libc.string cimport strerror
 from libc.errno cimport errno
 from libcpp cimport bool
+from libcpp cimport string
 from cpython.ref cimport PyObject
 
 from convertor cimport Context, PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR, VHDL, VERILOG, Convertor as _Convertor
@@ -25,10 +26,7 @@ cdef class hdlConvertor:
 
 
     def parse(self,filename,langue,hierarchyOnly,debug):
-#if PY_MAJOR_VERSION >= 3
-        filename = filename.encode()
-#endif
-        cdef char * filename_byte = <bytes> filename
+
         cdef Context* c
         if langue == "verilog":
             langue_value = VERILOG
@@ -37,7 +35,7 @@ cdef class hdlConvertor:
         else:
             raise ValueError(langue +  " is not reconnized")
 
-        c = self.thisptr.parse(filename_byte,langue_value,hierarchyOnly,debug)
+        c = self.thisptr.parse(filename,langue_value,hierarchyOnly,debug)
         if c is NULL:
             if self.thisptr.err == PERR_FILE:
                 raise IOError(filename + " : " + strerror(errno))

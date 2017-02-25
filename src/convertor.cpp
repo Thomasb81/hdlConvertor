@@ -1,6 +1,6 @@
 #include "convertor.h"
 
-const char * Convertor::fileName = NULL;
+std::string Convertor::fileName;
 const char * Convertor::errStr = NULL;
 Langue Convertor::lang = VHDL;
 bool Convertor::hierarchyOnly = false;
@@ -31,7 +31,7 @@ void parseFnSystemVerilog(sv::sv2012Parser * antlrParser,
 }
 #endif
 
-Context * Convertor::parse(const char * _fileName, Langue _lang,
+Context * Convertor::parse(std::string _fileName, Langue _lang,
 		bool _hierarchyOnly, bool _debug) {
 	fileName = _fileName;
 	lang = _lang;

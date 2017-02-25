@@ -23,7 +23,7 @@ cdef extern from "langue.h":
 cdef extern from "convertor.h":
     cdef cppclass Convertor:
 
-        char * filename
+        string filename
         Langue lang
         bool hierarchyOnly
         ParserErrors err
