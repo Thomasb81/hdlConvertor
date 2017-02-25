@@ -72,13 +72,16 @@ Context * Convertor::parse(const char * _fileName, Langue _lang,
 	return c;
 }
 
-void Convertor::test(const char * fileName) {
+void Convertor::test(const std::string fileName, std::vector<std::string> incdir ) {
 
   std::ifstream t(fileName);
   std::string str((std::istreambuf_iterator<char>(t)),
                  std::istreambuf_iterator<char>());
 
-  std::string result = return_preprocessed(str,true);
+  std::string result = return_preprocessed(str,incdir,true);
+  for (uint8_t i=0; i < incdir.size(); i++) {
+    printf("incdir : %s\n",incdir[i].c_str());
+  }
   printf("---------------------------------------------\n");
   printf("%s\n",result.c_str());
   

@@ -1,9 +1,9 @@
 #include "vPreprocessor.h"
 #include "macroSymbol.h"
 
-void macroSymbol::insert(const std::pair<std::string,macro_replace* > item) {
-	
-	std::string new_replacement = return_preprocessed(item.second->data.tmplate,false);
+void macroSymbol::insert(const std::pair<std::string,macro_replace* > item, std::vector<std::string> &incdir) {
+
+	std::string new_replacement = return_preprocessed(item.second->data.tmplate,incdir,false);
 	/*
 	printf("%s -> %s : %s\n",
 	item.first.c_str(),

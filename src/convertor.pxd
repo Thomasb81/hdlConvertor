@@ -1,5 +1,7 @@
 
 from libcpp cimport bool
+from libcpp.vector cimport vector
+from libcpp.string cimport string
 from cpython.ref cimport PyObject
 
 
@@ -32,4 +34,4 @@ cdef extern from "convertor.h":
                               bool,
                               bool
                              ) except +
-        void test (char * filename)
+        void test (string filename, vector[string] incdir) except +

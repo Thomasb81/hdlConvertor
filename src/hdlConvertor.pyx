@@ -53,12 +53,8 @@ cdef class hdlConvertor:
         d_py = <object> d
         return d_py
     
-    def test(self, filename):
-#if PY_MAJOR_VERSION >= 3
-        filename = filename.encode()
-#endif
-        cdef char * filename_byte = <bytes> filename
-        self.thisptr.test(filename_byte)
+    def test(self, filename, incdir=['.']):
+        self.thisptr.test(filename,incdir)
 
 
 def parse(filename,langue,hierarchyOnly=False,debug=False):
@@ -68,7 +64,7 @@ def parse(filename,langue,hierarchyOnly=False,debug=False):
     context = obj.parse(filename,langue,hierarchyOnly,debug)
     return context
 
-def test(filename):
+def test(filename,incdir=['.']):
     cdef hdlConvertor obj
     obj = hdlConvertor()
-    obj.test(filename)
+    obj.test(filename,incdir)

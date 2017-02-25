@@ -11,6 +11,7 @@ preprocess_directive
     : define
     | undef
     | conditional
+    | include
     | token_id
     ;
 
@@ -66,6 +67,10 @@ group_of_lines
 token_id
     : BACKTICK macro_toreplace '(' ID ( ',' ID )* ')'  //{System.out.println(">>> to replace : " + $macro_toreplace.text);}
     | BACKTICK macro_toreplace  //{ System.out.println(">>> to replace : " + $macro_toreplace.text);}
+    ;
+
+include
+    : INCLUDE StringLiteral 
     ;
 
 INCLUDE

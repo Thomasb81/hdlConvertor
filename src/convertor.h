@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <list>
 #include <iostream>
 #include <fstream>
 #include <streambuf>
@@ -13,8 +14,8 @@
 #include "VhdlParser/vhdlParser.h"
 #include "vhdlConvertor/designFileParser.h"
 
-#include "VerilogParser/Verilog2001Lexer.h"
-#include "VerilogParser/Verilog2001Parser.h"
+#include "Verilog2001Parser/Verilog2001Lexer.h"
+#include "Verilog2001Parser/Verilog2001Parser.h"
 #include "verilogConvertor/source_textParser.h"
 
 #ifdef SV_PARSER
@@ -51,6 +52,6 @@ public:
 			bool hierarchyOnly,
 			bool debug);
 
-	void test(const char *  filename);
+	void test(const std::string, std::vector<std::string> incdir );
 
 };
