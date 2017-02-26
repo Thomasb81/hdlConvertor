@@ -22,9 +22,9 @@ class vPreprocessor : public  vppBaseListener {
 		static std::vector<std::string> _stack_incfile;
 	public:
 		TokenStreamRewriter * _rewriter;
-		
+
 		std::string genBlank(size_t n);
-		
+
 		vPreprocessor(TokenStream *tokens,
 				std::vector<std::string> &incdir,
 				bool eraseDB);
