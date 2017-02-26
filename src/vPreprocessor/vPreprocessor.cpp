@@ -86,21 +86,24 @@ void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx)
 
 	search = _defineDB.find(ctx->ID(0)->getText());
 	if (search != _defineDB.end() ) {
-		replacement = return_preprocessed(ctx->ifdef_group_of_lines()->getText(),_incdir,false);
+		misc::Interval interval = ctx->ifdef_group_of_lines()->getSourceInterval();
+		replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 	}
 	else {
 		ID_cpt++;
 		while (ID_cpt < ctx->ID().size() ) {
 			search = _defineDB.find(ctx->ID(ID_cpt)->getText());
 			if (search != _defineDB.end() ) {
-				replacement = return_preprocessed(ctx->elsif_group_of_lines(ID_cpt)->getText(),_incdir,false);
+				misc::Interval interval = ctx->elsif_group_of_lines(ID_cpt)->getSourceInterval();
+				replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 				goto exit_label;
 
 			}
 			ID_cpt++;
 		}
 		if (ctx->ELSE() != nullptr) {
-			replacement = return_preprocessed(ctx->else_group_of_lines()->getText(),_incdir,false);
+			misc::Interval interval = ctx->else_group_of_lines()->getSourceInterval();
+			replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 		
 		}
 	}
@@ -119,21 +122,24 @@ void vPreprocessor::exitIfndef_directive(vppParser::Ifndef_directiveContext * ct
 
 	search = _defineDB.find(ctx->ID(0)->getText());
 	if (search != _defineDB.end() ) {
-		replacement = return_preprocessed(ctx->ifndef_group_of_lines()->getText(),_incdir,false);
+		misc::Interval interval = ctx->ifndef_group_of_lines()->getSourceInterval();
+		replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 	}
 	else {
 		ID_cpt++;
 		while (ID_cpt < ctx->ID().size() ) {
 			search = _defineDB.find(ctx->ID(ID_cpt)->getText());
 			if (search != _defineDB.end() ) {
-				replacement = return_preprocessed(ctx->elsif_group_of_lines(ID_cpt)->getText(),_incdir,false);
+				misc::Interval interval = ctx->elsif_group_of_lines(ID_cpt)->getSourceInterval();
+				replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 				goto exit_label;
 
 			}
 			ID_cpt++;
 		}
 		if (ctx->ELSE() != nullptr) {
-			replacement = return_preprocessed(ctx->else_group_of_lines()->getText(),_incdir,false);
+			misc::Interval interval = ctx->else_group_of_lines()->getSourceInterval();
+			replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
 		
 		}
 	}
