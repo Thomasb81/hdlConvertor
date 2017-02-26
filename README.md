@@ -35,7 +35,11 @@ for e in res['entities']:
 
 Currently package is testet only for python3.5 under linux but should work with every python3.x on any system where is compiler with c++11 support.
 
-Build instruction
+Build instruction:
+```
 mkdir build
+cd buid
 cmake -DCMAKE_BUILD_TYPE=Debug -DANTLR_JAR_LOCATION=../antlr4/antlr-4.6-complete.jar ..
 make -j 8
+```
+Replace `Debug` by `Release` in order to compile with optimization. Add `VERBOSE=1` to make command line to print compile command line.
