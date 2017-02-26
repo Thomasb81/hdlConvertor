@@ -21,7 +21,7 @@
 #ifdef SV_PARSER
 #include "SVParser/sv2012Lexer.h"
 #include "SVParser/sv2012Parser.h"
-#include "svConverter/library_textParser.h"
+#include "svConverter/source_textParser.h"
 #endif
 
 #include "vPreprocessor/vPreprocessor.h"
@@ -49,6 +49,7 @@ public:
 	static Context * parse(
 			std::string fileName,
 			Langue lang,
+			std::vector<std::string>,
 			bool hierarchyOnly,
 			bool debug);
 

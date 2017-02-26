@@ -15,14 +15,6 @@ enum ParserErrors {
 	PERR_OK = 0, PERR_FILE, PARSING_ERR, CONVERTING_ERR
 };
 
-inline bool file_exists(const char * name) {
-	if (FILE *file = fopen(name, "r")) {
-		fclose(file);
-		return true;
-	} else {
-		return false;
-	}
-}
 
 template<class antlrLexerT, class antlrParserT, class hdlParserT>
 class ParserContainer {
@@ -32,9 +24,9 @@ class ParserContainer {
 	antlrParserT * antlrParser;
 	hdlParserT * hdlParser;
 
-	void initParser(ANTLRFileStream * input) {
+	void initParser(ANTLRInputStream &input) {
 		// create a lexer that feeds off of input CharStream
-		lexer = new antlrLexerT(input);
+		lexer = new antlrLexerT(&input);
 
 		// create a buffer of tokens pulled from the lexer
 		tokens = new CommonTokenStream(lexer);
@@ -49,17 +41,17 @@ class ParserContainer {
 public:
 	Context * context;
 	ParserErrors parseFile(
-			std::string fileName,
+			ANTLRInputStream &fileName,
 			bool hierarchyOnly,
 			bool debug,
 			std::function<
-					void(antlrParserT * antlrParser, hdlParserT * hdlParser)> parseFn) {
-		// create a CharStream that reads from standard input
-		if (!file_exists(fileName.c_str()))
-			return PERR_FILE;
+					void(
+						antlrParserT * antlrParser,
+						hdlParserT * hdlParser
+					    )
+				     > parseFn) {
 
-		ANTLRFileStream * input = new ANTLRFileStream(fileName);
-		initParser(input);
+		initParser(fileName);
 
 		hdlParser = new hdlParserT(hierarchyOnly);
 
@@ -72,7 +64,6 @@ public:
 		delete antlrParser;
 		delete tokens;
 		delete lexer;
-		delete input;
 
 		return PERR_OK;
 	}

@@ -31,7 +31,9 @@ cdef extern from "convertor.h":
 
         Context * parse ( char *,
                               Langue,
+                              vector[string],
                               bool,
                               bool
                              ) except +
         void test (string filename, vector[string] incdir) except +
+

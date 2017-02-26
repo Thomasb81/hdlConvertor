@@ -6,7 +6,7 @@ from libcpp cimport bool
 from libcpp cimport string
 from cpython.ref cimport PyObject
 
-from convertor cimport Context, PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR, VHDL, VERILOG, Convertor as _Convertor
+from convertor cimport Context, PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR, VHDL, VERILOG, SYSTEM_VERILOG, Convertor as _Convertor
 
 
 class parser_error(Exception):
@@ -25,17 +25,19 @@ cdef class hdlConvertor:
         del self.thisptr
 
 
-    def parse(self,filename,langue,hierarchyOnly,debug):
+    def parse(self,filename,langue,incdir,hierarchyOnly,debug):
 
         cdef Context* c
         if langue == "verilog":
             langue_value = VERILOG
         elif langue == "vhdl":
             langue_value = VHDL
+        elif langue == "systemVerilog":
+            langue_value = SYSTEM_VERILOG
         else:
             raise ValueError(langue +  " is not reconnized")
 
-        c = self.thisptr.parse(filename,langue_value,hierarchyOnly,debug)
+        c = self.thisptr.parse(filename,langue_value,incdir,hierarchyOnly,debug)
         if c is NULL:
             if self.thisptr.err == PERR_FILE:
                 raise IOError(filename + " : " + strerror(errno))
@@ -53,16 +55,17 @@ cdef class hdlConvertor:
     
     def test(self, filename, incdir=['.']):
         self.thisptr.test(filename,incdir)
+    
 
-
-def parse(filename,langue,hierarchyOnly=False,debug=False):
+def parse(filename,langue,incdir=['.'],hierarchyOnly=False,debug=False):
     cdef hdlConvertor obj
     cdef object context
     obj = hdlConvertor()
-    context = obj.parse(filename,langue,hierarchyOnly,debug)
+    context = obj.parse(filename,langue,incdir,hierarchyOnly,debug)
     return context
 
 def test(filename,incdir=['.']):
     cdef hdlConvertor obj
     obj = hdlConvertor()
     obj.test(filename,incdir)
+
