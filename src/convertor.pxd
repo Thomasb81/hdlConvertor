@@ -9,16 +9,12 @@ cdef extern from "hdlObjects/context.h":
     cdef cppclass Context:
         PyObject * toJson()
 
-
-cdef extern from "parserContainer.h":
-    enum ParserErrors:
-        PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR
+cdef extern from "exception.h":
+    cdef void raise_py_error()
 
 cdef extern from "langue.h":
     enum Langue:
         VHDL, VERILOG,SYSTEM_VERILOG
-
-
 
 cdef extern from "convertor.h":
     cdef cppclass Convertor:
@@ -26,14 +22,12 @@ cdef extern from "convertor.h":
         string filename
         Langue lang
         bool hierarchyOnly
-        ParserErrors err
-        char * errStr
 
         Context * parse ( char *,
                               Langue,
                               vector[string],
                               bool,
                               bool
-                             ) except +
-        void test (string filename, vector[string] incdir) except +
+                             ) except +raise_py_error
+        void test (string filename, vector[string] incdir) except +raise_py_error
 

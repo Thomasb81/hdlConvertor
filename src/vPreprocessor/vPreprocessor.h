@@ -10,7 +10,7 @@
 #include <string>
 #include <map>
 #include <sys/stat.h>
-
+#include "exception.h"
 
 using namespace antlr4;
 

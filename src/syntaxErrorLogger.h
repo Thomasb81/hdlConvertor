@@ -1,12 +1,43 @@
 #pragma once
 #include "antlr4-runtime.h"
+#include "exception.h"
+#include <sstream>
+#include <string>
 
 using namespace antlr4;
 
+enum error_kind_t {SYNTAXERROR,REPORTAMBIGUITY,REPORTCONTEXTSENSITIVITY,REPORTATTEMPTINGFULLCONTEXT};
+
+class error_data {
+	public:
+	enum error_kind_t _error_kind;
+	size_t _line;
+	size_t _charPosition;
+	std::string _filename;
+	std::string _message;
+};
+
+
 class SyntaxErrorLogger: public ANTLRErrorListener {
+
+
+	class error_data {
+		public:
+		enum error_kind_t _error_kind;
+		size_t _line;
+		size_t _charPosition;
+		std::string _filename;
+		std::string _message;
+	};
+	
+private:
+	std::vector<error_data> _errors;
+
+
 public:
+	void CheckErrors();
 	void syntaxError(
-			IRecognizer *recognizer,
+			Recognizer *recognizer,
 			Token *offendingSymbol,
 			size_t line,
 			size_t charPositionInLine,

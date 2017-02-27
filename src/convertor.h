@@ -18,6 +18,8 @@
 #include "Verilog2001Parser/Verilog2001Parser.h"
 #include "verilogConvertor/source_textParser.h"
 
+#define SV_PARSER
+
 #ifdef SV_PARSER
 #include "SVParser/sv2012Lexer.h"
 #include "SVParser/sv2012Parser.h"
@@ -26,6 +28,7 @@
 
 #include "vPreprocessor/vPreprocessor.h"
 
+#include "exception.h"
 #include "syntaxErrorLogger.h"
 #include "langue.h"
 #include "parserContainer.h"
@@ -39,14 +42,12 @@ using namespace vhdl;
 class Convertor {
 
 public:
-	static std::string fileName;
-	static Langue lang;
-	static bool hierarchyOnly;
+	std::string fileName;
+	Langue lang;
+	bool hierarchyOnly;
 	static bool debug;
-	static ParserErrors err;
-	static const char * errStr;
 
-	static Context * parse(
+	Context * parse(
 			std::string fileName,
 			Langue lang,
 			std::vector<std::string>,

@@ -11,14 +11,9 @@
 
 using namespace antlr4;
 
-enum ParserErrors {
-	PERR_OK = 0, PERR_FILE, PARSING_ERR, CONVERTING_ERR
-};
-
-
 template<class antlrLexerT, class antlrParserT, class hdlParserT>
 class ParserContainer {
-	ANTLRErrorListener * syntaxErrLogger;
+	SyntaxErrorLogger * syntaxErrLogger;
 	antlrLexerT * lexer;
 	CommonTokenStream * tokens;
 	antlrParserT * antlrParser;
@@ -40,7 +35,7 @@ class ParserContainer {
 	}
 public:
 	Context * context;
-	ParserErrors parseFile(
+	void parseFile(
 			ANTLRInputStream &fileName,
 			bool hierarchyOnly,
 			bool debug,
@@ -59,13 +54,13 @@ public:
 		parseFn(antlrParser, hdlParser);
 
 		context = hdlParser->getContext();
+		syntaxErrLogger->CheckErrors(); // Throw exception if errors
 		delete hdlParser;
 		delete syntaxErrLogger;
 		delete antlrParser;
 		delete tokens;
 		delete lexer;
 
-		return PERR_OK;
 	}
 };
 

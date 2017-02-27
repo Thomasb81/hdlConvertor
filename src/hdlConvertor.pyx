@@ -6,14 +6,12 @@ from libcpp cimport bool
 from libcpp cimport string
 from cpython.ref cimport PyObject
 
-from convertor cimport Context, PERR_OK, PERR_FILE, PARSING_ERR, CONVERTING_ERR, VHDL, VERILOG, SYSTEM_VERILOG, Convertor as _Convertor
+from convertor cimport Context, VHDL, VERILOG, SYSTEM_VERILOG, Convertor as _Convertor
 
+class parseException(Exception):
+    pass
 
-class parser_error(Exception):
-    def _init_(self,value):
-        self.value = value
-    def __str__(self):
-        return repr(self.value)
+cdef public PyObject * parseExceptionerror = <PyObject*> parseException
 
 cdef class hdlConvertor:
     cdef _Convertor * thisptr
@@ -38,13 +36,6 @@ cdef class hdlConvertor:
             raise ValueError(langue +  " is not reconnized")
 
         c = self.thisptr.parse(filename,langue_value,incdir,hierarchyOnly,debug)
-        if c is NULL:
-            if self.thisptr.err == PERR_FILE:
-                raise IOError(filename + " : " + strerror(errno))
-            elif self.thisptr.err == PARSING_ERR or self.thisptr.err == CONVERTING_ERR:
-                raise parser_error(self.thisptr.errStr)
-            else:
-                raise Exception("Converter::parse did not returned correct context for file")
 
         cdef PyObject * d
         d = NULL

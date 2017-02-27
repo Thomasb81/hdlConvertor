@@ -3,7 +3,7 @@
 macroSymbol vPreprocessor::_defineDB;
 std::vector<std::string> vPreprocessor::_stack_incfile;
 
-vPreprocessor::vPreprocessor(TokenStream * tokens, 
+vPreprocessor::vPreprocessor(TokenStream * tokens,
 		std::vector<std::string> &incdir,
 		bool eraseDB) {
 	_rewriter = new TokenStreamRewriter(tokens);
@@ -12,7 +12,7 @@ vPreprocessor::vPreprocessor(TokenStream * tokens,
 	if (eraseDB == true) {
 		_defineDB.clear();
 	}
-	
+
 }
 
 vPreprocessor::~vPreprocessor() {
@@ -52,7 +52,7 @@ void vPreprocessor::enterDefine(vppParser::DefineContext * ctx){
 	}
 
 	misc::Interval token = ctx->getSourceInterval();
-	
+
 	_rewriter->replace(
 				token.a,
 				token.b,
@@ -66,10 +66,10 @@ void vPreprocessor::enterUndef(vppParser::UndefContext * ctx) {
 void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 	macroPrototype macro = return_prototype(ctx->getText().substr(1,std::string::npos));
 
-	std::string replacement = _defineDB[macro.macroName]->replace(macro.args);	
-	
+	std::string replacement = _defineDB[macro.macroName]->replace(macro.args);
+
 	misc::Interval token = ctx->getSourceInterval();
-	
+
 	_rewriter->replace(
 				token.a-1,
 				token.b,
@@ -78,7 +78,7 @@ void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 
 
 void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx) {
-	
+
 	uint32_t ID_cpt = 0;
 	macroSymbol::iterator search;
 	std::string replacement = "";
@@ -104,7 +104,7 @@ void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx)
 		if (ctx->ELSE() != nullptr) {
 			misc::Interval interval = ctx->else_group_of_lines()->getSourceInterval();
 			replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
-		
+
 		}
 	}
 
@@ -114,7 +114,7 @@ void vPreprocessor::exitIfdef_directive(vppParser::Ifdef_directiveContext * ctx)
 }
 
 void vPreprocessor::exitIfndef_directive(vppParser::Ifndef_directiveContext * ctx) {
-	
+
 	uint32_t ID_cpt = 0;
 	macroSymbol::iterator search;
 	std::string replacement = "";
@@ -140,7 +140,7 @@ void vPreprocessor::exitIfndef_directive(vppParser::Ifndef_directiveContext * ct
 		if (ctx->ELSE() != nullptr) {
 			misc::Interval interval = ctx->else_group_of_lines()->getSourceInterval();
 			replacement = return_preprocessed(_tokens->getText(interval),_incdir,false);
-		
+
 		}
 	}
 
@@ -157,7 +157,7 @@ void vPreprocessor::enterInclude(vppParser::IncludeContext * ctx) {
 	std::string StringLiteral = ctx->StringLiteral()->getText();
 	std::string filename;
 	while(incdir_iter != _incdir.end() && found == false){
-		
+
 		filename = (*incdir_iter) + '/' + StringLiteral.substr(1,StringLiteral.size()-2);
 		if (stat(filename.c_str(),&buffer) == 0) {
 			found = true;
@@ -165,21 +165,21 @@ void vPreprocessor::enterInclude(vppParser::IncludeContext * ctx) {
 		incdir_iter++;
 	}
 	if (found == false) {
-		printf("%s was not found in include directory\n",
-				StringLiteral.substr(1,StringLiteral.size()-2).c_str()
-				);
+		std::string msg = StringLiteral.substr(1,StringLiteral.size()-2) + \
+			" was not found in include directory\n";
+		throw parseException(msg);
 	}
 	else if (_stack_incfile.size() > 20) {
-		printf("Include limit reach !\n");
+		std::string msg = "Nested include limite reach";
+		throw parseException(msg);
 	}
 	else {
-
 
 		misc::Interval token = ctx->getSourceInterval();
 		//std::string replacement = genBlank(ctx->getText().size());
 		std::string replacement;
 		_rewriter->Delete(token.a,token.b);
-		
+
 		_stack_incfile.push_back(filename);
   		std::ifstream t(filename);
   		std::string str((std::istreambuf_iterator<char>(t)),
@@ -188,9 +188,9 @@ void vPreprocessor::enterInclude(vppParser::IncludeContext * ctx) {
                 replacement = return_preprocessed(str,_incdir,false);
 		_stack_incfile.pop_back();
 		_rewriter->insertAfter(ctx->StringLiteral()->getSymbol(),replacement);
-		
+
 	}
-	
+
 }
 
 
@@ -201,7 +201,7 @@ std::string return_preprocessed(const std::string input_token,std::vector<std::s
   CommonTokenStream * tokens = new CommonTokenStream(lexer);
   vppParser * parser = new vppParser(tokens);
   tree::ParseTree *tree = parser->file();
-  
+
   tree::ParseTreeWalker walker = tree::ParseTreeWalker();
   vPreprocessor * extractor = new vPreprocessor(tokens,incdir,eraseDB);
   walker.walk( (tree::ParseTreeListener*) extractor,tree);
