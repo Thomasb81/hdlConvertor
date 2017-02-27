@@ -2,8 +2,7 @@
 
 bool Convertor::debug = false;
 
-void parseFnVerilog(Verilog2001Parser * antlrParser,
-		Source_textParser * hdlParser) {
+void parseFnVerilog(Verilog2001Parser * antlrParser, Source_textParser * hdlParser) {
 	Verilog2001Parser::Source_textContext *tree = antlrParser->source_text();
 	hdlParser->visitSource_text(tree);
 }
