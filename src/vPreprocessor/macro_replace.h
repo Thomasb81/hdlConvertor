@@ -1,12 +1,13 @@
 #pragma once
 
-#include  "macroPrototype.h"
+#include "macroPrototype.h"
+#include "exception.h"
 
 class macro_replace_data {
 
 	public:
-	std::string tmplate;
-	std::vector<std::string> args;
+	std::string tmplate; //macro template
+	std::vector<std::string> args; // list of argument to be replace in the template
 };
 
 class macro_replace {
