@@ -66,6 +66,10 @@ void vPreprocessor::enterUndef(vppParser::UndefContext * ctx) {
 void vPreprocessor::enterToken_id(vppParser::Token_idContext * ctx) {
 	macroPrototype macro = return_prototype(ctx->getText().substr(1,std::string::npos));
 
+	if (_defineDB.find(macro.macroName) == _defineDB.end()) {
+		std::string msg = macro.macroName + "is not defined";
+		throw parseException(msg);
+	}
 	std::string replacement = _defineDB[macro.macroName]->replace(macro.args);
 
 	misc::Interval token = ctx->getSourceInterval();
