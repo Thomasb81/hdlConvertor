@@ -83,6 +83,11 @@ cdef extern from "hdlConvertor/hdlConvertor.h" namespace "hdlConvertor":
             Language mode,
             const string & encoding) except +raise_cpp_py_error
 
+        void verilog_xpath(
+            const string & filename,
+            vector[string] incdirs,
+            Language mode,
+            const string & encoding, const string & pattern) except +raise_cpp_py_error
 
 cdef class HdlConvertorPy:
     """
@@ -258,3 +263,24 @@ cdef class HdlConvertorPy:
         data = str_decode(data)
 
         return data
+
+
+    def verilog_xpath(self, filename, lang, pattern ,incdirs=['.'], encoding="utf-8"):
+        """
+        Execute xpath
+
+        :type filename: Union[str, List[str]]
+        :param encoding: character encoding of input data
+        :return: string output from verilog preprocessor
+        """
+        language_value = self._translate_verilog_enum(lang)
+
+        filename = str_encode(filename)
+        incdirs = [str_encode(item) for item in incdirs]
+        pattern = str_encode(pattern)
+
+        data = self.thisptr.get().verilog_xpath(filename, incdirs,
+                                             language_value, str_encode(encoding),pattern)
+        #data = str_decode(data)
+
+        #return data

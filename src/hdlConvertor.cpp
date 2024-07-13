@@ -82,6 +82,45 @@ public:
 		syntaxErrLogger.check_errors(); // Throw exception if errors
 		hdlParser->visitSource_text(tree);
 	}
+
+	void parse_xpath( const filesystem::path &file_name,
+			std::vector<std::string> _incdirs, const std::string &encoding,
+			const std::string & pattern) {
+
+		preproc.init(_incdirs);
+		verilog_pp::VerilogPreprocOutBuffer preprocess_res(0);
+		preproc.run_preproc_file(file_name, encoding, preprocess_res);
+		string preprocessed_code = preprocess_res.str();
+		file_line_map = preprocess_res.file_line_map;
+
+		antlr4::ANTLRInputStream input_for_parser(preprocessed_code);
+		input_for_parser.name = file_name.u8string();
+
+		initParser(input_for_parser);
+		hdlParser = std::make_unique<sv::Source_textParser>(*antlrParser->getTokenStream(),
+				context, false);
+
+
+		sv2017_antlr::sv2017Parser::Source_textContext *tree =
+				antlrParser->source_text();
+
+		//hdlParser->visitSource_text(tree);
+
+
+		antlr4::tree::xpath::XPath finder(antlrParser.get(),"/");
+		std::vector<antlr4::tree::ParseTree *> nodes = finder.findAll(
+				tree,pattern,antlrParser.get());
+		for (antlr4::tree::ParseTree *token : nodes) {
+			if (token->getTreeType() == antlr4::tree::ParseTreeType::TERMINAL) {
+				std::cout << token->toString() << std::endl;
+  			}
+		}
+
+		hdlParser->visitSource_text(tree);
+
+
+
+	}
 };
 
 HdlConvertor::HdlConvertor(hdlAst::HdlContext &_c) :
@@ -154,6 +193,19 @@ string HdlConvertor::verilog_pp_str(const string &verilog_str,
 	pc.preproc.run_preproc_str(verilog_str, encoding, res);
 	return res.str();
 }
+
+
+void HdlConvertor::verilog_xpath(const string &fileName,
+		const vector<string> _incdirs, Language lang,
+		const std::string &encoding,
+		const std::string &pattern) {
+
+	SVParserContainer pc(c, lang, defineDB);
+	pc.parse_xpath(fileName, _incdirs, encoding, pattern);
+
+}
+
+
 
 HdlConvertor::~HdlConvertor() {
 	for (auto o : defineDB) {

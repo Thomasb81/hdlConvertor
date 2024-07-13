@@ -40,6 +40,11 @@ public:
 			const std::string &encoding);
 
 	virtual ~HdlConvertor();
+
+	void verilog_xpath(const std::string &filename,
+			const std::vector<std::string> incdirs, Language lang,
+			const std::string &encoding,
+			const std::string & pattern);
 };
 
 }
