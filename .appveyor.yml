@@ -47,7 +47,7 @@ install:
   - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
 
 build_script:
-  - 'call "%VSINSTALLDIR%\\VC\\Auxiliary\\Build\\vcvars64.bat"'
+  - 'call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"'
   - 'where cl'
   - 'where clang'
   - '%PYTHON%\\python.exe -m pip install .'
