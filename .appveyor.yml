@@ -1,5 +1,7 @@
 clone_depth: 5
 
+build: off
+
 environment:
   matrix:
     #- GENERATOR: -G"Visual Studio 16 2019" -A x64
