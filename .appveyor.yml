@@ -45,6 +45,7 @@ install:
   - "%PYTHON%\\python.exe -m pip install -r requirements.txt"
 
 build_script:
+  - 'call "%VSINSTALLDIR%\\VC\\Auxiliary\\Build\\vcvars64.bat"'
   - '%PYTHON%\\python.exe -m pip install .'
   - 'rmdir /s /q hdlConvertor' # to not collide with installed module
 
