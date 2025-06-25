@@ -38,7 +38,7 @@ environment:
     #  PLATFORM: x64
     #  ANTLR_VER: 4.9
        CC: cl
-       CXX:cl
+       CXX: cl
 
 install:
   - 'systeminfo'
@@ -50,6 +50,8 @@ install:
 
 build_script:
   - 'call "%VSINSTALLDIR%\\VC\\Auxiliary\\Build\\vcvars64.bat"'
+  - 'where cl'
+  - 'where clang'
   - '%PYTHON%\\python.exe -m pip install .'
   - 'rmdir /s /q hdlConvertor' # to not collide with installed module
 
