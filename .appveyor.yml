@@ -37,6 +37,8 @@ environment:
     #  PATH: $(PYTHON)\Scripts;$(PATH) 
     #  PLATFORM: x64
     #  ANTLR_VER: 4.9
+       CC: cl
+       CXX:cl
 
 install:
   - 'systeminfo'
