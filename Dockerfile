@@ -27,7 +27,7 @@ RUN adduser --disabled-password \
 
 RUN apt install build-essential uuid-dev cmake default-jre\
                 python3 python3-dev python3-pip libssl-dev -yq
-RUN pip3 install scikit-build Cython notebook --break-system-packages
+RUN pip3 install Cython notebook --break-system-packages
 # RUN pip3 install hdlConvertor
 
 # [mybinder specific]
